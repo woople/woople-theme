@@ -2,7 +2,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem 'thin'
-gem 'pg'
+gem 'sqlite3'
+
+group :production do
+  gem 'pg'
+end
 
 group :assets do
   gem 'less-rails-bootstrap'
