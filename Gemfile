@@ -4,10 +4,6 @@ gem 'rails', '3.2.1'
 gem 'thin'
 gem 'sqlite3'
 
-group :production do
-  gem 'pg'
-end
-
 group :assets do
   gem 'less-rails-bootstrap'
   gem 'coffee-rails', '~> 3.2.1'
