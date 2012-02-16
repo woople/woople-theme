@@ -1,10 +1,31 @@
 <div class="container">
-  <header class="masthead">
-    <h1>Page Title</h1>
-    <p>Here is some text</p>
-  </header>
+
+  <section id="buttons">
+    <h1>Buttons</h1>
+
+    <h2>Button</h2>
+
+    <h3>Description</h3>
+
+    <%= codify do %>
+      <a href="#" class="btn btn-large btn-primary">Primary Action</a>
+    <% end %>
+
+    <%= codify do %>
+      <table>
+        <thead>
+          <tr><th>Blah</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>BOOM!</td></tr>
+        </tbody>
+      </table>
+    <% end %>
+  </section>
+
 
   <section id="section-1">
+
   <div class="page-header">
     <h1>
       Section 1
@@ -59,14 +80,6 @@
   </div>
   </section>
 
-  <section id="section-2">
-  <div class="page-header">
-    <h1>
-      Section 2
-      <small>This is where you add a short introduction</small>
-    </h1>
-  </div>
-  </section>
 
   <footer>
   <p class="pull-right"><a href="#">Back to top</a></p>

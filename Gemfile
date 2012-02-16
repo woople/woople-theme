@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.1'
 gem 'thin'
 gem 'sqlite3'
+gem 'htmlentities'
 
 group :assets do
   gem 'less-rails-bootstrap'

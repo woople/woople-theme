@@ -8,11 +8,9 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
+ *= require google-code-prettify/prettify
  *= require twitter/bootstrap
+ *= require ui
  *= require_tree .
+ *= require_self
 */
-
-body {
-	padding-top: 80px;
-}
