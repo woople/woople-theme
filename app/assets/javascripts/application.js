@@ -13,30 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require google-code-prettify/prettify
-//= require ui
 //= require_tree .
 
 $(document).ready(function() {
   prettyPrint();
-
-  var picker = new ui.ColorPicker;
-
-  $('.codify').each(function() {
-
-    var codify = $(this);
-
-    var content = codify.find('.well');
-    var code = codify.find('pre');
-    var link = codify.find('.show_source');
-
-    var picker = new ui.ColorPicker;
-
-    var card = ui.card(content, code);
-    card.el.appendTo(codify);
-
-    link.click(function() {
-      card.flip();
-    });
-  });
-
 });
