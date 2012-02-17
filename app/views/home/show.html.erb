@@ -6,7 +6,6 @@
     <h2>Base</h2>
     <div>
       <h3>H1</h3>
-      <h4>Usage</h4>
       <p>The H1 tag is to be used within the masthead of every page to denote the primary heading.</p>
       <%= codify do %>
         <h1>This is an H1</h1>
@@ -19,8 +18,10 @@
     </div>
     <div>
       <h3>H2</h3>
-      <h4>Usage</h4>
       <p>The H2 tag is to be used to denote a section on a page.</p>
+      <%= codify do %>
+        <h2>This is an H2</h2>
+      <% end %>
       <h4>Examples</h4>
       <p>Here are some examples of how we use the H2 tag in Woople.</p>
       <ul>
@@ -29,8 +30,10 @@
     </div>
     <div>
       <h3>H3</h3>
-      <h4>Usage</h4>
       <p>The H3 tag is to be used to denote a subheading within a section.</p>
+      <%= codify do %>
+        <h3>This is an H3</h3>
+      <% end %>
       <h4>Examples</h4>
       <p>Here are some examples of how we use the H3 tag in Woople.</p>
       <ul>
@@ -39,16 +42,20 @@
     </div>
     <div>
       <h3>P</h3>
-      <h4>Usage</h4>
       <p>The Paragraph tag is the basic unit of text within Woople.</p>
+      <%= codify do %>
+        <p>This is a P.</p>
+      <% end %>
       <h4>Examples</h4>
       <p>Here are some examples of how we use the Paragraph tag in Woople.</p>
       <ul>
         <li><a href="">The Certification Dashboard</a></li>
       </ul>
       <h3>EM</h3>
-      <h4>Usage</h4>
       <p>The Emphasis tag should be used sparingly to highlight a selection of text.</p>
+      <%= codify do %>
+        <em>This is a EM.</em>
+      <% end %>
       <h4>Examples</h4>
       <p>Here are some examples of how we use the Emphasis tag in Woople.</p>
       <ul>
@@ -60,15 +67,19 @@
     <h2>Email Header &amp; Footer</h2>
     <div>
       <h3>Email Header</h3>
-      <h4>Usage</h4>
       <p>The Email Header is used within all official Woople E-mails.</p>
+      <%= codify do %>
+        <img src="http://woople.com/images/email/header2.jpg" alt="Shout Woople!">
+      <% end %>
       <h4>Examples</h4>
       <p>Here is an example of a Woople E-mail</p>
     </div>
     <div>
       <h3>Email Footer</h3>
-      <h4>Usage</h4>
       <p>The Email Footer is used within all official Woople Emails.</p>
+      <%= codify do %>
+        <img src="http://woople.com/images/email/footer2.jpg" alt="Powered by Woople!">
+      <% end %>
       <h4>Examples</h4>
       <p>Here is an example of a Woople Email.</p>
     </div>
@@ -77,8 +88,10 @@
     <h2>Miscellaneous</h2>
     <div>
       <h3>Big Number</h3>
-      <h4>Usage</h4>
       <p>The Big Number class is used to callout a particular number to the user's attention.</p>
+      <%= codify do %>
+        <p class="big-number">43%</p>
+      <% end %>
       <h4>Examples</h4>
       <p>Here is an example of how Big Number is used in Woople.</p>
       <ul>
