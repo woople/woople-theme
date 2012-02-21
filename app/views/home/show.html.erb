@@ -136,6 +136,31 @@
     <div>
       <h3>Inline Form</h3>
       <p>The Inline Form can be used in situations where the user is required to log in</p>
+      <em>Inactive</em>
+      <%= codify do %>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <em>Focused</em>
+      <%= codify do %>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <em>Warning</em>
+      <%= codify do %>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <em>Error</em>
       <%= codify do %>
         <form class="form-inline">
           <input type="text" class="input-small" placeholder="Email">
