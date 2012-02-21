@@ -1,8 +1,8 @@
 <div class="container">
   <header>
-    <h1>Typography</h1>
   </header>
-  <section>
+  <section id="typography">
+    <h1>Typography</h1>
     <h2>Base</h2>
     <div>
       <h3>H1</h3>
@@ -62,8 +62,6 @@
         <li><a href="">The Certification Dashboard</a></li>
       </ul>
     </div>
-  </section>
-  <section>
     <h2>Email Header &amp; Footer</h2>
     <div>
       <h3>Email Header</h3>
@@ -83,8 +81,6 @@
       <h4>Examples</h4>
       <p>Here is an example of a Woople Email.</p>
     </div>
-  </section>
-  <section>
     <h2>Miscellaneous</h2>
     <div>
       <h3>Big Number</h3>
@@ -99,6 +95,130 @@
       </ul>
     </div>
   </section>
+  <section id="forms">
+    <h1>Forms</h1>
+    <h2>Base</h2>
+    <div>
+      <h3>Basic Form</h3>
+      <p>The Basic Form is used for typical text input.</p>
+      <%= codify do %>
+        <form>
+          <label>Label name</label>
+          <input type="text" class="span3" placeholder="Type something...">
+          <span class="help-inline">Associated help text!</span>
+          <label class="checkbox">
+            <input type="checkbox"> Check me out
+          </label>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the basic form in Woople.</p>
+      <ul>
+        <li><a href="">Login Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Search Form</h3>
+      <p>The Search Form is used for searches.</p>
+      <%= codify do %>
+        <form class="form-search">
+          <input type="text" class="input-medium search-query">
+          <button type="submit" class="btn">Search</button>
+        </form>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the basic form in Woople.</p>
+      <ul>
+        <li><a href="">Login Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Inline Form</h3>
+      <p>The Inline Form can be used in situations where the user is required to log in</p>
+      <%= codify do %>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the basic form in Woople.</p>
+      <ul>
+        <li><a href="">Login Page</a></li>
+      </ul>
+    </div>
+    <h2>Help Block</h2>
+    <div>
+      <h3>Alert</h3>
+      <p>The Alert Help Block is used to inform users about something.</p>
+      <%= codify do %>
+        <div class="alert-block">
+          <a class="close" data-dismiss="alert">x</a>
+          <h4 class="alert-heading">Alert!</h4>
+          <p>Check yourself before you wreck yourself.</p>
+        </div>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use this component in Woople.</p>
+      <ul>
+        <li><a href="">No Example Yet</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Error</h3>
+      <p>The Error Help Block is used to inform users when something has gone wrong.</p>
+      <%= codify do %>
+        <div class="alert-block alert-error">
+          <a class="close" data-dismiss="alert">x</a>
+          <h4 class="alert-heading">Error</h4>
+          <p>I don't know much about computers.</p>
+        </div>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use this component in Woople.</p>
+      <ul>
+        <li><a href="">No Example Yet</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Success</h3>
+      <p>The Success Help Block is used to inform users when something is successful.</p>
+      <%= codify do %>
+        <div class="alert-block alert-success">
+          <a class="close" data-dismiss="alert">x</a>
+          <h4 class="alert-heading">Success</h4>
+          <p>For great justice!</p>
+        </div>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use this component in Woople.</p>
+      <ul>
+        <li><a href="">No Example Yet</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Info</h3>
+      <p>The Info Help Block is used to inform users about something.</p>
+      <%= codify do %>
+        <div class="alert-block alert-info">
+          <a class="close" data-dismiss="alert">x</a>
+          <h4 class="alert-heading">Yo</h4>
+          <p>Knowledge is power!</p>
+        </div>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use this component in Woople.</p>
+      <ul>
+        <li><a href="">No Example Yet</a></li>
+      </ul>
+    </div>
+
+  </section>
+
+  
+
   <footer>
   <p class="pull-right"><a href="#">Back to top</a></p>
   </footer>
