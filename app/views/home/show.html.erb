@@ -6,12 +6,17 @@
     <h2>Base</h2>
       <div>
         <h3>Button</h3>
+        <p>The default .btn class can be used with &lt;a&gt;, &lt;button&gt; or &lt;input&gt;</p>
+        <%= codify do %>
+          <a class="btn" href="">Button</a>
+        <% end %>
       </div>
     <h2>Rich Buttons</h2>
       <div>
         <h3>Primary Button</h3>
         <p></p>
         <%= codify do %>
+          <a class="btn btn-primary" href="">Primary Button</a>
         <% end %>
         <h4>Examples</h4>
         <p></p>
@@ -23,6 +28,11 @@
         <h3>Button Group</h3>
         <p></p>
         <%= codify do %>
+          <div class="btn-group">
+            <a class="btn" href="#">One</a>
+            <a class="btn" href="#">Two</a>
+            <a class="btn" href="#">Three</a>
+          </div>
         <% end %>
         <h4>Examples</h4>
         <p></p>
@@ -34,6 +44,9 @@
         <h3>Icon Button</h3>
         <p></p>
         <%= codify do %>
+          <a class="btn" href="#">
+            <i class="icon-refresh"></i> Refresh
+          </a>
         <% end %>
         <h4>Examples</h4>
         <p></p>
@@ -44,7 +57,13 @@
       <div>
         <h3>Confirmable Button</h3>
         <p></p>
+          <em>Inactive</em>
         <%= codify do %>
+          <a class="btn btn-primary" href="">Delete</a>
+        <% end %>
+          <em>Active</em>
+        <%= codify do %>
+          <a class="btn btn-danger" href="">Delete</a><a class="btn btn-success" href="">Cancel</a>
         <% end %>
         <h4>Examples</h4>
         <p></p>
@@ -56,6 +75,7 @@
         <h3>Icon Link</h3>
         <p></p>
         <%= codify do %>
+          <a href=""><i class="icon-refresh"></i> Refresh</a>
         <% end %>
         <h4>Examples</h4>
         <p></p>
