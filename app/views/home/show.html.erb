@@ -89,18 +89,44 @@
     <h2>Base</h2>
     <div>
       <h3>Basic Progress</h3>
-      <p>The basic progress bar is use to illustrate progress to the user.</p>
+      <p>The basic progress bar is use to illustrate learning progress to the user.</p>
+      <%= codify do %>
+        <div class="progress">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
     </div>
     <h2>Rich Progress Bars</h2>
     <div>
       <h3>Jumbo Progress</h3>
+      <p>The jumbo progress bar is used to illustrate learning progress to the user.</p>
+      <%= codify do %>
+        <div class="progress">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <h3>Loading Indicator</h3>
       <p></p>
+       <%= codify do %>
+        <div class="progress progress-striped active">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
     </div>
     <div>
-    <h3>Loading Indicator</h3>
-    </div>
-    <div>
-    <h3>Ratings</h3>
+      <h3>Ratings</h3>
+      <p>We might deprecate ratings.</p>
+      <%= codify do %>
+        <div class="progress">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
     </div>
   <section>
   <section id="typography">
