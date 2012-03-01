@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Woople Style Guide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -20,28 +21,7 @@
     }
   </style>
 </head>
-<body>	
-  <div class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="brand" href="#">
-          Woople Style Guide
-        </a>
-        <ul class="nav">
-          <li><a href="#buttons">Buttons</a></li>
-          <li><a href="#progress_bars">Progress Bars</a></li>
-          <li><a href="#lists">Lists</a></li>
-          <li><a href="#charts">Charts</a></li>
-          <li><a href="#iconography">Iconography</a></li>
-          <li><a href="#typography">Typography</a></li>
-          <li><a href="#forms">Forms</a></li>
-          <li><a href="#rich_modules">Rich Modules</a></li>
-          <li><a href="#navigation">Navigation</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
+<body>
   <%= yield %>
 </body>
 </html>
