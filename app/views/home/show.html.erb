@@ -1,147 +1,285 @@
 <style>
   body {
-    background:#4984d0;
+    background:#f9f7f7;
   }
 
   .menu {
-    width:40px;
+    width:240px;
     position:fixed;
-
-    -webkit-transition-property: width;
-    -webkit-transition-duration: .25s;
-    -webkit-transition-easing: ease-in-out;
+    background:#4984d0;
   }
 
   .menu .menu-content {
+    -webkit-transform: translateX(-240px);
+    -webkit-transition: -webkit-transform .25s ease-out;
     position:relative;
-    left:-270px;
-    -webkit-transition-property: left;
-    -webkit-transition-duration: .25s;
-    -webkit-transition-easing: ease-in-out;
+    padding:10px;
   }
 
   .open .menu {
-    width:270px;
     position:absolute;
   }
 
   .open .menu .menu-content {
     display:block;
-    left:0;
+    -webkit-transform: translateX(0);
   }
 
   .open .content {
-    opacity:0.5;
+    margin-left:10px;
+  }
+
+  .no-touch .outer-content {
+    left:30px;
   }
 
   .outer-content {
-    height:600px;
+    position:absolute;
+    left:0;
+    right:0;
+
     overflow:auto;
     -webkit-overflow-scrolling: touch;
-
-    -webkit-transition-property: -webkit-transform;
-    -webkit-transition-duration: .25s;
-    -webkit-transition-easing: ease-in-out;
-
-    /*-webkit-backface-visibility: hidden;*/
+    -webkit-transition: -webkit-transform .25s ease-out;
   }
+
 
   .open .outer-content {
     overflow:hidden;
     position:fixed;
-    right:0;
+    right:230px;
     left:0;
-    /*left:280px;*/
-    -webkit-transform: translateX(280px);
+    -webkit-transform: translateX(230px);
   }
 
   .content {
-    background:white;
-    margin-left:50px;
+    background:#f9f7f7;
+    margin-left:10px;
+    padding-bottom:20px;
     padding-left:30px;
     padding-top:40px;
     -webkit-perspective: 1000;
     -webkit-backface-visibility: hidden;
 
     -webkit-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
-
-    -webkit-transition-property: margin-left, opacity;
-    -webkit-transition-duration: .25s;
-    -webkit-transition-easing: ease-in-out;
   }
-    h1 {
-      margin-bottom:30px; 
-    }
+
+  .menu .search-query {
+    width:180px;
+  }
+
+  h1 {
+    margin-bottom:30px; 
+  }
+  .menu .nav-list .nav-header {
+    color:#fff;
+    text-shadow:0 1px 0 rgba(0,0,0,0.5);
+  }
+
+  .menu .nav-list .active > a {
+    background-color:#ccc;
+  }
+
+  .menu .nav > li > a:hover {
+    background-color:rgba(255,255,255,0.25);
+  }
+
+
+  .menu a {
+    color:#fff;
+  }
+
+  .menu .nav-list {
+    margin-top:10px;
+  }
+
+  .nav-list > li > a, .nav-list .nav-header {
+    color:rgba(255, 255, 255, 0.75);
+    text-shadow:0 1px 0 rgba(0,0,0,0.5);
+  }
 
 </style>
 
 <script>
   $(document).ready(function() {
-    $('.open-menu').on('click', function() {
-      $('.box').toggleClass('open');
+    $('.no-touch .menu').on('mouseover', function() {
+      $('.box').addClass('open');
     });
 
-    $('.outer-content').height($(document).height());
+    $('.no-touch .content').on('mouseover', function() {
+      $('.box').removeClass('open');
+    });
+
+    $('.outer-content').height($(window).height());
+    $('.menu').height($('.menu-content').height() + 100);
 
     $(window).on("resize", function() {
       $('.outer-content').height($(window).height());
+      $('.menu').height($('.menu-content').height() + 100);
     });
+
+    var touching = false;
+    var startingTouchX;
+
+    var minimumContentX = 0;
+    var maximumContentX = 230;
+
+    var minimumMenuX = -240;
+    var maximumMenuX = 0;
+
+    $('.content')[0].addEventListener('touchstart', function(event) {
+      touching = true;
+      if (event.touches.length == 1) {
+        var touch = event.touches[0];
+        startingTouchX = touch.pageX;
+      }
+    });
+
+    function translateX(moveX) {
+      return 'translateX(' + moveX + 'px)';
+    }
+
+    $('.content')[0].addEventListener('touchend', function(event) {
+      // make sure we are either fully open or fully closed
+
+      if ($('.box').hasClass('open')) {
+        translateContentX = maximumContentX;
+        translateMenuX = maximumMenuX;
+      } else {
+        translateContentX = minimumContentX;
+        translateMenuX = minimumMenuX;
+      }
+
+      $('.outer-content').css({ '-webkit-transform': translateX(translateContentX) });
+      $('.menu-content').css({ '-webkit-transform': translateX(translateMenuX) });
+
+    });
+
+    $('.content')[0].addEventListener('touchmove', function(event) {
+      if (event.touches.length == 1) {
+        var touch = event.changedTouches[0];
+        var moveX = touch.pageX - startingTouchX;
+        var open = $('.box').hasClass('open');
+
+
+        if (open) {
+          var translateContentX = maximumContentX + moveX;
+
+          if (translateContentX > maximumContentX) {
+            translateContentX = maximumContentX;
+          }
+
+          if (translateContentX < minimumContentX) {
+            translateContentX = minimumContentX;
+          }
+
+          $('.outer-content').css({ '-webkit-transform': translateX(translateContentX) });
+
+          var translateMenuX = maximumMenuX + moveX;
+
+          if (translateMenuX > maximumMenuX) {
+            translateMenuX = maximumMenuX;
+            $('.box').addClass('open');
+          }
+
+          if (translateMenuX < minimumMenuX) {
+            translateMenuX = minimumMenuX;
+            $('.box').removeClass('open');
+          }
+
+          $('.menu-content').css({ '-webkit-transform': translateX(translateMenuX) });
+
+        } else {
+          // opening
+          var translateContentX = minimumContentX + moveX;
+
+          if (translateContentX > maximumContentX) {
+            translateContentX = maximumContentX;
+          }
+
+          if (translateContentX < minimumContentX) {
+            translateContentX = minimumContentX;
+          }
+
+          $('.outer-content').css({ '-webkit-transform': translateX(translateContentX) });
+
+          var translateMenuX = minimumMenuX + moveX;
+
+          if (translateMenuX > (maximumMenuX/2)) {
+            translateMenuX = maximumMenuX;
+            $('.box').addClass('open');
+          }
+
+          if (translateMenuX < minimumMenuX) {
+            translateMenuX = minimumMenuX;
+            $('.box').removeClass('open');
+          }
+
+          $('.menu-content').css({ '-webkit-transform': translateX(translateMenuX) });
+        }
+      }
+    });
+
   });
 </script>
 
 <div class="box">
   <div class="menu">
     <div class="menu-content">
-      <h1>Top of Menu</h1>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
-      <p>Menu is open</p>
+      <form class="search">
+        <input type="text" class="input-medium search-query">
+      </form>
 
+      <div class="row">
+        <div class="span1">
+            <img src="http://placehold.it/48x48" alt="">
+        </div>
+        <div class="span2">
+          <p><strong>Cameron Westland</strong></p>
+        </div>
+      </div>
+
+      <ul class="nav nav-list">
+        <li class="active"><a href="#">Current</a></li>
+
+        <li class="nav-header">Certification</li>
+        <li><a href="#">Essential</a></li>
+        <li><a href="#">Elective</a></li>
+
+        <li class="nav-header">Featured</li>
+        <li><a href="#">Popular</a></li>
+        <li><a href="#">Favourites</a></li>
+
+        <li class="nav-header">Categories</li>
+        <li><a href="#">Advice</a></li>
+        <li><a href="#">Agency Best Practices</a></li>
+        <li><a href="#">Allstate Workout 1</a></li>
+        <li><a href="#">Allstate Workout 2</a></li>
+        <li><a href="#">Allstate Workout 2012</a></li>
+        <li><a href="#">Allstate Workout 3</a></li>
+        <li><a href="#">California Region</a></li>
+        <li><a href="#">Care Sell Quote Close</a></li>
+        <li><a href="#">Executive Messages</a></li>
+        <li><a href="#">Grid Square</a></li>
+        <li><a href="#">Interviews</a></li>
+        <li><a href="#">Leadership</a></li>
+        <li><a href="#">Live Events</a></li>
+        <li><a href="#">Motivation</a></li>
+        <li><a href="#">Personal Development</a></li>
+        <li><a href="#">Sales Quick Tips</a></li>
+        <li><a href="#">Woople Help</a></li>
+
+        <li class="nav-header">Elsewhere</li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
     </div>
   </div>
 
   <div class="outer-content">
     <div class="content">
       <h1>Woople</h1>
-      <a href="#" class='open-menu'>Open</a>
       <p>Hello World!</p>
       <p>Hello World!</p>
       <p>Hello World!</p>
@@ -175,7 +313,6 @@
       <p>Hello World!</p>
       <p>Hello World!</p>
       <p>Hello World!</p>
-      <a href="#" class='open-menu'>Open</a>
       <p>Hello World!</p>
       <p>Hello World!</p>
       <p>Hello World!</p>
