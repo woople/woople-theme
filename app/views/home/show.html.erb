@@ -11,13 +11,23 @@
 
   .menu .menu-content {
     -webkit-transform: translateX(-240px);
+    -ms-transform: translateX(-240px);
+    -o-transform: translateX(-240px);
+    -moz-transform: translateX(-240px);
     transform: translateX(-240px);
 
     -webkit-transition: -webkit-transform .25s ease-out;
+    -ms-transition: -ms-transform .25s ease-out;
+    -o-transition: -o-transform .25s ease-out;
+    -moz-transition: -moz-transform .25s ease-out;
     transition: transform .25s ease-out;
 
     position:relative;
     padding:10px;
+  }
+
+  .no-csstransforms .menu .menu-content {
+    left: -240px;
   }
 
   .open .menu {
@@ -27,15 +37,18 @@
   .open .menu .menu-content {
     display:block;
     -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    -moz-transform: translateX(0);
     transform: translateX(0);
+  }
+
+  .no-csstransforms .open .menu .menu-content {
+    left:0;
   }
 
   .open .content {
     margin-left:10px;
-  }
-
-  .no-touch .outer-content {
-    left:30px;
   }
 
   .outer-content {
@@ -45,12 +58,17 @@
 
     overflow:auto;
     -webkit-overflow-scrolling: touch;
+    -ms-overflow-scrolling: touch;
+    -o-overflow-scrolling: touch;
+    -moz-overflow-scrolling: touch;
     overflow-scrolling: touch;
 
     -webkit-transition: -webkit-transform .25s ease-out;
+    -ms-transition: -ms-transform .25s ease-out;
+    -o-transition: -o-transform .25s ease-out;
+    -moz-transition: -moz-transform .25s ease-out;
     transition: transform .25s ease-out;
   }
-
 
   .open .outer-content {
     overflow:hidden;
@@ -58,7 +76,14 @@
     right:230px;
     left:0;
     -webkit-transform: translateX(230px);
+    -ms-transform: translateX(230px);
+    -o-transform: translateX(230px);
+    -moz-transform: translateX(230px);
     transform: translateX(230px);
+  }
+
+  .no-csstransforms .open .outer-content {
+    left:230px;
   }
 
   .content {
@@ -66,20 +91,34 @@
     margin-left:10px;
     padding-bottom:20px;
     padding-left:30px;
-    padding-top:10px;
+    padding-top:40px;
     height:100%;
     -webkit-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    -ms-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    -o-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    -moz-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
     box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
   }
 
-  .instructions {
+  .logo:hover {
+    opacity:0.75;
+  }
+
+  .no-csstransitions .open .logo {
+    left:220px;
+  }
+
+  .logo {
+    background:url('assets/logo.png') 50% 50% no-repeat;
+    width:40px;
+    height:24px;
+    overflow:hidden;
+    position:fixed;
+    left:-10px;
+    top:11px;
     display:block;
-    color:white;
-    position:absolute;
-    top:8px;
-    left:13px;
+    cursor:pointer;
     z-index:3;
-    font-size:30px;
   }
 
   .menu .search-query {
@@ -120,6 +159,20 @@
 
 <script>
   $(document).ready(function() {
+    $('.no-touch .logo').on('click', function() {
+
+      var logo = $('.logo a');
+      var box = $('.box')
+      var open = box.hasClass('open');
+
+      if (open) {
+        box.removeClass('open');
+      } else {
+        box.addClass('open');
+      }
+
+    });
+/*
     $('.no-touch .menu').on('mouseover', function() {
       $('.box').addClass('open');
     });
@@ -127,6 +180,7 @@
     $('.no-touch .content').on('mouseover', function() {
       $('.box').removeClass('open');
     });
+*/
 
     $('.outer-content').height($(window).height());
     $('.menu').height($('.menu-content').height() + 100);
@@ -242,7 +296,6 @@
 </script>
 
 <div class="box">
-  <span class="instructions">&rsaquo;</span>
 
   <div class="menu">
     <div class="menu-content">
@@ -299,7 +352,8 @@
 
   <div class="outer-content">
     <div class="content">
-      <h1>Welcome to Woople</h1>
+      <span class="logo"></span>
+
       <p>Explore the demo.</p>
 
 
