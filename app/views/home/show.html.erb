@@ -11,7 +11,11 @@
 
   .menu .menu-content {
     -webkit-transform: translateX(-240px);
+    transform: translateX(-240px);
+
     -webkit-transition: -webkit-transform .25s ease-out;
+    transition: transform .25s ease-out;
+
     position:relative;
     padding:10px;
   }
@@ -23,6 +27,7 @@
   .open .menu .menu-content {
     display:block;
     -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
 
   .open .content {
@@ -40,7 +45,10 @@
 
     overflow:auto;
     -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+
     -webkit-transition: -webkit-transform .25s ease-out;
+    transition: transform .25s ease-out;
   }
 
 
@@ -50,6 +58,7 @@
     right:230px;
     left:0;
     -webkit-transform: translateX(230px);
+    transform: translateX(230px);
   }
 
   .content {
@@ -57,11 +66,20 @@
     margin-left:10px;
     padding-bottom:20px;
     padding-left:30px;
-    padding-top:40px;
-    -webkit-perspective: 1000;
-    -webkit-backface-visibility: hidden;
-
+    padding-top:10px;
+    height:100%;
     -webkit-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+  }
+
+  .instructions {
+    display:block;
+    color:white;
+    position:absolute;
+    top:8px;
+    left:13px;
+    z-index:3;
+    font-size:30px;
   }
 
   .menu .search-query {
@@ -224,10 +242,12 @@
 </script>
 
 <div class="box">
+  <span class="instructions">&rsaquo;</span>
+
   <div class="menu">
     <div class="menu-content">
       <form class="search">
-        <input type="text" class="input-medium search-query">
+        <input type="text" class="input-medium search-query" placeholder="Search...">
       </form>
 
       <div class="row">
@@ -279,80 +299,21 @@
 
   <div class="outer-content">
     <div class="content">
-      <h1>Woople</h1>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
-      <p>Hello World!</p>
+      <h1>Welcome to Woople</h1>
+      <p>Explore the demo.</p>
+
+
+      <h2>Exercise 1: Find the popular courses</h2>
+      <p>Try to find the popular courses in Woople, if you cannot find them ask for help!</p>
+
+      <h2>Exercise 2: Search for 'Sales Training'</h2>
+      <p>Perform a search for 'Sales Training' don't worry the results don't work yet!</p>
+
+      <h2>Exercise 3: Get Help!</h2>
+      <p>You are having trouble figuring something out and you want to ask for help. Visit the help section.</p>
+
+      <h2>Exercise 4: Log out</h2>
+      <p>You are sharing a computer with someone else, you are finished working. Please log out.</p>
     </div>
   </div>
 </div>
