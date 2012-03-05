@@ -1,15 +1,34 @@
 <style>
   body {
-    background:#f9f7f7;
+    background:#c9d5dd;
+  }
+
+  body > .container {
+    margin-bottom:40px;
   }
 
   .menu {
-    width:240px;
-    position:fixed;
+    padding-right:20px;
     background:#4984d0;
+
+    -webkit-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    -ms-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    -o-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    -moz-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
   }
 
+  .outer-content {
+    position:relative;
+    left:-10px;
+    margin-left:0;
+  }
+
+
   .menu .menu-content {
+    /*
     -webkit-transform: translateX(-240px);
     -ms-transform: translateX(-240px);
     -o-transform: translateX(-240px);
@@ -21,19 +40,25 @@
     -o-transition: -o-transform .25s ease-out;
     -moz-transition: -moz-transform .25s ease-out;
     transition: transform .25s ease-out;
+    */
 
     position:relative;
     padding:10px;
   }
 
   .no-csstransforms .menu .menu-content {
+    /*
     left: -240px;
+    */
   }
 
+  /*
   .open .menu {
     position:absolute;
   }
+  */
 
+  /*
   .open .menu .menu-content {
     display:block;
     -webkit-transform: translateX(0);
@@ -42,34 +67,13 @@
     -moz-transform: translateX(0);
     transform: translateX(0);
   }
+  */
 
   .no-csstransforms .open .menu .menu-content {
     left:0;
   }
 
-  .open .content {
-    margin-left:10px;
-  }
-
-  .outer-content {
-    position:absolute;
-    left:0;
-    right:0;
-
-    overflow:auto;
-    -webkit-overflow-scrolling: touch;
-    -ms-overflow-scrolling: touch;
-    -o-overflow-scrolling: touch;
-    -moz-overflow-scrolling: touch;
-    overflow-scrolling: touch;
-
-    -webkit-transition: -webkit-transform .25s ease-out;
-    -ms-transition: -ms-transform .25s ease-out;
-    -o-transition: -o-transform .25s ease-out;
-    -moz-transition: -moz-transform .25s ease-out;
-    transition: transform .25s ease-out;
-  }
-
+  /*
   .open .outer-content {
     overflow:hidden;
     position:fixed;
@@ -81,31 +85,28 @@
     -moz-transform: translateX(230px);
     transform: translateX(230px);
   }
+  */
 
+  /*
   .no-csstransforms .open .outer-content {
     left:230px;
   }
+  */
 
   .content {
     background:#f9f7f7;
-    margin-left:10px;
-    padding-bottom:20px;
-    padding-left:30px;
-    padding-top:40px;
-    height:100%;
+    padding:20px;
     -webkit-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
     -ms-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
     -o-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
     -moz-box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
     box-shadow: -5px -5px 2px rgba(0,0,0,0.25);
+    border-bottom-left-radius:4px;
+    border-bottom-right-radius:4px;
   }
 
-  .logo:hover {
+  .no-touch .logo:hover {
     opacity:0.75;
-  }
-
-  .no-csstransitions .open .logo {
-    left:220px;
   }
 
   .logo {
@@ -119,6 +120,15 @@
     display:block;
     cursor:pointer;
     z-index:3;
+    -webkit-transition: -webkit-transform .25s ease-out;
+  }
+
+  .open .logo {
+    -webkit-transform: translateX(230px);
+  }
+
+  .no-css-transforms .open .logo {
+    left:220px;
   }
 
   .menu .search-query {
@@ -159,7 +169,7 @@
 
 <script>
   $(document).ready(function() {
-    $('.no-touch .logo').on('click', function() {
+    $('.logo').on('click', function() {
 
       var logo = $('.logo a');
       var box = $('.box')
@@ -182,6 +192,7 @@
     });
 */
 
+/*
     $('.outer-content').height($(window).height());
     $('.menu').height($('.menu-content').height() + 100);
 
@@ -189,6 +200,9 @@
       $('.outer-content').height($(window).height());
       $('.menu').height($('.menu-content').height() + 100);
     });
+    */
+
+    /*
 
     var touching = false;
     var startingTouchX;
@@ -291,83 +305,87 @@
         }
       }
     });
+    */
 
   });
 </script>
 
-<div class="box">
+<div class="container">
 
-  <div class="menu">
-    <div class="menu-content">
-      <form class="search">
-        <input type="text" class="input-medium search-query" placeholder="Search...">
-      </form>
+  <div class="row">
+    <div class="menu span3">
+      <div class="menu-content">
+        <form class="search">
+          <input type="text" class="input-medium search-query" placeholder="Search...">
+        </form>
 
-      <div class="row">
-        <div class="span1">
-            <img src="http://placehold.it/48x48" alt="">
+        <div class="row">
+          <div class="span1">
+              <img src="http://placehold.it/48x48" alt="">
+          </div>
+          <div class="span2">
+            <p><strong>Cameron Westland</strong></p>
+          </div>
         </div>
-        <div class="span2">
-          <p><strong>Cameron Westland</strong></p>
-        </div>
+
+        <ul class="nav nav-list">
+          <li class="active"><a href="#">Current</a></li>
+
+          <li class="nav-header">Certification</li>
+          <li><a href="#">Essential</a></li>
+          <li><a href="#">Elective</a></li>
+
+          <li class="nav-header">Featured</li>
+          <li><a href="#">Popular</a></li>
+          <li><a href="#">Favourites</a></li>
+
+          <li class="nav-header">Categories</li>
+          <li><a href="#">Advice</a></li>
+          <li><a href="#">Agency Best Practices</a></li>
+          <li><a href="#">Allstate Workout 1</a></li>
+          <li><a href="#">Allstate Workout 2</a></li>
+          <li><a href="#">Allstate Workout 2012</a></li>
+          <li><a href="#">Allstate Workout 3</a></li>
+          <li><a href="#">California Region</a></li>
+          <li><a href="#">Care Sell Quote Close</a></li>
+          <li><a href="#">Executive Messages</a></li>
+          <li><a href="#">Grid Square</a></li>
+          <li><a href="#">Interviews</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Live Events</a></li>
+          <li><a href="#">Motivation</a></li>
+          <li><a href="#">Personal Development</a></li>
+          <li><a href="#">Sales Quick Tips</a></li>
+          <li><a href="#">Woople Help</a></li>
+
+          <li class="nav-header">Elsewhere</li>
+          <li><a href="#">Community</a></li>
+          <li><a href="#">Help</a></li>
+          <li><a href="#">Logout</a></li>
+        </ul>
       </div>
-
-      <ul class="nav nav-list">
-        <li class="active"><a href="#">Current</a></li>
-
-        <li class="nav-header">Certification</li>
-        <li><a href="#">Essential</a></li>
-        <li><a href="#">Elective</a></li>
-
-        <li class="nav-header">Featured</li>
-        <li><a href="#">Popular</a></li>
-        <li><a href="#">Favourites</a></li>
-
-        <li class="nav-header">Categories</li>
-        <li><a href="#">Advice</a></li>
-        <li><a href="#">Agency Best Practices</a></li>
-        <li><a href="#">Allstate Workout 1</a></li>
-        <li><a href="#">Allstate Workout 2</a></li>
-        <li><a href="#">Allstate Workout 2012</a></li>
-        <li><a href="#">Allstate Workout 3</a></li>
-        <li><a href="#">California Region</a></li>
-        <li><a href="#">Care Sell Quote Close</a></li>
-        <li><a href="#">Executive Messages</a></li>
-        <li><a href="#">Grid Square</a></li>
-        <li><a href="#">Interviews</a></li>
-        <li><a href="#">Leadership</a></li>
-        <li><a href="#">Live Events</a></li>
-        <li><a href="#">Motivation</a></li>
-        <li><a href="#">Personal Development</a></li>
-        <li><a href="#">Sales Quick Tips</a></li>
-        <li><a href="#">Woople Help</a></li>
-
-        <li class="nav-header">Elsewhere</li>
-        <li><a href="#">Community</a></li>
-        <li><a href="#">Help</a></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
     </div>
+
+  <div class="outer-content span9">
+
+      <div class="content">
+        <%= image_tag('logo1.png') %>
+        <p>Please explore the demo.</p>
+
+        <h2>Exercise 1: Find the popular courses</h2>
+        <p>Try to find the popular courses in Woople, if you cannot find them ask for help!</p>
+
+        <h2>Exercise 2: Search for 'Sales Training'</h2>
+        <p>Perform a search for 'Sales Training' don't worry the results don't work yet!</p>
+
+        <h2>Exercise 3: Get Help!</h2>
+        <p>You are having trouble figuring something out and you want to ask for help. Visit the help section.</p>
+
+        <h2>Exercise 4: Log out</h2>
+        <p>You are sharing a computer with someone else, you are finished working. Please log out.</p>
+      </div>
+    </div>
+
   </div>
 
-  <div class="outer-content">
-    <div class="content">
-      <span class="logo"></span>
-
-      <p>Explore the demo.</p>
-
-
-      <h2>Exercise 1: Find the popular courses</h2>
-      <p>Try to find the popular courses in Woople, if you cannot find them ask for help!</p>
-
-      <h2>Exercise 2: Search for 'Sales Training'</h2>
-      <p>Perform a search for 'Sales Training' don't worry the results don't work yet!</p>
-
-      <h2>Exercise 3: Get Help!</h2>
-      <p>You are having trouble figuring something out and you want to ask for help. Visit the help section.</p>
-
-      <h2>Exercise 4: Log out</h2>
-      <p>You are sharing a computer with someone else, you are finished working. Please log out.</p>
-    </div>
   </div>
-</div>
