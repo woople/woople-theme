@@ -1,24 +1,23 @@
-.examples > .container {
+@import "twitter/bootstrap/mixins";
+
+body > .container {
   margin-bottom:40px;
 }
 
 .menu {
   padding-right:20px;
-  background:#4984d0;
 
-  -webkit-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  -ms-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  -o-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  -moz-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  box-shadow: -5px 0 2px rgba(0,0,0,0.25);
+  .box-shadow(-5px, 0, 2px, rgba(0,0,0,0.25));
 
   border-bottom-left-radius:4px;
   border-bottom-right-radius:4px;
 
-}
-
-.menu {
   -webkit-transition: right, -webkit-transform 0.25s;
+  -moz-transition: right, -moz-transform 0.25s;
+  -ms-transition: right, -ms-transform 0.25s;
+  -o-transition: right, -o-transform 0.25s;
+  transition: right, transform 0.25s;
+
 }
 
 #navigation .outer-content {
@@ -29,65 +28,28 @@
 
 .outer-content {
   -webkit-transition: right, -webkit-transform 0.25s;
+  -moz-transition: right, -moz-transform 0.25s;
+  -ms-transition: right, -ms-transform 0.25s;
+  -o-transition: right, -o-transform 0.25s;
+  transition: right, transform 0.25s;
 }
-
 
 .menu .menu-content {
   position:relative;
   padding:10px;
 }
 
-.no-csstransforms .open .menu .menu-content {
-  left:0;
-}
-
 .content {
-  background:#f9f7f7;
-  padding:20px;
-
-  -webkit-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  -ms-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  -o-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  -moz-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-  box-shadow: -5px 0 2px rgba(0,0,0,0.25);
+  .box-shadow(-5px 0 2px rgba(0,0,0,0.25));
 
   border-bottom-left-radius:4px;
   border-bottom-right-radius:4px;
-}
-
-.no-touch .logo:hover {
-  opacity:0.75;
-}
-
-.logo {
-  background:url('assets/logo.png') 50% 50% no-repeat;
-  width:40px;
-  height:24px;
-  overflow:hidden;
-  position:fixed;
-  left:-10px;
-  top:11px;
-  display:block;
-  cursor:pointer;
-  z-index:3;
-  -webkit-transition: -webkit-transform .25s ease-out;
-}
-
-.open .logo {
-  -webkit-transform: translateX(230px);
-}
-
-.no-css-transforms .open .logo {
-  left:220px;
 }
 
 .menu .search-query {
   width:180px;
 }
 
-h1 {
-  margin-bottom:30px; 
-}
 .menu .nav-list .nav-header {
   color:#fff;
   text-shadow:0 1px 0 rgba(0,0,0,0.5);
@@ -100,7 +62,6 @@ h1 {
 .menu .nav > li > a:hover {
   background-color:rgba(255,255,255,0.25);
 }
-
 
 .menu a {
   color:#fff;
@@ -141,7 +102,7 @@ h1 {
     position:absolute;
     top:72px;
 
-    -webkit-transform: translateX(-250px);
+    .translate(-250px, 0);
   }
 
   .no-csstransform .container .menu {
@@ -193,7 +154,7 @@ h1 {
   }
 
   #navigation:target .menu {
-    -webkit-transform: translateX(0);
+    .translate(0,0);
   }
 
   .no-csstransform .container .menu {
@@ -201,7 +162,7 @@ h1 {
   }
 
   #navigation:target .outer-content {
-    -webkit-transform: translateX(225px);
+    .translate(225px, 0);
   }
 
   .no-csstransform #navigation:target .outer-content {
@@ -209,3 +170,4 @@ h1 {
     right:-225px;
   }
 }
+
