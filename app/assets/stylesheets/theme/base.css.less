@@ -1,0 +1,98 @@
+@import "theme/variables.css.less";
+@import "theme/colours.css.less";
+
+body {
+  background: @background;
+}
+
+body > .container {
+  margin-bottom:40px;
+}
+
+.close, .navigation {
+  display:none;
+}
+
+#masthead {
+  padding-top:@logoSize;
+  padding-bottom:@logoSize;
+  height:@logoSize;
+
+  .search {
+    float:right;
+    margin-right:30px;
+    margin-bottom:0;
+
+    .search-page {
+      position:relative;
+      left:32px;
+      top:2px;
+      opacity:0.5;
+    }
+
+    .search-query {
+      padding-left:30px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  #masthead {
+    .search {
+      input { display:none; }
+
+      .search-page {
+        position:absolute;
+        top:0;
+        right:0;
+        left:50%;
+        width:50%;
+        height:@logoWithPadding;
+        opacity:1.0;
+
+        .icon-search {
+          position:absolute;
+          right:10px;
+          top:29px;
+        }
+      }
+    }
+
+    img {
+      display:block;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  }
+
+  body > .container {
+    padding:0;
+  }
+
+  .close {
+    z-index:3;
+  }
+
+  .navigation {
+    display:block;
+  }
+
+  .navigation, .close {
+    position:absolute;
+    margin-right:0;
+    margin-bottom:0;
+    width:50%;
+    top:0;
+    line-height:@logoWithPadding;
+    text-indent:10px;
+  }
+
+  #navigation:target .close {
+    display:block;
+    left:0;
+  }
+
+  #navigation:target .navigation {
+    display:none;
+  }
+}

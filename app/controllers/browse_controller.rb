@@ -1,3 +1,3 @@
 class BrowseController < ApplicationController
-  layout 'examples'
+  layout 'theme'
 end

@@ -1,0 +1,36 @@
+@import "theme/variables.css.less";
+
+#navigation .outer-content {
+  position:relative;
+  left:-10px;
+  margin-left:0;
+
+  -webkit-transition: right, -webkit-transform 0.25s;
+  -moz-transition: right, -moz-transform 0.25s;
+  -ms-transition: right, -ms-transform 0.25s;
+  -o-transition: right, -o-transform 0.25s;
+  transition: right, transform 0.25s;
+
+  .content {
+    background: @contentBackground;
+    .box-shadow();
+  }
+}
+
+@media (max-width: 768px) {
+  #navigation .outer-content {
+    position: absolute;
+    top:@logoWithPadding;
+    left:0;
+    right:0;
+  }
+
+  #navigation:target .outer-content {
+    .translate(@contentOffset, 0);
+  }
+
+  .no-csstransform #navigation:target .outer-content {
+    left:@contentOffset;
+    right:@negativeContentOffset;
+  }
+}
