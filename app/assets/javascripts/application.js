@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require modernizr
 //= require google-code-prettify/prettify
 //= require_tree .
 
