@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Woople</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+
+  <%= stylesheet_link_tag    "theme", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container" id="navigation">
+  <div class="row">
+    <a href="#" class="close">&times;</a>
+    <a href="#navigation" class="navigation"><i class="icon-th-list"></i></a>
+
+    <div id="masthead" class="span12">
+      <%= image_tag('logo1.png') %>
+
+      <form class="search">
+        <a href="#" class='search-page'><i class="icon-search"></i></a>
+        <input type="text" class="search-query" placeholder="Search...">
+      </form>
+    </div>
+
+    <%= render 'menu' %>
+
+    <div class="outer-content span9">
+        <div class="content">
+          <%= yield %>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
