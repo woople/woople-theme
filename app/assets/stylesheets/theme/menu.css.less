@@ -1,14 +1,12 @@
 @import "theme/variables.css.less";
+@import "theme/colours.css.less";
 
 .menu {
   background: @primary;
 
-  padding-right:20px;
+  padding-right:10px;
 
-  .box-shadow(-5px, 0, 2px, @boxShadowColour);
-
-  border-bottom-left-radius:4px;
-  border-bottom-right-radius:4px;
+  .box-shadow();
 
   -webkit-transition: right, -webkit-transform 0.25s;
   -moz-transition: right, -moz-transform 0.25s;
@@ -18,7 +16,6 @@
 
   .menu-content {
     position:relative;
-    padding:10px;
   }
 
   .search-query {
@@ -34,14 +31,35 @@
 
     > li > a {
       color:@menuLinkColour;
+      margin-right:-24px;
     }
 
     > li > a, .nav-header {
       text-shadow:0 1px 0 rgba(0,0,0,0.5);
     }
 
-    .active > a {
-      background-color:@menuActiveColour;
+    .active {
+      position:relative;
+
+      > a {
+        background-color:@menuActiveColour;
+        color:@menuHeadingColour;
+        margin-left:-18px;
+        text-indent:1px;
+
+        ::after {
+          content: "";
+          position: absolute;
+          left: -24px;
+          width: 0;
+          height: 0;
+          border-width: 10px 10px 10px 10px;
+          border-style: solid;
+          border-color: darken(@highlight, 15%) transparent transparent transparent;
+          -webkit-transform: scaleY(0.2) scaleX(0.3) rotate(-45deg);
+          top: -10px;
+        }
+      }
     }
   }
 
@@ -50,11 +68,25 @@
   }
 }
 
+.cert-status-red {
+  width: 14px;
+  height: 14px;
+  vertical-align:text-top;
+  background-image: url('/assets/certification/red-icon.png');
+  background-repeat:no-repeat;
+  display:inline-block;
+  float:right;
+}
+
 @media (max-width: 768px) {
   #navigation:target {
     .menu {
       .translate(0,0);
     }
+  }
+
+  .menu .nav-list > li > a {
+    margin-right:-14px;
   }
 
   .no-csstransform {
@@ -68,7 +100,6 @@
   .container {
     .menu {
       padding-right:0;
-      border-radius:0;
       position:absolute;
       top:72px;
       .translate(-250px, 0);
