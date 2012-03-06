@@ -1,300 +1,355 @@
-<style>
-  body {
-    background:#c9d5dd;
-  }
-
-  body > .container {
-    margin-bottom:40px;
-  }
-
-  .menu {
-    padding-right:20px;
-    background:#4984d0;
-
-    -webkit-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    -ms-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    -o-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    -moz-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-
-    border-bottom-left-radius:4px;
-    border-bottom-right-radius:4px;
-
-  }
-
-  .touch .menu {
-    -webkit-transition: right, -webkit-transform 0.25s;
-  }
-
-  .outer-content {
-    position:relative;
-    left:-10px;
-    margin-left:0;
-  }
-
-  .touch .outer-content {
-    -webkit-transition: right, -webkit-transform 0.25s;
-  }
-
-
-  .menu .menu-content {
-    position:relative;
-    padding:10px;
-  }
-
-  .no-csstransforms .open .menu .menu-content {
-    left:0;
-  }
-
-  .content {
-    background:#f9f7f7;
-    padding:20px;
-
-    -webkit-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    -ms-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    -o-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    -moz-box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-    box-shadow: -5px 0 2px rgba(0,0,0,0.25);
-
-    border-bottom-left-radius:4px;
-    border-bottom-right-radius:4px;
-  }
-
-  .no-touch .logo:hover {
-    opacity:0.75;
-  }
-
-  .logo {
-    background:url('assets/logo.png') 50% 50% no-repeat;
-    width:40px;
-    height:24px;
-    overflow:hidden;
-    position:fixed;
-    left:-10px;
-    top:11px;
-    display:block;
-    cursor:pointer;
-    z-index:3;
-    -webkit-transition: -webkit-transform .25s ease-out;
-  }
-
-  .open .logo {
-    -webkit-transform: translateX(230px);
-  }
-
-  .no-css-transforms .open .logo {
-    left:220px;
-  }
-
-  .menu .search-query {
-    width:180px;
-  }
-
-  h1 {
-    margin-bottom:30px; 
-  }
-  .menu .nav-list .nav-header {
-    color:#fff;
-    text-shadow:0 1px 0 rgba(0,0,0,0.5);
-  }
-
-  .menu .nav-list .active > a {
-    background-color:#ccc;
-  }
-
-  .menu .nav > li > a:hover {
-    background-color:rgba(255,255,255,0.25);
-  }
-
-
-  .menu a {
-    color:#fff;
-  }
-
-  .menu .nav-list {
-    margin-top:10px;
-  }
-
-  .nav-list > li > a, .nav-list .nav-header {
-    color:rgba(255, 255, 255, 0.75);
-    text-shadow:0 1px 0 rgba(0,0,0,0.5);
-  }
-
-  .close {
-    display:none;
-  }
-
-  .navigation {
-    display:none;
-  }
-
-  #masthead {
-    padding-top:24px;
-    padding-bottom:24px;
-  }
-
-  @media (max-width: 768px) {
-    #masthead img {
-      display:block;
-      margin-left:auto;
-      margin-right:auto;
-    }
-
-    .container .menu {
-      padding-right:0;
-      border-radius:0;
-      position:absolute;
-      top:72px;
-
-      -webkit-transform: translateX(-240px);
-    }
-
-    .no-csstransform .container .menu {
-      left:-240px;
-    }
-
-    .outer-content {
-      position: absolute;
-      top:72px;
-      left:0;
-      right:0;
-      border-radius:0;
-    }
-
-    .container {
-      padding:0;
-    }
-
-    .close {
-      z-index:3;
-      position:absolute;
-      width:100%;
-      top:0;
-      line-height:72px;
-      text-indent:10px;
-    }
-
-    .navigation {
-      display:block;
-      position:absolute;
-      margin-right:0;
-      margin-bottom:0;
-      width:100%;
-      top:0;
-      line-height:72px;
-      text-indent:10px;
-    }
-
-    #navigation:target .close {
-      display:block;
-      left:0;
-      right:-225px;
-    }
-
-    #navigation:target .navigation {
-      display:none;
-    }
-
-    #navigation:target .menu {
-      -webkit-transform: translateX(0);
-    }
-
-    .no-csstransform .container .menu {
-      left:0;
-    }
-
-    #navigation:target .outer-content {
-      -webkit-transform: translateX(225px);
-    }
-
-    .no-csstransform #navigation:target .outer-content {
-      left:225px;
-      right:-225px;
-    }
-
-  }
-
-</style>
-
 <div class="container">
-  <div class="row" id="navigation">
-    <a href="#" class="close">&times;</a>
-    <a href="#navigation" class="navigation"><i class="icon-th-list"></i></a>
-    <div id="masthead" class="span12">
-      <%= image_tag('logo1.png') %>
-    </div>
-
-    <div class="menu span3">
-
-      <div class="menu-content">
-        <form class="search">
-          <input type="text" class="input-medium search-query" placeholder="Search...">
-        </form>
-
-        <div class="row">
-          <div class="span1">
-              <img src="http://placehold.it/48x48" alt="">
-          </div>
-          <div class="span2">
-            <p><strong>Cameron Westland</strong></p>
-          </div>
-        </div>
-
-        <ul class="nav nav-list">
-          <li class="active"><a href="#">Current</a></li>
-
-          <li class="nav-header">Certification</li>
-          <li><a href="#">Essential</a></li>
-          <li><a href="#">Elective</a></li>
-
-          <li class="nav-header">Featured</li>
-          <li><a href="#">Popular</a></li>
-          <li><a href="#">Favourites</a></li>
-
-          <li class="nav-header">Categories</li>
-          <li><a href="#">Advice</a></li>
-          <li><a href="#">Agency Best Practices</a></li>
-          <li><a href="#">Allstate Workout 1</a></li>
-          <li><a href="#">Allstate Workout 2</a></li>
-          <li><a href="#">Allstate Workout 2012</a></li>
-          <li><a href="#">Allstate Workout 3</a></li>
-          <li><a href="#">California Region</a></li>
-          <li><a href="#">Care Sell Quote Close</a></li>
-          <li><a href="#">Executive Messages</a></li>
-          <li><a href="#">Grid Square</a></li>
-          <li><a href="#">Interviews</a></li>
-          <li><a href="#">Leadership</a></li>
-          <li><a href="#">Live Events</a></li>
-          <li><a href="#">Motivation</a></li>
-          <li><a href="#">Personal Development</a></li>
-          <li><a href="#">Sales Quick Tips</a></li>
-          <li><a href="#">Woople Help</a></li>
-
-          <li class="nav-header">Elsewhere</li>
-          <li><a href="#">Community</a></li>
-          <li><a href="#">Help</a></li>
-          <li><a href="#">Logout</a></li>
+  <header>
+  </header>
+  <section id="buttons">
+    <h1>Buttons</h1>
+    <h2>Base</h2>
+      <div>
+        <h3>Button</h3>
+        <p>The default .btn class can be used with &lt;a&gt;, &lt;button&gt; or &lt;input&gt;</p>
+        <%= codify do %>
+          <a class="btn" href="">Button</a>
+        <% end %>
+      </div>
+    <h2>Rich Buttons</h2>
+      <div>
+        <h3>Primary Button</h3>
+        <p></p>
+        <%= codify do %>
+          <a class="btn btn-primary" href="">Primary Button</a>
+        <% end %>
+        <h4>Examples</h4>
+        <p></p>
+        <ul>
+          <li></li>
         </ul>
       </div>
-    </div>
-
-  <div class="outer-content span9">
-      <div class="content">
-        <p>Please explore the demo.</p>
-
-        <h2>Exercise 1: Find the popular courses</h2>
-        <p>Try to find the popular courses in Woople, if you cannot find them ask for help!</p>
-
-        <h2>Exercise 2: Search for 'Sales Training'</h2>
-        <p>Perform a search for 'Sales Training' don't worry the results don't work yet!</p>
-
-        <h2>Exercise 3: Get Help!</h2>
-        <p>You are having trouble figuring something out and you want to ask for help. Visit the help section.</p>
-
-        <h2>Exercise 4: Log out</h2>
-        <p>You are sharing a computer with someone else, you are finished working. Please log out.</p>
+      <div>
+        <h3>Button Group</h3>
+        <p></p>
+        <%= codify do %>
+          <div class="btn-group">
+            <a class="btn" href="#">One</a>
+            <a class="btn" href="#">Two</a>
+            <a class="btn" href="#">Three</a>
+          </div>
+        <% end %>
+        <h4>Examples</h4>
+        <p></p>
+        <ul>
+          <li></li>
+        </ul>
       </div>
+      <div>
+        <h3>Icon Button</h3>
+        <p></p>
+        <%= codify do %>
+          <a class="btn" href="#">
+            <i class="icon-refresh"></i> Refresh
+          </a>
+        <% end %>
+        <h4>Examples</h4>
+        <p></p>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Confirmable Button</h3>
+        <p></p>
+          <em>Inactive</em>
+        <%= codify do %>
+          <a class="btn btn-primary" href="">Delete</a>
+        <% end %>
+          <em>Active</em>
+        <%= codify do %>
+          <a class="btn btn-success" href="">Cancel</a><a class="btn btn-danger" href="">Delete</a>
+        <% end %>
+        <h4>Examples</h4>
+        <p></p>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Icon Link</h3>
+        <p></p>
+        <%= codify do %>
+          <a href=""><i class="icon-refresh"></i> Refresh</a>
+        <% end %>
+        <h4>Examples</h4>
+        <p></p>
+        <ul>
+          <li></li>
+        </ul>
+      </div>
+  </section>
+  <section id="progress-bars">
+    <h1>Progress Bars</h1>
+    <h2>Base</h2>
+    <div>
+      <h3>Basic Progress</h3>
+      <p>The basic progress bar is use to illustrate learning progress to the user.</p>
+      <%= codify do %>
+        <div class="progress">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
     </div>
-  </div>
+    <h2>Rich Progress Bars</h2>
+    <div>
+      <h3>Jumbo Progress</h3>
+      <p>The jumbo progress bar is used to illustrate learning progress to the user.</p>
+      <%= codify do %>
+        <div class="progress">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <h3>Loading Indicator</h3>
+      <p></p>
+       <%= codify do %>
+        <div class="progress progress-striped active">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
+    </div>
+    <div>
+      <h3>Ratings</h3>
+      <p>We might deprecate ratings.</p>
+      <%= codify do %>
+        <div class="progress">
+          <div class="bar"
+            style="width: 60%;"></div>
+        </div>
+      <% end %>
+    </div>
+  </section>
+  <section id="lists">    
+    <h2>Base</h2>
+    <div>
+      <h3>Unordered List</h3>
+      <p></p>
+      <%= codify do %>
+        <ul>
+          <li>This is one list item.</li>
+          <li>This is a second list item.</li>
+        </ul>
+      <% end %>
+    </div>
+    <div>
+      <h3>Ordered List</h3>
+      <p></p>
+      <%= codify do %>
+        <ol>
+          <li>This is one odered list item.</li>
+          <li>This is a second ordered list item.</li>
+        </ol>
+      <% end %>
+    </div>
+  </section>
+  <section id="typography">
+    <h1>Typography</h1>
+    <h2>Base</h2>
+    <div>
+      <h3>H1</h3>
+      <p>The H1 tag is to be used within the masthead of every page to denote the primary heading.</p>
+      <%= codify do %>
+        <h1>This is an H1</h1>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the H1 tag in Woople.</p>
+      <ul>
+        <li><a href="">The Certification Dashboard</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>H2</h3>
+      <p>The H2 tag is to be used to denote a section on a page.</p>
+      <%= codify do %>
+        <h2>This is an H2</h2>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the H2 tag in Woople.</p>
+      <ul>
+        <li><a href="">The Certification Dashboard</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>H3</h3>
+      <p>The H3 tag is to be used to denote a subheading within a section.</p>
+      <%= codify do %>
+        <h3>This is an H3</h3>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the H3 tag in Woople.</p>
+      <ul>
+        <li><a href="">The Certification Dashboard</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>P</h3>
+      <p>The Paragraph tag is the basic unit of text within Woople.</p>
+      <%= codify do %>
+        <p>This is a P.</p>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the Paragraph tag in Woople.</p>
+      <ul>
+        <li><a href="">The Certification Dashboard</a></li>
+      </ul>
+      <h3>EM</h3>
+      <p>The Emphasis tag should be used sparingly to highlight a selection of text.</p>
+      <%= codify do %>
+        <em>This is an EM.</em>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the Emphasis tag in Woople.</p>
+      <ul>
+        <li><a href="">The Certification Dashboard</a></li>
+      </ul>
+    </div>
+    <h2>Email Header &amp; Footer</h2>
+    <div>
+      <h3>Email Header</h3>
+      <p>The Email Header is used within all official Woople E-mails.</p>
+      <%= codify do %>
+        <img src="http://woople.com/images/email/header2.jpg" alt="Shout Woople!">
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here is an example of a Woople E-mail</p>
+    </div>
+    <div>
+      <h3>Email Footer</h3>
+      <p>The Email Footer is used within all official Woople Emails.</p>
+      <%= codify do %>
+        <img src="http://woople.com/images/email/footer2.jpg" alt="Powered by Woople!">
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here is an example of a Woople Email.</p>
+    </div>
+    <h2>Miscellaneous</h2>
+    <div>
+      <h3>Big Number</h3>
+      <p>The Big Number class is used to callout a particular number to the user's attention.</p>
+      <%= codify do %>
+        <span class="big-number">43%</span>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here is an example of how Big Number is used in Woople.</p>
+      <ul>
+        <li><a href="">The Certification Dashboard</a></li>
+      </ul>
+    </div>
+  </section>
+  <section id="forms">
+    <h1>Forms</h1>
+    <h2>Base</h2>
+    <div>
+      <h3>Basic Form</h3>
+      <p>The Basic Form is used for typical text input.</p>
+      <%= codify do %>
+        <form>
+          <label>Label name</label>
+          <input type="text" class="span3" placeholder="Type something...">
+          <span class="help-inline">Associated help text!</span>
+          <label class="checkbox">
+            <input type="checkbox"> Check me out
+          </label>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the basic form in Woople.</p>
+      <ul>
+        <li><a href="">Login Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Search Form</h3>
+      <p>The Search Form is used for searches.</p>
+      <%= codify do %>
+        <form class="form-search">
+          <input type="text" class="input-medium search-query">
+          <button type="submit" class="btn">Search</button>
+        </form>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the basic form in Woople.</p>
+      <ul>
+        <li><a href="">Login Page</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Inline Form</h3>
+      <p>The Inline Form can be used in situations where the user is required to log in</p>
+      <em>Inactive</em>
+      <%= codify do %>
+        <form class="form-inline">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <em>Focused</em>
+      <%= codify do %>
+        <form class="form-inline">
+          <input type="text" class="input-small focused" placeholder="Email">
+          <input type="password" class="input-small focused" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <em>Warning</em>
+      <%= codify do %>
+        <form class="form-inline control-group warning">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <em>Error</em>
+      <%= codify do %>
+        <form class="form-inline control-group error">
+          <input type="text" class="input-small" placeholder="Email">
+          <input type="password" class="input-small" placeholder="Password">
+          <button type="submit" class="btn">Go</button>
+        </form>
+      <% end %>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use the basic form in Woople.</p>
+      <ul>
+        <li><a href="">Login Page</a></li>
+      </ul>
+    </div>
+    <h2>Help Block</h2>
+    <div>
+      <h3>Alert</h3>
+      <p>The Alert Help Block is used to alert users about something.</p>
+      <%= codify do %>
+        <div class="alert-block">
+          <a class="close" data-dismiss="alert">x</a>
+          <h4 class="alert-heading">Alert!</h4>
+          <p>Check yourself before you wreck yourself.</p>
+        </div>
+      <% end %>
+      <h4>Use Cases</h4>
+      <ul>
+        <li>System Alerts and Notifications</li>
+      </ul>
+      <h4>Examples</h4>
+      <p>Here are some examples of how we use this component in Woople.</p>
+      <ul>
+        <li><a href="">Woople Help</a></li>
+      </ul>
+    </div>
+  </section>
 
-  </div>
+  <footer>
+  <p class="pull-right"><a href="#">Back to top</a></p>
+  </footer>
+
+</div>
