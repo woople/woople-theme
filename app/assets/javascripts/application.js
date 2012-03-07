@@ -17,6 +17,37 @@
 //= require twitter/bootstrap/dropdown
 //= require_tree .
 
+function resizeFix() {
+  if (navigator.userAgent.match(/iPhone/i) || navigator.userAgent.match(/iPad/i)) {
+    var viewportmeta = document.querySelector('meta[name="viewport"]');
+    if (viewportmeta) {
+      viewportmeta.content = 'width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1.0';
+      document.body.addEventListener('gesturestart', function () {
+        viewportmeta.content = 'width=device-width, minimum-scale=0.25, maximum-scale=1.6';
+      }, false);
+    }
+  }
+}
+
+
+/*
+   This is a dirty hack.
+   On safari when you open the menu and close it the transform
+   makes the page think that it is bigger than it really is
+   in order to resolve it you need to re-render the page
+*/
+function dirtyHack() {
+  $('.close').on('click', function() {
+    $('body > .container').width($(document).width() - 1);
+    setTimeout(function() {
+      $('body > .container').width('100%');
+    }, 500);
+  });
+}
+
 $(document).ready(function() {
   prettyPrint();
+  resizeFix();
+  dirtyHack();
+
 });
