@@ -17,43 +17,83 @@ body > .container {
   padding-top:@logoSize;
   padding-bottom:@logoSize;
   height:@logoSize;
+  position:relative;
 
-  .search {
-    float:right;
-    margin-right:30px;
-    margin-bottom:0;
+  .profile {
+    position:absolute;
+    top:@logoSize;
+    right:30px;
 
-    .search-page {
-      position:relative;
-      left:32px;
-      top:2px;
-      opacity:0.5;
+    .profile-link {
+      float:right;
+      margin-bottom:0;
+
+      .dropdown-toggle {
+        height:28px;
+        padding:2px;
+      }
+
+      img {
+        width:100%;
+        .border-radius(5px);
+      }
+
+      .dropdown-menu {
+        left:auto;
+        right:0;
+      }
     }
 
-    .search-query {
-      padding-left:30px;
+    .search {
+      float:left;
+      display:inline-block;
+      position:relative;
+      margin-bottom:0;
+      margin-top:3px;
+      margin-right:5px;
+
+      .search-page {
+        position:absolute;
+        left:10px;
+        top:6px;
+        opacity:0.5;
+      }
+
+      .search-query {
+        padding-left:30px;
+      }
     }
   }
 }
 
 @media (max-width: 768px) {
   #masthead {
-    .search {
-      input { display:none; }
+    .profile {
+      right:5px;
 
-      .search-page {
-        position:absolute;
-        top:0;
-        right:0;
-        left:50%;
-        width:50%;
-        height:@logoWithPadding;
-        opacity:1.0;
+      .search {
+        margin-right:0;
 
-        .icon-search {
-          position:absolute;
-          right:10px;
-          top:29px;
+        input { display:none; }
+
+        .profile-link {
+        }
+
+        .search-page {
+          opacity:1.0;
+          position:relative;
+          display:inline-block;
+          width:30px;
+          height:30px;
+          top:0;
+          left:0;
+          margin-right:5px;
+
+          .icon-search {
+            position:absolute;
+            left:8px;
+            top:8px;
+          }
         }
       }
     }
@@ -75,6 +115,7 @@ body > .container {
 
   .navigation {
     display:block;
+    z-index:2;
   }
 
   .navigation, .close {
