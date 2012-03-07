@@ -52,7 +52,7 @@
         background-color:@menuActiveColour;
         color:@menuHeadingColour;
         margin-left:-18px;
-        text-indent:1px;
+        text-indent:3px;
 
         ::after {
           content: "";
@@ -77,6 +77,18 @@
 
   .nav > li > a:hover {
     background-color:@menuHoverColour;
+    margin-left:-15px;
+    text-indent:0;
+
+    .label {
+      background-color:@menuHoverLabelColour;
+    }
+
+    ::after {
+      display:none;
+    }
+
+
   }
 
   .cert-status-red {
@@ -99,10 +111,11 @@
     margin-right:5px;
     margin-top:5px;
     background-color: @menuLabelBackground;
+    text-indent:0;
   }
 
   .label-icon {
-    padding-left:17px;
+    padding-left:18px;
     position:relative;
   }
 
