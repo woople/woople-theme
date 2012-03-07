@@ -3,7 +3,7 @@
 
 .menu {
   background: @primary;
-
+  min-width:@menuWidth;
   padding-right:10px;
 
   .box-shadow();
@@ -32,6 +32,13 @@
     > li > a {
       color:@menuLinkColour;
       margin-right:-24px;
+
+      em {
+        font-size:1.25em;
+        line-height:1.5em;
+        display:block;
+        font-style:normal;
+      }
     }
 
     > li > a, .nav-header {
@@ -60,22 +67,45 @@
           top: -10px;
         }
       }
+
+      .label {
+        background-color: @menuActiveLabelColour;
+
+      }
     }
   }
 
   .nav > li > a:hover {
     background-color:@menuHoverColour;
   }
-}
 
-.cert-status-red {
-  width: 14px;
-  height: 14px;
-  vertical-align:text-top;
-  background-image: url('/assets/certification/red-icon.png');
-  background-repeat:no-repeat;
-  display:inline-block;
-  float:right;
+  .cert-status-red {
+    width: 14px;
+    height: 14px;
+    vertical-align:text-top;
+    background-image: url('/assets/certification/red-icon.png');
+    background-repeat:no-repeat;
+    display:inline-block;
+    position:absolute;
+    left:2px;
+    top:0;
+  }
+
+  .label {
+    float:right;
+    min-width:11px;
+    text-align:center;
+    line-height:1.25em;
+    margin-right:5px;
+    margin-top:5px;
+    background-color: @menuLabelBackground;
+  }
+
+  .label-icon {
+    padding-left:17px;
+    position:relative;
+  }
+
 }
 
 @media (max-width: 768px) {
