@@ -19,87 +19,10 @@ body > .container {
   height:@logoSize;
   position:relative;
 
-  .profile {
-    position:absolute;
-    top:@logoSize;
-    right:30px;
-
-    .profile-link {
-      float:right;
-      margin-bottom:0;
-
-      .dropdown-toggle {
-        height:28px;
-        padding:2px;
-        position:relative;
-        z-index:1001;
-      }
-
-      img {
-        width:100%;
-        .border-radius(5px);
-      }
-
-      .dropdown-menu {
-        left:auto;
-        right:2px;
-      }
-    }
-
-    .search {
-      float:left;
-      display:inline-block;
-      position:relative;
-      margin-bottom:0;
-      margin-top:3px;
-      margin-right:5px;
-
-      .search-page {
-        position:absolute;
-        left:10px;
-        top:6px;
-        opacity:0.5;
-      }
-
-      .search-query {
-        padding-left:30px;
-      }
-    }
-  }
 }
 
 @media (max-width: 768px) {
   #masthead {
-    .profile {
-      right:5px;
-
-      .search {
-        margin-right:0;
-
-        input { display:none; }
-
-        .profile-link {
-        }
-
-        .search-page {
-          opacity:1.0;
-          position:relative;
-          display:inline-block;
-          width:30px;
-          height:30px;
-          top:0;
-          left:0;
-          margin-right:5px;
-
-          .icon-search {
-            position:absolute;
-            left:8px;
-            top:8px;
-          }
-        }
-      }
-    }
-
     img {
       display:block;
       margin-left:auto;
