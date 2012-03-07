@@ -17,11 +17,31 @@
 
     <div id="masthead" class="span12">
       <%= image_tag('logo1.png') %>
-
-      <form class="search">
-        <a href="#" class='search-page'><i class="icon-search"></i></a>
-        <input type="text" class="search-query" placeholder="Search...">
-      </form>
+      <div class="profile"> 
+        <form class="search">
+          <a href="#" class='search-page'><i class="icon-search"></i></a>
+          <input type="text" class="search-query" placeholder="Search...">
+        </form>
+        <ul class="nav nav-pills profile-link">
+          <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= image_tag('kitty.jpeg') %></a>
+          <ul id="menu1" class="dropdown-menu">
+            <li><a href="#">Account Settings</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Feature Requests</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Security</a></li>
+            <li><a href="#">Term of Service</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Log out</a></li>
+          </ul>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <%= render 'menu' %>

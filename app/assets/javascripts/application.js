@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require modernizr
 //= require google-code-prettify/prettify
+//= require twitter/bootstrap/dropdown
 //= require_tree .
 
 $(document).ready(function() {

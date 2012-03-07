@@ -17,47 +17,12 @@ body > .container {
   padding-top:@logoSize;
   padding-bottom:@logoSize;
   height:@logoSize;
+  position:relative;
 
-  .search {
-    float:right;
-    margin-right:30px;
-    margin-bottom:0;
-
-    .search-page {
-      position:relative;
-      left:32px;
-      top:2px;
-      opacity:0.5;
-    }
-
-    .search-query {
-      padding-left:30px;
-    }
-  }
 }
 
 @media (max-width: 768px) {
   #masthead {
-    .search {
-      input { display:none; }
-
-      .search-page {
-        position:absolute;
-        top:0;
-        right:0;
-        left:50%;
-        width:50%;
-        height:@logoWithPadding;
-        opacity:1.0;
-
-        .icon-search {
-          position:absolute;
-          right:10px;
-          top:29px;
-        }
-      }
-    }
-
     img {
       display:block;
       margin-left:auto;
@@ -75,6 +40,7 @@ body > .container {
 
   .navigation {
     display:block;
+    z-index:2;
   }
 
   .navigation, .close {
