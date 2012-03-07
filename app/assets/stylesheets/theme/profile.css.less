@@ -1,0 +1,30 @@
+@import "theme/variables.css.less";
+@import "theme/colours.css.less";
+
+.profile {
+  .nav-pills .dropdown-menu {
+    background: @contentBackground;
+    .border-radius(0);
+    .box-shadow();
+    top:33px;
+    border:none;
+
+    li > a:hover, .active > a, .active a:hover {
+      background-color:@primary;
+    }
+  }
+
+  .dropdown-toggle {
+    border:solid 1px transparent;
+    border:none;
+  }
+
+  .open .dropdown-toggle {
+    background: @contentBackground;
+    border-color:@contentBorder;
+    border-bottom:none;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
+  }
+}
+
