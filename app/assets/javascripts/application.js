@@ -40,7 +40,7 @@ function dirtyHack() {
   $('.close').on('click', function() {
     $('body > .container').width($(document).width() - 1);
     setTimeout(function() {
-      $('body > .container').width('100%');
+      $('body > .container').removeAttr('style');
     }, 500);
   });
 }
