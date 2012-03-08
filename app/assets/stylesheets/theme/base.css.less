@@ -37,6 +37,10 @@ a:hover {
 }
 
 @media (max-width: 768px) {
+  body .row {
+    margin-left:0;
+  }
+
   #masthead {
     img {
       display:block;
@@ -77,4 +81,13 @@ a:hover {
   #navigation:target .navigation {
     display:none;
   }
+}
+
+.breadcrumb {
+  padding-left:@contentPadding;
+  background: @contentBackground;
+  .box-shadow(0 1px 3px rgba(0,0,0,0.10));
+  .border-radius(0);
+  border:none;
+  margin-bottom:0;
 }

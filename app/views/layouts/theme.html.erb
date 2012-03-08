@@ -48,7 +48,16 @@
 
     <div class="outer-content span9">
         <div class="content">
-          <%= yield %>
+          <ul class="breadcrumb">
+            <li>
+            <a href="#">Home</a> <span class="divider">/</span>
+            </li>
+            <li>
+            <a href="#">Library</a></span>
+          </li>
+        </ul>
+
+        <%= yield %>
       </div>
     </div>
   </div>
