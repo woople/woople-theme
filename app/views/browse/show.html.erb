@@ -1,3 +1,20 @@
+<style>
+
+  .course_img {
+    height: 55px;
+    width: 55px;
+    border-radius: 5px;
+  }
+  #browse_show .span7 {
+    margin-left:0px;
+  }
+  #browse_show .span1 a:link {
+    font-size: 13px;
+  }
+
+</style>
+
+
 <section id="browse_show">
   <header class="page-header">
     <h1>Continue Learning</h1>
@@ -106,9 +123,10 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="span2">
-      <img src="" height="50px" width="50px">
+
+ <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
     </div>
     <div class="span7">
       <h3><a href="">Strategies for Growing in the Multicultural Marketplace</a></h3>
@@ -117,6 +135,40 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="span6">
+      <div class="progress progress-success">
+        <div class="bar" style="width: 80%"></div>
+      </div>
+    </div>
+    <div class="span1">
+      <a class="btn" href="">Resume</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
+    </div>
+    <div class="span7">
+      <h3><a href="">Strategies for Growing in the Multicultural Marketplace</a></h3>
+      <div class="row">
+        <div class="span6">
+          <a href="#"><i class="icon-ok"></i> Essential </a>
+          <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span5">
+          <div class="progress progress-success">
+            <div class="bar" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="span1">
+          <a class="btn" href="">Resume</a>
+        </div>
+        </div>
+      </div>
+    </div>
 
 
   <div class="pagination pagination-centered">
