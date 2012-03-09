@@ -7,45 +7,22 @@
     </tr>
   </thead>
   <tbody>
-    <tr onclick="javascript:void()">
-      <td><span class="index">1</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-download-alt"></i></a></td>
+    <tr>
+      <td><a class="action btn btn-primary" href="#"><i class="icon-white icon-download-alt"></i></a></td>
       <td>Reference Guide</td>
-      <td>-</td>
+      <td></td>
     </tr>
+    <% videos.each_with_index do |video, index| %>
+      <tr>
+        <td><span class="index"><%= 1+index %></span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
+        <td><%= video %></td>
+        <td><%= "#{rand(10)}:#{10+rand(60)}" %></td>
+      </tr>
+    <% end %>
     <tr>
-      <td><span class="index">2</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
-      <td>Learn to Isolate</td>
-      <td>1:59</td>
-    </tr>
-    <tr>
-      <td><span class="index">3</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
-      <td>Define - Select - Write</td>
-      <td>2:13</td>
-    </tr>
-    <tr>
-      <td><span class="index">4</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
-      <td>Create Your Own Statements</td>
-      <td>1:40</td>
-    </tr>
-    <tr>
-      <td><span class="index">5</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
-      <td>How to Practice</td>
-      <td>4:32</td>
-    </tr>
-    <tr>
-      <td><span class="index">6</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
-      <td>Student Practice</td>
-      <td>1:27</td>
-    </tr>
-    <tr>
-      <td><span class="index">7</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
-      <td>Examples: Student Sharing</td>
-      <td>4:26</td>
-    </tr>
-    <tr>
-      <td><span class="index">8</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
+      <td><a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
       <td>6 Question Assessment</td>
-      <td>-</td>
+      <td></td>
     </tr>
   </tbody>
 </table>
