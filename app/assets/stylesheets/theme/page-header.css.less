@@ -1,0 +1,29 @@
+@import "theme/variables.css.less";
+@import "theme/colours.css.less";
+
+.page-header {
+  border-color:fade(@highlight, 10%);
+  margin-left:@contentPadding * -1;
+  margin-right:@contentPadding * -1;
+  padding-left:@contentPadding;
+  padding-right:@contentPadding;
+  margin-top:0;
+  padding-top:18px;
+  background: @highlightBackground;
+
+  h1 {
+    letter-spacing:2px;
+    font-weight:300;
+    color:#0089D0;
+    font-size:40px;
+    line-height:1em;
+    margin-bottom:0.15em;
+  }
+
+  p {
+    font-size:18px;
+    line-height:1.5em;
+    color:rgba(0,0,0,0.5);
+    margin-bottom:0;
+  }
+}

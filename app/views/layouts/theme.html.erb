@@ -49,15 +49,10 @@
     <div class="outer-content span9">
         <div class="content">
           <ul class="breadcrumb">
-            <li>
-            <a href="#">Home</a> <span class="divider">/</span>
-            </li>
-            <li>
-            <a href="#">Library</a></span>
-          </li>
-        </ul>
+            <%= content_for?(:breadcrumb) ? yield(:breadcrumb) : '<li>&nbsp;</li>'.html_safe %>
+          </ul>
 
-        <%= yield %>
+          <%= yield %>
       </div>
     </div>
   </div>

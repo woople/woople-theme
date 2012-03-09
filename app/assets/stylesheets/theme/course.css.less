@@ -1,0 +1,53 @@
+@import "theme/variables.css.less";
+@import "theme/colours.css.less";
+
+@imageWidth: 50px;
+@tableCellPadding: 10px;
+
+#course {
+  overflow:hidden;
+
+  .page-header {
+
+    img {
+      float:left;
+      margin-right:@gridGutterWidth;
+    }
+
+    p, h1 {
+      margin-left: @gridGutterWidth + @imageWidth;
+    }
+  }
+
+  > header {
+   margin:0;
+  }
+
+  table {
+    th, td {
+      padding:@tableCellPadding;
+    }
+
+    .count {
+      width:75px;
+    }
+
+    margin-bottom:0;
+
+    th {
+      border-top:none;
+    }
+
+    tr > td:first-child, tr > th:first-child {
+      padding-left:@contentPadding;
+      width:@gridGutterWidth + @imageWidth - (@tableCellPadding * 2);
+    }
+
+  }
+}
+
+.no-touch #course tr:hover td {
+  background-color:@highlight;
+  color:#fff;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5);
+}
