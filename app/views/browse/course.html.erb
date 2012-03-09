@@ -10,12 +10,21 @@
     <p>Learn how to use The “O” Grid in isolation to refine your closing skills and reinforce your commitment to the customer</p>
   </header>
 
-  <h2>Good Hands Closing</h2>
-  <%= render 'outline', videos: ["Words Matter", "Absorption Strategy", "Take It In", "Restate", "Provide Assurance", "Question Up", "Relieve Pressure", "Escape Route", "Bridging", "FBV Strategy", "Minor Point Agreement", "Good Hands Closing Recap"] %>
+  <div class="outline">
+    <h2>Good Hands Closing</h2>
+    <%= render 'outline', completed: 5, videos: ["Words Matter", "Absorption Strategy", "Take It In", "Restate", "Provide Assurance", "Question Up", "Relieve Pressure", "Escape Route", "Bridging", "FBV Strategy", "Minor Point Agreement", "Good Hands Closing Recap"] %>
+    <p class="assessment disabled"><a>START ASSESSMENT</a></p>
+  </div>
 
-  <h2>Specific Closing Strategies</h2>
-  <%= render 'outline', videos: ["Soft Issue vs Hard Issue Objections", "Time and Distance", "Would You Expound", "Based on Your Viewpoint Sequence", "Considering for a Moment", "Feel Felt Found", "I Can Relate", "Bullet Closing Sequence 1", "Bullet Closing Sequence 2", "Bullet Closing Sequence 3"] %>
+  <div class="outline">
+    <h2>Specific Closing Strategies</h2>
+    <%= render 'outline', completed:0, videos: ["Soft Issue vs Hard Issue Objections", "Time and Distance", "Would You Expound", "Based on Your Viewpoint Sequence", "Considering for a Moment", "Feel Felt Found", "I Can Relate", "Bullet Closing Sequence 1", "Bullet Closing Sequence 2", "Bullet Closing Sequence 3"] %>
+    <p class="assessment disabled"><a>START ASSESSMENT</a></p>
+  </div>
 
-  <h2>An Interview with Paul Cummings about Closing</h2>
-  <%= render 'outline', videos: ["Why Are Words Important?", "Why Is Empathy Important?", "Why Are Questions Important?", "Why Is FBV Strategy So Important?", "More on Soft vs. Hard Issue Objections", "Why Bullets?", "How Do You Master the Material?", "Favorite Closing Strategy?", "Closing Strategies Recap"] %>
+  <div class="outline">
+    <h2>An Interview with Paul Cummings about Closing</h2>
+    <%= render 'outline', completed: 0, videos: ["Why Are Words Important?", "Why Is Empathy Important?", "Why Are Questions Important?", "Why Is FBV Strategy So Important?", "More on Soft vs. Hard Issue Objections", "Why Bullets?", "How Do You Master the Material?", "Favorite Closing Strategy?", "Closing Strategies Recap"] %>
+    <p class="assessment disabled"><a>START ASSESSMENT</a></p>
+  </div>
 </section>

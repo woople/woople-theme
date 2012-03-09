@@ -32,7 +32,7 @@
     padding-right:90px;
   }
 
-  header + h2 {
+  header + .outline h2 {
     border-top:0;
     margin-top:0;
   }
@@ -42,6 +42,10 @@
   }
 
   table {
+    th {
+      color: rgba(0,0,0,0.5);
+    }
+
     th, td {
       padding:@tableCellPadding;
       border-top:none;
@@ -88,5 +92,36 @@
     line-height:10px;
     .border-radius(14px);
     .buttonBackground(lighten(@primary,5%), @primary);
+  }
+}
+
+#course .outline {
+  .assessment {
+    margin-left:90px;
+    margin-top:20px;
+    text-transform:uppercase;
+  }
+  .disabled {
+    opacity:0.5;
+    a:hover {
+
+      text-decoration:none;
+    }
+  }
+
+  tr.disabled {
+    &:hover td, &:active td {
+      background-color:transparent;
+      text-shadow:none;
+      color:rgb(51,51,51);
+
+      .index {
+        display:block;
+      }
+
+      .action {
+        display:none;
+      }
+    }
   }
 }
