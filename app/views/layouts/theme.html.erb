@@ -47,12 +47,8 @@
     <%= render 'menu' %>
 
     <div class="outer-content span9">
-        <div class="content">
-          <ul class="breadcrumb">
-            <%= content_for?(:breadcrumb) ? yield(:breadcrumb) : '<li>&nbsp;</li>'.html_safe %>
-          </ul>
-
-          <%= yield %>
+      <div class="content">
+        <%= yield %>
       </div>
     </div>
   </div>
