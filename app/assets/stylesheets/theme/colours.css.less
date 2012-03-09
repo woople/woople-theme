@@ -1,5 +1,7 @@
 @primary: #4984d0;
 @highlight: #8bc03f;
+@secondaryTextColour: rgba(0,0,0,0.5);
+
 @background: spin(darken(fade(@primary, 20%), 20%), -9);
 @highlightBackground: fade(@highlight, 4%);
 
@@ -8,7 +10,7 @@
 @insideShadowColour: rgba(0,0,0,0.10);
 
 
-@menuTextShadowColour: rgba(0,0,0,0.5);
+@menuTextShadowColour: @secondaryTextColour;
 @menuActiveColour: @highlight;
 @menuHoverColour: rgba(255,255,255,0.25);
 @menuLinkColour: rgba(255, 255, 255, 0.75);
