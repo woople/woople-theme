@@ -1,19 +1,34 @@
 <style>
 
+  h2 {
+    font-weight:normal;
+  }
+
+  
   .course_img {
-    height: 55px;
-    width: 55px;
     border-radius: 5px;
   }
-  #browse_show .span7 {
-    margin-left:0px;
+  #browse_show .row {
+    margin-bottom:10px;
   }
-  #browse_show .span1 a:link {
-    font-size: 13px;
+
+
+
+  @media (max-width: 480px) {
+    .course_img { display:none;}
+  }
+
+  @media (max-width: 768px) {
+    .course_img { display:none;}
+  }
+
+  @media (min-width: 1200px) {
+    #browse_show .span6, #browse_show .span5 {
+      margin-left: 25px;
+    }
   }
 
 </style>
-
 
 <section id="browse_show">
   <header class="page-header">
@@ -22,78 +37,21 @@
   </header>
 
   <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
+    </div>
     <div class="span6">
-      <h3><a href="">Agency Economics - 2012 Overview</a></h3>
-      <p class="categories"><a href="">Sales</a>, <a href="">Marketing</a>, <a href="">Leadership</a>, <a href="">Motivation</a></p>
-      <p>Look forward to the new Agency Compensation Program with this overview of how it will function and benefit agents in 2012</p>
       <div class="row">
-        <div class="span5">
-          <div class="progress progress-success">
-            <div class="bar" style="width: 10%"></div>
-          </div>
-        </div>
-        <div class="span1">
-          <a class="btn" href="">Resume</a>
+        <div class="span6">
+          <a href="#"><i class="icon-ok"></i> Essential </a>
+          <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span6">
-      <h3><a href="">Allstate Business Insurance - It's Everywhere</a></h3>
-      <p class="categories"><a href="">Sales</a>, <a href="">Marketing</a>, <a href="">Leadership</a>, <a href="">Motivation</a></p>
-      <p>Learn how to better identify and acquire Allstate Business Insurance (ABI) leads using the ideas and strategies from this great course!</p>
       <div class="row">
-        <div class="span5">
-          <div class="progress progress-success">
-            <div class="bar" style="width: 20%"></div>
-          </div>
-        </div>
-        <div class="span1">
-          <a class="btn" href="">Resume</a>
+        <div class="span6">
+          <h2><a href="">Strategies for Growing</a></h2>
         </div>
       </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span6">
-      <h3><a href="">Allstate House & Home: Q&A with Ron Stouffer</a></h3>
-      <p class="categories"><a href="">Sales</a>, <a href="">Marketing</a>, <a href="">Leadership</a>, <a href="">Motivation</a></p>
-      <p>Join Ron Stouffer as he explains more about Allstate?s House &amp; Home product in this fun course!</p>
-      <div class="row">
-        <div class="span5">
-          <div class="progress progress-success">
-            <div class="bar" style="width: 90%"></div>
-          </div>
-        </div>
-        <div class="span1">
-          <a class="btn" href="">Resume</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span6">
-      <h3><a href="">Bundling: Keeping It All Together Chapter 1</a></h3>
-      <p class="categories"><a href="">Sales</a>, <a href="">Marketing</a>, <a href="">Leadership</a>, <a href="">Motivation</a></p>
-      <p>Learn the essential techniques for bundling Allstate products in order to better serve the customer</p>
-      <div class="row">
-        <div class="span5">
-          <div class="progress progress-success">
-            <div class="bar" style="width: 40%"></div>
-          </div>
-        </div>
-        <div class="span1">
-          <a class="btn" href="">Resume</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span6">
-      <h3><a href="">Resources for Growth: Items in Force (IIF) Report</a></h3>
-      <p class="categories"><a href="">Sales</a>, <a href="">Marketing</a>, <a href="">Leadership</a>, <a href="">Motivation</a></p>
-      <p>Tracking your Agency?s progress towards your year-end goals just got easier with the new Items In Force (IIF) report. This course will help you better understand how to find and use this report</p>
       <div class="row">
         <div class="span5">
           <div class="progress progress-success">
@@ -106,11 +64,52 @@
       </div>
     </div>
   </div>
+
   <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
+    </div>
     <div class="span6">
-      <h3><a href="">Strategies for Growing in the Multicultural Marketplace</a></h3>
-      <p class="categories"><a href="">Sales</a>, <a href="">Marketing</a>, <a href="">Leadership</a>, <a href="">Motivation</a></p>
-      <p>Increase your customer base and community influence by expanding into the Multicultural Marketplace with these tips and strategies</p>
+      <div class="row">
+        <div class="span6">
+          <a href="#"><i class="icon-ok"></i> Elective</a>
+          <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <h2><a href="">Strategies for Growing in the Multicultural Marketplace</a></h2>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="span5">
+          <div class="progress progress-success">
+            <div class="bar" style="width: 20%"></div>
+          </div>
+        </div>
+        <div class="span1">
+          <a class="btn" href="">Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
+    </div>
+    <div class="span6">
+      <div class="row">
+        <div class="span6">
+          <a href="#"><i class="icon-ok"></i> Essential </a>
+          <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <h2><a href="">Strategies for Growing in the Multicultural Marketplace and Making Your Agency Succeed</a></h2>
+        </div>
+      </div>  
       <div class="row">
         <div class="span5">
           <div class="progress progress-success">
@@ -124,39 +123,80 @@
     </div>
   </div>
 
- <div class="row">
+  <div class="row">
     <div class="span1">
       <%= image_tag('course.jpg', :class => 'course_img') %>
     </div>
-    <div class="span7">
-      <h3><a href="">Strategies for Growing in the Multicultural Marketplace</a></h3>
-      <div>
-        <a href="#"><i class="icon-ok"></i> Essential </a><a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
-      </div>
-    </div>
-  </div>
-  <div class="row">
     <div class="span6">
-      <div class="progress progress-success">
-        <div class="bar" style="width: 80%"></div>
-      </div>
-    </div>
-    <div class="span1">
-      <a class="btn" href="">Resume</a>
-    </div>
-  </div>
-  <div class="row">
-    <div class="span1">
-      <%= image_tag('course.jpg', :class => 'course_img') %>
-    </div>
-    <div class="span7">
-      <h3><a href="">Strategies for Growing in the Multicultural Marketplace</a></h3>
       <div class="row">
         <div class="span6">
           <a href="#"><i class="icon-ok"></i> Essential </a>
           <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
         </div>
       </div>
+      <div class="row">
+        <div class="span6">
+          <h2><a href="">Strategies for Growing</a></h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span5">
+          <div class="progress progress-success">
+            <div class="bar" style="width: 60%"></div>
+          </div>
+        </div>
+        <div class="span1">
+          <a class="btn" href="">Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
+    </div>
+    <div class="span6">
+      <div class="row">
+        <div class="span6">
+          <a href="#"><i class="icon-ok"></i> Elective</a>
+          <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <h2><a href="">Strategies for Growing in the Multicultural Marketplace</a></h2>
+        </div>
+      </div>  
+      <div class="row">
+        <div class="span5">
+          <div class="progress progress-success">
+            <div class="bar" style="width: 20%"></div>
+          </div>
+        </div>
+        <div class="span1">
+          <a class="btn" href="">Resume</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="span1">
+      <%= image_tag('course.jpg', :class => 'course_img') %>
+    </div>
+    <div class="span6">
+      <div class="row">
+        <div class="span6">
+          <a href="#"><i class="icon-ok"></i> Essential </a>
+          <a href="#"><i class="icon-heart"></i> 212,396 Likes </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span6">
+          <h2><a href="">Strategies for Growing in the Multicultural Marketplace and Making Your Agency Succeed</a></h2>
+        </div>
+      </div>  
       <div class="row">
         <div class="span5">
           <div class="progress progress-success">
@@ -166,9 +206,10 @@
         <div class="span1">
           <a class="btn" href="">Resume</a>
         </div>
-        </div>
       </div>
     </div>
+  </div>
+
 
 
   <div class="pagination pagination-centered">
