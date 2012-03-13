@@ -7,6 +7,7 @@
     border-radius: 5px;
   }
 
+/*
   @media (max-width: 480px) {
     .course_img { display:none;}
   }
@@ -14,11 +15,16 @@
   @media (max-width: 768px) {
     .course_img { display:none;}
   }
+*/
 
   @media (min-width: 1200px) {
     #browse_show .span6, #browse_show .span5 {
       margin-left: 25px;
     }
+  }
+
+  class*=['span'] {
+    background:purple;
   }
 </style>
 
@@ -28,23 +34,49 @@
     <p>what you've started but haven't finished</p>
   </header>
 
-  <div class="row">
-    <div class="span1">
+  <div class="row" style="display:none">
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+    <div class="span1" style="background:red">
+      <div style="background:blue; border:solid 1px yellow; height:50px;">&nbsp;</div>
+    </div>
+  </div>
+
+  <div class="course row">
+    <div class="course-image span1 offset1">
       <%= image_tag('course.jpg', :class => 'course_img') %>
     </div>
-    <div class="span6">
-      <div class="row">
-        <div class="span6">
-          <a href="#"><i class="icon-ok"></i> Essential</a>
-          <a href="#"><i class="icon-time"></i> 12 Minutes</a>
-          <a href="#"><i class="icon-heart"></i> 212,396 Likes</a>
-        </div>
+    <div class="course-content span6">
+      <div class="metadata">
+        <a href="#"><i class="icon-ok"></i> Essential</a>
+        <a href="#"><i class="icon-time"></i> 12 Minutes</a>
+        <a href="#"><i class="icon-heart"></i> 212,396 Likes</a>
       </div>
-      <div class="row">
-        <div class="span6">
-          <h2><a href="">Strategies for Growing</a></h2>
-        </div>
-      </div>
+
+      <h2><a href="">Strategies for Growing</a></h2>
+
       <div class="row">
         <div class="span5">
           <div class="progress progress-success">

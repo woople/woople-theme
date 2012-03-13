@@ -1,8 +1,8 @@
 @import "theme/variables.css.less";
 
 #browse_show {
-  padding:@contentPadding;
-  padding-top:0;
+  /*padding:@contentPadding;*/
+  /*padding-top:0;*/
 }
 
 .categories {
@@ -26,5 +26,20 @@
   margin-top:3px;
 }
 
-@media (max-width: 768px) {
+.course {
+  .course-content {
+  }
+
+  .course-image {
+
+    img {
+      max-width:100%;
+    }
+  }
+
+  .course-progress {
+    margin-left:@gridGutterWidth * -1;
+    .clearfix();
+  }
 }
+
