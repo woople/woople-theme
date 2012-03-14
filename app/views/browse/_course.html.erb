@@ -13,7 +13,7 @@
 
     <div class="content-item-metadata row">
       <div class="span2">
-        <i class="icon-time"></i> <em><%= "#{rand(10)}:#{10+rand(60)}" %></em> / <%= "#{rand(10)}:#{10+rand(60)}" %>
+        <em><%= "#{rand(10)}:#{10+rand(60)}" %></em> / <%= "#{rand(10)}:#{10+rand(60)}" %>
       </div>
       <div class="span2">
         <i class="icon-star"></i> 212,396
@@ -22,7 +22,7 @@
       <% course_type = course_types.sample %>
       <% if course_type %>
         <div class="span2">
-          <span class="badge"><i class="icon-fire icon-white"></i> <%= course_type %></span>
+          <span class="badge"><%= course_type %></span>
         </div>
       <% end %>
     </div>

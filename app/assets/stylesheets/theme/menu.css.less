@@ -55,7 +55,7 @@
         margin-left:-18px;
         text-indent:3px;
 
-        ::after {
+        &::after {
           content: "";
           position: absolute;
           left: -24px;
@@ -69,9 +69,8 @@
         }
       }
 
-      .label {
+      .badge {
         background-color: @menuActiveLabelColour;
-
       }
     }
   }
@@ -81,43 +80,42 @@
     margin-left:-15px;
     text-indent:0;
 
-    .label {
+    .badge {
       background-color:@menuHoverLabelColour;
     }
 
-    ::after {
+    &::after {
       display:none;
     }
-
-
   }
 
   .cert-status-red {
-    width: 14px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
     vertical-align:text-top;
     background-image: url('/assets/certification/red-icon.png');
     background-repeat:no-repeat;
     display:inline-block;
     position:absolute;
-    left:2px;
-    top:0;
+    left:4px;
+    top:-6px;
   }
 
-  .label {
-    float:right;
-    min-width:11px;
-    text-align:center;
-    line-height:1.25em;
-    margin-right:5px;
-    margin-top:5px;
+  .badge {
     background-color: @menuLabelBackground;
-    text-indent:0;
+    line-height:1em;
+    margin-top:4px;
+    font-size:12px;
+    float:right;
   }
 
   .label-icon {
-    padding-left:18px;
+    padding-left:31px;
     position:relative;
+
+    i {
+      position:absolute;
+    }
   }
 
 }
