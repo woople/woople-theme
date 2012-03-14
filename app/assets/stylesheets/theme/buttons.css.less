@@ -1,0 +1,23 @@
+@import "theme/variables.css.less";
+@import "theme/colours.css.less";
+
+.action {
+  display:inline-block;
+  position:absolute;
+  margin-left:-9px;
+  margin-top:-4px;
+  width:9px;
+  padding-left:5px;
+  padding-right:9px;
+  line-height:10px;
+  .border-radius(14px);
+  .buttonBackground(lighten(@primary,5%), @primary);
+}
+
+
+.action-large {
+  line-height:30px;
+  .border-radius(30px);
+  padding-left:13px;
+  padding-right:18px;
+}

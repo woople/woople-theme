@@ -61,25 +61,14 @@
     }
 
     tr:hover td, tr:active td {
-      background-color:@highlight;
-      color:#fff;
-      text-shadow: 0 1px 0 @secondaryTextColour;
+      background-color:transparent;
 
       .index {
         display:none;
       }
 
       .action {
-        display:inline-block;
-        position:absolute;
-        margin-left:-9px;
-        margin-top:-4px;
-        width:9px;
-        padding-left:5px;
-        padding-right:9px;
-        line-height:10px;
-        .border-radius(14px);
-        .buttonBackground(lighten(@primary,5%), @primary);
+        display:block;
       }
     }
 
