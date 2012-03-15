@@ -14,16 +14,16 @@
 
     <div class="content-item-metadata row">
       <div class="span2">
-        <em><%= "#{rand(10)}:#{10+rand(60)}" %></em> / <%= "#{rand(10)}:#{10+rand(60)}" %>
+        <em class="timeRemaining" data-milliseconds="<%= rand(100) %>"><%= "#{rand(10)}:#{10+rand(60)}" %></em> / <%= "#{rand(10)}:#{10+rand(60)}" %>
       </div>
       <div class="span2">
-        <i class="icon-star"></i> 212,396
+        <i class="icon-star"></i> <span class="popularity">212,396</span>
       </div>
       <% course_types = [nil, "Essential", "+10 pts"] %>
       <% course_type = course_types.sample %>
       <% if course_type %>
         <div class="span2">
-          <span class="badge"><%= course_type %></span>
+          <span class="badge certificationValue"><%= course_type %></span>
         </div>
       <% end %>
     </div>
