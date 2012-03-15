@@ -5,7 +5,7 @@
 }
 
 .content-item-header {
-  margin-left:0;
+  margin-left:(@contentPadding / 2) * -1;
   font-weight:bold;
 
   a {
@@ -30,8 +30,9 @@
     margin-left:0;
 
     img {
-      max-width:100%;
-      .border-radius();
+      width:100%;
+      .border-radius(10px);
+      .box-shadow(0 1px 3px rgba(0, 0, 0, 0.10));
     }
   }
 

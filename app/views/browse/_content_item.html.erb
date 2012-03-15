@@ -1,6 +1,9 @@
 <div class="content-item row">
   <div class="content-item-image span1">
-    <a href="/browse/course"><%= image_tag('course.jpg') %></a>
+    <a href="/browse/course">
+      <% images = ['course.jpeg', 'missing.png'] %>
+      <%= image_tag(images.sample) %> 
+    </a>
   </div>
   <div class="content-item-content span7">
     <div class="row">
