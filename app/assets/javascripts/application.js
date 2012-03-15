@@ -15,6 +15,7 @@
 //= require modernizr
 //= require google-code-prettify/prettify
 //= require twitter/bootstrap/dropdown
+//= require fastclick.min_
 //= require_tree .
 
 function resizeFix() {
@@ -49,5 +50,10 @@ $(document).ready(function() {
   prettyPrint();
   resizeFix();
   dirtyHack();
+  new FastClick(document.body);
+
+  $('.touch .content-item').on('click', function() {
+    window.location = $(this).find('a').attr('href');
+  });
 });
 
