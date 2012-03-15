@@ -4,6 +4,15 @@
   margin-top:@contentPadding * -1;
 }
 
+.content-item-header {
+  margin-left:0;
+  font-weight:bold;
+
+  a {
+    color:@secondaryTextColour;
+  }
+}
+
 .content-item {
   position:relative;
   margin-left:0;
@@ -15,18 +24,6 @@
   > * { 
     position:relative;
     z-index:2;
-  }
-
-  .action {
-    position:absolute;
-    right:0;
-    opacity:0;
-  }
-
-  &:hover {
-    .action {
-      opacity:1;
-    }
   }
 
   .content-item-image {
@@ -56,6 +53,14 @@
       .badge {
         background:@highlight;
         cursor:initial;
+      }
+
+      .icon-star {
+        width:15px;
+        height:15px;
+        margin-top:-1px;
+        background-image:url(/assets/star-icon.png);
+        background-position:0 0;
       }
 
       em {
