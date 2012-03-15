@@ -116,3 +116,39 @@
     background:fade(@highlight, 100%);
   }
 }
+
+@media (max-width: 767px) {
+  .content-item-header {
+    display:none;
+  }
+
+  .content-item {
+    padding-left:@phoneMargin;
+
+    .content-item-image {
+      width:@phoneImageSize;
+      height:@phoneImageSize;
+      float:left;
+      margin-right:@phoneMargin;
+    }
+
+    .content-item-content {
+      h2 {
+        margin-left:@phoneOffset;
+        margin-right:@phoneMargin;
+        font-size:14px;
+      }
+    }
+
+    .content-item-metadata {
+      margin-left: @phoneOffset;
+
+      > div {
+        float:left;
+        margin-right:@phoneMargin;
+      }
+    }
+
+
+  }
+}

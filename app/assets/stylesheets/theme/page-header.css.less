@@ -6,7 +6,7 @@
   padding-left:@contentPadding;
   padding-right:@contentPadding;
   margin-top:0;
-  padding-top:30px;
+  padding-top:@contentPadding * 1.5;
   background: @highlightBackground;
 
   h1 {
@@ -24,4 +24,25 @@
     color:rgba(0,0,0,0.5);
     margin-bottom:-4px;
   }
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    padding-left:@phoneMargin;
+    padding-right:@phoneMargin;
+    padding-top:@phoneMargin * 1.5;
+    margin-bottom:0;
+
+    h1 {
+      font-size:36px;
+      line-height:40px;
+    }
+
+    p {
+      font-size:12px;
+      line-height:18px;
+    }
+
+  }
+
 }
