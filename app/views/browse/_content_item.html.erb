@@ -1,4 +1,6 @@
-<div class="content-item row">
+<% completed = ['completed', ''] %>
+
+<div class="content-item row <%= completed.sample %>">
   <div class="content-item-image span1">
     <a href="/browse/course">
       <% images = ['course.jpeg', 'missing.png'] %>
