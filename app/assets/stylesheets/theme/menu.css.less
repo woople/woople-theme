@@ -3,7 +3,6 @@
 
 .menu {
   background: @primary;
-  min-width:@menuWidth;
   padding-right:10px;
 
   .box-shadow();
@@ -124,6 +123,7 @@
   #navigation:target {
     .menu {
       .translate(0,0);
+      width:@menuWidth;
     }
   }
 

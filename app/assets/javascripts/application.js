@@ -30,26 +30,9 @@ function resizeFix() {
   }
 }
 
-
-/*
-   This is a dirty hack.
-   On safari when you open the menu and close it the transform
-   makes the page think that it is bigger than it really is
-   in order to resolve it you need to re-render the page
-*/
-function dirtyHack() {
-  $('.close').on('click', function() {
-    $('body > .container').width($(document).width() - 1);
-    setTimeout(function() {
-      $('body > .container').removeAttr('style');
-    }, 500);
-  });
-}
-
 $(document).ready(function() {
   prettyPrint();
   resizeFix();
-  dirtyHack();
   new FastClick(document.body);
 
   $('.touch .content-item').on('click', function() {
