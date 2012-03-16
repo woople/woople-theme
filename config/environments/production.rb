@@ -48,7 +48,8 @@ WoopleTheme::Application.configure do
   # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
   config.assets.precompile += [
     'framework.css',
-    'theme.css'
+    'theme.css',
+    'theme-retina.css'
   ]
 
   # Disable delivery errors, bad email addresses will be ignored
