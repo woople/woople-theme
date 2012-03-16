@@ -17,3 +17,8 @@
   background-image:url(/assets/star-icon2x.png);
   background-size:15px 15px;
 }
+
+.menu .cert-status-red {
+  background-image:url(/assets/certification/red-icon2x.png);
+  background-size:25px 25px;
+}
