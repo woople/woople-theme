@@ -3,7 +3,7 @@
 
 .profile {
   position:absolute;
-  top:@logoSize;
+  top:19px;
   right:30px;
 
   .profile-link {
@@ -19,7 +19,6 @@
       left:auto;
       right:2px;
 
-
       li > a:hover, .active > a, .active a:hover {
         background-color:@primary;
       }
@@ -32,6 +31,12 @@
       z-index:1001;
       border:solid 1px transparent;
       border:none;
+
+      &:hover {
+        img {
+          .box-shadow(none);
+        }
+      }
     }
 
     .open .dropdown-toggle {
@@ -40,11 +45,16 @@
       border-bottom:none;
       border-bottom-left-radius:0;
       border-bottom-right-radius:0;
+
+      img {
+        .box-shadow(none);
+      }
     }
 
     img {
-      width:100%;
+      max-width:28px;
       .border-radius(5px);
+      .box-shadow(0 1px 3px rgba(0,0,0,0.10));
     }
   }
 
@@ -61,6 +71,11 @@
       left:10px;
       top:6px;
       opacity:0.5;
+
+      .icon-search {
+        background:url(/assets/icons/search.png);
+        background-position:0 0;
+      }
     }
 
     .search-query {
@@ -77,9 +92,6 @@
       margin-right:0;
 
       input { display:none; }
-
-      .profile-link {
-      }
 
       .search-page {
         opacity:1.0;

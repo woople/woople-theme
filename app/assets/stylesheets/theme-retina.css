@@ -1,4 +1,19 @@
 .navigation .icon-th-list {
-  background:url(/assets/icons/menu2x.png);
+  background-image:url(/assets/icons/menu2x.png);
   background-size: 14px 14px;
+}
+
+.profile .search .search-page .icon-search {
+  background-image:url(/assets/icons/search2x.png);
+  background-size:14px 14px;
+}
+
+.completed {
+  background-image:url(/assets/completed-triangle2x.png);
+  background-size:34px 27px;
+}
+
+.content-item .content-item-content .content-item-metadata .icon-star {
+  background-image:url(/assets/star-icon2x.png);
+  background-size:15px 15px;
 }
