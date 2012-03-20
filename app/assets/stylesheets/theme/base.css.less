@@ -136,9 +136,22 @@ a:hover {
   }
 }
 
+.modal-backdrop {
+  opacity:0.5;
+}
+
 .modal {
   width:720px;
   margin: -250px 0 0 -360px;
+  .border-radius(0);
+  background-color:@contentBackground;
+  border:none;
+  .box-shadow();
+
+  h3 {
+    .content-title();
+    margin-bottom:0;
+  }
 
   .modal-footer {
     text-align:left;
@@ -187,6 +200,8 @@ a:hover {
     right:0;
     .border-radius(0);
     border:none;
+    width:auto;
+    margin:0;
 
     -webkit-overflow-scrolling: touch;
     -o-overflow-scrolling: touch;
@@ -194,8 +209,16 @@ a:hover {
     -moz-overflow-scrolling: touch;
     overflow-scrolling: touch;
 
+    .modal-header {
+      padding: @phoneMargin;
+    }
+
     .modal-body {
       max-height:initial;
+    }
+
+    .modal-footer {
+      padding: @phoneMargin;
     }
   }
 

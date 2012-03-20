@@ -21,3 +21,17 @@
   padding-left:13px;
   padding-right:18px;
 }
+
+.btn-group {
+  .btn:last-child, .btn:first-child {
+    .border-radius(0);
+  }
+
+  .btn-primary {
+   .buttonBackground(lighten(@primary,5%), @primary);
+  }
+
+  .active {
+    color:@secondaryTextColour;
+  }
+}
