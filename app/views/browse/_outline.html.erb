@@ -1,7 +1,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th class="count">#</th>
+      <th></th>
       <th class="string">Name</th>
       <th class="count">Duration</th>
     </tr>
@@ -9,13 +9,15 @@
   <tbody>
     <tr class="<%= (completed == 0) ? 'disabled' : ''  %>">
       <td><span class="index">1</span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-download-alt"></i></a></td>
-      <td>Reference Guide</td>
+      <td><a href="#">Reference Guide</a></td>
       <td></td>
     </tr>
     <% videos.each_with_index do |video, index| %>
+      <% data_toggle = (index+1 > completed) ? '' : 'data-toggle=modal' %>
+
       <tr class="<%= (index+1 > completed ) ? 'disabled' : '' %>">
-        <td><span class="index"><%= 2+index %></span> <a class="action btn btn-primary" href="#myModal" data-toggle="modal"><i class="icon-white icon-play"></i></a></td>
-        <td><%= video %></td>
+        <td><%= (index+2 > completed) ? '' : '✔' %></td>
+        <td><a href="#myModal" <%= data_toggle %>><%= video %></a></td>
         <td><%= "#{rand(10)}:#{10+rand(60)}" %></td>
       </tr>
     <% end %>

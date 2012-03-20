@@ -26,17 +26,27 @@
 
   .disabled {
     opacity:0.5;
-    a:hover {
 
+    a:hover {
       text-decoration:none;
     }
   }
 
   tr.disabled {
-    &:hover td, &:active td {
+   &:hover {
+     td {
+       background:none;
+     }
+   }
+
+   td {
       background-color:transparent;
       text-shadow:none;
-      color:rgb(51,51,51);
+      color:@primaryTextColour;
+
+      a {
+        color:@primaryTextColour;
+      }
 
       .index {
         display:block;
@@ -58,24 +68,14 @@
     th, td {
       padding:@tableCellPadding;
       border-top:none;
+      a {
+        color:@primaryTextColour;
+      }
     }
-
-    /*tr:hover td, tr:active td {*/
-      /*background-color:transparent;*/
-
-      /*.index {*/
-        /*display:none;*/
-      /*}*/
-
-      /*.action {*/
-        /*display:block;*/
-      /*}*/
-    /*}*/
 
     .count {
       width:75px;
     }
-
 
     th {
       border-top:none;
@@ -92,6 +92,12 @@
 
     .index {
       display:none;
+    }
+
+    tr:hover {
+      td {
+        background-color:@highlightBackground;
+      }
     }
   }
 }
