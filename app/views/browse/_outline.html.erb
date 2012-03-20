@@ -14,7 +14,7 @@
     </tr>
     <% videos.each_with_index do |video, index| %>
       <tr class="<%= (index+1 > completed ) ? 'disabled' : '' %>">
-        <td><span class="index"><%= 2+index %></span> <a class="action btn btn-primary" href="#"><i class="icon-white icon-play"></i></a></td>
+        <td><span class="index"><%= 2+index %></span> <a class="action btn btn-primary" href="#myModal" data-toggle="modal"><i class="icon-white icon-play"></i></a></td>
         <td><%= video %></td>
         <td><%= "#{rand(10)}:#{10+rand(60)}" %></td>
       </tr>

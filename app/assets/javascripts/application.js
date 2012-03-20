@@ -15,6 +15,7 @@
 //= require modernizr
 //= require google-code-prettify/prettify
 //= require twitter/bootstrap/dropdown
+//= require twitter/bootstrap/modal
 //= require fastclick.min_
 //= require_tree .
 
