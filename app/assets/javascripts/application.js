@@ -41,7 +41,7 @@ $(document).ready(function() {
     window.location = $(this).find('a').attr('href');
   });
 
-  $('.outline tr').on('click', function(e) {
+  $('.touch .outline tr').on('click', function(e) {
     if ($(e.target).parent()[0] == $(this)[0]) {
       $(this).find('a').trigger('click');
     }
