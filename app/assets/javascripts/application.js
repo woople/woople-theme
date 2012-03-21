@@ -46,5 +46,12 @@ $(document).ready(function() {
       $(this).find('a').trigger('click');
     }
   });
+
+  if (showingPlayer) {
+    $('#myModal').modal();
+    $('#myModal').on('hide', function() {
+      window.location.href = '/browse/course';
+    });
+  }
 });
 

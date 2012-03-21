@@ -1,9 +1,7 @@
 WoopleTheme::Application.routes.draw do
-  resource :browse, controller: "browse" do
-    member do
-      get :course
-    end
-  end
+  match 'browse', to: 'browse#show'
+  match 'browse/course', to: 'browse#course'
+  match 'browse/course/video', to: 'browse#video'
 
   root :to => 'home#show'
 end

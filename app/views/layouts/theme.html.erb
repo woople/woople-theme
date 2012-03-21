@@ -9,6 +9,11 @@
   <%= stylesheet_link_tag "theme-retina", media: 'only screen and (-webkit-min-device-pixel-ratio: 2)' %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <script>
+    var showingPlayer = <%= (@video.present?) ? 'true' : 'false' %>;
+  </script>
+
 </head>
 <body>
 <%= yield :body_content %>

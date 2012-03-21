@@ -3,6 +3,11 @@ class BrowseController < ApplicationController
 
   before_filter :set_course_names
 
+  def video
+    @video = { name: 'My Video' }
+    render 'course'
+  end
+
   private
 
   def set_course_names

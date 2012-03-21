@@ -13,11 +13,11 @@
       <td></td>
     </tr>
     <% videos.each_with_index do |video, index| %>
-      <% data_toggle = (index+1 > completed) ? '' : 'data-toggle=modal' %>
+      <% url = (index+1 > completed) ? '#' : '/browse/course/video' %>
 
       <tr class="<%= (index+1 > completed ) ? 'disabled' : '' %>">
         <td><%= (index+2 > completed) ? '' : '✔' %></td>
-        <td><a href="#myModal" <%= data_toggle %>><%= video %></a></td>
+        <td><a href="<%= url %>" class="video_link"><%= video %></a></td>
         <td><%= "#{rand(10)}:#{10+rand(60)}" %></td>
       </tr>
     <% end %>
