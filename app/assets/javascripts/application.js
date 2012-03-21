@@ -33,7 +33,7 @@ function resizeFix() {
 }
 
 function showMobile() {
-  var video = $('#good_hands_closing_video_0')
+  var video = $('#good_hands_closing_video_1')
   video.after('<tr><td colspan=3>' + $('#myModal').html());
   var offset = video.offset();
   window.scrollTo(offset.left, offset.top);
