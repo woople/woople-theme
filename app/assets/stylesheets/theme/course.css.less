@@ -23,3 +23,30 @@
     border-top:0;
   }
 }
+
+@media (max-width: 767px) {
+  #course {
+    .modal-body {
+      padding:@phoneMargin;
+      .modal-video();
+    }
+
+    .modal-header {
+      padding:0;
+      border:none;
+      h3 {
+        .outline-title(@phoneLeftColumnOffset);
+      }
+
+      .close {
+        display:none;
+      }
+    }
+
+    .modal-footer {
+      padding:@phoneMargin;
+      border:none;
+      .box-shadow(none);
+    }
+  }
+}

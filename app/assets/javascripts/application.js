@@ -32,6 +32,18 @@ function resizeFix() {
   }
 }
 
+function showMobile() {
+  $('.content .page-header').after($('#myModal').html());
+  $('.outline').hide();
+}
+
+function showDesktop() {
+  $('#myModal').modal();
+  $('#myModal').on('hide', function() {
+    window.location.href = '/browse/course';
+  });
+}
+
 $(document).ready(function() {
   prettyPrint();
   resizeFix();
@@ -42,16 +54,15 @@ $(document).ready(function() {
   });
 
   $('.touch .outline tr').on('click', function(e) {
-    if ($(e.target).parent()[0] == $(this)[0]) {
-      $(this).find('a').trigger('click');
-    }
+    window.location = $(this).find('a').attr('href');
   });
 
   if (showingPlayer) {
-    $('#myModal').modal();
-    $('#myModal').on('hide', function() {
-      window.location.href = '/browse/course';
-    });
+    if ($(window).width() < 768) {
+      showMobile();
+    } else {
+      showDesktop();
+    }
   }
 });
 
