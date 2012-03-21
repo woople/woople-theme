@@ -33,8 +33,13 @@ function resizeFix() {
 }
 
 function showMobile() {
-  $('.content .page-header').after($('#myModal').html());
-  $('.outline').hide();
+  var video = $('#good_hands_closing_video_0')
+  video.after('<tr><td colspan=3>' + $('#myModal').html());
+  var offset = video.offset();
+  window.scrollTo(offset.left, offset.top);
+
+  //$('.content .page-header').after($('#myModal').html());
+  //$('.outline').hide();
 }
 
 function showDesktop() {

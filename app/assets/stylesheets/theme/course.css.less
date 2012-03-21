@@ -27,24 +27,17 @@
 @media (max-width: 767px) {
   #course {
     .modal-body {
-      padding:@phoneMargin;
+      padding:0;
       .modal-video();
     }
 
     .modal-header {
-      padding:0;
-      border:none;
-      h3 {
-        .outline-title(@phoneLeftColumnOffset);
-      }
-
-      .close {
-        display:none;
-      }
+      display:none;
     }
 
     .modal-footer {
-      padding:@phoneMargin;
+      padding:0;
+      padding-top:@phoneMargin;
       border:none;
       .box-shadow(none);
     }
