@@ -1,30 +1,26 @@
-<% completed = ['completed', ''] %>
-
-<div class="content-item row <%= completed.sample %>">
+<div class="content-item row <%= content_item.completed %>">
   <div class="content-item-image span1">
     <a href="/browse/course">
-      <% images = ['course.jpeg', 'missing.png'] %>
-      <%= image_tag(images.sample) %> 
+      <%= image_tag(content_item.image) %> 
     </a>
   </div>
   <div class="content-item-content span7">
-    <h2><a href="/browse/course"><%= name %></a></h2>
+    <h2><a href="/browse/course"><%= content_item.name %></a></h2>
 
     <div class="content-item-metadata row">
       <div class="span2">
-        <em class="timeRemaining"><%= "#{rand(10)}:#{10+rand(60)}" %></em> / <%= "#{rand(10)}:#{10+rand(60)}" %>
+        <em class="timeRemaining"><%= content_item.time_remaining %></em> / <%= content_item.time_total %>
       </div>
       <div class="span2">
-        <i class="icon-star"></i> <span class="popularity">212,396</span>
+        <i class="icon-star"></i> <span class="popularity"><%= content_item.popularity %></span>
       </div>
-      <% course_types = [nil, "Essential", "+10 pts"] %>
-      <% course_type = course_types.sample %>
-      <% if course_type %>
+
+      <% content_item.certification_type do |type| %>
         <div class="span2">
-          <span class="badge certificationValue"><%= course_type %></span>
+          <span class="badge certificationValue"><%= type %></span>
         </div>
       <% end %>
     </div>
   </div>
-  <div class="content-item-progress-bar" style="width:<%= rand(100) %>%"></div>
+  <div class="content-item-progress-bar" style="width:<%= content_item.percent_complete %>%"></div>
 </div>
