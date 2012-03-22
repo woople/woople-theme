@@ -42,35 +42,6 @@ a:hover {
   color:rgba(0,0,0,0.5);
 }
 
-.pagination {
-  margin-top:0;
-  .box-shadow(inset 0 1px 3px @insideShadowColour);
-
-  ul {
-    .box-shadow(0 0 0 transparent);
-    .border-radius(0);
-  }
-  li:first-child a {
-    border-radius:0;
-    -webkit-border-radius:0;
-  }
-
-  li:last-child a {
-    border-radius:0;
-    -webkit-border-radius:0;
-  }
-
-  a {
-    border:none;
-  }
-
-  a:hover, .active a {
-    background-color:@highlightBackground;
-  }
-
-}
-
-
 @media (max-width: 768px) {
   .container > .row {
     margin-left:0;
@@ -128,56 +99,3 @@ a:hover {
   }
 }
 
-.modal-backdrop {
-  opacity:0.5;
-}
-
-.modal {
-  width:720px;
-  margin: -250px 0 0 -360px;
-  .border-radius(0);
-  background-color:@contentBackground;
-  border:none;
-  .box-shadow();
-
-  h3 {
-    .content-title();
-    margin-bottom:0;
-  }
-
-  .modal-footer {
-    background-color:@contentBackground;
-
-    .btn-group {
-      display:inline-block;
-    }
-
-    .btn {
-      line-height:16px;
-    }
-  }
-
-  .modal-body {
-    max-height:initial;
-    padding:0;
-    background-color:@contentBackground;
-
-    .modal-video();
-  }
-}
-
-.icon-thumbs-up {
-  width:15px;
-  height:16px;
-  background:url(/assets/icons/thumbs_up.png) no-repeat;
-}
-
-.active .icon-thumbs-up { opacity: 0.5; }
-
-.icon-thumbs-down {
-  width:15px;
-  height:16px;
-  background:url(/assets/icons/thumbs_down.png) no-repeat;
-}
-
-.active .icon-thumbs-down { opacity: 0.5; }
