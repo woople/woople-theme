@@ -1,14 +1,16 @@
 @primary: #4984d0;
 @highlight: #8bc03f;
 
-@primaryTextColour: darken(fade(@primary, 75%), 50%);
-@secondaryTextColour: rgba(0,0,0,0.5);
+@primaryTextColour: #42474e;
+@secondaryTextColour: #7d7c7c;
 
 @background: spin(darken(fade(@primary, 20%), 20%), -9);
+
 @highlightBackground: fade(@highlight, 4%);
 
 @contentBackground: #f9f7f7;
 @contentBorder: darken(@contentBackground, 25%);
+@insetContentBorder: #e0dede;
 @insideShadowColour: rgba(0,0,0,0.10);
 
 
@@ -21,3 +23,7 @@
 @menuLabelBackground: darken(@primary, 10%);
 @menuHoverLabelColour: lighten(@primary, 5%);
 @menuActiveLabelColour: darken(@menuActiveColour, 10%);
+
+/* LEGACY */
+@legacyBackground: #d3dfe8;
+@legacyMenuLinkColour: #fff;
