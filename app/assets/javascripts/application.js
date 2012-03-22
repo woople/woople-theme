@@ -52,7 +52,10 @@ function showDesktop() {
 $(document).ready(function() {
   prettyPrint();
   resizeFix();
-  new FastClick(document.body);
+
+  if (Modernizr.touch) {
+    new FastClick(document.body);
+  }
 
   $('.touch .content-item').on('click', function() {
     window.location = $(this).find('a').attr('href');
