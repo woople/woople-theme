@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 
   <script>
-    var showingPlayer = <%= (@video.present?) ? 'true' : 'false' %>;
+    <%= 'var showingPlayer = true;' if @video.present? %>
   </script>
 
 </head>

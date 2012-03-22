@@ -1,32 +1,11 @@
 <% content_for(:menu_active, 'false') %>
 
 <% content_for(:body_content) do %>
-  <div id="myModal" class="modal hide" style="display: none; ">
-    <div class="modal-header">
-      <a class="close" data-dismiss="modal">×</a>
-      <% video_names = ["Better Served Pleasant - (Book Of Virtues) The Rack 'Em Up Series", "Absorption Strategy", "Conversations With Paul&Chris - Chris Talks About His Grandfather"] %>
-      <h3><%= video_names.sample %></h3>
-    </div>
-    <div class="modal-body">
-      <div class="modal-video">
-        <iframe src="<%= ['http://www.youtube-nocookie.com/embed/k9bRT3JrykM?rel=0'].sample %>" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-    <div class="modal-footer">
-      <div class="btn-group" data-toggle="buttons-radio">
-        <button class="btn btn-primary"><i class="icon-thumbs-up"></i> Like</button>
-        <button class="btn btn-primary"><i class="icon-thumbs-down"></i> Dislike</button>
-      </div>
-    </div>
-  </div>
+  <%= video_modal(@video) if @video.present? %>
 <% end %>
 
 <section id="course">
-  <header class="page-header">
-    <%= image_tag(@images.sample) %>
-    <h1><%= @course_names.sample %></h1>
-    <p>Learn how to use The “O” Grid in isolation to refine your closing skills and reinforce your commitment to the customer</p>
-  </header>
+  <%= page_header(@course, CourseHeaderPresenter) %>
 
   <div class="outline">
     <h2>Good Hands Closing</h2>

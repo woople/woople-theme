@@ -1,45 +1,20 @@
-<% require 'ostruct' %>
-
+<% #NOTE: this is an example to show how the menu looks when active %>
 <% content_for(:menu_active, 'true') %>
 
-<section id="browse_show">
-  <header class="page-header">
-    <h1>Continue Learning</h1>
-    <p>what you've started but haven't finished</p>
-  </header>
+<%= page_header(title: 'Continue Learning', description: "what you've started but haven't finished") %>
+<%= content_item_header %>
+<%= content_items(@content_items) %>
 
-  <!-- NOTE: Only one sort should be possible at the same time. These need to sort server side due to pagination -->
-  <div class="content-item-header row">
-    <div class="span1">&nbsp;</div>
-    <div class="span2"><a href="#" class="sortAsc">Time Left <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i> </a></div>
-    <div class="span2"><a href="#" class="sortDesc">Popularity <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i></a></div>
-    <div class="span2"><a href="#">Points <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i></a></div>
-  </div>
-
-  <% 10.times do %>
-    <%= render 'content_item', content_item:
-      ContentItemPresenter.new(OpenStruct.new(
-        name: @course_names.sample,
-        completed: @completed.sample,
-        percent_complete: rand(100),
-        image: @images.sample,
-        time_remaining: "#{rand(10)}:#{10+rand(60)}",
-        time_total: "#{rand(10)}:#{10+rand(60)}",
-        popularity: "230,323"
-      ))%>
-  <% end %>
-
-  <div class="pagination pagination-centered">
-    <ul>
-      <li><a href="#">Prev</a></li>
-      <li class="active">
-      <a href="#">1</a>
-      </li>
-      <li><a href="#">2</a></li>
-      <li><a href="#">3</a></li>
-      <li><a href="#">4</a></li>
-      <li><a href="#">Next</a></li>
-    </ul>
-  </div>
-
-</section>
+<% # NOTE: this will probably be replaced with will_paginate %>
+<div class="pagination pagination-centered">
+  <ul>
+    <li><a href="#">Prev</a></li>
+    <li class="active">
+    <a href="#">1</a>
+    </li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">Next</a></li>
+  </ul>
+</div>
