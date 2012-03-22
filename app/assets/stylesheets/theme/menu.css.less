@@ -53,19 +53,6 @@
         color:@menuHeadingColour;
         margin-left:-18px;
         text-indent:3px;
-
-        &::after {
-          content: "";
-          position: absolute;
-          left: -24px;
-          width: 0;
-          height: 0;
-          border-width: 10px 10px 10px 10px;
-          border-style: solid;
-          border-color: darken(@highlight, 15%) transparent transparent transparent;
-          -webkit-transform: scaleY(0.2) scaleX(0.3) rotate(-135deg);
-          bottom: -10px;
-        }
       }
 
       .badge {
@@ -81,10 +68,6 @@
 
     .badge {
       background-color:@menuHoverLabelColour;
-    }
-
-    &::after {
-      display:none;
     }
   }
 
