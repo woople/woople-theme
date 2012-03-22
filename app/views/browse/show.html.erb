@@ -16,17 +16,13 @@
     <div class="span2"><a href="#">Points <i class="icon-chevron-up"></i><i class="icon-chevron-down"></i></a></div>
   </div>
 
-  <% #NOTE: this is just sample data %>
-  <% images = ['course.png', 'missing.png', 'coffee.png', 'leadership.png', 'training.png', 'workshops.png', 'pen.png', 'innovation.png'] %>
-  <% completed = ['completed', ''] %>
-
   <% 10.times do %>
     <%= render 'content_item', content_item:
       ContentItemPresenter.new(OpenStruct.new(
         name: @course_names.sample,
-        completed: completed.sample,
+        completed: @completed.sample,
         percent_complete: rand(100),
-        image: images.sample,
+        image: @images.sample,
         time_remaining: "#{rand(10)}:#{10+rand(60)}",
         time_total: "#{rand(10)}:#{10+rand(60)}",
         popularity: "230,323"
