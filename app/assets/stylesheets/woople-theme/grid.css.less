@@ -1,0 +1,38 @@
+@import "woople-theme/variables.css.less";
+@import "woople-theme/colours.css.less";
+@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/variables";
+
+@media (max-width: 768px) {
+  @woopleColumnWidth: 67px;
+
+  .woopleColumn(@columns: 1) {
+    float: left;
+    margin-left: @gridGutterWidth;
+    width: (@woopleColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1));
+  }
+
+  .woopleOffset (@columns) {
+    margin-left: (@woopleColumnWidth * @columns) + (@gridGutterWidth * (@columns - 1)) + (@gridGutterWidth * 2);
+  }
+
+  .span1  { .woopleColumn(1); }
+  .span2  { .woopleColumn(2); }
+  .span3  { .woopleColumn(3); }
+  .span4  { .woopleColumn(4); }
+  .span5  { .woopleColumn(5); }
+  .span6  { .woopleColumn(6); }
+  .span7  { .woopleColumn(7); }
+  .span8  { .woopleColumn(8); }
+  .span9  { .woopleColumn(9); }
+
+  .offset1 { .woopleOffset(1); }
+  .offset2 { .woopleOffset(2); }
+  .offset3 { .woopleOffset(3); }
+  .offset4 { .woopleOffset(4); }
+  .offset5 { .woopleOffset(5); }
+  .offset6 { .woopleOffset(6); }
+  .offset7 { .woopleOffset(7); }
+  .offset8 { .woopleOffset(8); }
+  .offset9 { .woopleOffset(9); }
+}

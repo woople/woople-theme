@@ -1,7 +1,4 @@
-require "woople-theme/version"
+require 'woople-theme/engine'
 
-module Woople
-  module Theme
-    # Your code goes here...
-  end
+module WoopleTheme
 end

@@ -1,0 +1,38 @@
+@import "woople-theme/variables.css.less";
+@import "woople-theme/colours.css.less";
+
+#navigation .outer-content {
+  position:relative;
+  left:-10px;
+  margin-left:0;
+
+  -webkit-transition: right, -webkit-transform 0.25s;
+  -moz-transition: right, -moz-transform 0.25s;
+  -ms-transition: right, -ms-transform 0.25s;
+  -o-transition: right, -o-transform 0.25s;
+  transition: right, transform 0.25s;
+
+  .translate(0, 0);
+
+  .content {
+    background: @contentBackground;
+    .box-shadow();
+  }
+}
+
+@media (max-width: 768px) {
+  #navigation .outer-content {
+    left:0;
+    right:0;
+    width:100%;
+  }
+
+  #navigation:target .outer-content {
+    .translate(@contentOffset, 0);
+  }
+
+  .no-csstransform #navigation:target .outer-content {
+    left:@contentOffset;
+    right:@negativeContentOffset;
+  }
+}

@@ -1,0 +1,68 @@
+@import "twitter/bootstrap/mixins";
+@import "twitter/bootstrap/variables";
+@import "woople-theme/colours.css.less";
+
+@contentPadding: 20px;
+@menuWidth: 255px;
+@contentOverlap: 5px;
+@contentOffset: @menuWidth - @contentOverlap;
+@negativeContentOffset: @contentOffset * -1;
+
+@logoSize: 24px;
+@logoWithPadding: @logoSize * 3;
+
+/*course*/
+@imageWidth: 50px;
+@tableCellPadding: 10px;
+@leftColumnOffset: (@gridGutterWidth*2) + @imageWidth;
+
+
+@phoneImageSize: 50px;
+@phoneMargin: @contentPadding / 2;
+@phoneOffset: @phoneImageSize + @phoneMargin;
+@phoneLeftColumnOffset: @phoneMargin + @gridGutterWidth + @imageWidth;
+
+.content-title() {
+  font-weight:300;
+  font-size:18px;
+  line-height:1.5em;
+  margin-bottom:0.5em;
+}
+
+.outline-title(@left: @leftColumnOffset) {
+  line-height:1.5em;
+  font-size:11px;
+  text-transform:uppercase;
+  padding-left:@left;
+  border-top:solid 1px @insetContentBorder;
+  color: @secondaryTextColour;
+  padding-top:@contentPadding * 1.5;
+  margin-bottom:@contentPadding / 2;
+  padding-right:@leftColumnOffset;
+}
+.modal-video() {
+  max-height:600px;
+  overflow:visible;
+
+  .modal-video {
+    position:relative;
+    padding-bottom: 56.25%;
+    padding-top:30px; /* ie 6 workaround */
+    height:0;
+    overflow:hidden;
+
+    iframe, object, embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+    }
+  }
+}
+
+.course-image() {
+  width:100%;
+  .border-radius(10px);
+  .box-shadow(0 1px 3px rgba(0, 0, 0, 0.10));
+}

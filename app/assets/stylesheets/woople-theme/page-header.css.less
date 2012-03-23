@@ -1,0 +1,48 @@
+@import "woople-theme/variables.css.less";
+@import "woople-theme/colours.css.less";
+
+.page-header {
+  border-color:fade(@highlight, 10%);
+  padding-left:@contentPadding;
+  padding-right:@contentPadding;
+  margin-top:0;
+  padding-top:@contentPadding * 1.5;
+  background: @highlightBackground;
+
+  h1 {
+    font-weight:200;
+    font-family:HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color:#0089D0;
+    font-size:50px;
+    line-height:55px;
+    margin-bottom:10px;
+  }
+
+  p {
+    font-size:16px;
+    line-height:23px;
+    color:@secondaryTextColour;
+    margin-bottom:-4px;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header {
+    padding-left:@phoneMargin;
+    padding-right:@phoneMargin;
+    padding-top:@phoneMargin * 1.5;
+    margin-bottom:0;
+
+    h1 {
+      font-size:28px;
+      line-height:32px;
+    }
+
+    p {
+      font-size:12px;
+      line-height:18px;
+    }
+
+  }
+
+}

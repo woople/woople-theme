@@ -1,0 +1,8 @@
+/*
+ *= require twitter/bootstrap
+ *= require woople-theme/index
+ */
+
+.somestyle {
+  background:red;
+}
