@@ -7,11 +7,11 @@ require "woople-theme/version"
 Gem::Specification.new do |s|
   s.name        = "woople-theme"
   s.version     = WoopleTheme::VERSION
-  s.authors     = ["TODO: Your name"]
-  s.email       = ["TODO: Your email"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of WoopleTheme."
-  s.description = "TODO: Description of WoopleTheme."
+  s.authors     = ["Big Bang Technology Inc."]
+  s.email       = ["developers@bigbangtechnology.com"]
+  s.homepage    = "http://woople.com"
+  s.summary     = "Our Front-End CSS Framework/Theme"
+  s.description = "All Front-End all the Time"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
