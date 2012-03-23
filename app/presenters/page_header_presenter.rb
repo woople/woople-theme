@@ -1,10 +1,7 @@
 class PageHeaderPresenter < SimpleDelegator
-  def initialize(header)
-    @header = header
-    super(header)
-  end
+  include ContentImage
 
-  def image(&block)
-    yield(@header.image) if @header.image.present?
+  def initialize(header)
+    super(header)
   end
 end

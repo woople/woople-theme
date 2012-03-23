@@ -1,7 +1,9 @@
 <div class="content-item row <%= content_item.completed %>">
   <div class="content-item-image span1">
     <a href="/course">
-      <%= image_tag(content_item.image || 'woople-theme/missing.png') %> 
+      <% content_item.image do |url| %>
+        <%= image_tag(url) %>
+      <% end %>
     </a>
   </div>
   <div class="content-item-content span7">
@@ -15,9 +17,9 @@
         <i class="icon-star"></i> <span class="popularity"><%= content_item.popularity %></span>
       </div>
 
-      <% content_item.certification_type do |type| %>
+      <% content_item.certification_metadata do |data| %>
         <div class="span2">
-          <span class="badge certificationValue"><%= type %></span>
+          <span class="badge certificationValue"><%= data %></span>
         </div>
       <% end %>
     </div>
