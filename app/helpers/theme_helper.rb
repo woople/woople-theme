@@ -11,7 +11,7 @@ module ThemeHelper
       header = presenter.new(header)
     end
 
-    render 'page_header', header: PageHeaderPresenter.new(header)
+    render 'woople-theme/page_header', header: PageHeaderPresenter.new(header)
   end
 
   def content_items(items, presenter = nil)
@@ -21,7 +21,7 @@ module ThemeHelper
       collection = items.collect { |item| ContentItemPresenter.new(item) }
     end
 
-    render partial: 'content_item', collection: collection
+    render partial: 'woople-theme/content_item', collection: collection
   end
 
   def video_modal(video, presenter = nil)
@@ -29,10 +29,10 @@ module ThemeHelper
       video = presenter.new(video)
     end
 
-    render 'video_modal', video: video
+    render 'woople-theme/video_modal', video: video
   end
 
   def content_item_header
-    render partial: 'content_item_header'
+    render partial: 'woople-theme/content_item_header'
   end
 end

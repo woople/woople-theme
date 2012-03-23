@@ -1,44 +1,44 @@
 .navigation .icon-th-list {
-  background-image:url(/assets/icons/menu2x.png);
+  background-image:url(/assets/woople-theme/icons/menu2x.png);
   background-size: 14px 14px;
 }
 
 .profile .search .search-page .icon-search {
-  background-image:url(/assets/icons/search2x.png);
+  background-image:url(/assets/woople-theme/icons/search2x.png);
   background-size:14px 14px;
 }
 
 #browse_show .completed {
-  background-image:url(/assets/completed-triangle2x.png);
+  background-image:url(/assets/woople-theme/completed-triangle2x.png);
   background-size:34px 27px;
 }
 
 .content-item .content-item-content .content-item-metadata .icon-star {
-  background-image:url(/assets/star-icon2x.png);
+  background-image:url(/assets/woople-theme/star-icon2x.png);
   background-size:15px 15px;
 }
 
 .menu .cert-status-red {
-  background-image:url(/assets/certification/red-icon2x.png);
+  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
   background-size:25px 25px;
 }
 
 .content-item-header .sortAsc .icon-chevron-up {
-  background-image:url(/assets/icons/sortASC2x.png);
+  background-image:url(/assets/woople-theme/icons/sortASC2x.png);
   background-size:14px 14px;
 }
 
 .content-item-header .sortDesc .icon-chevron-down {
-  background-image:url(/assets/icons/sortDESC2x.png);
+  background-image:url(/assets/woople-theme/icons/sortDESC2x.png);
   background-size:14px 14px;
 }
 
 .icon-thumbs-up {
-  background-image:url(/assets/icons/thumbs_up2x.png);
+  background-image:url(/assets/woople-theme/icons/thumbs_up2x.png);
   background-size:15px 16px;
 }
 
 .icon-thumbs-down {
-  background-image:url(/assets/icons/thumbs_down2x.png);
+  background-image:url(/assets/woople-theme/icons/thumbs_down2x.png);
   background-size:15px 16px;
 }
