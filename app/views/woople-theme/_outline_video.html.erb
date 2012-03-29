@@ -1,0 +1,13 @@
+<tr id="<%= outline_video.slug %>" class="<%= outline_video.css_class %>">
+  <td>
+    <a class="action btn btn-primary" href="<%= outline_video.url %>">
+      <i class="icon-white icon-play">
+    </i></a>
+    <% outline_video.completed do %>
+      ✔
+    <% end %>
+  </td>
+  <td><a href="<%= outline_video.url %>" class="video_link"><%= outline_video.name %></a></td>
+  <td><%= outline_video.duration %></td>
+</tr>
+

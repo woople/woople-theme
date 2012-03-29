@@ -8,15 +8,17 @@ module ThemeHelper
     end
 
     if presenter.present?
-      header = presenter.new(header)
+      header = presenter.new(PageHeaderPresenter.new(header))
+    else
+      header = PageHeaderPresenter.new(header)
     end
 
-    render 'woople-theme/page_header', header: PageHeaderPresenter.new(header)
+    render 'woople-theme/page_header', header: header
   end
 
   def content_items(items, presenter = nil)
     if presenter.present?
-      collection = items.collect { |item| ContentItemPresenter.new(presenter.new(item)) }
+      collection = items.collect { |item| presenter.new(ContentItemPresenter.new(item)) }
     else
       collection = items.collect { |item| ContentItemPresenter.new(item) }
     end
@@ -34,5 +36,27 @@ module ThemeHelper
 
   def content_item_header
     render partial: 'woople-theme/content_item_header'
+  end
+
+  def outline(items, presenter = nil)
+    if presenter.present?
+      collection = items.collect { |item| presenter.new(OutlinePresenter.new(item)) }
+    else
+      collection = items.collect { |item| OutlinePresenter.new(item) }
+    end
+
+    render partial: 'woople-theme/outline', collection: collection
+  end
+
+  def outline_downloads(items, decorator)
+    items = items.collect { |item| decorator.decorate_download(item) }
+
+    render partial: 'woople-theme/outline_download', collection: items
+  end
+
+  def outline_videos(items, decorator)
+    items = items.collect { |item| decorator.decorate_video(item) }
+
+    render partial: 'woople-theme/outline_video', collection: items
   end
 end

@@ -1,26 +1,19 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th></th>
-      <th class="string">Name</th>
-      <th class="count">Duration</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="<%= (completed == 0) ? 'disabled' : ''  %>">
-      <td><a class="action btn btn-primary" href="#"><i class="icon-white icon-download-alt"></i></a></td>
-      <td><a href="#">Reference Guide</a></td>
-      <td></td>
-    </tr>
-    <% videos.each_with_index do |video, index| %>
-      <% url = (index+1 > completed) ? '#' : '/course/video' %>
-
-      <tr id="<%= slug %>_video_<%= index %>" class="<%= (index+1 > completed ) ? 'disabled' : '' %> <%= (index+2 > completed) ? '' : 'completed' %>">
-        <td><a class="action btn btn-primary" href="<%= url %>"><i class="icon-white icon-play"></i></a> <%= (index+2 > completed) ? '' : '✔' %></td>
-        <td><a href="<%= url %>" class="video_link"><%= video %></a></td>
-        <td><%= "#{rand(10)}:#{10+rand(60)}" %></td>
+<div class="outline">
+  <h2><%= outline.name %></h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th class="string">Name</th>
+        <th class="count">Duration</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-
+    </thead>
+    <tbody>
+      <%= outline_downloads(outline.downloads, outline) %>
+      <%= outline_videos(outline.videos, outline) %>
+    </tbody>
+  </table>
+  <% outline.assessment do |assessment_class| %>
+    <p class="<%= assessment_class %>"><a>START ASSESSMENT</a></p>
+  <% end %>
+</div>
