@@ -1,10 +1,8 @@
-<% content_for(:menu_active, 'false') %>
-
 <% content_for(:body_content) do %>
   <%= video_modal(@video) if @video.present? %>
 <% end %>
 
 <section id="course">
-  <%= page_header(@course, CourseHeaderPresenter) %>
-  <%= outline(@course.units) %>
+<%= page_header(@course, CourseHeaderPresenter) %>
+<%= outline(@course.units) %>
 </section>

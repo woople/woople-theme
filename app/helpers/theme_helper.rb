@@ -59,4 +59,14 @@ module ThemeHelper
 
     render partial: 'woople-theme/outline_video', collection: items
   end
+
+  def profile(presenter = nil)
+    if presenter.present?
+      model = presenter.new(ProfilePresenter.new(profile_links))
+    else
+      model = ProfilePresenter.new(profile_links)
+    end
+
+    render 'woople-theme/profile', profile: ProfilePresenter.new(profile_links)
+  end
 end

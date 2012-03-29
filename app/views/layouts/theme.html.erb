@@ -25,31 +25,7 @@
 
     <div id="masthead" class="span12">
       <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>
-      <div class="profile"> 
-        <form class="search">
-          <a href="#" class='search-page'><i class="icon-search"></i></a>
-          <input type="text" class="search-query" placeholder="Search...">
-        </form>
-        <ul class="nav nav-pills profile-link">
-          <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#"><%= image_tag('woople-theme/missing-profile.png') %></a>
-          <ul id="menu1" class="dropdown-menu">
-            <li><a href="#">Account Settings</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Help</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Feature Requests</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Security</a></li>
-            <li><a href="#">Term of Service</a></li>
-            <li><a href="#">Privacy</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Log out</a></li>
-          </ul>
-          </li>
-        </ul>
-      </div>
+      <%= profile %>
     </div>
 
     <%= render 'woople-theme/menu', active: yield(:menu_active) %>
