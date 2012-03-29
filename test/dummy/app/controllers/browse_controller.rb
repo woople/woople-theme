@@ -15,6 +15,8 @@ class BrowseController < ApplicationController
   end
 
   def show
+    @selection = 'continue-learning'
+
     @content_items = []
 
     10.times do

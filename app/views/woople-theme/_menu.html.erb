@@ -1,36 +1,14 @@
 <div class="menu span3">
   <div class="menu-content">
     <ul class="nav nav-list">
-      <li class="<%= (active == 'true') ? 'active' : '' %>"><a href="/"><em>Continue Learning</em></a></li>
-
-      <li class="nav-header">Certification</li>
-      <li><a href="#"><em>Progress <span class="badge label-icon"><i class="cert-status-red"></i> Red</span></em></a></li>
-      <li><a href="#"><em>Essential <span class="badge">5 Courses</span></em></a></li>
-      <li><a href="#"><em>Elective <span class="badge">44 Points</span></em></a></li>
-      <li><a href="#"><em>Live Events</em></a></li>
-
-      <li class="nav-header">Featured</li>
-      <li><a href="#"><em>Popular</em></a></li>
-      <li><a href="#"><em>Favourites</em></a></li>
-
-      <li class="nav-header">Topics</li>
-      <li><a href="#">Advice</a></li>
-      <li><a href="#">Agency Best Practices</a></li>
-      <li><a href="#">Allstate Workout 1</a></li>
-      <li><a href="#">Allstate Workout 2</a></li>
-      <li><a href="#">Allstate Workout 2012</a></li>
-      <li><a href="#">Allstate Workout 3</a></li>
-      <li><a href="#">California Region</a></li>
-      <li><a href="#">Care Sell Quote Close</a></li>
-      <li><a href="#">Executive Messages</a></li>
-      <li><a href="#">Grid Square</a></li>
-      <li><a href="#">Interviews</a></li>
-      <li><a href="#">Leadership</a></li>
-      <li><a href="#">Live Events</a></li>
-      <li><a href="#">Motivation</a></li>
-      <li><a href="#">Personal Development</a></li>
-      <li><a href="#">Sales Quick Tips</a></li>
-      <li><a href="#">Woople Help</a></li>
+      <% menu.each do |section| %>
+        <% section.name do |name| %>
+          <li class="nav-header"><%= name %></li>
+        <% end %>
+        <% section.each do |link| %>
+          <li class="<%= link.css_class %>"><a href="<%= link.url %>"><%= link.featured_tag(link.name + link.badge + link.certification_badge) %></a></li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>

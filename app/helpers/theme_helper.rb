@@ -60,13 +60,16 @@ module ThemeHelper
     render partial: 'woople-theme/outline_video', collection: items
   end
 
-  def profile(presenter = nil)
-    if presenter.present?
-      model = presenter.new(ProfilePresenter.new(profile_links))
-    else
-      model = ProfilePresenter.new(profile_links)
-    end
+  def profile
+    model = ProfilePresenter.new(profile_model)
 
-    render 'woople-theme/profile', profile: ProfilePresenter.new(profile_links)
+    render 'woople-theme/profile', profile: model
   end
+
+  def menu
+    model = MenuPresenter.new(menu_model)
+
+    render 'woople-theme/menu', menu: model
+  end
+
 end
