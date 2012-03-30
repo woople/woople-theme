@@ -15,4 +15,4 @@
 /tmp
 .DS_Store
 tmp
-test/dummy/log/development.log
+test/dummy/log/*.log
