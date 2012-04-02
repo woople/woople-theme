@@ -8496,3 +8496,1107 @@ Served asset /twitter/bootstrap/glyphicons-halflings-white.png - 304 Not Modifie
 
 Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 15:56:12 -0400
 Served asset /woople-theme/theme-retina.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.5ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (2.4ms)
+  Rendered browse/show.html.erb within layouts/theme (13.7ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (1.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.9ms)
+Completed 200 OK in 113ms (Views: 102.0ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /twitter/bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/responsive.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/base.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/menu.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/content.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/profile.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/page-header.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/outline.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/grid.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/buttons.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/content-item.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/pagination.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/modal.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/legacy.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/course.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/index.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/theme.css - 304 Not Modified (22ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /modernizr.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /twitter/bootstrap/dropdown.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /twitter/bootstrap/modal.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /twitter/bootstrap/button.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /fastclick.min_.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/theme.js - 304 Not Modified (18ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/logo.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/icons/search.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/missing-profile.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/certification/red-icon.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/icons/sortASC.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/icons/sortASC.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/icons/sortDESC.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/icons/sortDESC.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/workshops.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /workshops.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/star-icon.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/star-icon.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/leadership.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /leadership.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pen.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /pen.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/missing.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/missing.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/innovation.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /innovation.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/coffee.png" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /coffee.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:05 -0400
+Served asset /woople-theme/theme-retina.css - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 17:01:06 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (2.1ms)
+  Rendered browse/show.html.erb within layouts/theme (4.2ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.2ms)
+Completed 200 OK in 33ms (Views: 20.1ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:06 -0400
+Served asset /twitter/bootstrap.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:06 -0400
+Served asset /woople-theme/responsive.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:06 -0400
+Served asset /woople-theme/base.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:06 -0400
+Served asset /woople-theme/menu.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/content.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/profile.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/page-header.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/outline.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/grid.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/buttons.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/content-item.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/pagination.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/modal.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/legacy.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/course.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/index.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/theme.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /modernizr.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /twitter/bootstrap/dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /twitter/bootstrap/modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /twitter/bootstrap/button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /fastclick.min_.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/theme.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/logo.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/icons/search.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/missing-profile.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/certification/red-icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/icons/sortASC.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/icons/sortASC.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/icons/sortDESC.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/icons/sortDESC.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/innovation.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /innovation.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/woople-theme/star-icon.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/star-icon.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/pen.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /pen.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/coffee.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /coffee.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/training.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /training.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/missing.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/missing.png - 304 Not Modified (0ms)
+
+
+Started GET "/assets/course.png" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /course.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:01:07 -0400
+Served asset /woople-theme/theme-retina.css - 304 Not Modified (0ms)
+
+
+Started GET "/course" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Processing by BrowseController#course as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (0.8ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (0.5ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (0.8ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline.html.erb (9.0ms)
+  Rendered browse/course.html.erb within layouts/theme (17.5ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.3ms)
+Completed 200 OK in 39ms (Views: 37.2ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /twitter/bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/base.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/menu.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/content.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/profile.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/page-header.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/pagination.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/modal.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/outline.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/grid.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/buttons.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/content-item.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/legacy.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/course.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/index.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/theme.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /modernizr.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /twitter/bootstrap/dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /twitter/bootstrap/modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /twitter/bootstrap/button.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /woople-theme/theme.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:18 -0400
+Served asset /fastclick.min_.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /woople-theme/logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /woople-theme/icons/search.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /woople-theme/certification/red-icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/leadership.png" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /leadership.png - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/glyphicons-halflings-white.png" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /twitter/bootstrap/glyphicons-halflings-white.png - 200 OK (5ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /woople-theme/missing-profile.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:19 -0400
+Served asset /woople-theme/theme-retina.css - 200 OK (0ms)
+
+
+Started GET "/course/video" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Processing by BrowseController#video as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_video_modal.html.erb (12.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (0.9ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline.html.erb (2.6ms)
+  Rendered browse/course.html.erb within layouts/theme (17.8ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.2ms)
+Completed 200 OK in 34ms (Views: 32.4ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /twitter/bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/content.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/menu.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/profile.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/base.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/page-header.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/outline.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/grid.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/content-item.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/buttons.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/pagination.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/legacy.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/course.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/modal.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/index.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/theme.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /modernizr.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /twitter/bootstrap/modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /twitter/bootstrap/button.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /twitter/bootstrap/dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /fastclick.min_.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/theme.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/missing-profile.png - 200 OK (0ms)
+
+
+Started GET "/assets/course.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /course.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/certification/red-icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/glyphicons-halflings-white.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /twitter/bootstrap/glyphicons-halflings-white.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/icons/search.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/thumbs_up.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/icons/thumbs_up.png - 200 OK (3ms)
+
+
+Started GET "/assets/woople-theme/icons/thumbs_down.png" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/icons/thumbs_down.png - 200 OK (3ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:26:25 -0400
+Served asset /woople-theme/theme-retina.css - 200 OK (0ms)
+
+
+Started GET "/course" for 127.0.0.1 at 2012-04-02 17:28:38 -0400
+Processing by BrowseController#course as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.2ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (1.2ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (0.6ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline.html.erb (9.1ms)
+  Rendered browse/course.html.erb within layouts/theme (21.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.3ms)
+Completed 200 OK in 44ms (Views: 41.7ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:38 -0400
+Served asset /twitter/bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:38 -0400
+Served asset /woople-theme/responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/base.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/menu.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/content.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/profile.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/page-header.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/outline.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/modal.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/buttons.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/grid.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/content-item.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/pagination.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/legacy.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/course.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/index.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/theme.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /twitter/bootstrap/dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /twitter/bootstrap/modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /modernizr.js - 200 OK (0ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /fastclick.min_.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /twitter/bootstrap/button.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/theme.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/icons/search.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/missing-profile.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/certification/red-icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/glyphicons-halflings-white.png" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /twitter/bootstrap/glyphicons-halflings-white.png - 200 OK (0ms)
+
+
+Started GET "/assets/coffee.png" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /coffee.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:39 -0400
+Served asset /woople-theme/theme-retina.css - 200 OK (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (1.9ms)
+  Rendered browse/show.html.erb within layouts/theme (6.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.1ms)
+Completed 200 OK in 34ms (Views: 21.2ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /twitter/bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/content.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/base.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/profile.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/menu.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/content-item.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/page-header.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/outline.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/grid.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/buttons.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/pagination.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/modal.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/legacy.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/course.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/index.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/theme.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /modernizr.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /twitter/bootstrap/dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /twitter/bootstrap/modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /woople-theme/theme.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /twitter/bootstrap/button.js - 200 OK (0ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:28:41 -0400
+Served asset /fastclick.min_.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/sortASC.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/icons/sortASC.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/missing-profile.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/sortDESC.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/icons/sortDESC.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/certification/red-icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/icons/search.png - 200 OK (0ms)
+
+
+Started GET "/assets/pen.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /pen.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/star-icon.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/star-icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/coffee.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /coffee.png - 200 OK (0ms)
+
+
+Started GET "/assets/innovation.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /innovation.png - 200 OK (0ms)
+
+
+Started GET "/assets/workshops.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /workshops.png - 200 OK (0ms)
+
+
+Started GET "/assets/training.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /training.png - 200 OK (0ms)
+
+
+Started GET "/assets/leadership.png" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /leadership.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:28:42 -0400
+Served asset /woople-theme/theme-retina.css - 200 OK (0ms)
+
+
+Started GET "/course" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Processing by BrowseController#course as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_download.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline_video.html.erb (0.6ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_outline.html.erb (1.8ms)
+  Rendered browse/course.html.erb within layouts/theme (3.8ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (4.5ms)
+Completed 200 OK in 23ms (Views: 21.8ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /twitter/bootstrap.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/responsive.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/base.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/menu.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/content.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/profile.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/page-header.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/modal.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/pagination.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/outline.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/grid.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/buttons.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/content-item.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/legacy.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/course.css - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/index.css - 200 OK (1ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/theme.css - 200 OK (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /jquery.js - 200 OK (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /jquery_ujs.js - 200 OK (0ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /modernizr.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /twitter/bootstrap/dropdown.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /twitter/bootstrap/modal.js - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /twitter/bootstrap/button.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/theme.js - 200 OK (0ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /fastclick.min_.js - 200 OK (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /application.js - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/logo.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/icons/search.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/certification/red-icon.png - 200 OK (0ms)
+
+
+Started GET "/assets/leadership.png" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /leadership.png - 200 OK (0ms)
+
+
+Started GET "/assets/twitter/bootstrap/glyphicons-halflings-white.png" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /twitter/bootstrap/glyphicons-halflings-white.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/missing-profile.png - 200 OK (0ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 17:29:50 -0400
+Served asset /woople-theme/theme-retina.css - 200 OK (0ms)

@@ -1,36 +1,17 @@
 module ThemeHelper
-
   # This allows you to generate a page-header component
-  def page_header(header, presenter = nil)
-    #TODO: fix this hack
-    if header.is_a? Hash
-      header = OpenStruct.new(header)
-    end
-
-    if presenter.present?
-      header = presenter.new(PageHeaderPresenter.new(header))
-    else
-      header = PageHeaderPresenter.new(header)
-    end
-
-    render 'woople-theme/page_header', header: header
+  def page_header(data, presenter = nil)
+    data = ThemePresentation.wrap(data, PageHeaderPresenter, presenter)
+    render 'woople-theme/page_header', header: data
   end
 
   def content_items(items, presenter = nil)
-    if presenter.present?
-      collection = items.collect { |item| presenter.new(ContentItemPresenter.new(item)) }
-    else
-      collection = items.collect { |item| ContentItemPresenter.new(item) }
-    end
-
+    collection = ThemePresentation.wrap_collection(items, ContentItemPresenter, presenter)
     render partial: 'woople-theme/content_item', collection: collection
   end
 
   def video_modal(video, presenter = nil)
-    if presenter.present?
-      video = presenter.new(video)
-    end
-
+    video = ThemePresentation.wrap(video, presenter)
     render 'woople-theme/video_modal', video: video
   end
 
@@ -39,37 +20,17 @@ module ThemeHelper
   end
 
   def outline(items, presenter = nil)
-    if presenter.present?
-      collection = items.collect { |item| presenter.new(OutlinePresenter.new(item)) }
-    else
-      collection = items.collect { |item| OutlinePresenter.new(item) }
-    end
-
+    collection = ThemePresentation.wrap_collection(items, OutlinePresenter, presenter)
     render partial: 'woople-theme/outline', collection: collection
   end
 
-  def outline_downloads(items, decorator)
-    items = items.collect { |item| decorator.decorate_download(item) }
-
-    render partial: 'woople-theme/outline_download', collection: items
-  end
-
-  def outline_videos(items, decorator)
-    items = items.collect { |item| decorator.decorate_video(item) }
-
-    render partial: 'woople-theme/outline_video', collection: items
-  end
-
   def profile
-    model = ProfilePresenter.new(send(WoopleTheme.configuration.profile_helper))
-
+    model = ThemePresentation.wrap(send(WoopleTheme.configuration.profile_helper), ProfilePresenter)
     render 'woople-theme/profile', profile: model
   end
 
   def menu
-    model = MenuPresenter.new(send(WoopleTheme.configuration.menu_helper))
-
+    model = ThemePresentation.wrap(send(WoopleTheme.configuration.menu_helper))
     render 'woople-theme/menu', menu: model
   end
-
 end

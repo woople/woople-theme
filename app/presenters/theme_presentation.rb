@@ -1,0 +1,51 @@
+require 'ostruct'
+
+class ThemePresentation
+  def self.wrap(data, *presenters)
+    normalized = normalize(data)
+    presenters = normalize_presenters(presenters)
+
+    wrapped_data = presenters.inject(normalized) do |wrapped, presenter|
+      presenter.new(wrapped)
+    end
+
+    class << wrapped_data
+      attr_accessor :wrapped_by
+    end
+
+    wrapped_data.wrapped_by = presenters
+
+    wrapped_data
+  end
+
+  def self.wrap_collection(collection, *presenters)
+    collection.collect { |item| wrap(item, *presenters) }
+  end
+
+  private
+
+  def self.normalize(data)
+    if data.is_a? Hash
+      OpenStruct.new(data)
+    else
+      data
+    end
+  end
+
+  def self.normalize_presenters(presenters)
+    presenters.reject!(&:nil?)
+    add_class_delegation(presenters)
+
+    presenters
+  end
+
+  def self.add_class_delegation(presenters)
+    presenters.each do |presenter|
+      presenter.class_eval do
+        def class
+          __getobj__.class
+        end
+      end
+    end
+  end
+end

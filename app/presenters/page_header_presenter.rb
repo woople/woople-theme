@@ -4,4 +4,5 @@ class PageHeaderPresenter < SimpleDelegator
   def initialize(header)
     super(header)
   end
+
 end
