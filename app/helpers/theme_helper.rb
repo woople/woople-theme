@@ -61,7 +61,7 @@ module ThemeHelper
   end
 
   def profile
-    model = ProfilePresenter.new(profile_model)
+    model = ProfilePresenter.new(self.send(WoopleTheme.configuration.profile_helper))
 
     render 'woople-theme/profile', profile: model
   end

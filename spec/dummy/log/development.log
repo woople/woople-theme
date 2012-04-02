@@ -1614,3 +1614,728 @@ Served asset /twitter/bootstrap/glyphicons-halflings-white.png - 304 Not Modifie
 
 Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-03-30 11:21:46 -0400
 Served asset /woople-theme/theme-retina.css - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 14:48:39 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.5ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.3ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (2.4ms)
+  Rendered browse/show.html.erb within layouts/theme (12.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.8ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (2.6ms)
+Completed 200 OK in 104ms (Views: 93.8ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /twitter/bootstrap.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/responsive.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/base.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/menu.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/content.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/theme.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/profile.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/page-header.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/outline.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/grid.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/buttons.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/content-item.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/pagination.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/modal.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/legacy.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/course.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/index.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /twitter/bootstrap/dropdown.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /modernizr.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /twitter/bootstrap/modal.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /twitter/bootstrap/button.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /fastclick.min_.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/theme.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/logo.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/icons/search.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/missing-profile.png - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/certification/red-icon.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/icons/sortASC.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/icons/sortASC.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/icons/sortDESC.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/icons/sortDESC.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/course.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /course.png - 304 Not Modified (2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (2.1ms)
+  Rendered browse/show.html.erb within layouts/theme (4.2ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (0.6ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (3.5ms)
+Completed 200 OK in 38ms (Views: 24.3ms)
+
+
+Started GET "/assets/woople-theme/star-icon.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/star-icon.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/missing.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/missing.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/leadership.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /leadership.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/innovation.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /innovation.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/training.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /training.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/pen.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /pen.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/workshops.png" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /workshops.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 14:48:40 -0400
+Served asset /woople-theme/theme-retina.css - 304 Not Modified (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 14:49:00 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (1.8ms)
+  Rendered browse/show.html.erb within layouts/theme (7.4ms)
+Completed 500 Internal Server Error in 32ms
+
+ActionView::Template::Error (undefined method `profile_helper' for nil:NilClass):
+    25: 
+    26:     <div id="masthead" class="span12">
+    27:       <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>
+    28:       <%= profile %>
+    29:     </div>
+    30: 
+    31:     <%= menu %>
+  /Users/camwest/src/woople-theme/app/helpers/theme_helper.rb:64:in `profile'
+  /Users/camwest/src/woople-theme/app/views/layouts/theme.html.erb:28:in `___sers_camwest_src_woople_theme_app_views_layouts_theme_html_erb__3969752943844957710_70337464285060'
+  actionpack (3.2.2) lib/action_view/template.rb:143:in `block in render'
+  activesupport (3.2.2) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.2) lib/action_view/template.rb:141:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:109:in `_render_template'
+  actionpack (3.2.2) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/camwest/.rvm/rubies/ruby-1.9.3-p0-perf/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:414:in `_run__1836475563409013964__process_action__2228052727615346485__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.2) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__2151882412271958945__call__750144402706705581__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.2) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.2) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.2) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.2) lib/rails/commands.rb:50:in `<top (required)>'
+  spec/dummy/script/rails:6:in `require'
+  spec/dummy/script/rails:6:in `<main>'
+
+
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 14:49:20 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (2.1ms)
+  Rendered browse/show.html.erb within layouts/theme (4.9ms)
+Completed 500 Internal Server Error in 31ms
+
+ActionView::Template::Error (undefined method `profile_helper' for nil:NilClass):
+    25: 
+    26:     <div id="masthead" class="span12">
+    27:       <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>
+    28:       <%= profile %>
+    29:     </div>
+    30: 
+    31:     <%= menu %>
+  /Users/camwest/src/woople-theme/app/helpers/theme_helper.rb:64:in `profile'
+  /Users/camwest/src/woople-theme/app/views/layouts/theme.html.erb:28:in `___sers_camwest_src_woople_theme_app_views_layouts_theme_html_erb__3969752943844957710_70337464285060'
+  actionpack (3.2.2) lib/action_view/template.rb:143:in `block in render'
+  activesupport (3.2.2) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.2) lib/action_view/template.rb:141:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:109:in `_render_template'
+  actionpack (3.2.2) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/camwest/.rvm/rubies/ruby-1.9.3-p0-perf/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:414:in `_run__1836475563409013964__process_action__2228052727615346485__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.2) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__2151882412271958945__call__750144402706705581__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.2) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.2) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.2) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.2) lib/rails/commands.rb:50:in `<top (required)>'
+  spec/dummy/script/rails:6:in `require'
+  spec/dummy/script/rails:6:in `<main>'
+
+
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 14:49:21 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.1ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (1.8ms)
+  Rendered browse/show.html.erb within layouts/theme (3.7ms)
+Completed 500 Internal Server Error in 24ms
+
+ActionView::Template::Error (undefined method `profile_helper' for nil:NilClass):
+    25: 
+    26:     <div id="masthead" class="span12">
+    27:       <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>
+    28:       <%= profile %>
+    29:     </div>
+    30: 
+    31:     <%= menu %>
+  /Users/camwest/src/woople-theme/app/helpers/theme_helper.rb:64:in `profile'
+  /Users/camwest/src/woople-theme/app/views/layouts/theme.html.erb:28:in `___sers_camwest_src_woople_theme_app_views_layouts_theme_html_erb__3969752943844957710_70337464285060'
+  actionpack (3.2.2) lib/action_view/template.rb:143:in `block in render'
+  activesupport (3.2.2) lib/active_support/notifications.rb:125:in `instrument'
+  actionpack (3.2.2) lib/action_view/template.rb:141:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:54:in `render_with_layout'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:40:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/template_renderer.rb:13:in `render'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:36:in `render_template'
+  actionpack (3.2.2) lib/action_view/renderer/renderer.rb:17:in `render'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:109:in `_render_template'
+  actionpack (3.2.2) lib/action_controller/metal/streaming.rb:225:in `_render_template'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:103:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/renderers.rb:28:in `render_to_body'
+  actionpack (3.2.2) lib/action_controller/metal/compatibility.rb:50:in `render_to_body'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:88:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+  /Users/camwest/.rvm/rubies/ruby-1.9.3-p0-perf/lib/ruby/1.9.1/benchmark.rb:295:in `realtime'
+  activesupport (3.2.2) lib/active_support/core_ext/benchmark.rb:5:in `ms'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:83:in `cleanup_view_runtime'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:39:in `render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (3.2.2) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:167:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:414:in `_run__1836475563409013964__process_action__2228052727615346485__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_process_action_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/abstract_controller/callbacks.rb:17:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `block in instrument'
+  activesupport (3.2.2) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (3.2.2) lib/active_support/notifications.rb:123:in `instrument'
+  actionpack (3.2.2) lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+  actionpack (3.2.2) lib/action_controller/metal/params_wrapper.rb:205:in `process_action'
+  actionpack (3.2.2) lib/abstract_controller/base.rb:121:in `process'
+  actionpack (3.2.2) lib/abstract_controller/rendering.rb:45:in `process'
+  actionpack (3.2.2) lib/action_controller/metal.rb:203:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+  actionpack (3.2.2) lib/action_controller/metal.rb:246:in `block in action'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:30:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.2) lib/action_dispatch/routing/route_set.rb:594:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `_run__2151882412271958945__call__750144402706705581__callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.2) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.2) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/reloader.rb:65:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.2) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.2) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.2) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  actionpack (3.2.2) lib/action_dispatch/middleware/static.rb:61:in `call'
+  railties (3.2.2) lib/rails/engine.rb:479:in `call'
+  railties (3.2.2) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.2) lib/rails/rack/log_tailer.rb:14:in `call'
+  thin (1.3.1) lib/thin/connection.rb:80:in `block in pre_process'
+  thin (1.3.1) lib/thin/connection.rb:78:in `catch'
+  thin (1.3.1) lib/thin/connection.rb:78:in `pre_process'
+  thin (1.3.1) lib/thin/connection.rb:53:in `process'
+  thin (1.3.1) lib/thin/connection.rb:38:in `receive_data'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run_machine'
+  eventmachine (0.12.10) lib/eventmachine.rb:256:in `run'
+  thin (1.3.1) lib/thin/backends/base.rb:61:in `start'
+  thin (1.3.1) lib/thin/server.rb:159:in `start'
+  rack (1.4.1) lib/rack/handler/thin.rb:13:in `run'
+  rack (1.4.1) lib/rack/server.rb:265:in `start'
+  railties (3.2.2) lib/rails/commands/server.rb:70:in `start'
+  railties (3.2.2) lib/rails/commands.rb:55:in `block in <top (required)>'
+  railties (3.2.2) lib/rails/commands.rb:50:in `tap'
+  railties (3.2.2) lib/rails/commands.rb:50:in `<top (required)>'
+  spec/dummy/script/rails:6:in `require'
+  spec/dummy/script/rails:6:in `<main>'
+
+
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_trace.erb (5.0ms)
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+  Rendered /Users/camwest/.rvm/gems/ruby-1.9.3-p0-perf/gems/actionpack-3.2.2/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-04-02 14:52:35 -0400
+Processing by BrowseController#show as HTML
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_page_header.html.erb (0.8ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item_header.html.erb (0.4ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_content_item.html.erb (2.9ms)
+  Rendered browse/show.html.erb within layouts/theme (12.7ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_profile.html.erb (1.0ms)
+  Rendered /Users/camwest/src/woople-theme/app/views/woople-theme/_menu.html.erb (3.2ms)
+Completed 200 OK in 85ms (Views: 74.2ms)
+
+
+Started GET "/assets/twitter/bootstrap.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /twitter/bootstrap.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/woople-theme/responsive.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/responsive.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/base.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/base.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/menu.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/menu.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/content.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/content.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/profile.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/profile.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/page-header.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/page-header.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/outline.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/outline.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/grid.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/grid.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/buttons.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/buttons.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/content-item.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/content-item.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/pagination.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/pagination.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/modal.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/modal.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/legacy.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/legacy.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/woople-theme/course.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/course.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/index.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/index.css - 304 Not Modified (31ms)
+
+
+Started GET "/assets/woople-theme/theme.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/theme.css - 304 Not Modified (20ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/modernizr.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /modernizr.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/twitter/bootstrap/dropdown.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /twitter/bootstrap/dropdown.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/twitter/bootstrap/modal.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /twitter/bootstrap/modal.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/twitter/bootstrap/button.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /twitter/bootstrap/button.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/fastclick.min_.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /fastclick.min_.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/theme.js?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/theme.js - 304 Not Modified (13ms)
+
+
+Started GET "/assets/woople-theme/logo.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/logo.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/icons/search.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/icons/search.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/missing-profile.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/missing-profile.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/certification/red-icon.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/certification/red-icon.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/woople-theme/icons/sortASC.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/icons/sortASC.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/icons/sortDESC.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/icons/sortDESC.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/innovation.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /innovation.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/woople-theme/star-icon.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/star-icon.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/pen.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /pen.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/workshops.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /workshops.png - 304 Not Modified (2ms)
+
+
+Started GET "/assets/course.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /course.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/training.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /training.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/missing.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/missing.png - 304 Not Modified (3ms)
+
+
+Started GET "/assets/coffee.png" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /coffee.png - 304 Not Modified (1ms)
+
+
+Started GET "/assets/woople-theme/theme-retina.css?body=1" for 127.0.0.1 at 2012-04-02 14:52:36 -0400
+Served asset /woople-theme/theme-retina.css - 304 Not Modified (3ms)
