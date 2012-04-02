@@ -61,13 +61,13 @@ module ThemeHelper
   end
 
   def profile
-    model = ProfilePresenter.new(self.send(WoopleTheme.configuration.profile_helper))
+    model = ProfilePresenter.new(send(WoopleTheme.configuration.profile_helper))
 
     render 'woople-theme/profile', profile: model
   end
 
   def menu
-    model = MenuPresenter.new(menu_model)
+    model = MenuPresenter.new(send(WoopleTheme.configuration.menu_helper))
 
     render 'woople-theme/menu', menu: model
   end

@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 3.2.2"
   s.add_dependency "less-rails-bootstrap"
 
+  s.add_development_dependency "bundler"
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "rspec-rails", "~> 2.9.0"
 end

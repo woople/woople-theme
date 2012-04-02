@@ -1,9 +1,13 @@
 module WoopleTheme
   class Configuration
-    attr_accessor :profile_helper
+    attr_accessor :profile_helper, :menu_helper, :layout_javascript
 
     def profile_helper
       @profile_helper || :profile_helper
+    end
+
+    def menu_helper
+      @menu_helper || :menu_helper
     end
   end
 
