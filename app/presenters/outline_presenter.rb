@@ -10,14 +10,14 @@ class OutlinePresenter < SimpleDelegator
     yield(css_class) if __getobj__.assessment
   end
 
-  def render_downloads(items)
+  def render_downloads(items, view_context)
     items = ThemePresentation.wrap_collection(items, OutlineDownloadPresenter)
-    render partial: 'woople-theme/outline_download', collection: items
+    view_context.render partial: 'woople-theme/outline_download', collection: items
   end
 
-  def render_videos(items)
+  def render_videos(items, view_context)
     items = ThemePresentation.wrap_collection(items, OutlineVideoPresenter)
-    render partial: 'woople-theme/outline_video', collection: items
+    view_context.render partial: 'woople-theme/outline_video', collection: items
   end
 
 end

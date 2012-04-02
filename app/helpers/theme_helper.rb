@@ -30,7 +30,7 @@ module ThemeHelper
   end
 
   def menu
-    model = ThemePresentation.wrap(send(WoopleTheme.configuration.menu_helper))
+    model = ThemePresentation.wrap(send(WoopleTheme.configuration.menu_helper), MenuPresenter)
     render 'woople-theme/menu', menu: model
   end
 end
