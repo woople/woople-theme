@@ -13,7 +13,8 @@ gem 'woople-theme' from your Gemfile
 
 ## Usage
 
-coming soon
+See documentation:
+http://rdoc.info/github/bigbangtechnology/woople-theme/master/frames
 
 ## Copyright
 
