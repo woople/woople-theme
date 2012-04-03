@@ -7,7 +7,7 @@ describe OutlinePresenter do
   describe "#assessment" do
     describe "when there is an assesment" do
       describe "when the assessment is enabled" do
-        subject { OutlinePresenter.new(stub(assessment:true, assessment_enabled?: true)) }
+        subject { OutlinePresenter.new(stub(assessment:true, assessment_enabled: true)) }
 
         it "yields the block" do
           called = false
@@ -22,7 +22,7 @@ describe OutlinePresenter do
       end
 
       describe "when the assessment is disabled" do
-        subject { OutlinePresenter.new(stub(assessment:true, assessment_enabled?: false)) }
+        subject { OutlinePresenter.new(stub(assessment:true, assessment_enabled: false)) }
 
         it "yields the block as disabled" do
           called = false

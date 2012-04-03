@@ -29,7 +29,7 @@ class OutlinePresenter < SimpleDelegator
   end
 
   def assessment_disabled?
-    outline.respond_to?(:assessment_enabled?) && !outline.assessment_enabled?
+    outline.respond_to?(:assessment_enabled) && !outline.assessment_enabled
   end
 
   def has_assessment?
