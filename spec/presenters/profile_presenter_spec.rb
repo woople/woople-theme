@@ -12,18 +12,22 @@ describe ProfilePresenter do
   end
 
   describe "#url" do
-    subject { ProfilePresenter.new(url: 'blah') }
+    subject { ProfilePresenter.new([url: 'blah']) }
 
     it "returns the url" do
-      subject.url.should == 'blah'
+      subject.each do |item|
+        item.url.should == 'blah'
+      end
     end
   end
 
   describe "#name" do
-    subject { ProfilePresenter.new(name: 'blah') }
+    subject { ProfilePresenter.new([name: 'blah']) }
 
     it "returns the name" do
-      subject.name.should == 'blah'
+      subject.each do |item|
+        item.name.should == 'blah'
+      end
     end
   end
 end

@@ -6,12 +6,4 @@ class ProfilePresenter < SimpleDelegator
       yield ThemePresentation.wrap(e, ProfilePresenter)
     end
   end
-
-  def url
-    __getobj__[:url]
-  end
-
-  def name
-    __getobj__[:name]
-  end
 end

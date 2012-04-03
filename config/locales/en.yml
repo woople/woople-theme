@@ -1,0 +1,18 @@
+en:
+  woople_theme:
+    company:
+      name: "Woople"
+      url: http://woople.com
+    content_item_header:
+      time_left: Time Left
+      popularity: Popularity
+      points: Points
+    outline:
+      name: Name
+      duration: Duration
+      start_assessment: START ASSESSMENT
+    profile:
+      search: Search...
+    video_modal:
+      like: Like
+      dislike: Dislike
