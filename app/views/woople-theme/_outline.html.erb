@@ -9,8 +9,8 @@
       </tr>
     </thead>
     <tbody>
-      <%= outline.render_downloads(outline.downloads, self) %>
-      <%= outline.render_videos(outline.videos, self) %>
+      <%= outline.render_downloads(self) %>
+      <%= outline.render_videos(self) %>
     </tbody>
   </table>
   <% outline.assessment do |assessment_class| %>
