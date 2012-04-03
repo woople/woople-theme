@@ -1,5 +1,7 @@
 module ContentImage
+  DEFAULT_IMAGE = 'woople-theme/missing.png'
+
   def image(&block)
-    yield(__getobj__.image || 'woople-theme/missing.png') if __getobj__.respond_to? :image
+    yield(__getobj__.image || DEFAULT_IMAGE) if __getobj__.respond_to? :image
   end
 end
