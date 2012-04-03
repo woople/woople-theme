@@ -1,8 +1,6 @@
-class OutlineDownloadPresenter < SimpleDelegator
-  def initialize(download)
-    super(download)
-  end
+require 'delegate'
 
+class OutlineDownloadPresenter < SimpleDelegator
   def css_class
     "disabled" if !__getobj__.enabled
   end
