@@ -1,8 +1,6 @@
-class OutlineVideoPresenter < SimpleDelegator
-  def initialize(video)
-    super(video)
-  end
+require 'delegate'
 
+class OutlineVideoPresenter < SimpleDelegator
   def css_class
     css_classes = []
     css_classes << "disabled" if !video.enabled
