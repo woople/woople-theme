@@ -5,7 +5,7 @@
         <% section.name do |name| %>
           <li class="nav-header"><%= name %></li>
         <% end %>
-        <% section.each do |link| %>
+        <% section.links.each do |link| %>
           <li class="<%= link.css_class %>"><a href="<%= link.url %>"><%= link.featured_tag(link.name + link.badge + link.certification_badge) %></a></li>
         <% end %>
       <% end %>

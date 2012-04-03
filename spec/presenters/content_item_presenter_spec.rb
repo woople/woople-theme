@@ -11,7 +11,11 @@ describe ContentItemPresenter do
       subject { ContentItemPresenter.new(stub(certification_metadata:nil)) }
 
       it "does not yield metadata" do
-        subject.certification_metadata { |metadata| 'Awesome!' }.should be_nil
+        called = false
+        subject.certification_metadata { |metadata|
+          called = true
+        }
+        called.should == false
       end
     end
 
@@ -19,7 +23,14 @@ describe ContentItemPresenter do
       subject { ContentItemPresenter.new(stub(certification_metadata:'data')) }
 
       it "yields metadata" do
-        subject.certification_metadata { |metadata| metadata }.should == 'data'
+        called = false
+
+        subject.certification_metadata { |metadata| 
+          metadata.should == 'data'
+          called = true
+        }
+
+        called.should == true
       end
     end
   end

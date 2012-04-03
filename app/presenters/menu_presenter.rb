@@ -1,28 +1,19 @@
+require 'delegate'
+require 'action_view'
+
 class MenuPresenter < SimpleDelegator
   def initialize(menu)
-    super(menu)
-  end
-
-  def each(*)
-    super do |e|
-      yield MenuSectionPresenter.new(e)
-    end
+    super(ThemePresentation.wrap_collection(menu, MenuSectionPresenter))
   end
 end
 
 class MenuSectionPresenter < SimpleDelegator
-  def initialize(section)
-    super(OpenStruct.new(section))
-  end
-
   def name
     yield(section.name) if section.respond_to? :name
   end
 
-  def each(*)
-    section.links.each do |link|
-      yield MenuLinkPresenter.new(link)
-    end
+  def links
+    @links ||= ThemePresentation.wrap_collection(section.links, MenuLinkPresenter)
   end
 
   private
@@ -30,40 +21,55 @@ class MenuSectionPresenter < SimpleDelegator
   def section
     __getobj__
   end
+
 end
 
 class MenuLinkPresenter < SimpleDelegator
   include ActionView::Helpers::TagHelper
 
-  def initialize(link)
-    super(OpenStruct.new(link))
-  end
-
-  def featured_tag(name, tag = :em)
-    if link.featured
-      content_tag(tag, name.html_safe)
+  def featured_tag(name)
+    if featured?
+      content_tag(:em, name.html_safe)
     else
       name
     end
   end
 
   def badge
-    return "" if link.badge.nil?
+    return "" if no_badge?
+
     content_tag(:span, link.badge, class: 'badge')
   end
 
   def certification_badge
-    return "" if link.certification_badge.nil?
+   return "" if no_certification_badge?
+
     content_tag(:span, content_tag(:i, '', class: "cert-status-#{link.certification_badge}") + " #{link.certification_badge.titleize}", class: 'badge label-icon')
   end
 
   def css_class
-    "active" if link.selected
+    "active" if selected?
   end
 
   private
 
   def link
     __getobj__
+  end
+
+  def featured?
+    link.respond_to?(:featured) && link.featured
+  end
+
+  def no_badge?
+    !link.respond_to?(:badge)
+  end
+
+  def no_certification_badge?
+    !link.respond_to?(:certification_badge)
+  end
+
+  def selected?
+    link.respond_to?(:selected) && link.selected
   end
 end
