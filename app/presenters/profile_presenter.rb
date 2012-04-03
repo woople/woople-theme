@@ -1,11 +1,9 @@
-class ProfilePresenter < SimpleDelegator
-  def initialize(profile_links)
-    super(profile_links)
-  end
+require 'delegate'
 
+class ProfilePresenter < SimpleDelegator
   def each(*)
     super do |e|
-      yield ProfilePresenter.new(e)
+      yield ThemePresentation.wrap(e, ProfilePresenter)
     end
   end
 
