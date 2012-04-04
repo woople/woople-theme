@@ -18,8 +18,6 @@ class OutlinePresenter < SimpleDelegator
     view_context.render partial: 'woople-theme/outline_video', collection: wrapped_videos
   end
 
-  private
-
   def downloads
     outline.downloads
   end
