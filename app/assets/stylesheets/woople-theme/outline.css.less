@@ -8,6 +8,11 @@
     .outline-title();
   }
 
+  p {
+    padding-left:@leftColumnOffset;
+    padding-right:@contentPadding;
+  }
+
   .assessment {
     margin-left:@leftColumnOffset;
     margin-top:@contentPadding;
@@ -108,6 +113,11 @@
 
     h2 {
       .outline-title(@phoneLeftColumnOffset);
+    }
+
+    p {
+      padding-left:@phoneLeftColumnOffset;
+      padding-right:@phoneMargin;
     }
 
     .assessment {

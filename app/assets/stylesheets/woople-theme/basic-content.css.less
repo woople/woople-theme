@@ -1,0 +1,42 @@
+@import "woople-theme/variables.css.less";
+@import "woople-theme/colours.css.less";
+
+.basic-content {
+  padding:@contentPadding;
+
+
+  h3 {
+    .content-title();
+  }
+
+  .well {
+    .clearfix();
+  }
+}
+
+.basic-content-header {
+  .outline-title(0);
+  border-color:transparent;
+  padding-top:0;
+  padding-left:@contentPadding;
+}
+
+
+.basic-content + .basic-content {
+  h3 {
+    border-color:@insetContentBorder;
+    padding-top:@contentPadding * 1.5;
+  }
+}
+
+@media (max-width: 767px) {
+  .basic-content {
+    padding-left: @phoneMargin;
+    padding-right: @phoneMargin;
+  }
+
+  .basic-content-header {
+    padding-left:@phoneMargin;
+    padding-right:@phoneMargin;
+  }
+}

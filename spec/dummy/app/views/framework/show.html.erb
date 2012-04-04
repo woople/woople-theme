@@ -1,0 +1,83 @@
+<style>
+  .outline p {
+    margin-left:
+  }
+</style>
+
+<%= page_header(title: 'Woople Theme', description: 'Describing how the theme is meant to be used') %>
+
+<section class="basic-content" id="introduction">
+  <h3>Introduction</h3>
+  <p>In order to understand how the woople-theme is meant to be used you'll have to read this guide.</p>
+</section>
+
+<h2 class="basic-content-header">Components</h2>
+
+<section class="basic-content" id="page_header">
+  <h3>Page Header</h3>
+
+  <p>The page header is meant to be used at the top of each page. It has a description and an optional image.</p>
+
+  <div class="well">
+    <%= page_header(title: 'Page Header Title', description: 'Page Header Description') %>
+  </div>
+</section>
+
+<section class="basic-content" id="content_items">
+  <h3>Content Items</h3>
+
+  <p>Standard Content Item:</p>
+  <div class="well">
+    <%= content_items([{name: 'Content Item Name', completed: true, time_remaining: 1000, time_total: 5000, popularity: 5000, percent_complete: 20, image: nil}]) %>
+  </div>
+
+  <p>Content Item With Optional Metadata:</p>
+  <div class="well">
+    <%= content_items([{name: 'Content Item Name', completed: true, time_remaining: 1000, time_total: 5000, popularity: 5000, percent_complete: 20, image: nil, certification_metadata: 'Essential' }]) %>
+  </div>
+</section>
+
+<section class="basic-content" id="content_item_header">
+  <h3>Content Item Header</h3>
+  <div class="well">
+    <%= content_item_header %>
+  </div>
+</section>
+
+<section class="basic-content" id="video_modal">
+  <h3>Video Modal</h3>
+  <p>Not sure how to show this one. Check <a href="/course/video">the example</a>.</p>
+</section>
+
+<section class="basic-content" id="outline">
+  <h3>Outline</h3>
+
+  <div class="well">
+    <%= outline([{
+      name: 'Outline Name',
+      enabled: true,
+      downloads: [{ name: 'Training Supplement', enabled: true }],
+      videos: [ 
+        { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: true, enabled: true },
+        { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: false, enabled: true },
+        { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: false, enabled: false }
+      ] }])
+    %>
+  </div>
+</section>
+
+<section class="basic-content" id="profile">
+  <h3>Profile</h3>
+  <div class="well" style="position:relative">
+    <%= profile %>
+  </div>
+</section>
+
+<section class="basic-content" id="menu">
+  <h3>Menu</h3>
+  <div class="well">
+    <%= menu %>
+  </div>
+</section>
+
+
