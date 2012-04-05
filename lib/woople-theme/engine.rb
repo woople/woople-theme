@@ -10,5 +10,11 @@ module WoopleTheme
         'woople-theme/theme-retina.css'
       ]
     end
+
+    initializer "something" do |config|
+      WoopleTheme.configure do |c|
+        #create an empty configuration
+      end
+    end
   end
 end

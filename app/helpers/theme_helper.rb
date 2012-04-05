@@ -25,11 +25,19 @@ module ThemeHelper
   end
 
   def profile
+    if !respond_to?(WoopleTheme.configuration.profile_helper)
+      raise "#{WoopleTheme.configuration.profile_helper} helper_method does not exist. WoopleTheme.configuration.profile_helper must point to a valid helper_method."
+    end
+
     model = ThemePresentation.wrap(send(WoopleTheme.configuration.profile_helper), ProfilePresenter)
     render 'woople-theme/profile', profile: model
   end
 
   def menu
+    if !respond_to?(WoopleTheme.configuration.menu_helper)
+      raise "#{WoopleTheme.configuration.menu_helper} helper_method does not exist. WoopleTheme.configuration.menu_helper must point to a valid helper_method."
+    end
+
     model = ThemePresentation.wrap(send(WoopleTheme.configuration.menu_helper), MenuPresenter)
     render 'woople-theme/menu', menu: model
   end

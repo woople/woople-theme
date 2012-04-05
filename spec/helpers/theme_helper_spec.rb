@@ -46,12 +46,20 @@ describe ThemeHelper do
   end
 
   describe "#profile" do
-    it "renders correctly" do
+    it "renders correctly when a profile_model is present" do
       helper.stub(:profile_model) { stub.as_null_object }
 
       html = helper.profile
       page = Capybara::Node::Simple.new(html)
       page.should have_css('.profile')
+    end
+
+    it "raises an error when the profile_helper method does not exist" do
+      WoopleTheme.configure do |config|
+        config.profile_helper = :something_that_does_not_exist
+      end
+
+      expect { helper.profile }.to raise_error("something_that_does_not_exist helper_method does not exist. WoopleTheme.configuration.profile_helper must point to a valid helper_method.")
     end
   end
 
@@ -62,6 +70,15 @@ describe ThemeHelper do
       html = helper.menu
       page = Capybara::Node::Simple.new(html)
       page.should have_css('.menu')
+    end
+
+    it "raises an error when the menu_helper method does not exist" do
+      WoopleTheme.configure do |config|
+        config.menu_helper = :something_that_does_not_exist
+      end
+
+      expect { helper.menu }.to raise_error("something_that_does_not_exist helper_method does not exist. WoopleTheme.configuration.menu_helper must point to a valid helper_method.")
+
     end
   end
 end
