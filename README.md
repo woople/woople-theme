@@ -16,6 +16,9 @@ gem 'woople-theme' from your Gemfile
 See documentation:
 http://rdoc.info/github/bigbangtechnology/woople-theme/master/frames
 
+Tutorial Video:
+http://www.youtube.com/watch?v=50jo-OMaAxI
+
 ## Copyright
 
 Copyright (c) 2012 Woople LLC. See LICENSE.txt for further details.
