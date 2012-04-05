@@ -9,7 +9,7 @@ class FrameworkController < ApplicationController
 
   def introduction
     {
-      links: [ { name: 'Introduction', url: '#introduction', featured: true } ]
+      links: [ { name: 'Introduction', url: '#introduction', badge: '31 courses' } ]
     }
   end
 

@@ -8,7 +8,7 @@ class MenuLinkPresenter < SimpleDelegator
     if featured?
       content_tag(:em, name.html_safe)
     else
-      name
+      name.html_safe
     end
   end
 
