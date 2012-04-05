@@ -4,7 +4,15 @@ require_relative '../../app/presenters/theme_presentation'
 class OutlineDownloadPresenter < SimpleDelegator; end
 
 describe OutlinePresenter do
-  describe "#assessment" do
+  describe "#name" do
+    subject { OutlinePresenter.new(stub(name: 'Channel')) }
+
+    it "wraps the name inside a header tag" do
+      subject.name.should == '<h2>Channel</h2>'
+    end
+  end
+
+  describe "#render_assessment" do
     describe "when there is an assesment" do
       describe "when the assessment is enabled" do
         subject { OutlinePresenter.new(stub(assessment:true, assessment_enabled: true)) }
@@ -12,7 +20,7 @@ describe OutlinePresenter do
         it "yields the block" do
           called = false
 
-          subject.assessment do |css_class|
+          subject.render_assessment do |css_class|
             css_class.should == 'assessment'
             called = true
           end
@@ -27,7 +35,7 @@ describe OutlinePresenter do
         it "yields the block as disabled" do
           called = false
 
-          subject.assessment do |css_class|
+          subject.render_assessment do |css_class|
             css_class.should == 'assessment disabled'
             called = true
           end
@@ -43,7 +51,7 @@ describe OutlinePresenter do
       it "does not yield the block" do
         called = false
 
-        subject.assessment do
+        subject.render_assessment do
           called = true
         end
 
@@ -55,7 +63,7 @@ describe OutlinePresenter do
   #NOTE: these two methods currently are very hard to test due to bugs in rails
   #      https://github.com/rails/rails/issues/5213
   #
-  describe "#render_downloads" do; end
-  describe "#render_videos" do; end
+  #describe "#render_downloads" do; end
+  #describe "#render_videos" do; end
 end
 

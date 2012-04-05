@@ -1,5 +1,9 @@
 require 'spec_helper'
 
+module Paperclip
+  class Attachment; end
+end
+
 describe ThemeHelper do
   describe "#page_header" do
     it "renders a hash correctly" do
@@ -37,11 +41,11 @@ describe ThemeHelper do
   end
 
   describe "#outline" do
-    it "renders correctly" do
-      outline = [stub.as_null_object, stub.as_null_object, stub.as_null_object]
-      html = helper.outline(outline)
+    #TODO: figure out how to test the fact that the outline partial yields the block
+    it "should render an outline which yields the presenter" do
+      html = helper.outline(stub(name:'my unit')) { |outline| outline.wrapped_by.should == [OutlinePresenter] }
       page = Capybara::Node::Simple.new(html)
-      page.should have_css('.outline', count: 3)
+      page.should have_css('.outline')
     end
   end
 

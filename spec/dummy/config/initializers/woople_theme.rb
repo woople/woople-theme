@@ -3,3 +3,7 @@ WoopleTheme.configure do |config|
   config.menu_helper = :menu_model
   config.layout_javascript = 'application'
 end
+
+module Paperclip
+  class Attachment; end
+end

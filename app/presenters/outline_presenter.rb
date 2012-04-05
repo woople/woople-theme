@@ -1,30 +1,37 @@
+require 'action_view'
 require 'delegate'
 
 class OutlinePresenter < SimpleDelegator
+  include ActionView::Helpers::TagHelper
+
+  attr_accessor :view_context
+
+  def name
+    content_tag(:h2, outline.name)
+  end
+
+  def videos(videos = outline.videos)
+    wrapped_videos = ThemePresentation.wrap_collection(videos, OutlineVideoPresenter)
+    view_context.render partial: 'woople-theme/outline_videos', locals: { videos: wrapped_videos }
+  end
+
+  def downloads(downloads = outline.downloads)
+    wrapped_downloads = ThemePresentation.wrap_collection(downloads, OutlineDownloadPresenter)
+    view_context.render partial: 'woople-theme/outline_downloads', locals: { downloads: wrapped_downloads }
+  end
+
   def assessment
+    view_context.render partial: 'woople-theme/outline_assessment', locals: { outline: self }
+  end
+
+  def render_assessment
     css_class = "assessment"
     css_class << " disabled" if assessment_disabled?
 
     yield(css_class) if has_assessment?
   end
 
-  def render_downloads(view_context)
-    wrapped_downloads = ThemePresentation.wrap_collection(downloads, OutlineDownloadPresenter)
-    view_context.render partial: 'woople-theme/outline_download', collection: wrapped_downloads
-  end
-
-  def render_videos(view_context)
-    wrapped_videos = ThemePresentation.wrap_collection(videos, OutlineVideoPresenter)
-    view_context.render partial: 'woople-theme/outline_video', collection: wrapped_videos
-  end
-
-  def downloads
-    outline.downloads
-  end
-
-  def videos
-    outline.videos
-  end
+  private
 
   def assessment_disabled?
     outline.respond_to?(:assessment_enabled) && !outline.assessment_enabled

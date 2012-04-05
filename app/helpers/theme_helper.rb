@@ -19,9 +19,11 @@ module ThemeHelper
     render partial: 'woople-theme/content_item_header'
   end
 
-  def outline(items, presenter = nil)
-    collection = ThemePresentation.wrap_collection(items, OutlinePresenter, presenter)
-    render partial: 'woople-theme/outline', collection: collection
+  def outline(item, &block)
+    presenter = ThemePresentation.wrap(item, OutlinePresenter)
+    presenter.view_context = self
+
+    render partial: 'woople-theme/outline', locals: { outline: presenter, block: block }
   end
 
   def profile

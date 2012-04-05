@@ -4,5 +4,13 @@
 
 <section id="course">
   <%= page_header(@course, CourseHeaderPresenter) %>
-  <%= outline(@course.units) %>
+
+  <% @course.units.each do |unit| %>
+    <%= outline(unit) do |outline| %>
+      <%= outline.name %>
+      <%= outline.downloads(unit.downloads) %>
+      <%= outline.videos(unit.videos) %>
+      <%= outline.assessment %>
+    <% end %>
+  <% end %>
 </section>

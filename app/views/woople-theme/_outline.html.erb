@@ -1,20 +1,3 @@
 <div class="outline">
-  <h2><%= outline.name %></h2>
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-        <th class="string"><%=t 'woople_theme.outline.name' %></th>
-        <th class="count"><%=t 'woople_theme.outline.duration' %></th>
-      </tr>
-    </thead>
-    <tbody>
-      <%= outline.render_downloads(self) %>
-      <%= outline.render_videos(self) %>
-    </tbody>
-  </table>
-
-  <% outline.assessment do |assessment_class| %>
-    <p class="<%= assessment_class %>"><a><%=t 'woople_theme.outline.start_assessment' %></a></p>
-  <% end %>
+  <% block.call(outline) %>
 </div>

@@ -53,16 +53,23 @@
   <h3>Outline</h3>
 
   <div class="well">
-    <%= outline([{
+    <%= outline({
       name: 'Outline Name',
       enabled: true,
       downloads: [{ name: 'Training Supplement', enabled: true }],
-      videos: [ 
+      assessment_enabled: true,
+      assessment: true,
+      videos: [
         { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: true, enabled: true },
         { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: false, enabled: true },
-        { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: false, enabled: false }
-      ] }])
-    %>
+        { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: false, enabled: false },
+      ] }) do |outline| %>
+
+        <%= outline.name %>
+        <%= outline.downloads %>
+        <%= outline.videos %>
+        <%= outline.assessment %>
+    <% end %>
   </div>
 </section>
 
