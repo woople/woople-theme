@@ -1,6 +1,13 @@
 require 'delegate'
 
 class OutlineVideoPresenter < SimpleDelegator
+  REQUIRED_ATTRIBUTES = [:slug, :enabled, :completed, :id, :duration, :url, :name]
+
+  def initialize(video)
+    super(video)
+    check_attributes
+  end
+
   def css_class
     css_classes = []
     css_classes << "disabled" if !video.enabled
@@ -38,6 +45,22 @@ class OutlineVideoPresenter < SimpleDelegator
   end
 
   private
+
+  def check_attributes
+    raise "Rendering a video requires: #{missing_attributes}" if missing_attributes?
+  end
+
+  def missing_attributes?
+    REQUIRED_ATTRIBUTES.find do |attr|
+      !__getobj__.respond_to?(attr)
+    end
+  end
+
+  def missing_attributes
+    REQUIRED_ATTRIBUTES.select do |attr|
+      !__getobj__.respond_to?(attr)
+    end
+  end
 
   def video
     __getobj__
