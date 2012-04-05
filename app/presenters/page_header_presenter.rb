@@ -8,7 +8,15 @@ class PageHeaderPresenter < SimpleDelegator
     name || header.title
   end
 
+  def image_class
+    'page-header-with-image' if has_image?
+  end
+
   private
+
+  def has_image?
+    header.respond_to?(:image)
+  end
 
   def name
     if header.respond_to?(:name)

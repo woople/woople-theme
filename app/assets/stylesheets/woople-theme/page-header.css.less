@@ -1,6 +1,19 @@
 @import "woople-theme/variables.css.less";
 @import "woople-theme/colours.css.less";
 
+.page-header-with-image {
+  img {
+    .course-image();
+    max-width:@imageWidth;
+    float:left;
+    margin-right:@gridGutterWidth;
+  }
+
+  p, h1 {
+    margin-left: @gridGutterWidth + @imageWidth;
+  }
+}
+
 .page-header {
   border-color:fade(@highlight, 10%);
   padding-left:@contentPadding;

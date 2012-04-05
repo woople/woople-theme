@@ -22,4 +22,23 @@ describe PageHeaderPresenter do
       end
     end
   end
+
+  describe "#image_class" do
+    describe "when the object has an image" do
+      subject { PageHeaderPresenter.new(stub(image: 'image')) }
+
+      it "has a class of page-header-with-image" do
+        subject.image_class.should == 'page-header-with-image'
+      end
+    end
+
+    describe "when the object does not have an image" do
+      subject { PageHeaderPresenter.new(stub) }
+
+      it "has a class of nil" do
+        subject.image_class.should be_nil
+      end
+    end
+
+  end
 end

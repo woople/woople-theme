@@ -5,28 +5,6 @@ header + .outline h2 {
   border-top:0;
 }
 
-#course {
-  overflow:hidden;
-
-  .page-header {
-    img {
-      .course-image();
-      max-width:@imageWidth;
-      float:left;
-      margin-right:@gridGutterWidth;
-    }
-
-    p, h1 {
-      margin-left: @gridGutterWidth + @imageWidth;
-    }
-  }
-
-  > header {
-    margin:0;
-  }
-
-}
-
 @media (max-width: 767px) {
   #course {
     .modal-body {
