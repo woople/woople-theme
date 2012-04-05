@@ -4,11 +4,11 @@ describe OutlineVideoPresenter do
   describe "#intialize" do
     describe "when there are no properties" do
       it "raises an exception" do
-        expect { OutlineVideoPresenter.new(stub) }.to raise_error "Rendering a video requires: [:slug, :enabled, :completed, :id, :duration, :url, :name]"
+        expect { OutlineVideoPresenter.new(stub) }.to raise_error "Rendering a video requires: [:enabled, :completed, :id, :duration, :url, :name]"
       end
 
       it "only includes the missing fields in the error" do
-        expect { OutlineVideoPresenter.new(stub(name:'Bob', id:1, url: 'test')) }.to raise_error "Rendering a video requires: [:slug, :enabled, :completed, :duration]"
+        expect { OutlineVideoPresenter.new(stub(name:'Bob', id:1, url: 'test')) }.to raise_error "Rendering a video requires: [:enabled, :completed, :duration]"
       end
     end
   end

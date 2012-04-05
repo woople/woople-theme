@@ -1,7 +1,7 @@
 require 'delegate'
 
 class OutlineVideoPresenter < SimpleDelegator
-  REQUIRED_ATTRIBUTES = [:slug, :enabled, :completed, :id, :duration, :url, :name]
+  REQUIRED_ATTRIBUTES = [:enabled, :completed, :id, :duration, :url, :name]
 
   def initialize(video)
     super(video)
