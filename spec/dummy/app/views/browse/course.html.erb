@@ -1,3 +1,10 @@
+<% content_for(:head_content) do %>
+  <% if @video.present? %>
+  <script>
+    var showingPlayer = true;
+  </script>
+  <% end %>
+<% end %>
 <% content_for(:body_content) do %>
   <%= video_modal(@video) if @video.present? %>
 <% end %>
