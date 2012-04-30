@@ -5,6 +5,7 @@
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
 //= require fastclick.min_
+//= require video.min
 //= require_tree .
 
 function resizeFix() {
