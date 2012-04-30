@@ -8,7 +8,7 @@ class BrowseController < ApplicationController
 
     @video = OpenStruct.new(
       name: video_names.sample,
-      src: 'http://www.youtube-nocookie.com/embed/k9bRT3JrykM?rel=0'
+      src: 'http://video-js.zencoder.com/oceans-clip.mp4'
     )
 
     render 'course'

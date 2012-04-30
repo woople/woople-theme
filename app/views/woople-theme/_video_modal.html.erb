@@ -1,13 +1,15 @@
 <div id="myModal" class="modal hide">
   <div class="modal-header">
     <a class="close" data-dismiss="modal">×</a>
-    <% %>
     <h3><%= video.name %></h3>
   </div>
   <div class="modal-body">
     <div class="modal-video">
-      <% #TODO: this only works with youtube urls right now. obviously hack %>
-      <iframe src="<%= video.src %>" frameborder="0" allowfullscreen></iframe>
+      <div class="video-js-box modal-video-box">
+        <video id="theme_video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}" poster="<%= asset_path('woople-theme/poster.jpg') %>">
+          <source src="<%= video.src.html_safe %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+        </video>
+      </div>
     </div>
   </div>
   <div class="modal-footer">
