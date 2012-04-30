@@ -10,10 +10,8 @@
   <%= javascript_include_tag "woople-theme/theme" %>
   <%= application_javascript %>
   <%= csrf_meta_tags %>
-
-  <script>
-    <%= 'var showingPlayer = true;' if @video.present? %>
-  </script>
+  
+  <%= yield :head_content %>
 
 </head>
 <body>
