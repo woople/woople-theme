@@ -35,6 +35,7 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       name: course_names.sample,
       description: 'Here is a sample description',
+      url: '/course',
       completed: completed.sample,
       percent_complete: rand(100),
       image: images.sample,
