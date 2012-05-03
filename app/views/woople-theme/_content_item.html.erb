@@ -1,6 +1,6 @@
 <div class="content-item row <%= content_item.completed %>">
   <div class="content-item-image span1">
-    <a href="/course">
+    <a href="<%= content_item.url %>">
       <% content_item.image do |url| %>
         <%= image_tag(url) %>
       <% end %>
