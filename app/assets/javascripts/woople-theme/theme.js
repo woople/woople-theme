@@ -1,6 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require modernizr
+//= require spin.min
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
@@ -20,6 +21,20 @@ function resizeFix() {
   }
 }
 
+function setLoading(element) {
+  var div = $('<div></div>').addClass('loadingAction');
+  $(element).find('td:first-child').html(div);
+  new Spinner({
+    lines: 9,
+    radius: 3,
+    length: 4,
+    width: 2
+  }).spin(div[0]);
+}
+
+function visitLocation(element) {
+  window.location = $(element).find('a').attr('href');
+}
 
 $(document).ready(function() {
   resizeFix();
@@ -28,12 +43,13 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.touch .content-item').on('click', function() {
-    window.location = $(this).find('a').attr('href');
+  $('.outline tr').on('click', function() {
+    setLoading(this);
+    visitLocation(this);
   });
 
-  $('.touch .outline tr').on('click', function(e) {
-    window.location = $(this).find('a').attr('href');
+  $('.touch .content-item').on('click', function() {
+    visitLocation(this);
   });
 
 });

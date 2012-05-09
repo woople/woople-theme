@@ -1,6 +1,14 @@
 @import "woople-theme/variables.css.less";
 @import "woople-theme/colours.css.less";
 
+.loadingAction {
+  width:16px;
+  height:13px;
+  padding-top:3px;
+  margin-left:-3px;
+}
+
+
 .action {
   display:inline-block;
   position:absolute;
@@ -36,3 +44,12 @@
     text-shadow:none;
   }
 }
+
+@media (max-width: 767px) {
+  .loadingAction {
+    margin:0;
+    position:relative;
+    left:3px;
+  }
+}
+
