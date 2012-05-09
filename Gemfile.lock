@@ -4,7 +4,6 @@ PATH
     woople-theme (0.2.8)
       less-rails-bootstrap (= 2.0.8)
       rails (~> 3.2.2)
-      spinjs-rails
 
 GEM
   remote: http://rubygems.org/
@@ -121,8 +120,6 @@ GEM
       ffi (~> 1.0)
       multi_json (~> 1.0)
       rubyzip
-    spinjs-rails (0.0.3)
-      rails (>= 3.1)
     sprockets (2.1.2)
       hike (~> 1.2)
       rack (~> 1.0)
