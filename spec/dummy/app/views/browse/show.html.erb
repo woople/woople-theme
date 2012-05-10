@@ -6,16 +6,5 @@
 <%= content_item_header %>
 <%= content_items(@content_items) %>
 
-<% # NOTE: this will probably be replaced with will_paginate %>
-<div class="pagination pagination-centered">
-  <ul>
-    <li><a href="#">Prev</a></li>
-    <li class="active">
-    <a href="#">1</a>
-    </li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">Next</a></li>
-  </ul>
-</div>
+<% # NOTE: this is collapsed to prevent browser adding gaps between elements; and the way will_paginate generates markup %>
+<div class="pagination pagination-centered"><span class="previous_page disabled">Prev</span><em class="current">1</em><a rel="next" href="#">2</a><a href="#">3</a><a href="#">4</a><a class="next_page" rel="next" href="#">Next</a></div>
