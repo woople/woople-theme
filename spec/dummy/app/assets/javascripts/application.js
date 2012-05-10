@@ -33,6 +33,8 @@ function resizePlayer() {
 }
 
 $(document).ready(function() {
+  var showingPlayer = showingPlayer || false;
+
   if (showingPlayer) {
     if ($(window).width() < 768) {
       showMobile();
