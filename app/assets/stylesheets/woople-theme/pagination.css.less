@@ -5,27 +5,30 @@
   margin-top:0;
   .box-shadow(inset 0 1px 3px @insideShadowColour);
 
-  ul {
-    .box-shadow(0 0 0 transparent);
-    .border-radius(0);
-  }
-  li:first-child a {
-    border-radius:0;
-    -webkit-border-radius:0;
-  }
-
-  li:last-child a {
-    border-radius:0;
-    -webkit-border-radius:0;
-  }
-
-  a {
-    border:none;
-  }
-
   a:hover, .active a {
     background-color:@highlightBackground;
   }
 
+  a, em, span {
+    border: none;
+    display: inline-block;
+    float: none;
+    font-style: normal;
+    line-height: 34px;
+    padding: 0 14px;
+    text-decoration: none;
+  }
+
+  .current {
+    background-color:@highlightBackground;
+  }
+  
+  .current, .disabled {
+    .disabled_pagination();
+  }
 }
 
+.disabled_pagination() {
+  color: #999;
+  cursor: default;
+}
