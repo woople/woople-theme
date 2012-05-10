@@ -21,15 +21,10 @@ function resizeFix() {
   }
 }
 
-function setLoading(element) {
+function setLoading(selector, element, options) {
   var div = $('<div></div>').addClass('loadingAction');
-  $(element).find('td:first-child').html(div);
-  new Spinner({
-    lines: 9,
-    radius: 3,
-    length: 4,
-    width: 2
-  }).spin(div[0]);
+  $(element).find(selector).html(div);
+  new Spinner(options).spin(div[0]);
 }
 
 function visitLocation(element) {
@@ -44,11 +39,20 @@ $(document).ready(function() {
   }
 
   $('.outline tr').on('click', function() {
-    setLoading(this);
+    setLoading('td:first-child', this, {
+      lines: 9,
+      radius: 3,
+      length: 4,
+      width: 2
+    });
     visitLocation(this);
   });
 
-  $('.touch .content-item').on('click', function() {
+  $('.content-item').on('click', function() {
+    setLoading('.content-item-image a', this, {
+      width: 3
+    });
+
     visitLocation(this);
   });
 
