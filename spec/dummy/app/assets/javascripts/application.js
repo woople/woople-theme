@@ -1,7 +1,9 @@
 //= require_self
 //= require_tree .
 
-function showMobile() {  
+var showingPlayer;
+
+function showMobile() {
   var modalContents = $('#myModal').html();
   var selectedRow   = $('#video_0_0');
   var playerRow     = selectedRow.after('<tr><td colspan=3>' + modalContents + '</td></tr>');
@@ -28,12 +30,13 @@ function resizePlayer() {
   var parentWidth  = $('.modal-video-box').width();
 
   $('#theme_video').css({'width': parentWidth, 'height': parentHeight});
-  $('#theme_video').attr('width', parseInt(parentWidth));
-  $('#theme_video').attr('height', parseInt(parentHeight));
+
+  // assume we are parsing a decimal -- http://stackoverflow.com/questions/850341/workarounds-for-javascript-parseint-octal-bug
+  $('#theme_video').attr('width', parseInt(parentWidth, 10));
+  $('#theme_video').attr('height', parseInt(parentHeight, 10));
 }
 
 $(document).ready(function() {
-  var showingPlayer = showingPlayer || false;
 
   if (showingPlayer) {
     if ($(window).width() < 768) {
