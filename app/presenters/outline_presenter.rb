@@ -21,7 +21,7 @@ class OutlinePresenter < SimpleDelegator
   end
 
   def assessment
-    view_context.render partial: 'woople-theme/outline_assessment', locals: { outline: self }
+    view_context.render partial: 'woople-theme/outline_assessment', locals: { outline: self, assessment: outline.assessment }
   end
 
   def render_assessment

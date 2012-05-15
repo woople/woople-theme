@@ -38,13 +38,14 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline tr').on('click', function() {
+  $('.outline tr').not('.disabled').on('click', function() {
     setLoading('td:first-child', this, {
       lines: 9,
       radius: 3,
       length: 4,
       width: 2
     });
+
     visitLocation(this);
   });
 

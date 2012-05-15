@@ -1,3 +1,17 @@
 <% outline.render_assessment do |assessment_class| %>
-  <p class="<%= assessment_class %>"><a><%=t 'woople_theme.outline.start_assessment' %></a></p>
+  <table class="table assessment_container">
+    <tr class="<%= assessment_class %>">
+      <td>
+        <a class="action btn btn-primary" href="#">
+          <i class="icon-white icon-play"></i>
+        </a>
+      </td>
+      <td>
+        <strong><%=t('woople_theme.outline.assessment')%></strong><br />
+        <%=t('woople_theme.outline.assessment_questions', count: assessment.questions_asked) %>
+        <%=t('woople_theme.outline.assessment_requirement', percent: assessment.pass_requirement) %>
+      </td>
+      <td class="count"><%= assessment.estimated_duration %>:00</td>
+    </tr>
+  </table>
 <% end %>

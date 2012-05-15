@@ -2,17 +2,21 @@
 @import "woople-theme/colours.css.less";
 
 .outline {
-  margin-bottom:20px;
   overflow:hidden;
+
+  padding-bottom:@contentPadding / 2;
+  .box-shadow();
 
   h2 {
     .outline-title();
   }
 
-  .assessment {
-    margin-left:@leftColumnOffset;
-    margin-top:@contentPadding;
-    text-transform:uppercase;
+  .assessment_container {
+    background-color:@highlightBackground;
+    padding-left:@leftColumnOffset;
+    padding-top:@contentPadding;
+    position:relative;
+    top:@contentPadding / 2;
   }
 
   .completed {
@@ -27,6 +31,11 @@
     a:hover {
       text-decoration:none;
     }
+
+    .action {
+      display:none;
+    }
+
   }
 
   tr.disabled {
@@ -117,7 +126,7 @@
     }
 
     .assessment {
-      margin-left:@phoneLeftColumnOffset;
+      padding-left:@phoneLeftColumnOffset;
     }
   }
 }

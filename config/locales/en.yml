@@ -10,7 +10,11 @@ en:
     outline:
       name: Name
       duration: Duration
-      start_assessment: START ASSESSMENT
+      assessment: Assessment
+      assessment_questions:
+        one: 1 Question
+        other: "%{count} Questions"
+      assessment_requirement: (%{percent}% required)
     profile:
       search: Search...
     video_modal:
