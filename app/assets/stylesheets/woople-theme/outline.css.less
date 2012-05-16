@@ -4,8 +4,7 @@
 .outline {
   overflow:hidden;
   padding-bottom:@contentPadding / 2;
-
-  .box-shadow();
+  border-bottom:solid 1px fade(@contentBorder, 35%);
 
   h2 {
     .outline-title();
@@ -15,10 +14,16 @@
     margin-top:@contentPadding / 2;
     margin-bottom:@contentPadding / 2;
     position:relative;
-    left:@contentPadding / 2;
+    margin-left:@contentPadding / 2;
 
     -webkit-perspective: 2000px;
     -moz-perspective: 2000px;
+
+    &.disabled {
+      .btn {
+        .opacity(25);
+      }
+    }
 
     h3 {
       .content-title();
