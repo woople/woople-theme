@@ -29,6 +29,8 @@ class BrowseController < ApplicationController
     @course = random_course
   end
 
+  helper_method :random_unit
+
   private
 
   def random_course
@@ -47,11 +49,12 @@ class BrowseController < ApplicationController
     )
   end
 
-  def random_unit(unit_index, enabled = false, completed_videos = 3)
+  def random_unit(unit_index = 0, enabled = false, completed_videos = 3)
     OpenStruct.new(
       name: course_names.sample,
       enabled: (unit_index == 0),
-      assessment: random_assessment, assessment_enabled: false,
+      assessment: random_assessment,
+      assessment_enabled: false,
       completed: 2,
       videos: rand((completed_videos+1)..(completed_videos*3)).times.collect { |index| 
         random_video("#{unit_index}_#{index}", 

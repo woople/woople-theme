@@ -3,20 +3,122 @@
 
 .outline {
   overflow:hidden;
-
   padding-bottom:@contentPadding / 2;
+
   .box-shadow();
 
   h2 {
     .outline-title();
   }
 
-  .assessment_container {
-    background-color:@highlightBackground;
-    padding-left:@leftColumnOffset;
-    padding-top:@contentPadding;
+  .assessment {
+    margin-top:@contentPadding / 2;
+    margin-bottom:@contentPadding / 2;
     position:relative;
-    top:@contentPadding / 2;
+    left:@contentPadding / 2;
+
+    -webkit-perspective: 2000px;
+    -moz-perspective: 2000px;
+
+    h3 {
+      .content-title();
+    }
+
+    .badge {
+      .woople-badge();
+    }
+
+    .assessment-start {
+      margin-top:@contentPadding * 2;
+    }
+
+    .flip-action, .flip-action-back {
+      cursor:pointer;
+    }
+
+    &.flip .front {
+      z-index: 900;
+
+      -webkit-transform: rotateY(180deg);
+      -moz-transform: rotateY(180deg);
+    }
+
+    .front {
+      position:relative;
+      z-index:900;
+      background:white;
+
+      .box-shadow();
+
+      -webkit-transform: rotateY(0deg);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+
+      -moz-transform: rotateY(0deg);
+      -moz-transform-style: preserve-3d;
+      -moz-backface-visibility: hidden;
+
+      /* -- transition is the magic sauce for animation -- */
+      -o-transition: all .4s ease-in-out;
+      -ms-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+    }
+
+    &.flip .back {
+      z-index:1000;
+      -webkit-transform: rotateY(0deg);
+      -moz-transform: rotateY(0deg);
+    }
+
+    .back {
+      position:absolute;
+      z-index:800;
+      background:white;
+      top:0;
+      left:0;
+      width:100%;
+      height:100%;
+
+      .box-shadow();
+
+      -webkit-transform: rotateY(-180deg);
+      -webkit-transform-style: preserve-3d;
+      -webkit-backface-visibility: hidden;
+
+      -moz-transform: rotateY(-180deg);
+      -moz-transform-style: preserve-3d;
+      -moz-backface-visibility: hidden;
+
+      /* -- transition is the magic sauce for animation -- */
+      -o-transition: all .4s ease-in-out;
+      -ms-transition: all .4s ease-in-out;
+      -moz-transition: all .4s ease-in-out;
+      -webkit-transition: all .4s ease-in-out;
+      transition: all .4s ease-in-out;
+
+    }
+
+    .assessment-pad {
+      padding:@contentPadding;
+
+      .assessment-history {
+
+        a {
+          color:blue;
+          text-decoration:underline;
+        }
+      }
+    }
+
+    .outline {
+      .box-shadow(none);
+
+      td:first-child, th:first-child {
+        padding-left:10px;
+      }
+    }
   }
 
   .completed {
@@ -25,7 +127,7 @@
     }
   }
 
-  .disabled td, p.disabled {
+  .disabled td {
     .opacity(50);
 
     a:hover {
@@ -120,13 +222,17 @@
       .outline-title(@phoneLeftColumnOffset);
     }
 
-    p {
+    > p {
       padding-left:@phoneLeftColumnOffset;
       padding-right:@phoneMargin;
     }
 
     .assessment {
-      padding-left:@phoneLeftColumnOffset;
+      left:@phoneMargin;
+
+      .assessment-inner {
+        padding:@phoneMargin;
+      }
     }
   }
 }

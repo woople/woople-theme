@@ -14,7 +14,7 @@ en:
       assessment_questions:
         one: 1 Question
         other: "%{count} Questions"
-      assessment_requirement: (%{percent}% required)
+      assessment_requirement: "%{percent}% required"
     profile:
       search: Search...
     video_modal:

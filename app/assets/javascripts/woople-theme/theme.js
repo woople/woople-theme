@@ -5,6 +5,7 @@
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
+//= require twitter/bootstrap/alert
 //= require fastclick.min_
 //= require video.min
 //= require_tree .
@@ -38,7 +39,7 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline tr').not('.disabled').on('click', function() {
+  $('.outline .outline-video').not('.disabled').on('click', function() {
     setLoading('td:first-child', this, {
       lines: 9,
       radius: 3,
@@ -57,5 +58,11 @@ $(document).ready(function() {
     visitLocation(this);
   });
 
-});
+  $('.assessment .flip-action').on('click', function() {
+    $(this).closest('.assessment').addClass('flip');
+  });
 
+  $('.assessment .flip-action-back').on('click', function() {
+    $(this).closest('.assessment').removeClass('flip');
+  });
+});
