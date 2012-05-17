@@ -32,7 +32,7 @@ $(document).ready(function() {
   $('.assessment .alert').bind('closed', function() {
     var front = $(this).closest('.assessment .front');
 
-    front.css({ height: 'initial' });
+    front.css({ height: 'inherit' });
     setTimeout(function() {
       setFrontHeight.call(front);
     }, 100);

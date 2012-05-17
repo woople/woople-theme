@@ -251,11 +251,24 @@
     }
 
     .assessment {
-      left:@phoneMargin;
+      margin-left:@phoneMargin / 2;
 
-      .assessment-inner {
-        padding:@phoneMargin;
+      .back {
+        table tr > td:first-child, tr > th:first-child {
+          text-indent:0;
+        }
       }
     }
+  }
+}
+
+.no-csstransforms3d {
+
+  .back {
+    display:none;
+  }
+
+  .flip .back {
+    display:block;
   }
 }
