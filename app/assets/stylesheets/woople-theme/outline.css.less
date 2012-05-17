@@ -27,6 +27,21 @@
 
     h3 {
       .content-title();
+      padding:@contentPadding / 2;
+      padding-bottom:0;
+    }
+
+    h4 {
+      .outline-title();
+      padding:@contentPadding / 2;
+    }
+
+    .assessment-attributes {
+      padding:@contentPadding / 2;
+    }
+
+    .alert {
+      margin:@contentPadding / 2;
     }
 
     .badge {
@@ -34,11 +49,15 @@
     }
 
     .assessment-start {
-      margin-top:@contentPadding * 2;
+      a {
+        margin:@contentPadding / 2;
+      }
     }
 
     .flip-action, .flip-action-back {
       cursor:pointer;
+      width:75px;
+      padding:@contentPadding / 2;
     }
 
     &.flip .front {
@@ -106,8 +125,6 @@
     }
 
     .assessment-pad {
-      padding:@contentPadding;
-
       .assessment-history {
 
         a {
@@ -118,12 +135,13 @@
     }
 
     .outline {
-      .box-shadow(none);
-
-      td:first-child, th:first-child {
-        padding-left:10px;
-      }
+      border:none;
     }
+
+    td:first-child, th:first-child {
+      padding-left:10px;
+    }
+
   }
 
   .completed {

@@ -2,27 +2,26 @@
   <div class="<%= assessment_class %>">
     <div class="front">
       <div class="assessment-pad">
-        <a class="flip-action pull-right">3 Previous</a>
+        <a class="flip-action pull-right">History</a>
 
         <h3><%=t('woople_theme.outline.assessment')%></h3>
 
-        <p>
+        <p class="assessment-attributes">
           <span class="badge"><%=t('woople_theme.outline.assessment_questions', count: assessment.questions_asked) %></span>
           <span class="badge"><%=t('woople_theme.outline.assessment_requirement', percent: assessment.pass_requirement) %></span>
           <span class="badge"><%= assessment.estimated_duration %>:00 minutes</span>
         </p>
 
-        <!--
         <div class="alert alert-error">
           <a class="close" data-dismiss="alert">×</a>
           You failed! Please watch the <strong>Require Relearning</strong> before attempting the assessment again.
         </div>
+
         <h4>Required Relearning</h4>
         <% unit = random_unit %>
         <%= outline(unit) do |outline| %>
           <%= outline.videos(unit.videos) %>
         <% end %>
-        -->
 
         <p class="assessment-start">
           <a href="#" class="btn btn-primary btn-large disabled">Start Assessment</a>
@@ -34,13 +33,13 @@
       <div class="assessment-pad">
         <a class="flip-action-back pull-right">Assessment</a>
 
-        <h4>Previously</h4>
+        <h3>Previously</h3>
         <div class="assessment-history">
           <table class="table">
             <thead>
               <tr>
                 <th style="width:50%">Date</th>
-                <th style="width:50%">Score</th>
+                <th>Score</th>
                 <th class="count">Result</th>
               </tr>
             </thead>
