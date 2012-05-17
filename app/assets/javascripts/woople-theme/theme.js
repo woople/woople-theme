@@ -8,6 +8,7 @@
 //= require twitter/bootstrap/alert
 //= require fastclick.min_
 //= require video.min
+//= require assessment_flipper
 //= require_tree .
 
 function resizeFix() {
@@ -56,13 +57,5 @@ $(document).ready(function() {
     });
 
     visitLocation(this);
-  });
-
-  $('.assessment .flip-action').on('click', function() {
-    $(this).closest('.assessment').addClass('flip');
-  });
-
-  $('.assessment .flip-action-back').on('click', function() {
-    $(this).closest('.assessment').removeClass('flip');
   });
 });
