@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    woople-theme (0.2.18)
+    woople-theme (0.2.19)
       less-rails-bootstrap (= 2.0.8)
       rails (~> 3.2.2)
 
