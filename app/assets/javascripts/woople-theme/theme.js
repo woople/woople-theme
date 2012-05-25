@@ -50,7 +50,7 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline tr:not([class=disabled])').on('click', function() {
+  $('.outline tr').not('.disabled, .download').on('click', function() {
     setLoading('td:first-child', this, {
       lines:  9,
       radius: 3,
