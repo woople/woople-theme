@@ -39,8 +39,14 @@ function paginationLoading(element, options) {
   span.append(spinner.el);
 }
 
-function visitLocation(element) {
-  window.location = $(element).find('a').attr('href');
+function visitLocation(element, newWindow) {
+  var url = $(element).find('a').attr('href');
+
+  if (newWindow) {
+    window.open(url, "_blank");
+  } else {
+    window.location = url;
+  }
 }
 
 $(document).ready(function() {
@@ -50,14 +56,17 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline tr').not('.disabled, .download').on('click', function() {
+  $('.outline tr').not('.disabled').on('click', function(e) {
+    e.preventDefault();
+
     setLoading('td:first-child', this, {
       lines:  9,
       radius: 3,
       length: 4,
       width:  2
     });
-    visitLocation(this);
+
+    visitLocation(this, $(this).hasClass('download'));
   });
 
   $('.content-item').on('click', function() {
