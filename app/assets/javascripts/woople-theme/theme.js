@@ -29,6 +29,18 @@ function setLoading(selector, element, options) {
   new Spinner(options).spin(div[0]);
 }
 
+function paginationLoading(element, options) {
+  var spinner = new Spinner(options).spin();
+  var el      = $(element);
+  var span    = $('<span></span>').addClass('loading');
+
+  span.css({ 'width': el.width() });
+
+  el.html(span);
+  $( spinner.el ).css({'top': '50%', 'left': '50%' });
+  span.append(spinner.el);
+}
+
 function visitLocation(element) {
   window.location = $(element).find('a').attr('href');
 }
@@ -40,12 +52,12 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline .outline-video').not('.disabled').on('click', function() {
+  $('.outline tr').not('.disabled, .download').on('click', function() {
     setLoading('td:first-child', this, {
-      lines: 9,
+      lines:  9,
       radius: 3,
       length: 4,
-      width: 2
+      width:  2
     });
 
     visitLocation(this);
@@ -55,7 +67,15 @@ $(document).ready(function() {
     setLoading('.content-item-image a', this, {
       width: 3
     });
-
     visitLocation(this);
+  });
+
+  $('.pagination a').on('click', function() {
+    paginationLoading(this, {
+      lines:  9,
+      radius: 2,
+      length: 2,
+      width:  2
+    });
   });
 });

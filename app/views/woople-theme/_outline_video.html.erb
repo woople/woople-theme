@@ -7,7 +7,12 @@
       ✔
     <% end %>
   </td>
-  <td><a href="<%= outline_video.url %>" class="video_link"><%= outline_video.name %></a></td>
+  <td>
+    <% if outline_video.enabled %>
+    <a href="<%= outline_video.url %>" class="video_link"><%= outline_video.name %></a>
+    <% else %>
+    <%= outline_video.name %>
+    <% end %>
+  </td>
   <td><%= outline_video.duration %></td>
 </tr>
-

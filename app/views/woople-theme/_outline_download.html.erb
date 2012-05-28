@@ -1,6 +1,12 @@
 <tr class="<%= outline_download.css_class %>">
   <td><a class="action btn btn-primary" href="#"><i class="icon-white icon-download-alt"></i></a></td>
-  <td><a href="#"><%= outline_download.name %></a></td>
+  <td>
+    <% if outline_download.enabled %>
+    <a href="<%= outline_download.url %>" target="_blank"><%= outline_download.name %></a>
+    <% else %>
+    <%= outline_download.name %>
+    <% end %>
+  </td>
   <td></td>
 </tr>
 

@@ -17,18 +17,59 @@
     line-height: 34px;
     padding: 0 14px;
     text-decoration: none;
+
+    .total {
+      display:none;
+      padding:0;
+    }
+    .loading {
+      vertical-align: middle;
+      padding: 0;
+      margin: 0 auto;
+    }
   }
 
   .current {
     background-color:@highlightBackground;
   }
-  
+
   .current, .disabled {
     .disabled_pagination();
+  }
+
+  .previous_page {
+    float: left;
+
+    span {
+      display: inline-block;
+    }
+  }
+  .next_page {
+    float: right;
+
+    span {
+      display: inline-block;
+    }
   }
 }
 
 .disabled_pagination() {
   color: #999;
   cursor: default;
+}
+
+@media (max-width: 767px) {
+  .pagination {
+    a, em, span {
+      display: none;
+
+      .total {
+        display:inline;
+      }
+    }
+
+    .current, .previous_page, .next_page {
+      display: inline-block;
+    }
+  }
 }
