@@ -1,5 +1,5 @@
-<% assessment.render do |assessment_class| %>
-  <div class="<%= assessment_class %>">
+<% assessment.render do %>
+  <div class="assessment">
     <div class="front">
       <div class="assessment-pad">
         <a class="flip-action pull-right">History</a>
@@ -17,14 +17,15 @@
           You failed! Please watch the <strong>Require Relearning</strong> before attempting the assessment again.
         </div>
 
-        <h4>Required Relearning</h4>
-        <% unit = random_unit %>
-        <%= outline(unit) do |outline| %>
-          <%= outline.videos(unit.videos) %>
+        <% assessment.render_relearnings do %>
+          <h4>Required Relearning</h4>
+          <%= outline(assessment) do |outline| %>
+            <%= outline.videos(assessment.relearnings) %>
+          <% end %>
         <% end %>
 
         <p class="assessment-start">
-          <a href="#" class="btn btn-primary btn-large disabled">Start Assessment</a>
+          <%= assessment.start_button_tag %>
         </p>
       </div>
     </div>

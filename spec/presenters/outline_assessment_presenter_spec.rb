@@ -10,8 +10,7 @@ describe OutlineAssessmentPresenter do
         it "yields the block" do
           called = false
 
-          subject.render do |css_class|
-            css_class.should == 'assessment'
+          subject.render do
             called = true
           end
 
@@ -25,8 +24,7 @@ describe OutlineAssessmentPresenter do
         it "yields the block as disabled" do
           called = false
       
-          subject.render do |css_class|
-            css_class.should == 'assessment disabled'
+          subject.render do
             called = true
           end
       
@@ -46,6 +44,62 @@ describe OutlineAssessmentPresenter do
         end
     
         called.should == false
+      end
+    end
+  end
+
+  describe "#render_relearning" do
+    describe "when there aren't relearnings" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [])) }
+
+      it "shouldn't yield" do
+        called = false
+        
+        subject.render_relearnings do
+          called = true
+        end
+        
+        called.should == false
+      end
+    end
+    
+    describe "when there are relearnings" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [stub])) }
+
+      it "should yield" do
+        called = false
+        
+        subject.render_relearnings do
+          called = true
+        end
+        
+        called.should == true
+      end
+    end
+  end
+
+  describe "#start_button_tag" do
+    describe "when the assessment is not startable" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, url: nil)) }
+      
+      it "should have the disabled class" do
+        subject.start_button_tag.should match('class="btn btn-primary btn-large disabled"')
+      end
+
+      it "should not have the href attribute" do
+        subject.start_button_tag.should_not match('href=')
+      end
+    end
+    
+    describe "when the assessment is startable" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, url: 'foo')) }
+      
+      it "should not have the disabled class" do
+        subject.start_button_tag.should match('class="btn btn-primary btn-large"')
+      end
+
+      it "should have the href attribute" do
+        subject.start_button_tag.should match('href="foo"')
       end
     end
   end
