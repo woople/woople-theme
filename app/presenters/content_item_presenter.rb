@@ -9,7 +9,7 @@ class ContentItemPresenter < SimpleDelegator
   end
 
   def completed_class
-    'completed' if source.completed
+    'completed' if source.completed?
   end
 
   def source

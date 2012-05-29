@@ -13,7 +13,7 @@ class PageHeaderPresenter < SimpleDelegator
   end
 
   def completed_class
-    'completed' if header.completed
+    'completed' if header.completed?
   end
 
   private

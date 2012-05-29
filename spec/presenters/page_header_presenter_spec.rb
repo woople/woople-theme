@@ -43,7 +43,7 @@ describe PageHeaderPresenter do
 
   describe "#completed_class" do
     describe "when the object is completed" do
-      subject { PageHeaderPresenter.new(stub(completed: true)) }
+      subject { PageHeaderPresenter.new(stub(completed?: true)) }
 
       it "has a class of completed" do
         subject.completed_class.should == 'completed'
@@ -51,7 +51,7 @@ describe PageHeaderPresenter do
     end
 
     describe "when the object is incompleted" do
-      subject { PageHeaderPresenter.new(stub(completed: false)) }
+      subject { PageHeaderPresenter.new(stub(completed?: false)) }
 
       it "has a class of nil" do
         subject.completed_class.should be_nil
