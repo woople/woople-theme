@@ -20,3 +20,5 @@ en:
     video_modal:
       like: Like
       dislike: Dislike
+    assessment:
+      start: Start Assessment
