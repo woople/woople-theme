@@ -98,7 +98,7 @@ class BrowseController < ApplicationController
   end
 
   def completed
-    ['completed', '']
+    [true, false]
   end
 
   def certification_metadata
