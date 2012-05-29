@@ -1,16 +1,19 @@
 $(document).ready(function() {
-  function setFrontHeight() {
-    var element = $(this);
+  function setFrontHeight(element) {
     var height = element.height();
     element.css({ height: height + 'px' }).attr('data-original-height', height);
   }
 
-  $('.assessment .front').each(setFrontHeight);
+  function removeFrontHeight(element) {
+    element.css({ height: 'inherit' });
+  }
 
   $('.assessment .flip-action').on('click', function() {
     $(this).closest('.assessment').addClass('flip');
 
     var front = $(this).closest('.front');
+    setFrontHeight(front);
+
     var frontHeight = front.height();
 
     var back = $(this).closest('.front').next('.back');
@@ -26,15 +29,6 @@ $(document).ready(function() {
   $('.assessment .flip-action-back').on('click', function() {
     var assessment = $(this).closest('.assessment').removeClass('flip');
     var front = assessment.find('.front');
-    front.css({ height: front.attr('data-original-height') + 'px' });
-  });
-
-  $('.assessment .alert').bind('closed', function() {
-    var front = $(this).closest('.assessment .front');
-
-    front.css({ height: 'inherit' });
-    setTimeout(function() {
-      setFrontHeight.call(front);
-    }, 100);
+    removeFrontHeight(front);
   });
 });
