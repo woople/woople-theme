@@ -1,7 +1,7 @@
 <div class="profile">
-  <form class="search">
+  <form class="search" action="/search">
     <a href="#" class='search-page'><i class="icon-search"></i></a>
-    <input type="text" class="search-query" placeholder="<%=t 'woople_theme.profile.search' %>">
+    <input name="q" type="text" class="search-query" placeholder="<%=t 'woople_theme.profile.search' %>" value="<%= params[:q] %>">
   </form>
   <ul class="nav nav-pills profile-link">
     <li class="dropdown">
