@@ -44,12 +44,6 @@
   padding-top:@contentPadding + 1;
 }
 
-#browse_show .completed {
-  background-image:url(/assets/woople-theme/completed-triangle.png);
-  background-position:top right;
-  background-repeat:no-repeat;
-}
-
 .content-item {
   position:relative;
   margin-left:0;
@@ -125,6 +119,12 @@
   }
 }
 
+.content-item.completed {
+  background-image:url(/assets/woople-theme/completed-triangle.png);
+  background-position:top right;
+  background-repeat:no-repeat;
+}
+
 @media (max-width: 767px) {
   .content-item-header {
     display:none;
@@ -161,7 +161,5 @@
         margin-right:@phoneMargin;
       }
     }
-
-
   }
 }
