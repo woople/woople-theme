@@ -12,6 +12,10 @@ class PageHeaderPresenter < SimpleDelegator
     'page-header-with-image' if has_image?
   end
 
+  def completed_class
+    'completed' if header.completed
+  end
+
   private
 
   def has_image?
