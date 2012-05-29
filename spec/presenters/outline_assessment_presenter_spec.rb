@@ -103,4 +103,36 @@ describe OutlineAssessmentPresenter do
       end
     end
   end
+
+  describe "#each_history_item" do
+    before do
+      first_history_item = stub(passed: false, score: 42, url: 'foo', completed_at: Date.parse('20120307')).as_null_object
+      second_history_item = stub(passed: true).as_null_object
+      assessment = OutlineAssessmentPresenter.new(stub(:assessment, history: [first_history_item, second_history_item]))
+      @processed = []
+      assessment.each_history_item do |history_item|
+        @processed << history_item
+      end
+    end
+
+    it "has a result_name of 'Fail' if passed is false" do
+      @processed.first.result_name.should == 'Fail'
+    end
+
+    it "has a result_name of 'Pass' if passed is true" do
+      @processed.second.result_name.should == 'Pass'
+    end
+
+    it "adds the percent symbol to the end of the score" do
+      @processed.first.score.should == '42%'
+    end
+
+    it "returns the url" do
+      @processed.first.url.should == 'foo'
+    end
+
+    it "returns the formatted date" do
+      @processed.first.date.should == 'Mar 07 2012'
+    end
+  end
 end

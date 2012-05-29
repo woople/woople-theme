@@ -45,26 +45,13 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>Feb 01 2012</td>
-                <td>0%</td>
-                <td><a href="#">Fail</a></td>
-              </tr>
-              <tr>
-                <td>Feb 01 2012</td>
-                <td>0%</td>
-                <td><a href="#">Fail</a></td>
-              </tr>
-              <tr>
-                <td>Feb 01 2012</td>
-                <td>0%</td>
-                <td><a href="#">Fail</a></td>
-              </tr>
-              <tr>
-                <td>Feb 01 2012</td>
-                <td>0%</td>
-                <td><a href="#">Fail</a></td>
-              </tr>
+              <% assessment.each_history_item do |history_item| %>
+                <tr>
+                  <td><%= history_item.date %></td>
+                  <td><%= history_item.score %></td>
+                  <td><%= link_to history_item.result_name, history_item.url %></td>
+                </tr>
+              <% end %>
             </tbody>
           </table>
         </div>

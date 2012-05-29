@@ -73,7 +73,17 @@ class BrowseController < ApplicationController
       estimated_duration: rand(5..25),
       enabled?: [true, false].sample,
       url: [nil, '#'].sample,
-      relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) }
+      relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) },
+      history: rand(0..7).times.collect { random_history_item }
+    )
+  end
+
+  def random_history_item
+    OpenStruct.new(
+      completed_at: Date.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28)),
+      score: [40, 50, 70].sample,
+      passed: [false, true].sample,
+      url: '#'
     )
   end
 
