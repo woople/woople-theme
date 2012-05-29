@@ -59,12 +59,14 @@ $(document).ready(function() {
   $('.outline tr').not('.disabled').on('click', function(e) {
     e.preventDefault();
 
-    setLoading('td:first-child', this, {
-      lines:  9,
-      radius: 3,
-      length: 4,
-      width:  2
-    });
+    if (!$(this).hasClass('download')) {
+      setLoading('td:first-child', this, {
+        lines:  9,
+        radius: 3,
+        length: 4,
+        width:  2
+      }); 
+    }
 
     visitLocation(this, $(this).hasClass('download'));
   });
