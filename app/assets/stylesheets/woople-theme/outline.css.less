@@ -3,7 +3,6 @@
 
 .outline {
   overflow:hidden;
-  padding-bottom:@contentPadding / 2;
   border-bottom:solid 1px fade(@contentBorder, 35%);
 
   h2 {
@@ -12,9 +11,7 @@
 
   .assessment {
     margin-top:@contentPadding / 2;
-    margin-bottom:@contentPadding / 2;
     position:relative;
-    margin-left:@contentPadding / 2;
 
     -webkit-perspective: 2000px;
     -moz-perspective: 2000px;
@@ -27,7 +24,6 @@
 
     h4 {
       .outline-title();
-      padding:@contentPadding / 2;
     }
 
     .assessment-attributes {
@@ -130,11 +126,6 @@
     .outline {
       border:none;
     }
-
-    td:first-child, th:first-child {
-      padding-left:10px;
-    }
-
   }
 
   .completed {
