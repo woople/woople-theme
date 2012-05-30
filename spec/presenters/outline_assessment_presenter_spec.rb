@@ -1,5 +1,6 @@
 require_relative '../../app/presenters/outline_assessment_presenter'
 require_relative '../../app/presenters/theme_presentation'
+require 'capybara'
 
 describe OutlineAssessmentPresenter do
   describe "#render" do
@@ -67,11 +68,13 @@ describe OutlineAssessmentPresenter do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, url: nil)) }
       
       it "should have the disabled class" do
-        subject.start_button_tag.should match('class="btn btn-primary btn-large disabled"')
+        page = Capybara::Node::Simple.new(subject.start_button_tag)
+        page.should have_css('a.disabled')
       end
 
       it "should not have the href attribute" do
-        subject.start_button_tag.should_not match('href=')
+        page = Capybara::Node::Simple.new(subject.start_button_tag)
+        page.should_not have_css('a[href]')
       end
     end
     
@@ -79,11 +82,13 @@ describe OutlineAssessmentPresenter do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, url: 'foo')) }
       
       it "should not have the disabled class" do
-        subject.start_button_tag.should match('class="btn btn-primary btn-large"')
+        page = Capybara::Node::Simple.new(subject.start_button_tag)
+        page.should_not have_css('a.disabled')
       end
 
       it "should have the href attribute" do
-        subject.start_button_tag.should match('href="foo"')
+        page = Capybara::Node::Simple.new(subject.start_button_tag)
+        page.should have_css('a[href="foo"]')
       end
     end
   end
