@@ -16,3 +16,6 @@
 .DS_Store
 tmp
 spec/dummy/log/*.log
+
+# Developer-specific folders
+.idea/
