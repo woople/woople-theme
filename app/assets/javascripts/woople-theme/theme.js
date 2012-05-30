@@ -5,8 +5,10 @@
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
+//= require twitter/bootstrap/alert
 //= require fastclick.min_
 //= require video.min
+//= require assessment_flipper
 //= require_tree .
 
 function resizeFix() {
@@ -86,5 +88,4 @@ $(document).ready(function() {
       width:  2
     });
   });
-
 });
