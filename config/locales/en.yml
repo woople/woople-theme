@@ -33,3 +33,6 @@ en:
       result_title: Result
       pass: Pass
       fail: Fail
+  date:
+    formats:
+      default: ! '%b %d %Y'

@@ -108,9 +108,11 @@ describe OutlineAssessmentPresenter do
 
   describe "#each_history_item" do
     before do
-      first_history_item = stub(passed: false, score: 42, url: 'foo', completed_at: Date.parse('20120307')).as_null_object
+      WoopleThemeI18n.stub(:l) { |param| param }
+      
+      @first_history_item = stub(passed: false, score: 42, url: 'foo', completed_at: Date.parse('20120307')).as_null_object
       second_history_item = stub(passed: true).as_null_object
-      assessment = OutlineAssessmentPresenter.new(stub(:assessment, history: [first_history_item, second_history_item]))
+      assessment = OutlineAssessmentPresenter.new(stub(:assessment, history: [@first_history_item, second_history_item]))
       @processed = []
       assessment.each_history_item do |history_item|
         @processed << history_item
@@ -134,7 +136,7 @@ describe OutlineAssessmentPresenter do
     end
 
     it "returns the formatted date" do
-      @processed.first.date.should == 'Mar 07 2012'
+      @processed.first.date.should == WoopleThemeI18n.l(@first_history_item.completed_at)
     end
   end
 end

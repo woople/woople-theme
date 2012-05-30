@@ -2,6 +2,7 @@ require 'ostruct'
 require 'delegate'
 require 'action_view'
 require 'active_support/core_ext/object/blank'
+require 'woople_theme_i18n'
 
 class OutlineAssessmentPresenter < SimpleDelegator
   include ActionView::Helpers::TagHelper
@@ -38,7 +39,7 @@ class OutlineAssessmentPresenter < SimpleDelegator
 
   def normalize history_item
     OpenStruct.new(
-      date: history_item.completed_at.strftime("%b %d %Y"),
+      date: WoopleThemeI18n.l(history_item.completed_at),
       score: "#{history_item.score}%",
       result_name: history_item.passed ? I18n.t('woople_theme.assessment.pass') : I18n.t('woople_theme.assessment.fail'),
       url: history_item.url
