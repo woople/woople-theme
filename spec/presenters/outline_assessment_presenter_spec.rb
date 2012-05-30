@@ -118,11 +118,11 @@ describe OutlineAssessmentPresenter do
     end
 
     it "has a result_name of 'Fail' if passed is false" do
-      @processed.first.result_name.should == 'Fail'
+      @processed.first.result_name.should == I18n.t('woople_theme.assessment.fail')
     end
 
     it "has a result_name of 'Pass' if passed is true" do
-      @processed.second.result_name.should == 'Pass'
+      @processed.second.result_name.should == I18n.t('woople_theme.assessment.pass')
     end
 
     it "adds the percent symbol to the end of the score" do
