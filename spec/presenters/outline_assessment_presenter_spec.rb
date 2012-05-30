@@ -3,33 +3,17 @@ require_relative '../../app/presenters/theme_presentation'
 
 describe OutlineAssessmentPresenter do
   describe "#render" do
-    describe "when there is an assesment" do
-      describe "when the assessment is enabled" do
-        subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: true).as_null_object) }
+    describe "when the assessment is enabled" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: true).as_null_object) }
 
-        it "yields the block" do
-          called = false
+      it "yields the block" do
+        called = false
 
-          subject.render do
-            called = true
-          end
-
-          called.should == true
+        subject.render do
+          called = true
         end
-      end
 
-      describe "when the assessment is not startable" do
-        subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: true, startable?: false)) }
-      
-        it "yields the block as disabled" do
-          called = false
-      
-          subject.render do
-            called = true
-          end
-      
-          called.should == true
-        end
+        called.should == true
       end
     end
 
