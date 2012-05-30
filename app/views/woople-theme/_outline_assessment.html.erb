@@ -2,23 +2,23 @@
   <div class="assessment">
     <div class="front">
       <div class="assessment-pad">
-        <a class="flip-action pull-right">History</a>
+        <%= assessment.history_link_tag %>
 
         <h3><%=t('woople_theme.outline.assessment')%></h3>
 
         <p class="assessment-attributes">
           <span class="badge"><%=t('woople_theme.outline.assessment_questions', count: assessment.questions_asked) %></span>
           <span class="badge"><%=t('woople_theme.outline.assessment_requirement', percent: assessment.pass_requirement) %></span>
-          <span class="badge"><%= assessment.estimated_duration %>:00 minutes</span>
+          <span class="badge"><%= assessment.estimated_duration %><%= t 'woople_theme.assessment.duration' %></span>
         </p>
 
         <div class="alert alert-error">
           <a class="close" data-dismiss="alert">×</a>
-          You failed! Please watch the <strong>Require Relearning</strong> before attempting the assessment again.
+          <%= t 'woople_theme.assessment.fail_html' %>
         </div>
 
         <% assessment.render_relearnings do %>
-          <h4>Required Relearning</h4>
+          <h4><%= t 'woople_theme.assessment.required_relearning' %></h4>
           <%= outline(assessment) do |outline| %>
             <%= outline.videos(assessment.relearnings) %>
           <% end %>
@@ -32,16 +32,16 @@
 
     <div class="back">
       <div class="assessment-pad">
-        <a class="flip-action-back pull-right">Assessment</a>
+        <a class="flip-action-back pull-right"><%= t 'woople_theme.assessment.name' %></a>
 
-        <h3>Assessment History</h3>
+        <h3><%= t 'woople_theme.assessment.assessment_history' %></h3>
         <div class="assessment-history">
           <table class="table">
             <thead>
               <tr>
-                <th style="width:50%">Date</th>
-                <th>Score</th>
-                <th class="count">Result</th>
+                <th style="width:50%"><%= t 'woople_theme.assessment.date_title' %></th>
+                <th><%= t 'woople_theme.assessment.score_title' %></th>
+                <th class="count"><%= t 'woople_theme.assessment.result_title' %></th>
               </tr>
             </thead>
             <tbody>

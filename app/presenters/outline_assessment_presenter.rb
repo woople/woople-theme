@@ -24,6 +24,10 @@ class OutlineAssessmentPresenter < SimpleDelegator
     end
   end
 
+  def history_link_tag
+    history.empty? ? '' : content_tag(:a, I18n.t('woople_theme.assessment.history'), class: 'flip-action pull-right')
+  end
+
   def each_history_item
     history.each do |history_item|
       yield normalize(history_item)

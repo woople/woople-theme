@@ -104,6 +104,24 @@ describe OutlineAssessmentPresenter do
     end
   end
 
+  describe "#history_link_tag" do
+    describe 'when no history items' do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [])) }
+
+      it 'returns an empty string' do
+        subject.history_link_tag.should be_blank
+      end
+    end
+
+    describe 'when having history items' do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [stub])) }
+      
+      it 'returns a link' do
+        subject.history_link_tag.should_not be_blank
+      end
+    end
+  end
+
   describe "#each_history_item" do
     before do
       first_history_item = stub(passed: false, score: 42, url: 'foo', completed_at: Date.parse('20120307')).as_null_object
