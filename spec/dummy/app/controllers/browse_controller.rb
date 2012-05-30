@@ -29,6 +29,8 @@ class BrowseController < ApplicationController
     @course = random_course
   end
 
+  helper_method :random_unit
+
   private
 
   def random_course
@@ -47,12 +49,11 @@ class BrowseController < ApplicationController
     )
   end
 
-  def random_unit(unit_index, enabled = false, completed_videos = 3)
+  def random_unit(unit_index = 0, enabled = false, completed_videos = 3)
     OpenStruct.new(
       name: course_names.sample,
       enabled: (unit_index == 0),
-      assessment: [true, false].sample,
-      assessment_enabled: false,
+      assessment: random_assessment,
       completed: 2,
       videos: rand((completed_videos+1)..(completed_videos*3)).times.collect { |index| 
         random_video("#{unit_index}_#{index}", 
@@ -62,6 +63,27 @@ class BrowseController < ApplicationController
                     )
       },
       downloads: [random_download(unit_index == 0)]
+    )
+  end
+
+  def random_assessment
+    OpenStruct.new(
+      questions_asked: rand(5..15),
+      pass_requirement: [50, 75, 100].sample,
+      estimated_duration: rand(5..25),
+      enabled?: [true, false].sample,
+      url: [nil, '#'].sample,
+      relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) },
+      history: rand(0..7).times.collect { random_history_item }
+    )
+  end
+
+  def random_history_item
+    OpenStruct.new(
+      completed_at: Date.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28)),
+      score: [40, 50, 70].sample,
+      passed: [false, true].sample,
+      url: '#'
     )
   end
 

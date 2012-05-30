@@ -5,8 +5,8 @@ describe OutlineDownloadPresenter do
     describe "when enabled" do
       subject { OutlineDownloadPresenter.new(stub(enabled: true)) }
 
-      it "returns nil" do
-        subject.css_class.should == nil
+      it "returns download" do
+        subject.css_class.should == 'download'
       end
     end
 
@@ -14,7 +14,7 @@ describe OutlineDownloadPresenter do
       subject { OutlineDownloadPresenter.new(stub(enabled: false)) }
 
       it "returns disabled" do
-        subject.css_class.should == 'disabled'
+        subject.css_class.should == 'download disabled'
       end
     end
   end
