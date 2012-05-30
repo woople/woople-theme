@@ -33,6 +33,7 @@ en:
       result_title: Result
       pass: Pass
       fail: Fail
+    search_results_more: See All >
   date:
     formats:
       default: ! '%b %d %Y'

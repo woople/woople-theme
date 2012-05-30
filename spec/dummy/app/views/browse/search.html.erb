@@ -1,0 +1,9 @@
+<%= page_header(title: 'Search Results', description: "find what you're looking for") %>
+
+<%= results_header("Courses & Channels", '#') %>
+<%= content_items(@content_items) %>
+
+<%= results_header("Videos", '#') %>
+<%= outline(OpenStruct.new(videos: 10.times.collect { random_video(0, false, true, true) })) do |outline| %>
+  <%= outline.videos %>
+<% end %>
