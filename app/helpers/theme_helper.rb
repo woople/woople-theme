@@ -43,4 +43,11 @@ module ThemeHelper
     model = ThemePresentation.wrap(send(WoopleTheme.configuration.menu_helper), MenuPresenter)
     render 'woople-theme/menu', menu: model
   end
+
+  def results_header(title, path = nil)
+    output = ""
+    output << content_tag(:h2, title, class: 'results-header')
+    output << content_tag(:a, I18n.t('woople_theme.search_results_more'), href: path) unless path.nil?
+    output.html_safe
+  end
 end

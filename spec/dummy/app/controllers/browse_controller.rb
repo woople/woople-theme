@@ -2,6 +2,8 @@ require 'ostruct'
 
 class BrowseController < ApplicationController
   layout 'theme'
+  
+  helper_method :random_unit, :random_video
 
   def video
     @course = random_course
@@ -22,14 +24,19 @@ class BrowseController < ApplicationController
     10.times do
       @content_items << random_course
     end
-
   end
 
   def course
     @course = random_course
   end
+  
+  def search
+    @content_items = []
 
-  helper_method :random_unit
+    3.times do
+      @content_items << random_course
+    end
+  end
 
   private
 
