@@ -31,3 +31,5 @@ en:
       date_title: Date
       score_title: Score
       result_title: Result
+      pass: Pass
+      fail: Fail

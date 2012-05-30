@@ -40,7 +40,7 @@ class OutlineAssessmentPresenter < SimpleDelegator
     OpenStruct.new(
       date: history_item.completed_at.strftime("%b %d %Y"),
       score: "#{history_item.score}%",
-      result_name: history_item.passed ? 'Pass' : 'Fail',
+      result_name: history_item.passed ? I18n.t('woople_theme.assessment.pass') : I18n.t('woople_theme.assessment.fail'),
       url: history_item.url
     )
   end
