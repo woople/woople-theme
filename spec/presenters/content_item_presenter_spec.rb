@@ -34,4 +34,22 @@ describe ContentItemPresenter do
       end
     end
   end
+
+  describe "#completed_class" do
+    describe "when the object is completed" do
+      subject { ContentItemPresenter.new(stub(completed?: true)) }
+
+      it "has a class of completed" do
+        subject.completed_class.should == 'completed'
+      end
+    end
+
+    describe "when the object is incompleted" do
+      subject { ContentItemPresenter.new(stub(completed?: false)) }
+
+      it "has a class of nil" do
+        subject.completed_class.should be_nil
+      end
+    end
+  end
 end

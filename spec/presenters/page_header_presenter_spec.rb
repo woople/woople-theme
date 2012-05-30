@@ -39,6 +39,23 @@ describe PageHeaderPresenter do
         subject.image_class.should be_nil
       end
     end
+  end
 
+  describe "#completed_class" do
+    describe "when the object is completed" do
+      subject { PageHeaderPresenter.new(stub(completed?: true)) }
+
+      it "has a class of completed" do
+        subject.completed_class.should == 'completed'
+      end
+    end
+
+    describe "when the object is incompleted" do
+      subject { PageHeaderPresenter.new(stub(completed?: false)) }
+
+      it "has a class of nil" do
+        subject.completed_class.should be_nil
+      end
+    end
   end
 end

@@ -38,7 +38,7 @@ class BrowseController < ApplicationController
       name: course_names.sample,
       description: 'Here is a sample description',
       url: '/course',
-      completed: completed.sample,
+      completed?: completed.sample,
       percent_complete: rand(100),
       image: images.sample,
       time_remaining: rand(10000),
@@ -120,7 +120,7 @@ class BrowseController < ApplicationController
   end
 
   def completed
-    ['completed', '']
+    [true, false]
   end
 
   def certification_metadata
