@@ -23,7 +23,7 @@ en:
     assessment:
       start: Start Assessment
       history: History
-      duration: :00 minutes
+      duration: ':00 minutes'
       fail_html: You failed! Please watch the <strong>Require Relearning</strong> before attempting the assessment again.
       required_relearning: Required Relearning
       name: Assessment
