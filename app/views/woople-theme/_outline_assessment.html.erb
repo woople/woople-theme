@@ -12,10 +12,10 @@
           <span class="badge"><%= assessment.estimated_duration %><%= t 'woople_theme.assessment.duration' %></span>
         </p>
 
-        <div class="alert alert-error">
+        <!-- <div class="alert alert-error">
           <a class="close" data-dismiss="alert">×</a>
-          <%= t 'woople_theme.assessment.fail_html' %>
-        </div>
+          <%# t 'woople_theme.assessment.fail_html' %>
+        </div> -->
 
         <% assessment.render_relearnings do %>
           <h4><%= t 'woople_theme.assessment.required_relearning' %></h4>
