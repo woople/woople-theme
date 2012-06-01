@@ -39,7 +39,7 @@ class OutlineAssessmentPresenter < SimpleDelegator
 
   def normalize history_item
     OpenStruct.new(
-      date: WoopleThemeI18n.l(history_item.completed_at),
+      date: WoopleThemeI18n.l(history_item.completed_at.to_date),
       score: "#{history_item.score}%",
       result_name: history_item.passed ? I18n.t('woople_theme.assessment.pass') : I18n.t('woople_theme.assessment.fail'),
       url: history_item.url
