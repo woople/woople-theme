@@ -12,8 +12,8 @@ en:
       duration: Duration
       assessment: Assessment
       assessment_questions:
-        one: 1 Question
-        other: "%{count} Questions"
+        one: 1 question
+        other: '%{count} questions'
       assessment_requirement: "%{percent}% required"
     profile:
       search: Search...
@@ -23,7 +23,9 @@ en:
     assessment:
       start: Start Assessment
       history: History
-      duration: ':00 minutes'
+      duration:
+        one: 1 minute
+        other: '%{count} minutes'
       fail_html: You failed! Please watch the <strong>Require Relearning</strong> before attempting the assessment again.
       required_relearning: Required Relearning
       name: Assessment
