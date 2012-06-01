@@ -9,7 +9,7 @@
         <p class="assessment-attributes">
           <span class="badge"><%=t('woople_theme.outline.assessment_questions', count: assessment.questions_asked) %></span>
           <span class="badge"><%=t('woople_theme.outline.assessment_requirement', percent: assessment.pass_requirement) %></span>
-          <span class="badge"><%= assessment.estimated_duration %><%= t 'woople_theme.assessment.duration' %></span>
+          <span class="badge"><%= t 'woople_theme.assessment.duration', count: assessment.estimated_duration %></span>
         </p>
 
         <div class="alert alert-error">
