@@ -87,7 +87,7 @@ class BrowseController < ApplicationController
 
   def random_history_item
     OpenStruct.new(
-      completed_at: Date.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28)),
+      completed_at: Time.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28), rand(0..12), rand(0..59), rand(0..59)),
       score: [40, 50, 70].sample,
       passed: [false, true].sample,
       url: '#'
