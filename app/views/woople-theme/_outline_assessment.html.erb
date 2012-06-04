@@ -2,7 +2,9 @@
   <div class="assessment">
     <div class="front">
       <div class="assessment-pad">
-        <%= assessment.history_link_tag %>
+        <div class="flip-action pull-right">
+          <%= assessment.history_link_tag %>
+        </div>
 
         <h3><%=t('woople_theme.outline.assessment')%></h3>
 
@@ -32,7 +34,9 @@
 
     <div class="back">
       <div class="assessment-pad">
-        <a class="flip-action-back pull-right"><%= t 'woople_theme.assessment.name' %></a>
+        <div class="flip-action-back pull-right">
+          <a><%= t 'woople_theme.assessment.name' %></a>
+        </div>
 
         <h3><%= t 'woople_theme.assessment.assessment_history' %></h3>
         <div class="assessment-history">
