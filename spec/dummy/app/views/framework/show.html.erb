@@ -57,8 +57,22 @@
       name: 'Outline Name',
       enabled: true,
       downloads: [{ name: 'Training Supplement', enabled: true, url: '#' }],
-      assessment_enabled: true,
-      assessment: true,
+      assessment: {
+        enabled?: true,
+        questions_asked: 7,
+        pass_requirement: 75.0,
+        estimated_duration: 7,
+        url: '#',
+        relearnings: [],
+        history: [
+          OpenStruct.new({
+            completed_at: Time.parse('20120307 123456'),
+            score: 75.0,
+            passed: true,
+            url: '#'
+          })
+        ]
+      },
       videos: [
         { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: true, enabled: true },
         { id: 1, name: 'Video Name', url: '#', duration: 100000, completed: false, enabled: true },
