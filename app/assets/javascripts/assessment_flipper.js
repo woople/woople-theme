@@ -8,7 +8,7 @@ $(document).ready(function() {
     element.css({ height: 'inherit' });
   }
 
-  $('.assessment .flip-action').on('click', function() {
+  $('.assessment .flip-action a').on('click', function() {
     $(this).closest('.assessment').addClass('flip');
 
     var front = $(this).closest('.front');
@@ -26,7 +26,7 @@ $(document).ready(function() {
     }
   });
 
-  $('.assessment .flip-action-back').on('click', function() {
+  $('.assessment .flip-action-back a').on('click', function() {
     var assessment = $(this).closest('.assessment').removeClass('flip');
     var front = assessment.find('.front');
     removeFrontHeight(front);
