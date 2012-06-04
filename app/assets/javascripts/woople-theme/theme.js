@@ -51,6 +51,51 @@ function visitLocation(element, newWindow) {
   }
 }
 
+function mobileSearchToggle() {
+  var mobileSearch = $('<div></div>').addClass('mobile-search');
+
+  $('a.search-page').on('click', function(e) {
+    e.preventDefault();
+    
+    if ($(window).width() > 768) {
+      return;
+    }
+    
+    var masthead        = $('#masthead');
+    var menu            = $('.container .menu');
+    var form            = $('form.search');
+    var profile         = $('.profile');
+
+    var clonedForm      = form.clone(true);
+    var menuOffset      = menu.offset();
+
+    masthead.toggleClass('mobile-search-visible');
+    menu.toggleClass('mobile-search-visible');
+
+    $(clonedForm).children('a').remove();
+    
+    if ($(mobileSearch).is(":visible")) {
+      mobileSearch.html(null);
+      mobileSearch.hide();
+    } else { 
+      mobileSearch.html(clonedForm);
+      mobileSearch.show();
+      $(profile).before(mobileSearch);
+    }
+    
+    return false;
+  });
+  
+  $(document).resize(function(e) {
+    if ($(window).width() > 768) {
+      $('#masthead').removeClass('mobile-search-visible');
+      $('.container .menu').removeClass('mobile-search-visible');
+      $('.mobile-search').html(null);
+      $('.mobile-search').hide();
+    }
+  });
+}
+
 $(document).ready(function() {
   resizeFix();
 
@@ -88,4 +133,6 @@ $(document).ready(function() {
       width:  2
     });
   });
+
+  mobileSearchToggle();
 });
