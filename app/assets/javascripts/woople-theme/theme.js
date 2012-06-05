@@ -51,16 +51,29 @@ function visitLocation(element, newWindow) {
   }
 }
 
+function nonMobileScreen() {
+  return ($(window).width() > 768);
+}
+
 function mobileSearchToggle() {
   var mobileSearch = $('<div></div>').addClass('mobile-search');
 
+  $(window).resize(function(e) {
+    if ( nonMobileScreen() ) {
+      $('#masthead').removeClass('mobile-search-visible');
+      $('.container .menu').removeClass('mobile-search-visible');
+      $('.mobile-search').empty();
+      $('.mobile-search').hide();
+    }
+  });
+
   $('a.search-page').on('click', function(e) {
     e.preventDefault();
-    
-    if ($(window).width() > 768) {
+
+    if ( nonMobileScreen() ) {
       return;
     }
-    
+
     var masthead        = $('#masthead');
     var menu            = $('.container .menu');
     var form            = $('form.search');
@@ -73,27 +86,19 @@ function mobileSearchToggle() {
     menu.toggleClass('mobile-search-visible');
 
     $(clonedForm).children('a').remove();
-    
+
     if ($(mobileSearch).is(":visible")) {
-      mobileSearch.html(null);
+      mobileSearch.empty();
       mobileSearch.hide();
-    } else { 
+    } else {
       mobileSearch.html(clonedForm);
       mobileSearch.show();
       $(profile).before(mobileSearch);
     }
-    
+
     return false;
   });
-  
-  $(document).resize(function(e) {
-    if ($(window).width() > 768) {
-      $('#masthead').removeClass('mobile-search-visible');
-      $('.container .menu').removeClass('mobile-search-visible');
-      $('.mobile-search').html(null);
-      $('.mobile-search').hide();
-    }
-  });
+
 }
 
 $(document).ready(function() {
@@ -112,7 +117,7 @@ $(document).ready(function() {
         radius: 3,
         length: 4,
         width:  2
-      }); 
+      });
     }
 
     visitLocation(this, $(this).hasClass('download'));
