@@ -40,10 +40,10 @@ describe MenuLinkPresenter do
 
   describe "#certification_badge" do
     describe "when there is a certification badge" do
-      subject { wrap_link(stub(certification_badge:'red')) }
+      subject { wrap_link(stub(certification_badge:'butt')) }
 
       it "wraps the content in a certification_badge" do
-        subject.certification_badge.should == "<span class=\"badge label-icon\"><i class=\"cert-status-red\"></i> Red</span>"
+        subject.certification_badge.should == "<span class=\"badge label-icon\"><i class=\"cert-status butt\"></i> Butt</span>"
       end
     end
 
