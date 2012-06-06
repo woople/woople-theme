@@ -19,14 +19,20 @@
   background-size:15px 15px;
 }
 
-.menu .cert-status-red {
-  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
+.menu .cert-status {
   background-size:25px 25px;
 }
 
-.content-item-header .sortAsc .icon-chevron-up {
-  background-image:url(/assets/woople-theme/icons/sortASC2x.png);
-  background-size:14px 14px;
+.menu .red {
+  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
+}
+
+.menu .green {
+  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
+}
+
+.menu .yellow {
+  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
 }
 
 .content-item-header .sortDesc .icon-chevron-down {

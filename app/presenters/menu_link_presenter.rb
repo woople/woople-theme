@@ -21,7 +21,7 @@ class MenuLinkPresenter < SimpleDelegator
   def certification_badge
    return "" if no_certification_badge?
 
-    content_tag(:span, content_tag(:i, '', class: "cert-status-#{link.certification_badge}") + " #{link.certification_badge.titleize}", class: 'badge label-icon')
+    content_tag(:span, content_tag(:i, '', class: "cert-status #{link.certification_badge}") + " #{link.certification_badge.titleize}", class: 'badge label-icon')
   end
 
   def css_class
