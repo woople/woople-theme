@@ -1,25 +1,21 @@
 @import "woople-theme/variables.css.less";
 @import "woople-theme/colours.css.less";
 
-#masthead.mobile-search-visible {
-  height: 72px;
-}
-
-.container .menu.mobile-search-visible {
-  top: 120px;
-}
-
 .mobile-search {
   display: none;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  left: 0.5em;
+  right: 0.5em;
+  position: absolute;
   margin-top: 25px;
-  text-align: right;
 
   input {
-    -webkit-appearance: searchfield;
-    margin-bottom: 10px;
-    height: 28px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    .border-radius(28px);
+    height: 38px;
+    margin-bottom: 20px;
+    width: 100%;
   }
 }
 
@@ -110,29 +106,34 @@
     }
   }
 }
+@media (min-width: 769px) {
+  #masthead.mobile-search-visible {
+    height: 24px;
+  }
 
-@media (min-width: 320px) {
-  .mobile-search {
-    input {
-      width: 278px;
-    }
+  .container .menu.mobile-search-visible {
+    top: 120px;
   }
-}
-@media (min-width: 480px) {
+
   .mobile-search {
+    display: none;
+    overflow: hidden;
+    height: 0;
+    
     input {
-      width: 438px;
-    }
-  }
-}
-@media (min-width: 768px) {
-  .mobile-search {
-    input {
-      width: 682px;
+      display: none;
     }
   }
 }
 @media (max-width: 768px) {
+  #masthead.mobile-search-visible {
+    height: 72px;
+  }
+
+  .container .menu.mobile-search-visible {
+    top: 120px;
+  }
+
   .profile {
     right:5px;
     width:auto;

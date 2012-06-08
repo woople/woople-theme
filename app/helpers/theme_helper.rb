@@ -47,7 +47,7 @@ module ThemeHelper
   def results_header(title, path = nil)
     output = ""
     output << content_tag(:h2, title, class: 'results-header')
-    output << content_tag(:a, I18n.t('woople_theme.search_results_more'), href: path) unless path.nil?
+    output << content_tag(:a, I18n.t('woople_theme.search_results_more'), href: path, class: 'loading_indicator') unless path.nil?
     output.html_safe
   end
 end
