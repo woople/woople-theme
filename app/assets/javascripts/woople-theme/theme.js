@@ -96,7 +96,7 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline tr').not('.disabled').on('click', function(e) {
+  $('.outline tbody tr').not('.disabled').on('click', function(e) {
     e.preventDefault();
 
     if (!$(this).hasClass('download')) {
