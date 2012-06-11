@@ -50,4 +50,8 @@ module ThemeHelper
     output << content_tag(:a, I18n.t('woople_theme.search_results_more'), href: path, class: 'loading_indicator') unless path.nil?
     output.html_safe
   end
+
+  def assessment_form assessment_form
+    render partial: 'woople-theme/assessment_form', object: ThemePresentation.wrap(assessment_form, AssessmentFormPresenter)
+  end
 end
