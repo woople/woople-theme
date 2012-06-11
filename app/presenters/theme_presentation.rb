@@ -26,7 +26,11 @@ class ThemePresentation
 
   def self.normalize(data)
     if data.is_a? Hash
-      OpenStruct.new(data)
+      hash = {}
+      data.each { |key, value| hash[key] = normalize value }
+      OpenStruct.new hash
+    elsif data.is_a? Array
+      data.collect { |datum| normalize datum }
     else
       data
     end

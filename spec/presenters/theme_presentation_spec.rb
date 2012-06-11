@@ -46,6 +46,27 @@ describe ThemePresentation do
       end
     end
 
+    describe 'when data is a hash with an array of hashes' do
+      let :hash do
+        {
+          key: 'value',
+          array: [
+            {
+              key: 'value'
+            },
+            {
+              another_key: 'another value'
+            }
+          ]
+        } 
+      end
+
+      it 'returns a nested struct' do
+        ThemePresentation.wrap(hash).array[0].key.should == 'value'
+        ThemePresentation.wrap(hash).array[1].another_key.should == 'another value'
+      end
+    end
+
     describe 'when data is a model object' do
       it "should return a class of type Model" do
         ThemePresentation.wrap(Model.new).should be_a(Model)
