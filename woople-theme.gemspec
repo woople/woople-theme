@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.5"
-  s.add_dependency "less-rails-bootstrap", "2.0.8"
+  s.add_dependency 'less-rails-bootstrap', '2.0.13'
+  s.add_dependency 'therubyracer'
 
   s.add_development_dependency "bundler"
   s.add_development_dependency "sqlite3"

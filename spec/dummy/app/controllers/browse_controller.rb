@@ -38,6 +38,10 @@ class BrowseController < ApplicationController
     end
   end
 
+  def assessment
+    @assessment_form = random_assessment_form
+  end
+
   private
 
   def random_course
@@ -112,6 +116,53 @@ class BrowseController < ApplicationController
       completed: completed && unit_enabled,
       enabled: enabled && unit_enabled
     )
+  end
+
+  def random_assessment_form
+    {
+      description: '"Hairy Forms" unit of "Pagination" course',
+      questions: rand(3..7).times.collect { random_question },
+      copyright: 'Copyright (c) 2012 Apple Inc. All rights reserved.'
+    }
+  end
+
+  def random_question
+    {
+      name: question_names.sample,
+      answers: rand(2..5).times.collect { answers.sample }
+    }
+  end
+
+  def question_names
+    [
+      'Does Marco Arment still have a financial stake in Tumblr?',
+      'Why are software development task estimations regularly off by a factor of 2-3?',
+      'What are some $1B+ markets ripe for disruption?',
+      'What does it feel like to be the CEO of a start-up?',
+      'How could Facebook monetize mobile?',
+      'What filesystem does GitHub use for its repositories and why?',
+      'What things has Paul Graham been very wrong about?',
+      'What caused the turbulence and eventual downtime of Facebook on Thursday, May 31st, 2012?',
+      'What is it like to always be the smartest person in the room?',
+      'How is the mobile team at Facebook structured?',
+      'Did anyone decline an offer to work at Instagram?'
+    ]
+  end
+
+  def answers
+    [
+      'You think water moves fast? You should see ice.',
+      'Now that there is the Tec-9, a crappy spray gun from South Miami.',
+      'The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men.',
+      'Now that we know who you are, I know who I am.',
+      'Well, the way they make shows is, they make one show.',
+      'You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot.',
+      'Do you see any Teletubbies in here?',
+      'Do you see a slender plastic tag clipped to my shirt with my name printed on it?',
+      'Do you see a little Asian child with a blank expression on his face sitting outside on a mechanical helicopter that shakes when you put quarters in it?',
+      'This gun is advertised as the most popular gun in American crime.',
+      'Some pilots get picked and become television programs.'
+    ]
   end
 
   def course_names

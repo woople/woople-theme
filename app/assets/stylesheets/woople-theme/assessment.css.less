@@ -1,0 +1,63 @@
+@import "woople-theme/variables.css.less";
+@import "woople-theme/colours.css.less";
+
+@assessment-fieldset-padding: 32px;
+@question-number-offset: 18px;
+@answer-label-font-size: 14px;
+
+#assessment {
+  margin: 0;
+
+  .fieldset {
+    padding: @assessment-fieldset-padding;
+  }
+
+  .even {
+    background-color: white;
+  }
+
+  legend {
+    margin: 0 0 8px 0;
+    border: none;
+    padding-left: @question-number-offset;
+    font-size: 18px;
+    line-height: normal;
+    color: @primaryTextColour;
+
+    span {
+      margin-left: -@question-number-offset;
+      color: @primary;
+    }
+  }
+
+  label {
+    margin: 0;
+    padding-top: 8px;
+    font-size: @answer-label-font-size;
+    line-height: normal;
+    color: @secondaryTextColour;
+
+    input {
+      margin-top: 2px;
+      margin-bottom: 0;
+      width: @answer-label-font-size;
+      height: @answer-label-font-size;
+    }
+  }
+
+  .span8 {
+    padding-top: 12px;
+  }
+
+  .span4 {
+    text-align: right;
+  }
+
+  p {
+    margin-bottom: 0;
+    padding: @assessment-fieldset-padding / 2;
+    text-align: center;
+    font-size: @sosumi-font-size;
+    color: @secondaryTextColour;
+  }
+}
