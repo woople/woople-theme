@@ -35,6 +35,10 @@ en:
       result_title: Result
       pass: Pass
       fail: Fail
+    assessment_form:
+      questions_unanswered:
+        one: 1 question unanswered
+        other: '%{count} questions unanswered'
     search_results_more: See All >
   date:
     formats:

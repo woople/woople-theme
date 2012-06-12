@@ -1,0 +1,15 @@
+<%= page_header image: nil, title: 'Assessment', description: assessment_form.description %>
+
+<form id="assessment">
+  <%= render partial: 'woople-theme/assessment_form_question', collection: assessment_form.questions %>
+
+  <div class="fieldset <%= cycle 'odd', 'even' %>">
+    <div class="row-fluid">
+      <div class="span8"><span class="badge badge-warning"><%= t 'woople_theme.assessment_form.questions_unanswered', count: assessment_form.questions.count %></span></div>
+      <div class="span4"><input type="submit" value="Submit Assessment" class="btn btn-primary btn-large" disabled="disabled" /></div>
+    </div>
+  </div>
+  <% assessment_form.render_copyright do %>
+    <p class="<%= cycle 'odd', 'even' %>"><%= assessment_form.copyright %></p>
+  <% end %>
+</form>
