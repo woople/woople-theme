@@ -36,9 +36,9 @@ en:
       pass: Pass
       fail: Fail
     assessment_form:
-      questions_unanswered:
-        one: 1 question unanswered
-        other: '%{count} questions unanswered'
+      unanswered_questions:
+        one: 1 unanswered question
+        other: '%{count} unanswered questions'
     search_results_more: See All >
   date:
     formats:
