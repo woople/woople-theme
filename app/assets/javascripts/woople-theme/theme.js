@@ -9,6 +9,7 @@
 //= require fastclick.min_
 //= require video.min
 //= require assessment_flipper
+//= require assessment_form
 //= require_tree .
 
 function resizeFix() {
