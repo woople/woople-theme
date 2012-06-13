@@ -21,6 +21,7 @@
     border: none;
     padding-left: @question-number-offset;
     font-size: 18px;
+    font-weight: @title-font-weight;
     line-height: normal;
     color: @primaryTextColour;
 
@@ -45,12 +46,16 @@
     }
   }
 
-  .span8 {
+  .span4 {
     padding-top: 12px;
   }
 
-  .span4 {
+  .span8 {
     text-align: right;
+  }
+
+  input[type=button] {
+    margin-right: @assessment-fieldset-padding / 2;
   }
 
   p {
