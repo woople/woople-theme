@@ -17,4 +17,8 @@ $(document).ready(function() {
       $('#assessment input[type=submit]').removeAttr('disabled');
     }
   });
+
+  $('input[type=button]').click(function() {
+    history.back();
+  });
 });
