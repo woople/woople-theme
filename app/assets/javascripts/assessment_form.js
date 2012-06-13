@@ -18,7 +18,7 @@ $(document).ready(function() {
     }
   });
 
-  var cancelButton = $('input[type=button]');
+  var cancelButton = $('#assessment input[type=button]');
   cancelButton.click(function() {
     location.href = cancelButton.attr('data-course-path');
   });
