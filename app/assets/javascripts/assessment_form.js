@@ -18,7 +18,8 @@ $(document).ready(function() {
     }
   });
 
-  $('input[type=button]').click(function() {
-    history.back();
+  var cancelButton = $('input[type=button]');
+  cancelButton.click(function() {
+    location.href = cancelButton.attr('data-course-path');
   });
 });
