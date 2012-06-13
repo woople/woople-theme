@@ -8,7 +8,7 @@ $(document).ready(function() {
     if (numberOfUnansweredQuestions > 0) {
       var unansweredQuestionsBadgeText = numberOfUnansweredQuestions + ' unanswered question';
       if (numberOfUnansweredQuestions > 1) {
-        unansweredQuestionsBadgeText = unansweredQuestionsBadgeText + 's'
+        unansweredQuestionsBadgeText += 's';
       }
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
