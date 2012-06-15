@@ -2,6 +2,7 @@
 @import "woople-theme/colours.css.less";
 
 @assessment-fieldset-padding: 32px;
+@touch-assessment-fieldset-padding: @assessment-fieldset-padding / 2;
 @question-number-offset: 18px;
 @answer-label-font-size: 14px;
 
@@ -64,5 +65,38 @@
     text-align: center;
     font-size: @sosumi-font-size;
     color: @secondaryTextColour;
+  }
+}
+
+@media (max-width: 480px) {
+  #assessment {
+    .fieldset {
+      padding: @touch-assessment-fieldset-padding 0 (@touch-assessment-fieldset-padding - @touch-assessment-fieldset-padding / 8) 0;
+    }
+
+    legend {
+      margin-bottom: @touch-assessment-fieldset-padding / 2 - @touch-assessment-fieldset-padding / 8;
+      margin-left: @touch-assessment-fieldset-padding;
+      margin-right: @touch-assessment-fieldset-padding;
+      width: auto;
+    }
+
+    label {
+      padding: (@touch-assessment-fieldset-padding / 8) @touch-assessment-fieldset-padding (@touch-assessment-fieldset-padding / 8) (@touch-assessment-fieldset-padding + @question-number-offset);
+    }
+
+    .span4 {
+      padding-top: 0;
+      height: @touch-assessment-fieldset-padding + 16; /* 16px is the height of the badge that this span contains */
+      text-align: center;
+    }
+
+    .span8 {
+      text-align: center;
+    }
+
+    input[type=button] {
+      margin-right: @assessment-fieldset-padding / 4;
+    }
   }
 }
