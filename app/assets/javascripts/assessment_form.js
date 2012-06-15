@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  $('#assessment').on('click', 'input[type=radio]', function() {
+  function updateAssessmentFormState() {
     var numberOfQuestions = $('#assessment legend').length;
     var numberOfCheckedAnswers = $('#assessment input:checked').length;
     var numberOfUnansweredQuestions = numberOfQuestions - numberOfCheckedAnswers;
@@ -13,13 +13,22 @@ $(document).ready(function() {
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
     } else {
-      unansweredQuestionsBadge.fadeOut();
+      unansweredQuestionsBadge.addClass('fade-out');
       $('#assessment input[type=submit]').removeAttr('disabled');
+
+      $('.touch #assessment .span4').addClass('collapse-height');
     }
-  });
+  }
+
+  $('#assessment').on('click', 'input[type=radio]', updateAssessmentFormState);
 
   var cancelButton = $('#assessment input[type=button]');
   cancelButton.click(function() {
     location.href = cancelButton.attr('data-course-path');
+  });
+
+  $('.touch #assessment label').click(function() {
+    $(this).children('input').attr('checked', 'checked');
+    updateAssessmentFormState();
   });
 });
