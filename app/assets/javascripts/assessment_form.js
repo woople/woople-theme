@@ -15,6 +15,8 @@ $(document).ready(function() {
     } else {
       unansweredQuestionsBadge.addClass('fade-out');
       $('#assessment input[type=submit]').removeAttr('disabled');
+
+      $('.touch #assessment .span4').addClass('collapse-height');
     }
   }
 

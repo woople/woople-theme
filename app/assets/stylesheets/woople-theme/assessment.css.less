@@ -99,8 +99,17 @@
 
     .span4 {
       padding-top: 0;
+      min-height: 0;
       height: @touch-assessment-fieldset-padding + 16; /* 16px is the height of the badge that this span contains */
       text-align: center;
+    }
+
+    .collapse-height {
+      height: 0;
+      -webkit-transition: height 0.5s;
+         -moz-transition: height 0.5s;
+           -o-transition: height 0.5s;
+              transition: height 0.5s;
     }
 
     .span8 {
