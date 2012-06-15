@@ -51,6 +51,14 @@
     padding-top: 12px;
   }
 
+  .fade-out {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+       -moz-transition: opacity 0.5s;
+         -o-transition: opacity 0.5s;
+            transition: opacity 0.5s;
+  }
+
   .span8 {
     text-align: right;
   }
@@ -83,6 +91,10 @@
 
     label {
       padding: (@touch-assessment-fieldset-padding / 8) @touch-assessment-fieldset-padding (@touch-assessment-fieldset-padding / 8) (@touch-assessment-fieldset-padding + @question-number-offset);
+    }
+
+    .row-fluid {
+      -webkit-perspective: 1000; /* Removes CSS transition flicker */
     }
 
     .span4 {

@@ -13,7 +13,7 @@ $(document).ready(function() {
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
     } else {
-      unansweredQuestionsBadge.fadeOut();
+      unansweredQuestionsBadge.addClass('fade-out');
       $('#assessment input[type=submit]').removeAttr('disabled');
     }
   }
