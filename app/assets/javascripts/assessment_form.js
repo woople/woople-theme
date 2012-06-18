@@ -1,6 +1,6 @@
 $(document).ready(function() {
   function updateAssessmentFormState() {
-    var numberOfQuestions = $('#assessment legend').length;
+    var numberOfQuestions = $('#assessment .legend').length;
     var numberOfCheckedAnswers = $('#assessment input:checked').length;
     var numberOfUnansweredQuestions = numberOfQuestions - numberOfCheckedAnswers;
 
