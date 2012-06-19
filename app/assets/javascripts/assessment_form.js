@@ -13,7 +13,9 @@ $(document).ready(function() {
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
     } else {
-      $('.touch #assessment .badge').hide();
+      if ($(window).width() <= 480) {
+        unansweredQuestionsBadge.hide();
+      }
 
       unansweredQuestionsBadge.fadeOut();
       $('#assessment input[type=submit]').removeAttr('disabled');
