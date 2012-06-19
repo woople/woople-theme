@@ -13,7 +13,7 @@ $(document).ready(function() {
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
     } else {
-      unansweredQuestionsBadge.addClass('fade-out');
+      unansweredQuestionsBadge.fadeOut();
       $('#assessment input[type=submit]').removeAttr('disabled');
 
       $('.touch #assessment .span4').addClass('collapse-height');
