@@ -3,7 +3,8 @@
 
 @assessment-fieldset-padding: 32px;
 @touch-assessment-fieldset-padding: @assessment-fieldset-padding / 2;
-@question-number-offset: 18px;
+@question-number-width: 24px;
+@question-number-offset: @question-number-width + 4;
 @answer-label-font-size: 14px;
 
 #assessment {
@@ -26,7 +27,10 @@
     color: @primaryTextColour;
 
     span {
+      display: inline-block;
       margin-left: -@question-number-offset;
+      width: @question-number-width;
+      text-align: right;
       color: @primary;
     }
   }
@@ -34,6 +38,7 @@
   label {
     margin: 0;
     padding-top: @assessment-fieldset-padding / 4;
+    padding-left: @question-number-offset;
     font-size: @answer-label-font-size;
     line-height: normal;
     color: @secondaryTextColour;
