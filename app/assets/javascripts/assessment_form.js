@@ -13,6 +13,8 @@ $(document).ready(function() {
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
     } else {
+      $('.touch #assessment .badge').hide();
+
       unansweredQuestionsBadge.fadeOut();
       $('#assessment input[type=submit]').removeAttr('disabled');
 
