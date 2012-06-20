@@ -121,7 +121,7 @@ class BrowseController < ApplicationController
   def random_assessment_form
     {
       description: '"Hairy Forms" unit of "Pagination" course',
-      questions: rand(3..7).times.collect { random_question },
+      questions: rand(10..13).times.collect { random_question },
       course_path: '/course',
       copyright: 'Copyright (c) 2012 Apple Inc. All rights reserved.'
     }
