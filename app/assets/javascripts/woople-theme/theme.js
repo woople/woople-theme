@@ -90,6 +90,10 @@ function mobileSearchToggle() {
 
 }
 
+function phone() {
+  return $(window).width() <= 480 ? true : false;
+}
+
 $(document).ready(function() {
   resizeFix();
 

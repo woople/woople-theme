@@ -5,7 +5,7 @@
 
   <div class="fieldset <%= cycle 'odd', 'even' %>">
     <div class="row-fluid">
-      <div class="span4"><span class="badge badge-warning"><%= t 'woople_theme.assessment_form.unanswered_questions', count: assessment_form.questions.count %></span></div>
+      <div class="span4"><span class="badge"><%= t 'woople_theme.assessment_form.unanswered_questions', count: assessment_form.questions.count %></span></div>
       <div class="span8">
         <input type="button" value="Cancel" class="btn btn-large" data-course-path="<%= assessment_form.course_path %>" />
         <input type="submit" value="Submit Assessment" class="btn btn-primary btn-large" disabled="disabled" />

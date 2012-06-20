@@ -3,7 +3,8 @@
 
 @assessment-fieldset-padding: 32px;
 @touch-assessment-fieldset-padding: @assessment-fieldset-padding / 2;
-@question-number-offset: 18px;
+@question-number-width: 24px;
+@question-number-offset: @question-number-width + 4;
 @answer-label-font-size: 14px;
 
 #assessment {
@@ -17,9 +18,8 @@
     background-color: white;
   }
 
-  legend {
-    margin: 0 0 8px 0;
-    border: none;
+  .legend {
+    margin-bottom: @assessment-fieldset-padding / 2 - @assessment-fieldset-padding / 4;
     padding-left: @question-number-offset;
     font-size: 18px;
     font-weight: @title-font-weight;
@@ -27,14 +27,18 @@
     color: @primaryTextColour;
 
     span {
+      display: inline-block;
       margin-left: -@question-number-offset;
+      width: @question-number-width;
+      text-align: right;
       color: @primary;
     }
   }
 
   label {
     margin: 0;
-    padding-top: 8px;
+    padding-top: @assessment-fieldset-padding / 4;
+    padding-left: @question-number-offset;
     font-size: @answer-label-font-size;
     line-height: normal;
     color: @secondaryTextColour;
@@ -42,6 +46,7 @@
     input {
       margin-top: 2px;
       margin-bottom: 0;
+      padding: 0; /* Overrides IE8 & IE9 user agent padding */
       width: @answer-label-font-size;
       height: @answer-label-font-size;
     }
@@ -51,12 +56,8 @@
     padding-top: 12px;
   }
 
-  .fade-out {
-    opacity: 0;
-    -webkit-transition: opacity 0.5s;
-       -moz-transition: opacity 0.5s;
-         -o-transition: opacity 0.5s;
-            transition: opacity 0.5s;
+  .badge {
+    background-color: @yellow;
   }
 
   .span8 {
@@ -82,19 +83,14 @@
       padding: @touch-assessment-fieldset-padding 0 (@touch-assessment-fieldset-padding - @touch-assessment-fieldset-padding / 8) 0;
     }
 
-    legend {
+    .legend {
       margin-bottom: @touch-assessment-fieldset-padding / 2 - @touch-assessment-fieldset-padding / 8;
       margin-left: @touch-assessment-fieldset-padding;
       margin-right: @touch-assessment-fieldset-padding;
-      width: auto;
     }
 
     label {
       padding: (@touch-assessment-fieldset-padding / 8) @touch-assessment-fieldset-padding (@touch-assessment-fieldset-padding / 8) (@touch-assessment-fieldset-padding + @question-number-offset);
-    }
-
-    .row-fluid {
-      -webkit-perspective: 1000; /* Removes CSS transition flicker */
     }
 
     .span4 {

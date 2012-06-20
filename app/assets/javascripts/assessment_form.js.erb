@@ -1,19 +1,24 @@
 $(document).ready(function() {
   function updateAssessmentFormState() {
-    var numberOfQuestions = $('#assessment legend').length;
+    var numberOfQuestions = $('#assessment .legend').length;
     var numberOfCheckedAnswers = $('#assessment input:checked').length;
     var numberOfUnansweredQuestions = numberOfQuestions - numberOfCheckedAnswers;
 
     var unansweredQuestionsBadge = $('#assessment .badge');
     if (numberOfUnansweredQuestions > 0) {
-      var unansweredQuestionsBadgeText = numberOfUnansweredQuestions + ' unanswered question';
-      if (numberOfUnansweredQuestions > 1) {
-        unansweredQuestionsBadgeText += 's';
+      if (numberOfUnansweredQuestions == 1) {
+        unansweredQuestionsBadgeText = '<%= I18n.t 'woople_theme.assessment_form.unanswered_questions.one' %>';
+      } else {
+        unansweredQuestionsBadgeText = '<%= I18n.t 'woople_theme.assessment_form.unanswered_questions.other' %>'.replace('%{count}', numberOfUnansweredQuestions);
       }
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
     } else {
-      unansweredQuestionsBadge.addClass('fade-out');
+      if (phone()) {
+        unansweredQuestionsBadge.hide();
+      }
+
+      unansweredQuestionsBadge.fadeOut();
       $('#assessment input[type=submit]').removeAttr('disabled');
 
       $('.touch #assessment .span4').addClass('collapse-height');
