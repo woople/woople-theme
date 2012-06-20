@@ -6,9 +6,10 @@ $(document).ready(function() {
 
     var unansweredQuestionsBadge = $('#assessment .badge');
     if (numberOfUnansweredQuestions > 0) {
-      var unansweredQuestionsBadgeText = numberOfUnansweredQuestions + ' unanswered question';
-      if (numberOfUnansweredQuestions > 1) {
-        unansweredQuestionsBadgeText += 's';
+      if (numberOfUnansweredQuestions == 1) {
+        unansweredQuestionsBadgeText = '<%= I18n.t 'woople_theme.assessment_form.unanswered_questions.one' %>';
+      } else {
+        unansweredQuestionsBadgeText = '<%= I18n.t 'woople_theme.assessment_form.unanswered_questions.other' %>'.replace('%{count}', numberOfUnansweredQuestions);
       }
 
       unansweredQuestionsBadge.text(unansweredQuestionsBadgeText);
