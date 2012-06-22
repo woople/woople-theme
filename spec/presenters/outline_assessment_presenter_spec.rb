@@ -63,32 +63,24 @@ describe OutlineAssessmentPresenter do
     end
   end
 
-  describe "#start_button_tag" do
-    describe "when the assessment is not startable" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, url: nil)) }
-      
-      it "should have the disabled class" do
-        page = Capybara::Node::Simple.new(subject.start_button_tag)
-        page.should have_css('a.disabled')
-      end
+  describe '#start_button_tag' do
+    describe 'when the assessment is not startable' do
+      subject { OutlineAssessmentPresenter.new stub :assessment, startable?: false }
 
-      it "should not have the href attribute" do
-        page = Capybara::Node::Simple.new(subject.start_button_tag)
-        page.should_not have_css('a[href]')
+      it "should have a 'disabled' class and not have an href attribute" do
+        page = Capybara::Node::Simple.new subject.start_button_tag
+        page.should have_css 'a.disabled'
+        page.should_not have_css 'a[href]'
       end
     end
     
-    describe "when the assessment is startable" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, url: 'foo')) }
-      
-      it "should not have the disabled class" do
-        page = Capybara::Node::Simple.new(subject.start_button_tag)
-        page.should_not have_css('a.disabled')
-      end
+    describe 'when the assessment is startable' do
+      subject { OutlineAssessmentPresenter.new stub :assessment, startable?: true, url: '/courses/foo' }
 
-      it "should have the href attribute" do
-        page = Capybara::Node::Simple.new(subject.start_button_tag)
-        page.should have_css('a[href="foo"]')
+      it "should not have a 'disabled' class and have an href attribute" do
+        page = Capybara::Node::Simple.new subject.start_button_tag
+        page.should_not have_css 'a.disabled'
+        page.should have_css 'a[href="/courses/foo"]'
       end
     end
   end
