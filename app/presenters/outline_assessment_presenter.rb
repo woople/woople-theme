@@ -16,12 +16,12 @@ class OutlineAssessmentPresenter < SimpleDelegator
   end
 
   def start_button_tag
-    css = 'btn btn-primary btn-large'
-    
-    if url.present?
-      content_tag(:a, I18n.t('woople_theme.assessment.start'), class: css, href: url)
+    css_classes = 'btn btn-primary btn-large'
+
+    if startable?
+      content_tag :a, I18n.t('woople_theme.assessment.start'), class: css_classes, href: url
     else
-      content_tag(:a, I18n.t('woople_theme.assessment.start'), class: "#{css} disabled")
+      content_tag :a, I18n.t('woople_theme.assessment.start'), class: "#{css_classes} disabled"
     end
   end
 
