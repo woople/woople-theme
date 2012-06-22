@@ -83,7 +83,8 @@ class BrowseController < ApplicationController
       pass_requirement: [50, 75, 100].sample,
       estimated_duration: rand(5..25),
       enabled?: [true, false].sample,
-      url: [nil, '#'].sample,
+      startable?: [true, false].sample,
+      url: '#',
       relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) },
       history: rand(0..7).times.collect { random_history_item }
     )
