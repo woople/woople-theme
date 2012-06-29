@@ -144,6 +144,10 @@
     }
 
     .content-item-content {
+      float: none;
+      margin-left: 0;
+      width: auto;
+
       h2 {
         margin-left:@phoneOffset;
         margin-right:@phoneMargin;
@@ -155,8 +159,10 @@
       margin-left: @phoneOffset;
 
       > div {
-        float:left;
-        margin-right:@phoneMargin;
+        float: left;
+        margin-left: 0;
+        margin-right: @phoneMargin;
+        width: auto;
       }
     }
   }
