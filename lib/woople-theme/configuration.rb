@@ -1,6 +1,6 @@
 module WoopleTheme
   class Configuration
-    attr_accessor :profile_helper, :menu_helper, :layout_javascript
+    attr_accessor :profile_helper, :menu_helper, :impersonation_banner_helper, :layout_javascript
 
     def profile_helper
       @profile_helper || :profile_helper
@@ -8,6 +8,10 @@ module WoopleTheme
 
     def menu_helper
       @menu_helper || :menu_helper
+    end
+
+    def impersonation_banner_helper
+      @impersonation_banner_helper || :impersonation_banner_helper
     end
   end
 
