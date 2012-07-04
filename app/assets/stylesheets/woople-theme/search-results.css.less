@@ -1,16 +1,21 @@
 @import "woople-theme/variables.css.less";
 @import "woople-theme/colours.css.less";
 
-h2.results-header {
-  .content-title();
-  background-color:@highlight;
-  color: #fff;
-  display: inline-block;
-  margin-right: 10px;
-  padding: 0.5em 20px;
-  text-shadow:0 1px 0 rgba(0,0,0,0.5);
+.results-header {
+  .title {
+    display: inline-block;
+    margin-right: 8px;
+    padding: 8px 20px;
+    background-color: @highlight;
+
+    .content-title();
+    margin-bottom: 0;
+
+    color: white;
+    text-shadow: 0 1px rgba(0, 0, 0, 0.5);
+  }
 }
 
-.content-item + h2 {
-  margin-top: 40px;
+.content-item + .results-header {
+  margin-top: 30px;
 }

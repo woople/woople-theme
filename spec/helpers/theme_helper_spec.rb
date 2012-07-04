@@ -89,15 +89,8 @@ describe ThemeHelper do
     let(:title) { "Results Header" }
 
     it "always shows the title" do
-      html = helper.results_header(title)
-      page = Capybara::Node::Simple.new(html)
-      page.find('h2.results-header').should have_content(title)
-    end
-
-    it "does not show the more link when the path is nil" do
-      html = helper.results_header(title)
-      page = Capybara::Node::Simple.new(html)
-      page.should_not have_selector("a")
+      page = Capybara::Node::Simple.new helper.results_header(title, '')
+      page.find('.results-header .title').should have_content(title)
     end
 
     it "shows the more link when the path is not nil" do
