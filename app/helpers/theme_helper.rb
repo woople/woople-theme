@@ -44,11 +44,8 @@ module ThemeHelper
     render 'woople-theme/menu', menu: model
   end
 
-  def results_header(title, path = nil)
-    output = ""
-    output << content_tag(:h2, title, class: 'results-header')
-    output << content_tag(:a, I18n.t('woople_theme.search_results_more'), href: path, class: 'loading_indicator') unless path.nil?
-    output.html_safe
+  def results_header title, path
+    render partial: 'woople-theme/results_header', locals: { title: title, path: path }
   end
 
   def assessment_form assessment_form
