@@ -79,6 +79,7 @@ class BrowseController < ApplicationController
 
   def random_assessment
     OpenStruct.new(
+      assessment_id: 42,
       questions_asked: rand(5..15),
       pass_requirement: [50, 75, 100].sample,
       estimated_duration: rand(5..25),
