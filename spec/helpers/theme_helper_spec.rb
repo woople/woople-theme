@@ -82,7 +82,6 @@ describe ThemeHelper do
       end
 
       expect { helper.menu }.to raise_error("something_that_does_not_exist helper_method does not exist. WoopleTheme.configuration.menu_helper must point to a valid helper_method.")
-
     end
   end
 
@@ -107,6 +106,34 @@ describe ThemeHelper do
       page = Capybara::Node::Simple.new(html)
       page.find("a").should have_content(I18n.t('woople_theme.search_results_more'))
       page.should have_css("a[href='#{path}']")
+    end
+  end
+
+  describe "#impersonation_banner" do
+    it "does not show anything if the impersonating? is false" do
+      helper.stub(:impersonation_banner_helper) { stub(impersonating?: false) }
+
+      html = helper.impersonation_banner
+      html.should be_nil
+    end
+
+    it "renders correctly" do
+      helper_stub = stub(impersonating?: true, logged_in_as: "Adam Doeler", impersonating: "Tom Cruise")
+
+      helper.stub(:impersonation_banner_helper) { helper_stub }
+
+      html = helper.impersonation_banner
+      page = Capybara::Node::Simple.new(html)
+      page.find(".span6:first-child").should have_content(helper_stub.logged_in_as)
+      page.find(".span6:last-child").should have_content(helper_stub.impersonating)
+    end
+
+    it "raises an error when the impersonation_banner_helper method does not exist" do
+      WoopleTheme.configure do |config|
+        config.impersonation_banner_helper = :something_that_does_not_exist
+      end
+
+      expect { helper.impersonation_banner }.to raise_error("something_that_does_not_exist helper_method does not exist. WoopleTheme.configuration.impersonation_banner_helper must point to a valid helper_method.")
     end
   end
 end

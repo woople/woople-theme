@@ -32,7 +32,6 @@ a:hover {
   .masthead-logo {
     width:140px;
   }
-
 }
 
 .copyright {
@@ -84,7 +83,6 @@ a:hover {
     margin-right:0;
     margin-bottom:0;
     width:50%;
-    top:0;
     line-height:@logoWithPadding;
     text-indent:@phoneMargin;
   }
@@ -113,5 +111,27 @@ a.loading_indicator {
       padding-left: 0.6em;
       top: -0.4em;
     }
+  }
+}
+
+.impersonation-banner {
+  background: @contentBackground;
+  line-height: 24px;
+  padding: 4px 1em;
+  margin: 0 auto;
+  width: 80%;
+  text-align: center;
+  .box-shadow(@default-shadow);
+  .hanging-border-radius(8px);
+}
+
+@media (min-width: 768px) {
+  .impersonation-banner {
+    .span6:first-child {
+      text-align: right;
+    }
+    .span6:last-child {
+      text-align: left;
+    }  
   }
 }
