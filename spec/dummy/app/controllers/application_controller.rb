@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  helper_method :profile_model, :menu_model
+  helper_method :profile_model, :menu_model, :impersonation_banner_helper
 
   private
 
@@ -11,5 +11,13 @@ class ApplicationController < ActionController::Base
 
   def menu_model
     Menu.generate(@selection)
+  end
+
+  def impersonation_banner_helper
+    {
+      logged_in_as: nil,
+      impersonating: nil,
+      impersonating?: false
+    }
   end
 end

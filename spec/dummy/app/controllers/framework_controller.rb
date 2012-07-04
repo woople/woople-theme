@@ -3,6 +3,14 @@ class FrameworkController < ApplicationController
 
   helper_method :menu_model
 
+  def impersonation_banner_helper
+    {
+      logged_in_as: "Adam Doeler",
+      impersonating: "Tom Cruise",
+      impersonating?: true
+    }
+  end
+
   def menu_model
     [introduction, components] #, look_and_feel, typography, urls, performance_and_metrics]
   end
