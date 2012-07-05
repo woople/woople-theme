@@ -26,9 +26,12 @@
           <% end %>
         <% end %>
 
-        <p class="assessment-start">
-          <%= assessment.start_button_tag %>
-        </p>
+        <div class="assessment-start">
+          <%= form_tag assessment.url, method: :post do %>
+            <%= hidden_field_tag :assessment_id, assessment.assessment_id %>
+            <%= assessment.start_button_tag %>
+          <% end %>
+        </div>
       </div>
     </div>
 
