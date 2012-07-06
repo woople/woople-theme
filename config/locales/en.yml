@@ -39,9 +39,11 @@ en:
       unanswered_questions:
         one: 1 unanswered question
         other: '%{count} unanswered questions'
+      submit_assessment: Submit Assessment
     search_results_more: See All >
     logged_in_as: Logged in as
     impersonating: impersonating
+    cancel: Cancel
   date:
     formats:
       default: ! '%b %d %Y'

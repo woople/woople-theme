@@ -5,6 +5,11 @@ class BrowseController < ApplicationController
 
   helper_method :random_unit, :random_video
 
+  def initialize(*args)
+    super(*args)
+    @id_generator = create_id_generator
+  end
+
   def video
     @course = random_course
 
@@ -125,14 +130,24 @@ class BrowseController < ApplicationController
       description: '"Hairy Forms" unit of "Pagination" course',
       questions: rand(10..13).times.collect { random_question },
       course_path: '/course',
-      copyright: 'Copyright (c) 2012 Apple Inc. All rights reserved.'
+      copyright: 'Copyright (c) 2012 Apple Inc. All rights reserved.',
+      submit_path: "/course"
     }
   end
 
+
   def random_question
     {
-      name: question_names.sample,
-      answers: rand(2..5).times.collect { answers.sample }
+      id: generate_id,
+      question: question_names.sample,
+      answers: rand(2..5).times.map { |i| random_answer(i) }
+    }
+  end
+
+  def random_answer(index)
+    {
+      index: index,
+      text:  answers.sample
     }
   end
 
@@ -187,4 +202,16 @@ class BrowseController < ApplicationController
   def certification_metadata
     [nil, "Essential", "+10 pts"]
   end
+
+  def generate_id
+    @id_generator.call
+  end
+
+  private
+
+  def create_id_generator
+    id = 0
+    Proc.new { id += 1 }
+  end
+
 end

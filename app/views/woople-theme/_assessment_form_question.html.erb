@@ -1,7 +1,7 @@
 <% question_number = assessment_form_question_counter + 1 %>
 <div class="fieldset <%= cycle 'odd', 'even' %>">
-  <div class="legend"><span><%= question_number %></span> <%= assessment_form_question.name %></div>
+  <div class="legend"><span><%= question_number %></span> <%= assessment_form_question.question %></div>
   <div>
-    <%= render partial: 'woople-theme/assessment_form_answer', collection: assessment_form_question.answers, locals: { question_number: question_number } %>
+    <%= render partial: 'woople-theme/assessment_form_answer', collection: assessment_form_question.answers, locals: { response_id: assessment_form_question.id } %>
   </div>
 </div>
