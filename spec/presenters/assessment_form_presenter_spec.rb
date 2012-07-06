@@ -1,4 +1,15 @@
+require 'spec_helper'
+
 describe AssessmentFormPresenter do
+  it "should have all of the delegated methods defined" do
+    AssessmentFormPresenter.instance_methods.should include(:description, :course_path, :copyright, :submit_path, :questions)
+  end
+
+  it "should return a set of QuestionPresenters" do
+    afp = AssessmentFormPresenter.new(OpenStruct.new({questions:[{}]}))
+    afp.questions.first.is_a?(QuestionPresenter).should be_true
+  end
+
   describe '#render_copyright' do
     describe 'when the copyright is not present' do
       subject { AssessmentFormPresenter.new stub(copyright: '') }

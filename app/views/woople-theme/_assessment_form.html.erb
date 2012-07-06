@@ -1,18 +1,24 @@
 <%= page_header title: 'Assessment', description: assessment_form.description %>
 
-<form id="assessment">
+
+<%= form_tag(assessment_form.submit_path, id: "assessment") do %>
+
   <%= render partial: 'woople-theme/assessment_form_question', collection: assessment_form.questions %>
 
   <div class="fieldset <%= cycle 'odd', 'even' %>">
     <div class="row-fluid">
       <div class="span4"><span class="badge"><%= t 'woople_theme.assessment_form.unanswered_questions', count: assessment_form.questions.count %></span></div>
       <div class="span8">
-        <input type="button" value="Cancel" class="btn btn-large" data-course-path="<%= assessment_form.course_path %>" />
-        <input type="submit" value="Submit Assessment" class="btn btn-primary btn-large" disabled="disabled" />
+        <input type="button"
+               value="<%= I18n.t('woople_theme.cancel') %>"
+               class="btn btn-large"
+               data-course-path="<%= assessment_form.course_path %>" />
+        <%= submit_tag(I18n.t('woople_theme.assessment_form.submit_assessment'), {class: "btn btn-primary btn-large", disabled: "disabled"}) %>
       </div>
     </div>
   </div>
   <% assessment_form.render_copyright do %>
     <p class="<%= cycle 'odd', 'even' %>"><%= assessment_form.copyright %></p>
   <% end %>
-</form>
+
+<% end %>
