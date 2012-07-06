@@ -20,14 +20,14 @@ describe OutlineAssessmentPresenter do
 
     describe "when the assessment is not enabled" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: false).as_null_object) }
-    
+
       it "does not yield the block" do
         called = false
-    
+
         subject.render do
           called = true
         end
-    
+
         called.should == false
       end
     end
@@ -39,25 +39,25 @@ describe OutlineAssessmentPresenter do
 
       it "shouldn't yield" do
         called = false
-        
+
         subject.render_relearnings do
           called = true
         end
-        
+
         called.should == false
       end
     end
-    
+
     describe "when there are relearnings" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [stub])) }
 
       it "should yield" do
         called = false
-        
+
         subject.render_relearnings do
           called = true
         end
-        
+
         called.should == true
       end
     end
@@ -67,20 +67,20 @@ describe OutlineAssessmentPresenter do
     describe 'when the assessment is not startable' do
       subject { OutlineAssessmentPresenter.new stub :assessment, startable?: false }
 
-      it "should have a 'disabled' class and not have an href attribute" do
+      it "should have a 'disabled' attribute" do
         page = Capybara::Node::Simple.new subject.start_button_tag
-        page.should have_css 'a.disabled'
-        page.should_not have_css 'a[href]'
+        page.should have_css 'input[type=submit].disabled'
+        page.should have_css 'input[type=submit][disabled]'
       end
     end
-    
+
     describe 'when the assessment is startable' do
       subject { OutlineAssessmentPresenter.new stub :assessment, startable?: true, url: '/courses/foo' }
 
-      it "should not have a 'disabled' class and have an href attribute" do
+      it "should not have a 'disabled' button" do
         page = Capybara::Node::Simple.new subject.start_button_tag
-        page.should_not have_css 'a.disabled'
-        page.should have_css 'a[href="/courses/foo"]'
+        page.should_not have_css 'input[type=submit].disabled'
+        page.should_not have_css 'input[type=submit][disabled]'
       end
     end
   end
@@ -96,7 +96,7 @@ describe OutlineAssessmentPresenter do
 
     describe 'when having history items' do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [stub])) }
-      
+
       it 'returns a link' do
         subject.history_link_tag.should_not be_blank
       end
@@ -106,7 +106,7 @@ describe OutlineAssessmentPresenter do
   describe "#each_history_item" do
     before do
       WoopleThemeI18n.stub(:l) { |param| param }
-      
+
       @first_history_item = stub(passed: false, score: 42, url: 'foo', completed_at: Date.parse('20120307')).as_null_object
       second_history_item = stub(passed: true).as_null_object
       assessment = OutlineAssessmentPresenter.new(stub(:assessment, history: [@first_history_item, second_history_item]))

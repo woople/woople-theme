@@ -2,7 +2,7 @@ require 'ostruct'
 
 class BrowseController < ApplicationController
   layout 'theme'
-  
+
   helper_method :random_unit, :random_video
 
   def initialize(*args)
@@ -34,7 +34,7 @@ class BrowseController < ApplicationController
   def course
     @course = random_course
   end
-  
+
   def search
     @content_items = []
 
@@ -71,8 +71,8 @@ class BrowseController < ApplicationController
       enabled: (unit_index == 0),
       assessment: random_assessment,
       completed: 2,
-      videos: rand((completed_videos+1)..(completed_videos*3)).times.collect { |index| 
-        random_video("#{unit_index}_#{index}", 
+      videos: rand((completed_videos+1)..(completed_videos*3)).times.collect { |index|
+        random_video("#{unit_index}_#{index}",
                      (index + 1 <= completed_videos) ? true : false,
                      (index <= completed_videos) ? true : false,
                      (unit_index == 0)
@@ -84,6 +84,7 @@ class BrowseController < ApplicationController
 
   def random_assessment
     OpenStruct.new(
+      assessment_id: 123,
       questions_asked: rand(5..15),
       pass_requirement: [50, 75, 100].sample,
       estimated_duration: rand(5..25),
