@@ -14,10 +14,12 @@
           <span class="badge"><%= t 'woople_theme.assessment.duration', count: assessment.estimated_duration %></span>
         </p>
 
-        <!-- <div class="alert alert-error">
-          <a class="close" data-dismiss="alert">×</a>
-          <%# t 'woople_theme.assessment.fail_html' %>
-        </div> -->
+        <% assessment.render_pass_fail_alert do |alert| %>
+          <div class="alert <%= alert.css_class %> fade in">
+            <button class="close" data-dismiss="alert">×</button>
+            <strong><%= alert.heading %></strong> <%= alert.message %>
+          </div>
+        <% end %>
 
         <% assessment.render_relearnings do %>
           <h4><%= t 'woople_theme.assessment.required_relearning' %></h4>

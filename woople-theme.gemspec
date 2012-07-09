@@ -22,6 +22,6 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency "bundler"
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails", "~> 2.9.0"
+  s.add_development_dependency 'rspec-rails', '2.11.0'
   s.add_development_dependency "capybara"
 end

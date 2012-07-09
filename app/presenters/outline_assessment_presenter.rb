@@ -35,6 +35,23 @@ class OutlineAssessmentPresenter < SimpleDelegator
     end
   end
 
+  def render_pass_fail_alert
+    return unless respond_to? :passed?
+    if passed?
+      yield OpenStruct.new(
+        css_class: 'alert-success',
+        heading: I18n.t('woople_theme.assessment.pass_alert.heading'),
+        message: I18n.t('woople_theme.assessment.pass_alert.message')
+      )
+    else
+      yield OpenStruct.new(
+        css_class: 'alert-error',
+        heading: I18n.t('woople_theme.assessment.fail_alert.heading'),
+        message: I18n.t('woople_theme.assessment.fail_alert.message')
+      )
+    end
+  end
+
   private
 
   def normalize history_item

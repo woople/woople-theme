@@ -136,4 +136,40 @@ describe OutlineAssessmentPresenter do
       @processed.first.date.should == WoopleThemeI18n.l(@first_history_item.completed_at)
     end
   end
+
+  describe '#render_pass_fail_alert' do
+    describe "given no 'passed?' key" do
+      subject { OutlineAssessmentPresenter.new OpenStruct.new }
+
+      it "doesn't yield" do
+        expect { |block| subject.render_pass_fail_alert &block }.not_to yield_control
+      end
+    end
+
+    describe "given 'passed?' is true" do
+      subject { OutlineAssessmentPresenter.new OpenStruct.new passed?: true }
+
+      it 'yields an OpenStruct with pass alert entries' do
+        expect { |block| subject.render_pass_fail_alert &block }.to yield_with_args OpenStruct
+        subject.render_pass_fail_alert do |alert|
+          alert.css_class.should == 'alert-success'
+          alert.heading.should == WoopleThemeI18n.t('woople_theme.assessment.pass_alert.heading')
+          alert.message.should == WoopleThemeI18n.t('woople_theme.assessment.pass_alert.message')
+        end
+      end
+    end
+
+    describe "given 'passed?' is false" do
+      subject { OutlineAssessmentPresenter.new OpenStruct.new passed?: false }
+
+      it 'yields an OpenStruct with fail alert entries' do
+        expect { |block| subject.render_pass_fail_alert &block }.to yield_with_args OpenStruct
+        subject.render_pass_fail_alert do |alert|
+          alert.css_class.should == 'alert-error'
+          alert.heading.should == WoopleThemeI18n.t('woople_theme.assessment.fail_alert.heading')
+          alert.message.should == WoopleThemeI18n.t('woople_theme.assessment.fail_alert.message')
+        end
+      end
+    end
+  end
 end

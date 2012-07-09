@@ -31,4 +31,8 @@ $(document).ready(function() {
     var front = assessment.find('.front');
     removeFrontHeight(front);
   });
+
+  $('.touch .alert').click(function() {
+    $(this).alert('close');
+  });
 });
