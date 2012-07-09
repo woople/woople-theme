@@ -1,3 +1,3 @@
 module WoopleTheme
-  VERSION = "0.2.48"
+  VERSION = "0.3.0"
 end

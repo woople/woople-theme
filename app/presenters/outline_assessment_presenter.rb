@@ -6,7 +6,8 @@ require 'woople_theme_i18n'
 
 class OutlineAssessmentPresenter < SimpleDelegator
   include ActionView::Helpers::TagHelper
-  
+  include ActionView::Helpers::FormTagHelper
+
   def render
     yield if enabled?
   end
@@ -19,9 +20,9 @@ class OutlineAssessmentPresenter < SimpleDelegator
     css_classes = 'btn btn-primary btn-large'
 
     if startable?
-      content_tag :a, I18n.t('woople_theme.assessment.start'), class: css_classes, href: url
+      submit_tag I18n.t('woople_theme.assessment.start'), class: css_classes
     else
-      content_tag :a, I18n.t('woople_theme.assessment.start'), class: "#{css_classes} disabled"
+      submit_tag I18n.t('woople_theme.assessment.start'), class: "#{css_classes} disabled", disabled: true
     end
   end
 
