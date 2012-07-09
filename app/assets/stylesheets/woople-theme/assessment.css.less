@@ -56,7 +56,7 @@
     padding-top: 12px;
   }
 
-  .badge {
+  .badge-unanswered {
     background-color: @yellow;
   }
 
@@ -74,6 +74,22 @@
     text-align: center;
     font-size: @sosumi-font-size;
     color: @secondaryTextColour;
+  }
+}
+
+#assessment.results {
+  .span12.return {
+    text-align: right;
+  }
+
+  input {
+    margin-right: 0;
+  }
+}
+
+.assessment_result_status {
+  .alert {
+    margin: 10px;
   }
 }
 
@@ -114,6 +130,12 @@
 
     input[type=button] {
       margin-right: @assessment-fieldset-padding / 4;
+    }
+  }
+
+  #assessment.results {
+    .span12.return {
+      text-align: center;
     }
   }
 }

@@ -3,10 +3,15 @@ require 'delegate'
 require 'action_view'
 require 'active_support/core_ext/object/blank'
 require 'woople_theme_i18n'
+require 'explicit_delegator'
 
-class OutlineAssessmentPresenter < SimpleDelegator
-  include ActionView::Helpers::TagHelper
+class OutlineAssessmentPresenter < ExplicitDelegator
   include ActionView::Helpers::FormTagHelper
+  include ActionView::Helpers::NumberHelper
+  include ActionView::Helpers::TagHelper
+
+  enforce_definitions :completed?,
+                      :enabled?
 
   def render
     yield if enabled?
@@ -53,12 +58,16 @@ class OutlineAssessmentPresenter < SimpleDelegator
     end
   end
 
+  def completed_class
+    "completed" if completed?
+  end
+
   private
 
   def normalize history_item
     OpenStruct.new(
       date: WoopleThemeI18n.l(history_item.completed_at.to_date),
-      score: "#{history_item.score}%",
+      score: number_to_percentage(history_item.score, :precision => 0),
       result_name: history_item.passed ? I18n.t('woople_theme.assessment.pass') : I18n.t('woople_theme.assessment.fail'),
       url: history_item.url
     )
