@@ -2,14 +2,13 @@
 //= require jquery_ujs
 //= require modernizr
 //= require spin.min
+//= require twitter/bootstrap/transition
 //= require twitter/bootstrap/dropdown
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
 //= require fastclick.min_
 //= require video.min
-//= require assessment_flipper
-//= require assessment_form
 //= require_tree .
 
 function resizeFix() {
