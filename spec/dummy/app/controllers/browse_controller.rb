@@ -84,7 +84,7 @@ class BrowseController < ApplicationController
 
   def random_assessment
     OpenStruct.new(
-      assessment_id: 123,
+      assessment_id: 42,
       questions_asked: rand(5..15),
       pass_requirement: [50, 75, 100].sample,
       estimated_duration: rand(5..25),
@@ -93,7 +93,7 @@ class BrowseController < ApplicationController
       url: '#',
       relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) },
       history: rand(0..7).times.collect { random_history_item }
-    )
+    ).tap { |assessment| assessment.send 'passed?=', [true, false].sample if [true, false].sample }
   end
 
   def random_history_item

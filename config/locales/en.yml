@@ -26,7 +26,6 @@ en:
       duration:
         one: 1 minute
         other: '%{count} minutes'
-      fail_html: You failed! Please watch the <strong>Require Relearning</strong> before attempting the assessment again.
       required_relearning: Required Relearning
       name: Assessment
       assessment_history: Assessment History
@@ -35,6 +34,12 @@ en:
       result_title: Result
       pass: Pass
       fail: Fail
+      pass_alert:
+        heading: Passed!
+        message: Congratulations, you've passed! You may review your history to see your scores and results. You may also retake the assessment to achieve a better result.
+      fail_alert:
+        heading: Failed!
+        message: Thank you for completing the assessment. You may review your history to see your scores and results. You may also retake the assessment to achieve a better result. You must rewatch the required relearnings below before retaking the assessment.
     assessment_form:
       unanswered_questions:
         one: 1 unanswered question
