@@ -1,32 +1,42 @@
 require 'spec_helper'
 
+def struct(obj_in)
+  OpenStruct.new(obj_in)
+end
+
 describe AssessmentFormPresenter do
-  it "should have all of the delegated methods defined" do
-    AssessmentFormPresenter.instance_methods.should include(:description, :course_path, :copyright, :submit_path, :questions)
-  end
+  obj = {
+          questions: [{id: nil, question: nil, answers: nil}],
+          description: nil,
+          course_path: nil,
+          copyright: nil,
+          submit_path: nil
+        }
 
   it "should return a set of QuestionPresenters" do
-    afp = AssessmentFormPresenter.new(OpenStruct.new({questions:[{}]}))
-    afp.questions.first.is_a?(QuestionPresenter).should be_true
+    afp = AssessmentFormPresenter.new(struct(obj))
+    afp.questions.first.is_a?(WoopleTheme::QuestionPresenter).should be_true
   end
 
   describe '#render_copyright' do
     describe 'when the copyright is not present' do
-      subject { AssessmentFormPresenter.new stub(copyright: '') }
+      obj[:copyright] = ''
+      assessment_form = AssessmentFormPresenter.new struct(obj)
 
       it 'does not yield' do
         yielded = false
-        subject.render_copyright { yielded = true }
+        assessment_form.render_copyright { yielded = true }
         yielded.should == false
       end
     end
 
     describe 'when the copyright is present' do
-      subject { AssessmentFormPresenter.new stub(copyright: 'Copyright (c) 2012 Apple Inc. All rights reserved.') }
+      obj[:copyright] = 'Copyright (c) 2012 Apple Inc. All rights reserved.'
+      assessment_form = AssessmentFormPresenter.new( struct(obj) )
 
       it 'yields' do
         yielded = false
-        subject.render_copyright { yielded = true }
+        assessment_form.render_copyright { yielded = true }
         yielded.should == true
       end
     end

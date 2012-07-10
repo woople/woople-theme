@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    woople-theme (0.3.0)
+    woople-theme (0.3.02)
       less-rails-bootstrap (= 2.0.13)
       rails (~> 3.2.5)
       therubyracer
