@@ -1,7 +1,7 @@
 <%= page_header title: 'Assessment', description: assessment_form.description %>
 
 
-<%= form_tag(assessment_form.submit_path, id: "assessment") do %>
+<%= form_tag(assessment_form.submit_path, { id: "assessment", method: :put }) do %>
 
   <%= render partial: 'woople-theme/assessment_form_question', collection: assessment_form.questions %>
 
