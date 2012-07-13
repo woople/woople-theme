@@ -3,7 +3,11 @@
   <input type="radio"
          id="<%= input_id %>"
          name="response[<%= response_id %>]"
-         value="<%= assessment_form_answer.index %>"/>
+         value="<%= assessment_form_answer.index %>"
+         <%= assessment_form_answer.radio_disabled %>
+         <%= assessment_form_answer.radio_checked %> />
 
+  <%= assessment_form_answer.correct_badge %>
+  <%= assessment_form_answer.incorrect_badge %>
   <%= assessment_form_answer.text %>
 </label>

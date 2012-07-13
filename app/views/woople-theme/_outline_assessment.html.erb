@@ -1,6 +1,6 @@
 <% assessment.render do %>
   <div id="assessment-<%= assessment.assessment_id %>" class="assessment">
-    <div class="front">
+    <div class="front <%= assessment.completed_class %>">
       <div class="assessment-pad">
         <div class="flip-action pull-right">
           <%= assessment.history_link_tag %>

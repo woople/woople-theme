@@ -1,20 +1,16 @@
-<%= page_header title: 'Assessment', description: assessment_form.description %>
+<%= page_header title: assessment_form.title, description: assessment_form.description %>
+<% assessment_form.render_result_status do |result| %>
+  <div class="row-fluid assessment_result_status <%= cycle 'odd', 'even' %>">
+    <%= content_tag(:div, result.message, class: result.classes) %>
+  </div>
+<% end %>
 
-
-<%= form_tag(assessment_form.submit_path, { id: "assessment", method: :put }) do %>
-
+<%= form_tag(assessment_form.submit_path, method: :put, id: "assessment", class: assessment_form.css_classes) do %>
   <%= render partial: 'woople-theme/assessment_form_question', collection: assessment_form.questions %>
 
   <div class="fieldset <%= cycle 'odd', 'even' %>">
     <div class="row-fluid">
-      <div class="span4"><span class="badge"><%= t 'woople_theme.assessment_form.unanswered_questions', count: assessment_form.questions.count %></span></div>
-      <div class="span8">
-        <input type="button"
-               value="<%= I18n.t('woople_theme.cancel') %>"
-               class="btn btn-large"
-               data-course-path="<%= assessment_form.course_path %>" />
-        <%= submit_tag(I18n.t('woople_theme.assessment_form.submit_assessment'), {class: "btn btn-primary btn-large", disabled: "disabled"}) %>
-      </div>
+      <%= render partial: assessment_form.footer_partial, locals: { data: assessment_form } %>
     </div>
   </div>
   <% assessment_form.render_copyright do %>

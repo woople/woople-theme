@@ -1,0 +1,8 @@
+<div class="span4"><span class="badge badge-unanswered"><%= t 'woople_theme.assessment_form.unanswered_questions', count: data.questions.count %></span></div>
+<div class="span8">
+  <input type="button"
+         value="<%= I18n.t('woople_theme.cancel') %>"
+         class="btn btn-large"
+         data-course-path="<%= data.course_path %>" />
+  <%= submit_tag(I18n.t('woople_theme.assessment_form.submit_assessment'), {class: "btn btn-primary btn-large", disabled: "disabled"}) %>
+</div>
