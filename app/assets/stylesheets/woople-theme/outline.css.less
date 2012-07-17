@@ -83,6 +83,12 @@
       transition: transform .4s ease-in-out;
     }
 
+    .front.completed {
+      background-image:url(/assets/woople-theme/completed-triangle.png);
+      background-position:top right;
+      background-repeat:no-repeat;
+    }
+
     &.flip .back {
       z-index:1000;
       -webkit-transform: rotateY(0deg);
@@ -114,7 +120,6 @@
       -moz-transition: -moz-transform .4s ease-in-out;
       -webkit-transition: -webkit-transform .4s ease-in-out;
       transition: transform .4s ease-in-out;
-
     }
 
     .assessment-pad {

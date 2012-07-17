@@ -48,19 +48,16 @@ module ThemeHelper
     render partial: 'woople-theme/results_header', locals: { title: title, path: path }
   end
 
-  def assessment_form assessment_form
-    render partial: 'woople-theme/assessment_form', object: ThemePresentation.wrap(assessment_form, AssessmentFormPresenter)
-  end
-
   def impersonation_banner
     if !respond_to?(WoopleTheme.configuration.impersonation_banner_helper)
       raise "#{WoopleTheme.configuration.impersonation_banner_helper} helper_method does not exist. WoopleTheme.configuration.impersonation_banner_helper must point to a valid helper_method."
     end
-    
+
     model = ThemePresentation.wrap(send(WoopleTheme.configuration.impersonation_banner_helper))
 
     return unless model.impersonating?
 
     render 'woople-theme/impersonation_banner', impersonation: model
   end
+
 end

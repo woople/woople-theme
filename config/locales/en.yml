@@ -34,12 +34,20 @@ en:
       result_title: Result
       pass: Pass
       fail: Fail
+      passed: passed
+      failed: failed
       pass_alert:
         heading: Passed!
         message: Congratulations, you've passed! You may review your history to see your scores and results. You may also retake the assessment to achieve a better result.
       fail_alert:
         heading: Failed!
         message: Thank you for completing the assessment. You may review your history to see your scores and results. You may also retake the assessment to achieve a better result. You must rewatch the required relearnings below before retaking the assessment.
+      result: Assessment Result
+      result_status:
+        one: On %{completed_at} you %{status} this assessment by answering %{correct_questions}/%{total_questions} question correctly for a %{score} score.
+        other: On %{completed_at} you %{status} this assessment by answering %{correct_questions}/%{total_questions} questions correctly for a %{score} score.
+      correct: Correct
+      incorrect: Incorrect
     assessment_form:
       unanswered_questions:
         one: 1 unanswered question
@@ -49,6 +57,7 @@ en:
     logged_in_as: Logged in as
     impersonating: impersonating
     cancel: Cancel
+    return_to_course: Return to Course
   date:
     formats:
       default: ! '%b %d %Y'

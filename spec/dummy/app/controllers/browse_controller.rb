@@ -44,7 +44,11 @@ class BrowseController < ApplicationController
   end
 
   def assessment
-    @assessment_form = random_assessment_form
+    @assessment_form = random_assessment_result(false)
+  end
+
+  def assessment_result
+    @assessment_form = random_assessment_result(true)
   end
 
   private
@@ -92,7 +96,8 @@ class BrowseController < ApplicationController
       startable?: [true, false].sample,
       url: '#',
       relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) },
-      history: rand(0..7).times.collect { random_history_item }
+      history: rand(0..7).times.collect { random_history_item },
+      completed?: [true, false].sample
     ).tap { |assessment| assessment.send 'passed?=', [true, false].sample if [true, false].sample }
   end
 
@@ -101,7 +106,7 @@ class BrowseController < ApplicationController
       completed_at: Time.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28), rand(0..12), rand(0..59), rand(0..59)),
       score: [40, 50, 70].sample,
       passed: [false, true].sample,
-      url: '#'
+      url: '/assessment_result'
     )
   end
 
@@ -125,30 +130,50 @@ class BrowseController < ApplicationController
     )
   end
 
-  def random_assessment_form
-    {
+  def random_assessment_result(submitted = false)
+    OpenStruct.new(
       description: '"Hairy Forms" unit of "Pagination" course',
-      questions: rand(10..13).times.collect { random_question },
+      questions: rand(10..13).times.collect { random_question(submitted) },
       course_path: '/course',
       copyright: 'Copyright (c) 2012 Apple Inc. All rights reserved.',
-      submit_path: "/course"
-    }
+      submit_path: "/course",
+      submitted?: submitted,
+      completed_at: Time.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28), rand(0..12), rand(0..59), rand(0..59)),
+      passed?: [true, false].sample,
+      correct_questions: rand(0..13),
+      score: [40, 50, 70].sample
+    )
   end
 
 
-  def random_question
+  def random_question(submitted = false)
+    num_answers     = rand(2..5)
+    submitted_index = submitted ? rand(0...num_answers) : nil
+    correct_index   = rand(0...num_answers) # this is for submitted assessment results
+
     {
       id: generate_id,
       question: question_names.sample,
-      answers: rand(2..5).times.map { |i| random_answer(i) }
+      answers: num_answers.times.map { |i| random_answer(i, correct_index, submitted_index, submitted) },
+      submitted_index: submitted_index
     }
   end
 
-  def random_answer(index)
-    {
+  def random_answer(index, correct_index, submitted_index, submitted = false)
+    answer = {
       index: index,
-      text:  answers.sample
+      text: answers.sample
     }
+
+    if submitted
+      answer.merge!({
+        correct?: (correct_index == index) ? true : false,
+        incorrect?: ((submitted_index == index) && (submitted_index != correct_index)) ? true : false,
+        checked?: (submitted_index == index) ? true : false
+      })
+    end
+
+    return answer
   end
 
   def question_names
