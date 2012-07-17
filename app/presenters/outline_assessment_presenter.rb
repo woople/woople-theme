@@ -31,8 +31,8 @@ class OutlineAssessmentPresenter < ExplicitDelegator
     end
   end
 
-  def history_link_tag
-    history.empty? ? '' : content_tag(:a, I18n.t('woople_theme.assessment.history'))
+  def render_history_link
+    yield unless history.empty?
   end
 
   def each_history_item

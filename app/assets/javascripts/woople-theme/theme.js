@@ -7,6 +7,7 @@
 //= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
+//= require twitter/bootstrap/tab
 //= require fastclick.min_
 //= require video.min
 //= require_tree .
@@ -62,7 +63,7 @@ function mobileSearchToggle() {
 
   $('a.search-page').on('click', function(e) {
     e.preventDefault();
-    
+
     var masthead        = $('#masthead');
     var menu            = $('.container .menu');
     var form            = $('form.search');
