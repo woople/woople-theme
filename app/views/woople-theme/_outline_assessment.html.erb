@@ -1,68 +1,62 @@
 <% assessment.render do %>
   <div id="assessment-<%= assessment.assessment_id %>" class="assessment">
-    <div class="front <%= assessment.completed_class %>">
-      <div class="assessment-pad">
-        <div class="flip-action pull-right">
-          <%= assessment.history_link_tag %>
-        </div>
+    <div class="assessment-pad">
+      <ul class="nav nav-tabs">
+        <li class="active"><a href="#assessment-details-<%= assessment.assessment_id %>" data-toggle="tab"><%=t('woople_theme.outline.assessment')%></a></li>
+        <% assessment.render_history_link do %>
+        <li><a href="#assessment-history-<%= assessment.assessment_id %>" data-toggle="tab"><%= t('woople_theme.assessment.history') %></a></li>
+        <% end %>
+      </ul>
+      <div class="tab-content <%= assessment.completed_class %>">
+        <div class="tab-pane active" id="assessment-details-<%= assessment.assessment_id %>">
+          <p class="assessment-attributes">
+            <span class="badge"><%=t('woople_theme.outline.assessment_questions', count: assessment.questions_asked) %></span>
+            <span class="badge"><%=t('woople_theme.outline.assessment_requirement', percent: assessment.pass_requirement) %></span>
+            <span class="badge"><%= t 'woople_theme.assessment.duration', count: assessment.estimated_duration %></span>
+          </p>
 
-        <h3><%=t('woople_theme.outline.assessment')%></h3>
+          <% assessment.render_pass_fail_alert do |alert| %>
+            <div class="alert <%= alert.css_class %> fade in">
+              <button class="close" data-dismiss="alert">×</button>
+              <strong><%= alert.heading %></strong> <%= alert.message %>
+            </div>
+          <% end %>
 
-        <p class="assessment-attributes">
-          <span class="badge"><%=t('woople_theme.outline.assessment_questions', count: assessment.questions_asked) %></span>
-          <span class="badge"><%=t('woople_theme.outline.assessment_requirement', percent: assessment.pass_requirement) %></span>
-          <span class="badge"><%= t 'woople_theme.assessment.duration', count: assessment.estimated_duration %></span>
-        </p>
+          <% assessment.render_relearnings do %>
+            <h4><%= t 'woople_theme.assessment.required_relearning' %></h4>
+            <%= outline(assessment) do |outline| %>
+              <%= outline.videos(assessment.relearnings) %>
+            <% end %>
+          <% end %>
 
-        <% assessment.render_pass_fail_alert do |alert| %>
-          <div class="alert <%= alert.css_class %> fade in">
-            <button class="close" data-dismiss="alert">×</button>
-            <strong><%= alert.heading %></strong> <%= alert.message %>
+          <div class="assessment-start">
+            <%= form_tag assessment.url, method: :post do %>
+              <%= hidden_field_tag :assessment_id, assessment.assessment_id %>
+              <%= assessment.start_button_tag %>
+            <% end %>
           </div>
-        <% end %>
-
-        <% assessment.render_relearnings do %>
-          <h4><%= t 'woople_theme.assessment.required_relearning' %></h4>
-          <%= outline(assessment) do |outline| %>
-            <%= outline.videos(assessment.relearnings) %>
-          <% end %>
-        <% end %>
-
-        <div class="assessment-start">
-          <%= form_tag assessment.url, method: :post do %>
-            <%= hidden_field_tag :assessment_id, assessment.assessment_id %>
-            <%= assessment.start_button_tag %>
-          <% end %>
         </div>
-      </div>
-    </div>
-
-    <div class="back">
-      <div class="assessment-pad">
-        <div class="flip-action-back pull-right">
-          <a><%= t 'woople_theme.assessment.name' %></a>
-        </div>
-
-        <h3><%= t 'woople_theme.assessment.assessment_history' %></h3>
-        <div class="assessment-history">
-          <table class="table">
-            <thead>
-              <tr>
-                <th style="width:50%"><%= t 'woople_theme.assessment.date_title' %></th>
-                <th><%= t 'woople_theme.assessment.score_title' %></th>
-                <th class="count"><%= t 'woople_theme.assessment.result_title' %></th>
-              </tr>
-            </thead>
-            <tbody>
-              <% assessment.each_history_item do |history_item| %>
+        <div class="tab-pane" id="assessment-history-<%= assessment.assessment_id %>">
+          <div class="assessment-history">
+            <table class="table">
+              <thead>
                 <tr>
-                  <td><%= history_item.date %></td>
-                  <td><%= history_item.score %></td>
-                  <td><%= link_to history_item.result_name, history_item.url %></td>
+                  <th style="width:50%"><%= t 'woople_theme.assessment.date_title' %></th>
+                  <th><%= t 'woople_theme.assessment.score_title' %></th>
+                  <th class="count"><%= t 'woople_theme.assessment.result_title' %></th>
                 </tr>
-              <% end %>
-            </tbody>
-          </table>
+              </thead>
+              <tbody>
+                <% assessment.each_history_item do |history_item| %>
+                  <tr>
+                    <td><%= history_item.date %></td>
+                    <td><%= history_item.score %></td>
+                    <td><%= link_to history_item.result_name, history_item.url %></td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>

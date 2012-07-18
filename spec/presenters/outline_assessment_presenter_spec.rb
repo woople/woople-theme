@@ -61,20 +61,20 @@ describe OutlineAssessmentPresenter do
     end
   end
 
-  describe "#history_link_tag" do
-    describe 'when no history items' do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [], completed?: false, enabled?: true)) }
+  describe "#render_history_link" do
+    describe "when having history items" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [stub], enabled?: true, completed?: false).as_null_object) }
 
-      it 'returns an empty string' do
-        subject.history_link_tag.should be_blank
+      it "yields the block" do
+        expect { |block| subject.render_history_link &block }.to yield_control
       end
     end
 
-    describe 'when having history items' do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [stub], completed?: false, enabled?: true)) }
+    describe "when no history items" do
+      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [], enabled?: false, completed?: false).as_null_object) }
 
-      it 'returns a link' do
-        subject.history_link_tag.should_not be_blank
+      it "does not yield the block" do
+        expect { |block| subject.render_history_link &block }.to_not yield_control
       end
     end
   end

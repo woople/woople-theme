@@ -2,7 +2,6 @@
 @import "woople-theme/colours.css.less";
 
 .outline {
-  overflow:hidden;
   border-bottom:solid 1px fade(@contentBorder, 35%);
 
   h2 {
@@ -44,87 +43,30 @@
       }
     }
 
-    .flip-action, .flip-action-back {
-      width:75px;
-      padding:@contentPadding / 2;
-
-      a {
-        cursor: pointer;
-      }
-    }
-
-    &.flip .front {
-      z-index: 900;
-
-      -webkit-transform: rotateY(180deg);
-      -moz-transform: rotateY(180deg);
-    }
-
-    .front {
-      position:relative;
-      z-index:900;
-      background:white;
-      border-bottom:solid 1px transparent;
-
-      .box-shadow(@default-shadow);
-
-      -webkit-transform: rotateY(0deg);
-      -webkit-transform-style: preserve-3d;
-      -webkit-backface-visibility: hidden;
-
-      -moz-transform: rotateY(0deg);
-      -moz-transform-style: preserve-3d;
-      -moz-backface-visibility: hidden;
-
-      -o-transition: -o-transform .4s ease-in-out;
-      -ms-transition: -ms-transform .4s ease-in-out;
-      -moz-transition: -moz-transform .4s ease-in-out;
-      -webkit-transition: -webkit-transform .4s ease-in-out;
-      transition: transform .4s ease-in-out;
-    }
-
-    .front.completed {
-      background-image:url(/assets/woople-theme/completed-triangle.png);
-      background-position:top right;
-      background-repeat:no-repeat;
-    }
-
-    &.flip .back {
-      z-index:1000;
-      -webkit-transform: rotateY(0deg);
-      -moz-transform: rotateY(0deg);
-    }
-
-    .back {
-      position:absolute;
-      z-index:800;
-      background:white;
-      top:0;
-      left:0;
-      width:100%;
-      /*height:100%;*/
-
-      .box-shadow(@default-shadow);
-
-      -webkit-transform: rotateY(-180deg);
-      -webkit-transform-style: preserve-3d;
-      -webkit-backface-visibility: hidden;
-
-      -moz-transform: rotateY(-180deg);
-      -moz-transform-style: preserve-3d;
-      -moz-backface-visibility: hidden;
-
-      /* -- transition is the magic sauce for animation -- */
-      -o-transition: -o-transform .4s ease-in-out;
-      -ms-transition: -ms-transform .4s ease-in-out;
-      -moz-transition: -moz-transform .4s ease-in-out;
-      -webkit-transition: -webkit-transform .4s ease-in-out;
-      transition: transform .4s ease-in-out;
-    }
-
     .assessment-pad {
-      .assessment-history {
+      .nav-tabs {
+        margin-bottom: 0;
 
+        li:first-child {
+          margin-left: 10px;
+        }
+
+        a {
+          outline: 0;
+        }
+      }
+
+      .tab-content.completed {
+        background-image:url(/assets/woople-theme/completed-triangle.png);
+        background-position:top right;
+        background-repeat:no-repeat;
+      }
+
+      .tab-content {
+        background: white;
+      }
+
+      .assessment-history {
         a {
           color: @primary;
         }
@@ -243,22 +185,11 @@
     }
 
     .assessment {
-      .back {
+      .assessment-history {
         table tr > td:first-child, tr > th:first-child {
           text-indent:0;
         }
       }
     }
-  }
-}
-
-.no-csstransforms3d {
-
-  .back {
-    display:none;
-  }
-
-  .flip .back {
-    display:block;
   }
 }
