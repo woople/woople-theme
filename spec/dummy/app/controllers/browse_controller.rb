@@ -73,7 +73,7 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       name: course_names.sample,
       enabled: (unit_index == 0),
-      assessment: random_assessment,
+      assessment: random_assessment(unit_index),
       completed: 2,
       videos: rand((completed_videos+1)..(completed_videos*3)).times.collect { |index|
         random_video("#{unit_index}_#{index}",
@@ -86,9 +86,9 @@ class BrowseController < ApplicationController
     )
   end
 
-  def random_assessment
+  def random_assessment(assessment_id)
     OpenStruct.new(
-      assessment_id: 42,
+      assessment_id: assessment_id,
       questions_asked: rand(5..15),
       pass_requirement: [50, 75, 100].sample,
       estimated_duration: rand(5..25),
