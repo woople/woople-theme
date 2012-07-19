@@ -47,12 +47,16 @@ class OutlineAssessmentPresenter < ExplicitDelegator
       yield OpenStruct.new(
         css_class: 'alert-success',
         heading: I18n.t('woople_theme.assessment.pass_alert.heading'),
-        message: I18n.t('woople_theme.assessment.pass_alert.message')
+        link: history.first.url,
+        link_text: I18n.t('woople_theme.assessment.pass_alert.link_text'),
+        message: ''
       )
     else
       yield OpenStruct.new(
         css_class: 'alert-error',
         heading: I18n.t('woople_theme.assessment.fail_alert.heading'),
+        link: history.first.url,
+        link_text: I18n.t('woople_theme.assessment.fail_alert.link_text'),
         message: I18n.t('woople_theme.assessment.fail_alert.message')
       )
     end
