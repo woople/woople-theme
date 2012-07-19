@@ -37,11 +37,12 @@ en:
       passed: passed
       failed: failed
       pass_alert:
-        heading: Passed!
-        message: Congratulations, you've passed! You may review your history to see your scores and results. You may also retake the assessment to achieve a better result.
+        heading: Congratulations, you passed.
+        link_text: View your results.
       fail_alert:
-        heading: Failed!
-        message: Thank you for completing the assessment. You may review your history to see your scores and results. You may also retake the assessment to achieve a better result. You must rewatch the required relearnings below before retaking the assessment.
+        heading: Sorry, please try again.
+        link_text: View your results.
+        message: Rewatch the lessons below to retake the assessment.
       result: Assessment Result
       result_status:
         one: On %{completed_at} you %{status} this assessment by answering %{correct_questions}/%{total_questions} question correctly for a %{score} score.

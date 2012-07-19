@@ -123,26 +123,30 @@ describe OutlineAssessmentPresenter do
     end
 
     describe "given 'passed?' is true" do
-      subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: true, completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: true, history: [OpenStruct.new(url: '/foo')], completed?: false, enabled?: true)) }
 
       it 'yields an OpenStruct with pass alert entries' do
         expect { |block| subject.render_pass_fail_alert &block }.to yield_with_args OpenStruct
         subject.render_pass_fail_alert do |alert|
           alert.css_class.should == 'alert-success'
           alert.heading.should == WoopleThemeI18n.t('woople_theme.assessment.pass_alert.heading')
-          alert.message.should == WoopleThemeI18n.t('woople_theme.assessment.pass_alert.message')
+          alert.link.should == '/foo'
+          alert.link_text.should == WoopleThemeI18n.t('woople_theme.assessment.pass_alert.link_text')
+          alert.message.should == ''
         end
       end
     end
 
     describe "given 'passed?' is false" do
-      subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: false, completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: false, history: [OpenStruct.new(url: '/foo')], completed?: false, enabled?: true)) }
 
       it 'yields an OpenStruct with fail alert entries' do
         expect { |block| subject.render_pass_fail_alert &block }.to yield_with_args OpenStruct
         subject.render_pass_fail_alert do |alert|
           alert.css_class.should == 'alert-error'
           alert.heading.should == WoopleThemeI18n.t('woople_theme.assessment.fail_alert.heading')
+          alert.link.should == '/foo'
+          alert.link_text.should == WoopleThemeI18n.t('woople_theme.assessment.fail_alert.link_text')
           alert.message.should == WoopleThemeI18n.t('woople_theme.assessment.fail_alert.message')
         end
       end
