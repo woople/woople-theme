@@ -95,7 +95,7 @@ class BrowseController < ApplicationController
       enabled?: [true, false].sample,
       startable?: [true, false].sample,
       url: '#',
-      relearnings: rand(0..7).times.collect { |index| random_video(index, true, true, true) },
+      relearnings: rand(0..7).times.collect { |index| random_video(index, [true, false].sample, true, true) },
       history: rand(0..7).times.collect { random_history_item },
       completed?: [true, false].sample
     ).tap { |assessment| assessment.send 'passed?=', [true, false].sample if [true, false].sample }
