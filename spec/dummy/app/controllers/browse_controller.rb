@@ -13,9 +13,10 @@ class BrowseController < ApplicationController
   def video
     @course = random_course
 
-    @video = OpenStruct.new(
+    @video  = OpenStruct.new(
       name: video_names.sample,
-      src: 'http://video-js.zencoder.com/oceans-clip.mp4'
+      src: 'http://video-js.zencoder.com/oceans-clip.mp4',
+      liked?: true
     )
 
     render 'course'
