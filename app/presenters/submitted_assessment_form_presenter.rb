@@ -40,11 +40,8 @@ class SubmittedAssessmentFormPresenter < AssessmentFormPresenter
   end
 
   def result_status_classes
-    classes = [:alert, :fade, :in]
-    classes << 'alert-success' if passed?
-    classes << 'alert-error' if !passed?
-
-    classes
+    css_classes = [:alert]
+    css_classes << (passed? ? 'alert-success' : 'alert-error')
   end
 
   def status
