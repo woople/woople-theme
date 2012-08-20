@@ -6,7 +6,7 @@ module WoopleTheme
     initializer :assets do |config|
       Rails.application.config.assets.precompile += [
         'woople-theme/framework.css',
-        'woople-theme/theme.css',
+        'woople-theme/index.css',
         'woople-theme/theme-retina.css'
       ]
     end
