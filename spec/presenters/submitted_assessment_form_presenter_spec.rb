@@ -72,11 +72,11 @@ describe SubmittedAssessmentFormPresenter do
     it "should contain alert-success when the result is passed" do
       subject.stub(:passed?) { true }
 
-      subject.result_status_classes.should include('alert-success')
+      subject.result_status_classes.should eq([:alert, 'alert-success'])
     end
 
     it "should contain alert-error when the result is not passed" do
-      subject.result_status_classes.should include('alert-error')
+      subject.result_status_classes.should eq([:alert, 'alert-error'])
     end
   end
 

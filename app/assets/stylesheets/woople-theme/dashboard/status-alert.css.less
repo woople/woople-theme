@@ -1,0 +1,56 @@
+@status-height: 32px;
+@alert-padding: 8px;
+
+.status-alert {
+  margin: 8px;
+  padding-left: 8px;
+  min-height: @status-height;
+  background-image: asset-url('woople-theme/certification/yellow-status.png');
+  background-position: @alert-padding @alert-padding;
+  background-repeat: no-repeat;
+
+  strong {
+    display: inline-block;
+    margin-top: 7px;
+    margin-left: @status-height + 4;
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  span {
+    margin-left: 4px;
+    font-size: 14px;
+  }
+}
+
+.status-alert.alert-error {
+  background-image: asset-url('woople-theme/certification/red-status.png');
+}
+
+.status-alert.alert-success {
+  background-image: asset-url('woople-theme/certification/green-status.png');
+}
+
+@media (max-width: 480px) {
+  .status-alert {
+    span {
+      display: block;
+      margin-top: 4px;
+    }
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .status-alert {
+    background-size: @status-height @status-height;
+    background-image: asset-url('woople-theme/certification/yellow-status-2x.png');
+  }
+
+  .status-alert.alert-error {
+    background-image: asset-url('woople-theme/certification/red-status-2x.png');
+  }
+
+  .status-alert.alert-success {
+    background-image: asset-url('woople-theme/certification/green-status-2x.png');
+  }
+}

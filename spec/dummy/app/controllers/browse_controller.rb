@@ -52,6 +52,13 @@ class BrowseController < ApplicationController
     @assessment_form = random_assessment_result(true)
   end
 
+  def member_dashboard
+    @presenter = OpenStruct.new(
+      status_color: [:red, :yellow, :green].sample,
+      status_description: '3 essentials and 123 elective points required.'
+    )
+  end
+
   private
 
   def random_course
