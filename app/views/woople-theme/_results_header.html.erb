@@ -1,3 +1,4 @@
 <div class="results-header">
-  <span class="title"><%= title %></span> <%= link_to t('woople_theme.search_results_more'), path, class: 'loading_indicator' %>
+  <span class="title"><%= title %></span>
+  <%= link_to(t('woople_theme.search_results_more'), path, class: 'loading_indicator') unless path.blank? %>
 </div>
