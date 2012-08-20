@@ -93,7 +93,13 @@ describe ThemeHelper do
       page.find('.results-header .title').should have_content(title)
     end
 
-    it "shows the more link when the path is not nil" do
+    it "should not show the more link when the path is not set" do
+      page = Capybara::Node::Simple.new helper.results_header(title, '')
+      page.should_not have_selector("a")
+      page.find('.results-header .title').should_not have_content(I18n.t('woople_theme.search_results_more'))
+    end
+
+    it "should show the more link when the path is set" do
       path = "/search"
       html = helper.results_header(title, path)
       page = Capybara::Node::Simple.new(html)
