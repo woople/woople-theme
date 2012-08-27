@@ -41,4 +41,18 @@ describe DashboardHelper do
       end
     end
   end
+
+  describe "#essentials_section" do
+    subject do
+      helper.essentials_section({
+        title: "section title",
+        enabled?: true
+      })
+    end
+    let(:page) { Capybara::Node::Simple.new(subject) }
+
+    it "has the correct title" do
+      page.find("#section-title-section h2").text.should eq('Section Title')
+    end
+  end
 end
