@@ -16,6 +16,8 @@
 
 @sosumi-font-size: 12px;
 
+@titleFont: HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
 /*course*/
 @imageWidth: 50px;
 @tableCellPadding: 10px;
@@ -43,6 +45,13 @@
   margin-top:@contentPadding * 1.5;
   margin-bottom:@contentPadding * 1.5;
   padding-right:@leftColumnOffset;
+}
+
+.section-title() {
+  font-weight: @title-font-weight;
+  margin-bottom:@contentPadding;
+  font-family:@titleFont;
+  color: @secondaryTextColour;
 }
 
 .modal-video() {

@@ -55,11 +55,19 @@ class BrowseController < ApplicationController
   def member_dashboard
     @presenter = OpenStruct.new(
       status_color: [:red, :yellow, :green].sample,
-      status_description: '3 essentials and 123 elective points required.'
+      status_description: '3 essentials and 123 elective points required.',
     )
+    @essentials_presenter = essentials
   end
 
   private
+
+  def essentials
+    OpenStruct.new(
+      title: 'Essentials',
+      enabled?: true
+    )
+  end
 
   def random_course
     OpenStruct.new(
