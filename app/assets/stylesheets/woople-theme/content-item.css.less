@@ -43,6 +43,10 @@
   padding-top:@contentPadding + 1;
 }
 
+.completed-item {
+  padding-bottom: @contentPadding !important;
+}
+
 .content-item {
   position:relative;
   margin-left:0;
@@ -57,7 +61,7 @@
   -ms-tap-highlight-color: transparent;
   tap-highlight-color: transparent;
 
-  > * { 
+  > * {
     position:relative;
     z-index:2;
   }
@@ -74,6 +78,22 @@
       .course-image();
     }
 
+  }
+
+  .content-item-spacer {
+    margin-left: 0;
+  }
+  .content-item-date {
+    .content-title();
+    margin-left: 0;
+    a {
+      color:@primaryTextColour;
+    }
+  }
+  .content-item-duration {
+    .content-title();
+    margin-right: 0;
+    text-align: right;
   }
 
   .content-item-content {

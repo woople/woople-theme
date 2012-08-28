@@ -9,4 +9,13 @@ module DashboardHelper
            object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::EssentialsSectionPresenter)
   end
 
+  def completed_essentials(items)
+    collection = ThemePresentation.wrap_collection(items, WoopleTheme::Dashboard::CompletedEssentialPresenter)
+    render partial: 'dashboard/completed_essential', collection: collection
+  end
+
+  def total_courses(total)
+    render partial: 'dashboard/total_courses', locals: {total: total}
+  end
+
 end
