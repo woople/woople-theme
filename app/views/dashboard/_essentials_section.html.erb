@@ -1,6 +1,17 @@
 <% essentials_section.render do %>
   <section id="<%= essentials_section.css_id %>">
   <h2><%= essentials_section.title %></h2>
-  <% yield %>
+  <ul class="nav nav-tabs">
+    <% essentials_section.render_remaining do %>
+      <li class="active"><a href="#" data-toggle="tab"><%=t('woople_theme.dashboard.essentials.remaining')%></a></li>
+    <% end %>
+  </ul>
+  <div class="tab-content">
+    <% essentials_section.render_remaining do %>
+      <div class="tab-pane active" id="essentials_remaining">
+      <%= content_items(essentials_section.essentials_remaining) %>
+      </div>
+    <% end %>
+  </div>
   </section>
 <% end %>

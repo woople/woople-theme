@@ -65,6 +65,7 @@ class BrowseController < ApplicationController
   def essentials
     OpenStruct.new(
       title: 'Essentials',
+      essentials_remaining: rand(0..5).times.collect { |index| random_course },
       enabled?: true
     )
   end
