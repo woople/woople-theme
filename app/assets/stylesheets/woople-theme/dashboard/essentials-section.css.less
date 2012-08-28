@@ -1,13 +1,24 @@
 @import "woople-theme/variables.css.less";
 
 #essentials-section {
-  padding-left:@contentPadding;
-  padding-right:@contentPadding;
-  margin-top:0;
-  margin-bottom:0;
-  padding-top:@contentPadding;
 
   h2 {
+    padding-left:@contentPadding;
+    padding-right:@contentPadding;
+    margin-top:0;
+    margin-bottom:0;
+    padding-top:@contentPadding;
     .section-title();
   }
+
+  .tab-pane {
+    background-color: white;
+  }
+  .nav-tabs li:first-child {
+    margin-left: 10px;
+  }
+  .nav {
+    margin-bottom: 0;
+  }
+
 }

@@ -46,13 +46,18 @@ describe DashboardHelper do
     subject do
       helper.essentials_section({
         title: "section title",
-        enabled?: true
+        enabled?: true,
+        essentials_remaining: [stub(name:'essential').as_null_object]
       })
     end
     let(:page) { Capybara::Node::Simple.new(subject) }
 
     it "has the correct title" do
-      page.find("#section-title-section h2").text.should eq('Section Title')
+      page.find("#section-title-section > h2").text.should == 'Section Title'
+    end
+
+    it "has the correct name for the essential remaining" do
+      page.find(".content-item-content h2 a").text.should == 'essential'
     end
   end
 end
