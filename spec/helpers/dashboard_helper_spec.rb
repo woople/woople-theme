@@ -47,7 +47,8 @@ describe DashboardHelper do
       helper.essentials_section({
         title: "section title",
         enabled?: true,
-        essentials_remaining: [stub(name:'essential').as_null_object]
+        essentials_remaining: [stub(name:'remaining').as_null_object],
+        essentials_completed: [stub(time_total:0).as_null_object]
       })
     end
     let(:page) { Capybara::Node::Simple.new(subject) }
@@ -57,7 +58,25 @@ describe DashboardHelper do
     end
 
     it "has the correct name for the essential remaining" do
-      page.find(".content-item-content h2 a").text.should == 'essential'
+      page.find(".content-item-content h2 a").text.should == 'remaining'
+    end
+  end
+
+  describe "#completed_essentials" do
+    it "renders a collection of completed essentials correctly" do
+      collection = [stub.as_null_object, stub.as_null_object, stub.as_null_object]
+      html = helper.completed_essentials(collection)
+      page = Capybara::Node::Simple.new(html)
+      page.should have_css("div.content-item", count: 3)
+    end
+  end
+
+  describe "#total_courses" do
+    it "renders the totals" do
+      html = helper.total_courses(3)
+      page = Capybara::Node::Simple.new(html)
+
+      page.find('.total').text.should == I18n.t('woople_theme.dashboard.courses', count: 3)
     end
   end
 end
