@@ -1,15 +1,32 @@
 <% essentials_section.render do %>
   <section id="<%= essentials_section.css_id %>">
   <h2><%= essentials_section.title %></h2>
-  <ul class="nav nav-tabs">
+  <ul class="nav nav-tabs" id="essentials_tab_nav">
     <% essentials_section.render_remaining do %>
-      <li class="active"><a href="#" data-toggle="tab"><%=t('woople_theme.dashboard.essentials.remaining')%></a></li>
+      <li><a href="#essentials_remaining" data-toggle="tab"><%=t('woople_theme.dashboard.essentials.remaining')%></a></li>
+    <% end %>
+    <% essentials_section.render_completed do %>
+      <li><a href="#essentials_completed" data-toggle="tab"><%=t('woople_theme.dashboard.essentials.completed')%></a></li>
     <% end %>
   </ul>
   <div class="tab-content">
     <% essentials_section.render_remaining do %>
-      <div class="tab-pane active" id="essentials_remaining">
+      <div class="tab-pane" id="essentials_remaining">
       <%= content_items(essentials_section.essentials_remaining) %>
+      </div>
+    <% end %>
+    <% essentials_section.render_completed do %>
+      <div class="tab-pane" id="essentials_completed">
+        <%= completed_essentials(essentials_section.essentials_completed) %>
+        <div class="content-item row">
+          <div class="span1 content-item-spacer">
+            &nbsp;
+          </div>
+          <%= total_courses(essentials_section.total_completed_courses) %>
+          <div class="content-item-duration span2">
+            <%= I18n.t('woople_theme.dashboard.duration', count: essentials_section.total_completed_minutes) %>
+          </div>
+        </div>
       </div>
     <% end %>
   </div>

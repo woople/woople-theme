@@ -57,6 +57,10 @@ en:
     dashboard:
       essentials:
         remaining: Remaining
+        completed: Completed
+      courses:
+        one: 1 Course
+        other: '%{count} Courses'
     search_results_more: See All >
     logged_in_as: Logged in as
     impersonating: impersonating
