@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'explicit_delegator'
 
 class NoMethodClass < ExplicitDelegator
 end
@@ -10,6 +9,14 @@ end
 
 class TwoMethodClass < ExplicitDelegator
   enforce_definitions :one, :two
+end
+
+class Parent < ExplicitDelegator
+  enforce_definitions :parent_method, :shared_method
+end
+
+class Child < Parent
+  enforce_definitions :child_method, :shared_method
 end
 
 describe ExplicitDelegator do
@@ -41,5 +48,9 @@ describe ExplicitDelegator do
     end
   end
 
+  describe '::enforce_definitions' do
+    it 'should raise a runtime error with a list of required methods (including inherited methods, unduplicated)' do
+      expect { Child.new(OpenStruct.new) }.to raise_error(RuntimeError, 'Methods required to use Child: [:parent_method, :shared_method, :child_method]')
+    end
+  end
 end
-
