@@ -1,4 +1,9 @@
 class ExplicitDelegator < SimpleDelegator
+  def self.enforce_definitions(*methods)
+    define_method(:enforced_methods) do
+      super() | methods
+    end
+  end
 
   def initialize(obj)
     super(obj)
@@ -16,11 +21,4 @@ class ExplicitDelegator < SimpleDelegator
     end
     raise "Methods required to use #{self.class}: #{missing_methods}" unless missing_methods.empty?
   end
-
-  def self.enforce_definitions(*methods)
-    define_method(:enforced_methods) do
-      return methods
-    end
-  end
-
 end
