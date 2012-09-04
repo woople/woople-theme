@@ -15,12 +15,21 @@ module DashboardHelper
   end
 
   def completed_essentials(items)
-    collection = ThemePresentation.wrap_collection(items, WoopleTheme::Dashboard::CompletedEssentialPresenter)
-    render partial: 'dashboard/completed_essential', collection: collection
+    render_collection_partial(items, WoopleTheme::Dashboard::CompletedEssentialPresenter, 'dashboard/completed_essential')
+  end
+
+  def essentials_exceptions(items)
+    render_collection_partial(items, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/essential_exception')
   end
 
   def total_courses(total)
     render partial: 'dashboard/total_courses', locals: {total: total}
   end
 
+  private
+
+  def render_collection_partial(items, presenter, partial)
+    collection = ThemePresentation.wrap_collection(items, presenter)
+    render partial: partial, collection: collection
+  end
 end

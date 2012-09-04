@@ -35,6 +35,23 @@ describe WoopleTheme::Dashboard::EssentialsSectionPresenter do
     end
   end
 
+  describe "#render_exceptions" do
+    describe "at least one essential exception" do
+      let(:data) { stub_presenter([],[],[stub]) }
+      subject { WoopleTheme::Dashboard::EssentialsSectionPresenter.new(data) }
+      it "yields the block" do
+        expect { |block| subject.render_exceptions(&block) }.to yield_control
+      end
+    end
+    describe "0 essential exceptions" do
+      let(:data) { stub_presenter }
+      subject { WoopleTheme::Dashboard::EssentialsSectionPresenter.new(data) }
+      it "does not yield the block" do
+        expect { |block| subject.render_exceptions(&block) }.not_to yield_control
+      end
+    end
+  end
+
   describe '#total_completed_courses' do
     let(:data) { stub_presenter([],[stub]) }
     subject { WoopleTheme::Dashboard::EssentialsSectionPresenter.new(data) }
@@ -50,7 +67,7 @@ describe WoopleTheme::Dashboard::EssentialsSectionPresenter do
       subject.total_completed_minutes.should == "0:01"
     end
   end
-  def stub_presenter(remaining=[], completed=[])
-    stub({title:'title', enabled?: true, essentials_remaining: remaining, essentials_completed: completed})
+  def stub_presenter(remaining=[], completed=[], exceptions=[])
+    stub({title:'title', enabled?: true, essentials_remaining: remaining, essentials_completed: completed, essentials_exceptions: exceptions})
   end
 end
