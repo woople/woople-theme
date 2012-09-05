@@ -54,18 +54,22 @@ en:
         one: 1 unanswered question
         other: '%{count} unanswered questions'
       submit_assessment: Submit Assessment
-    dashboard:
-      essentials:
-        remaining: Remaining
-        completed: Completed
-      courses:
-        one: 1 Course
-        other: '%{count} Courses'
     search_results_more: See All >
     logged_in_as: Logged in as
     impersonating: impersonating
     cancel: Cancel
     return_to_course: Return to Course
+
+    dashboards:
+      member:
+        essentials_section:
+          title: Essentials
+          remaining_tab_name: Remaining
+          completed_tab_name: Completed
+          courses:
+            one: 1 course
+            other: '%{count} courses'
+
   date:
     formats:
       default: ! '%b %d %Y'
