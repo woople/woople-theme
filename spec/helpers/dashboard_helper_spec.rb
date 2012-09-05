@@ -52,10 +52,6 @@ describe DashboardHelper do
     end
     let(:page) { Capybara::Node::Simple.new(subject) }
 
-    it "has the correct title" do
-      page.find("#section-title-section > h2").text.should == 'Section Title'
-    end
-
     it "has the correct name for the essential remaining" do
       page.find(".content-item-content h2 a").text.should == 'remaining'
     end
