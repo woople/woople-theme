@@ -45,7 +45,6 @@ describe DashboardHelper do
   describe "#essentials_section" do
     subject do
       helper.essentials_section({
-        title: "section title",
         enabled?: true,
         essentials_remaining: [stub(name:'remaining').as_null_object],
         essentials_completed: [stub(time_total:0).as_null_object]
