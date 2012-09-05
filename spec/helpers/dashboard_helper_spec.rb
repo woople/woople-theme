@@ -45,17 +45,12 @@ describe DashboardHelper do
   describe "#essentials_section" do
     subject do
       helper.essentials_section({
-        title: "section title",
         enabled?: true,
         essentials_remaining: [stub(name:'remaining').as_null_object],
         essentials_completed: [stub(time_total:0).as_null_object]
       })
     end
     let(:page) { Capybara::Node::Simple.new(subject) }
-
-    it "has the correct title" do
-      page.find("#section-title-section > h2").text.should == 'Section Title'
-    end
 
     it "has the correct name for the essential remaining" do
       page.find(".content-item-content h2 a").text.should == 'remaining'
@@ -76,7 +71,7 @@ describe DashboardHelper do
       html = helper.total_courses(3)
       page = Capybara::Node::Simple.new(html)
 
-      page.find('.total').text.should == I18n.t('woople_theme.dashboard.courses', count: 3)
+      page.find('.total').text.should == I18n.t('woople_theme.dashboards.member.essentials_section.courses', count: 3)
     end
   end
 end

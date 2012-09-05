@@ -1,12 +1,12 @@
 <% essentials_section.render do %>
-  <section id="<%= essentials_section.css_id %>">
-  <h2><%= essentials_section.title %></h2>
+  <section id="essentials-section">
+    <h2><%= t 'woople_theme.dashboards.member.essentials_section.title' %></h2>
   <ul class="nav nav-tabs" id="essentials_tab_nav">
     <% essentials_section.render_remaining do %>
-      <li><a href="#essentials_remaining" data-toggle="tab"><%=t('woople_theme.dashboard.essentials.remaining')%></a></li>
+      <li><a href="#essentials_remaining" data-toggle="tab"><%= t 'woople_theme.dashboards.member.essentials_section.remaining_tab_name' %></a></li>
     <% end %>
     <% essentials_section.render_completed do %>
-      <li><a href="#essentials_completed" data-toggle="tab"><%=t('woople_theme.dashboard.essentials.completed')%></a></li>
+      <li><a href="#essentials_completed" data-toggle="tab"><%= t 'woople_theme.dashboards.member.essentials_section.completed_tab_name' %></a></li>
     <% end %>
   </ul>
   <div class="tab-content">
