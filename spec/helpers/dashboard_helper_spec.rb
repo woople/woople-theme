@@ -71,7 +71,7 @@ describe DashboardHelper do
       html = helper.total_courses(3)
       page = Capybara::Node::Simple.new(html)
 
-      page.find('.total').text.should == I18n.t('woople_theme.dashboard.courses', count: 3)
+      page.find('.total').text.should == I18n.t('woople_theme.dashboards.member.essentials_section.courses', count: 3)
     end
   end
 end
