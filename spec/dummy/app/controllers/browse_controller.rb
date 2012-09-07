@@ -57,7 +57,9 @@ class BrowseController < ApplicationController
       status_color: [:red, :yellow, :green].sample,
       status_description: '3 essentials and 123 elective points required.',
     )
+
     @essentials_presenter = essentials
+    @electives_presenter  = electives
   end
 
   private
@@ -66,6 +68,12 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       essentials_remaining: rand(0..5).times.collect { |index| random_course },
       essentials_completed: rand(0..5).times.collect { |index| random_course },
+      enabled?: true
+    )
+  end
+
+  def electives
+    OpenStruct.new(
       enabled?: true
     )
   end
