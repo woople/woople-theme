@@ -69,6 +69,8 @@ en:
           courses:
             one: 1 course
             other: '%{count} courses'
+        electives_section:
+          title: Electives
 
   date:
     formats:
