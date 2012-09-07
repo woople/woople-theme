@@ -52,6 +52,10 @@ describe DashboardHelper do
     end
     let(:page) { Capybara::Node::Simple.new(subject) }
 
+    it "has the correct title" do
+      page.find("#essentials-section h2").text.should == I18n.t('woople_theme.dashboards.member.essentials_section.title')
+    end
+
     it "has the correct name for the essential remaining" do
       page.find(".content-item-content h2 a").text.should == 'remaining'
     end
@@ -72,6 +76,20 @@ describe DashboardHelper do
       page = Capybara::Node::Simple.new(html)
 
       page.find('.total').text.should == I18n.t('woople_theme.dashboards.member.essentials_section.courses', count: 3)
+    end
+  end
+
+  describe "#electives_section" do
+    subject do
+      helper.electives_section({
+        enabled?: true
+      })
+    end
+
+    let(:page) { Capybara::Node::Simple.new(subject)}
+
+    it "has the correct title" do
+      page.find("#electives-section h2").text.should == I18n.t('woople_theme.dashboards.member.electives_section.title')
     end
   end
 end

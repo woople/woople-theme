@@ -9,6 +9,11 @@ module DashboardHelper
            object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::EssentialsSectionPresenter)
   end
 
+  def electives_section(presenter)
+    render partial: 'dashboard/electives_section',
+           object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::ElectivesSectionPresenter)
+  end
+
   def completed_essentials(items)
     collection = ThemePresentation.wrap_collection(items, WoopleTheme::Dashboard::CompletedEssentialPresenter)
     render partial: 'dashboard/completed_essential', collection: collection
