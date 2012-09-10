@@ -16,10 +16,12 @@ describe ThemeHelper do
 
   describe "#content_items" do
     it "renders a collection of items correctly" do
-      collection = [stub.as_null_object, stub.as_null_object, stub.as_null_object]
+      stubbed_item = OpenStruct.new(name: 'Item', url:'/course', image: nil)
+      collection   = [stubbed_item, stubbed_item, stubbed_item]
+
       html = helper.content_items(collection)
       page = Capybara::Node::Simple.new(html)
-      page.should have_css("div.content-item", count: 3)
+      page.should have_css("div.content-item", count: collection.size)
     end
   end
 

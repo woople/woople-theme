@@ -1,5 +1,35 @@
 <% electives_section.render do %>
   <section id="electives-section" class="certification-content">
     <h2><%= t 'woople_theme.dashboards.member.electives_section.title' %></h2>
+    <ul class="nav nav-tabs" id="electives_tab_nav">
+      <% electives_section.render_history do %>
+        <li><a href="#electives_history" data-toggle="tab"><%= t 'woople_theme.dashboards.member.electives_section.history_tab_name' %></a></li>
+      <% end %>
+      <% electives_section.render_exceptions do %>
+        <li><a href="#electives_exceptions" data-toggle="tab"><%= t 'woople_theme.dashboards.member.exceptions.title' %></a></li>
+      <% end %>
+    </ul>
+    <div class="tab-content">
+    <% electives_section.render_history do %>
+      <div class="tab-pane" id="electives_history">
+        <%= electives_history(electives_section.electives_history) %>
+      </div>
+    <% end %>
+    <% electives_section.render_exceptions do %>
+      <div class="tab-pane" id="electives_exceptions">
+        <table class="table">
+          <thead>
+            <tr>
+              <th><%= t 'woople_theme.date_title' %></th>
+              <th><%= t 'woople_theme.dashboards.member.electives_section.reason_points' %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= electives_exceptions(electives_section.electives_exceptions) %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
+    </div>
   </section>
 <% end %>

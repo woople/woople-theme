@@ -39,7 +39,7 @@ describe AssessmentFormPresenter do
 
   describe "#render_result_status" do
     it "rendering nothing" do
-      expect { |block| subject.render_result_status &block }.to_not yield_control
+      expect { |block| subject.render_result_status &block }.not_to yield_control
     end
   end
 
@@ -49,7 +49,7 @@ describe AssessmentFormPresenter do
       assessment_form = AssessmentFormPresenter.new struct(obj)
 
       it 'does not yield' do
-        expect { |block| assessment_form.render_copyright &block }.to_not yield_control
+        expect { |block| assessment_form.render_copyright &block }.not_to yield_control
       end
     end
 

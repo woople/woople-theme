@@ -68,18 +68,41 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       essentials_remaining:  rand(0..5).times.collect { |index| random_course },
       essentials_completed:  rand(0..5).times.collect { |index| random_course },
-      essentials_exceptions: rand(0..5).times.collect { |index| random_course },
+      essentials_exceptions: rand(3..5).times.collect { |index| random_essential_exception },
       enabled?: true
     )
   end
 
   def electives
     OpenStruct.new(
+      electives_history: rand(3..5).times.collect { |index| random_course },
+      electives_exceptions: rand(3..5).times.collect { |index| random_elective_exception },
       enabled?: true
     )
   end
 
+  def random_essential_exception
+    OpenStruct.new(
+      name: course_names.sample,
+      description: exception_reasons.sample,
+      url: '/course',
+      completed_on: Time.at(rand * Time.now.to_i)
+    )
+  end
+
+  def random_elective_exception
+    total_points = [10, 20].sample
+
+    OpenStruct.new(
+      name: exception_reasons.sample,
+      description: total_points,
+      completed_on: Time.at(rand * Time.now.to_i)
+    )
+  end
+
   def random_course
+    total_points = [10, 20].sample
+
     OpenStruct.new(
       name: course_names.sample,
       description: 'Here is a sample description',
@@ -93,7 +116,8 @@ class BrowseController < ApplicationController
       popularity: "230,323",
       certification_metadata: certification_metadata.sample,
       units: rand(1..3).times.collect { |index| random_unit(index) },
-      reason: exception_reasons.sample
+      current_points: (1..total_points).to_a.sample,
+      total_points: total_points
     )
   end
 
@@ -134,7 +158,7 @@ class BrowseController < ApplicationController
       completed_at: Time.new([2010, 2011, 2012].sample, rand(1..12), rand(1..28), rand(0..12), rand(0..59), rand(0..59)),
       score: [40, 50, 70].sample,
       passed: [false, true].sample,
-      url: '/assessment_result'
+      url: '/assessment-result'
     )
   end
 
