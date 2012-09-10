@@ -118,45 +118,7 @@
       }
     }
   }
-
-  table {
-    margin-bottom:0;
-
-    th {
-      color: @secondaryTextColour;
-    }
-
-    th, td {
-      padding:@tableCellPadding;
-      border-top:none;
-      a {
-        color:@primaryTextColour;
-      }
-    }
-
-    .count {
-      width:75px;
-    }
-
-    th {
-      border-top:none;
-    }
-
-    tr > td:first-child, tr > th:first-child {
-      padding-left:@contentPadding;
-      width:@gridGutterWidth + @imageWidth - (@tableCellPadding * 2);
-    }
-
-    .action {
-      display:block;
-    }
-
-    tr:hover {
-      td {
-        background-color:@highlightBackground;
-      }
-    }
-  }
+  .styled-table();
 }
 
 @media (max-width: 767px) {
