@@ -66,8 +66,9 @@ class BrowseController < ApplicationController
 
   def essentials
     OpenStruct.new(
-      essentials_remaining: rand(0..5).times.collect { |index| random_course },
-      essentials_completed: rand(0..5).times.collect { |index| random_course },
+      essentials_remaining:  rand(0..5).times.collect { |index| random_course },
+      essentials_completed:  rand(0..5).times.collect { |index| random_course },
+      essentials_exceptions: rand(0..5).times.collect { |index| random_course },
       enabled?: true
     )
   end
@@ -91,7 +92,8 @@ class BrowseController < ApplicationController
       time_total: rand(10000),
       popularity: "230,323",
       certification_metadata: certification_metadata.sample,
-      units: rand(1..3).times.collect { |index| random_unit(index) }
+      units: rand(1..3).times.collect { |index| random_unit(index) },
+      reason: exception_reasons.sample
     )
   end
 
@@ -236,6 +238,10 @@ class BrowseController < ApplicationController
 
   def course_names
     ["My Really Long Course Name That Might Have to Do With Sales", "Anatomy of Backbone.js", "Rails Testing for Zombies", "CSS Cross-Country", "CoffeeScript", "jQuery Air: Captain's Log", "Natural Language Processing", "Game Theory", "Probabilistic Graphical Models", "Design and Analysis of Algorithms I", "Human-Computer Interaction"]
+  end
+
+  def exception_reasons
+    ["Dog ate homework", "Late Arrival", "Technical Error", "Attended Live Event"]
   end
 
   def video_names

@@ -46,15 +46,12 @@ describe DashboardHelper do
     subject do
       helper.essentials_section({
         enabled?: true,
-        essentials_remaining: [stub(name:'remaining').as_null_object],
-        essentials_completed: [stub(time_total:0).as_null_object]
+        essentials_remaining:  [stub(url:"/course",name:'remaining').as_null_object],
+        essentials_completed:  [stub(url:"/course",time_total:0).as_null_object],
+        essentials_exceptions: [stub(url:"/course").as_null_object]
       })
     end
     let(:page) { Capybara::Node::Simple.new(subject) }
-
-    it "has the correct title" do
-      page.find("#essentials-section h2").text.should == I18n.t('woople_theme.dashboards.member.essentials_section.title')
-    end
 
     it "has the correct name for the essential remaining" do
       page.find(".content-item-content h2 a").text.should == 'remaining'
@@ -62,11 +59,18 @@ describe DashboardHelper do
   end
 
   describe "#completed_essentials" do
-    it "renders a collection of completed essentials correctly" do
-      collection = [stub.as_null_object, stub.as_null_object, stub.as_null_object]
-      html = helper.completed_essentials(collection)
-      page = Capybara::Node::Simple.new(html)
-      page.should have_css("div.content-item", count: 3)
+    it "renders a collection" do
+      collection = [stub(url:"/course").as_null_object, stub(url:"/course").as_null_object, stub(url:"/course").as_null_object]
+      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::CompletedEssentialPresenter, 'dashboard/completed_essential')
+      helper.completed_essentials(collection)
+    end
+  end
+
+  describe "#essentials_exceptions" do
+    it "renders a collection" do
+      collection = [stub(url:"/course").as_null_object, stub(url:"/course").as_null_object, stub(url:"/course").as_null_object]
+      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/essential_exception')
+      helper.essentials_exceptions(collection)
     end
   end
 
