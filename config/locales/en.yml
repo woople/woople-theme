@@ -61,11 +61,16 @@ en:
     return_to_course: Return to Course
 
     dashboards:
+      titles:
+        reason: Reason
+        name: Name
+        time: Time
       member:
         essentials_section:
           title: Essentials
           remaining_tab_name: Remaining
           completed_tab_name: Completed
+          exceptions_tab_name: Exceptions
           courses:
             one: 1 course
             other: '%{count} courses'
