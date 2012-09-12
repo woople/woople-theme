@@ -1,3 +1,5 @@
+require 'delegate'
+
 class ExplicitDelegator < SimpleDelegator
   def self.enforce_definitions(*methods)
     define_method(:enforced_methods) do

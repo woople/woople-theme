@@ -1,4 +1,5 @@
-require 'delegate'
+require 'explicit_delegator'
+
 require_relative 'content_image'
 
 class ContentItemPresenter < ExplicitDelegator
