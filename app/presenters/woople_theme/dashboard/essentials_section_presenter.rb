@@ -1,4 +1,5 @@
 require 'action_view'
+
 module WoopleTheme
   module Dashboard
     class EssentialsSectionPresenter < SectionPresenter
@@ -16,18 +17,6 @@ module WoopleTheme
 
       def render_exceptions
         yield if render?(section.essentials_exceptions)
-      end
-
-      def total_completed_courses
-        section.essentials_completed.count
-      end
-
-      def total_exceptions
-        section.essentials_exceptions.count
-      end
-
-      def total_completed_minutes
-        Duration.format_time(section.essentials_completed.map(&:time_total).inject(0, :+))
       end
 
       private

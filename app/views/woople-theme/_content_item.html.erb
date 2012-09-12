@@ -7,22 +7,41 @@
     </a>
   </div>
   <div class="content-item-content span7">
-    <h2><a href="<%= content_item.url %>"><%= content_item.name %></a></h2>
+    <h2><%= link_to(content_item.name, content_item.url) %></h2>
 
     <div class="content-item-metadata row">
+      <% content_item.render_time_remaining do |time_remaining, time_total| %>
       <div class="span2">
-        <em class="timeRemaining"><%= content_item.time_remaining %></em> / <%= content_item.time_total %>
+        <em class="timeRemaining"><%= time_remaining %></em> / <%= time_total %>
       </div>
+      <% end %>
+      <% content_item.render_popularity do |popularity| %>
       <div class="span2">
-        <i class="icon-star"></i> <span class="popularity"><%= content_item.popularity %></span>
+        <i class="icon-star"></i> <span class="popularity"><%= popularity %></span>
       </div>
-
-      <% content_item.certification_metadata do |data| %>
-        <div class="span2">
-          <span class="badge certificationValue"><%= data %></span>
-        </div>
+      <% end %>
+      <% content_item.render_certification_metadata do |data| %>
+      <div class="span2">
+        <span class="badge certificationValue"><%= data %></span>
+      </div>
+      <% end %>
+      <% content_item.render_completed_on do |date| %>
+      <div class="span2"><%= date %></div>
+      <% end %>
+      <% content_item.render_elective_points do |points| %>
+      <div class="span2">
+        <span class="badge"><%= points %></span>
+      </div>
+      <% end %>
+      <% content_item.render_essential_duration do |duration| %>
+      <div class="span2">
+        <span class="badge"><%= duration %></span>
+      </div>
       <% end %>
     </div>
   </div>
-  <div class="content-item-progress-bar" style="width:<%= content_item.percent_complete %>%"></div>
+
+  <% content_item.render_progress_bar do |percent_complete| %>
+  <div class="content-item-progress-bar" style="width:<%= percent_complete %>%"></div>
+  <% end %>
 </div>

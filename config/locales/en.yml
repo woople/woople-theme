@@ -29,7 +29,6 @@ en:
       required_relearning: Required Relearning
       name: Assessment
       assessment_history: Assessment History
-      date_title: Date
       score_title: Score
       result_title: Result
       pass: Pass
@@ -59,6 +58,7 @@ en:
     impersonating: impersonating
     cancel: Cancel
     return_to_course: Return to Course
+    date_title: Date
 
     dashboards:
       titles:
@@ -66,16 +66,21 @@ en:
         name: Name
         time: Time
       member:
+        exceptions:
+          title: Exceptions
+          reason: 'Reason: %{reason}'
+        points:
+          one: '%{points} point'
+          other: '%{points} points'
         essentials_section:
           title: Essentials
           remaining_tab_name: Remaining
           completed_tab_name: Completed
-          exceptions_tab_name: Exceptions
-          courses:
-            one: 1 course
-            other: '%{count} courses'
+          course_reason: Course/Reason
         electives_section:
           title: Electives
+          history_tab_name: History
+          reason_points: Reason/Points
 
   date:
     formats:

@@ -46,11 +46,12 @@ describe DashboardHelper do
     subject do
       helper.essentials_section({
         enabled?: true,
-        essentials_remaining:  [stub(url:"/course",name:'remaining').as_null_object],
-        essentials_completed:  [stub(url:"/course",time_total:0).as_null_object],
-        essentials_exceptions: [stub(url:"/course").as_null_object]
+        essentials_remaining:  [stub(url:"/course",name:'remaining',image:nil).as_null_object],
+        essentials_completed:  [stub(url:"/course",name:'completed',image:nil,time_total:0).as_null_object],
+        essentials_exceptions: [stub(name: 'Exception', description: 'Reason', completed_on: Time.current, url: '/course').as_null_object]
       })
     end
+
     let(:page) { Capybara::Node::Simple.new(subject) }
 
     it "has the correct name for the essential remaining" do
@@ -58,42 +59,43 @@ describe DashboardHelper do
     end
   end
 
-  describe "#completed_essentials" do
+  describe "#essentials_completed" do
     it "renders a collection" do
       collection = [stub(url:"/course").as_null_object, stub(url:"/course").as_null_object, stub(url:"/course").as_null_object]
-      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::CompletedEssentialPresenter, 'dashboard/completed_essential')
-      helper.completed_essentials(collection)
+      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::EssentialCompletedPresenter, 'woople-theme/content_item')
+      helper.essentials_completed(collection)
     end
   end
 
   describe "#essentials_exceptions" do
     it "renders a collection" do
-      collection = [stub(url:"/course").as_null_object, stub(url:"/course").as_null_object, stub(url:"/course").as_null_object]
-      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/essential_exception')
+      collection = [stub(url: '/course').as_null_object]
+      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/exception')
       helper.essentials_exceptions(collection)
-    end
-  end
-
-  describe "#total_courses" do
-    it "renders the totals" do
-      html = helper.total_courses(3)
-      page = Capybara::Node::Simple.new(html)
-
-      page.find('.total').text.should == I18n.t('woople_theme.dashboards.member.essentials_section.courses', count: 3)
     end
   end
 
   describe "#electives_section" do
     subject do
       helper.electives_section({
+        electives_history: [stub(completed_on: Time.current, name: 'x', current_points: 10, total_points: 20, url: '/course', image: nil).as_null_object],
+        electives_exceptions: [stub(name: 'Exception', description: 10, completed_on: Time.current, url: nil).as_null_object],
         enabled?: true
       })
     end
 
-    let(:page) { Capybara::Node::Simple.new(subject)}
+    let(:page) { Capybara::Node::Simple.new(subject) }
 
     it "has the correct title" do
       page.find("#electives-section h2").text.should == I18n.t('woople_theme.dashboards.member.electives_section.title')
+    end
+  end
+
+  describe "#electives_history" do
+    it "renders a collection" do
+      collection = [stub(completed_on: Time.current, name: 'x', current_points: 10, total_points: 20, url: '/course', image: nil).as_null_object]
+      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::ElectiveHistoryPresenter, 'woople-theme/content_item')
+      helper.electives_history(collection)
     end
   end
 end
