@@ -9,21 +9,25 @@ module DashboardHelper
            object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::EssentialsSectionPresenter)
   end
 
+  def essentials_completed(items)
+    render_collection_partial(items, WoopleTheme::Dashboard::EssentialCompletedPresenter, 'woople-theme/content_item')
+  end
+
+  def essentials_exceptions(items)
+    render_collection_partial(items, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/exception')
+  end
+
   def electives_section(presenter)
     render partial: 'dashboard/electives_section',
            object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::ElectivesSectionPresenter)
   end
 
-  def completed_essentials(items)
-    render_collection_partial(items, WoopleTheme::Dashboard::CompletedEssentialPresenter, 'dashboard/completed_essential')
+  def electives_history(items)
+    render_collection_partial(items, WoopleTheme::Dashboard::ElectiveHistoryPresenter, 'woople-theme/content_item')
   end
 
-  def essentials_exceptions(items)
-    render_collection_partial(items, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/essential_exception')
-  end
-
-  def total_courses(total)
-    render partial: 'dashboard/total_courses', locals: {total: total}
+  def electives_exceptions(items)
+    render_collection_partial(items, WoopleTheme::Dashboard::ElectiveExceptionPresenter, 'dashboard/exception')
   end
 
   private

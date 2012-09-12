@@ -16,7 +16,7 @@ describe OutlineAssessmentPresenter do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: false, completed?: false).as_null_object) }
 
       it "does not yield the block" do
-        expect { |block| subject.render &block }.to_not yield_control
+        expect { |block| subject.render &block }.not_to yield_control
       end
     end
   end
@@ -26,7 +26,7 @@ describe OutlineAssessmentPresenter do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [], completed?: false, enabled?: true)) }
 
       it "shouldn't yield" do
-        expect { |block| subject.render_relearnings &block }.to_not yield_control
+        expect { |block| subject.render_relearnings &block }.not_to yield_control
       end
     end
 
@@ -74,7 +74,7 @@ describe OutlineAssessmentPresenter do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [], enabled?: false, completed?: false).as_null_object) }
 
       it "does not yield the block" do
-        expect { |block| subject.render_history_link &block }.to_not yield_control
+        expect { |block| subject.render_history_link &block }.not_to yield_control
       end
     end
   end

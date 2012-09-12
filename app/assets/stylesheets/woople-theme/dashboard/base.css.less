@@ -19,8 +19,44 @@ section.certification-content {
   }
   .nav {
     margin-bottom: 0;
+
+    a {
+      outline: none
+    }
   }
 
   .styled-table();
 
+  table {
+    tr > td:first-child, tr > th:first-child {
+      color: @secondaryTextColour;
+      width: 20%;
+      padding-top:@tableCellPadding * 1.6;
+    }
+
+    tr {
+      border-bottom:solid 1px @insetContentBorder;
+    }
+
+    h2 {
+      .content-title();
+
+      margin-bottom: 0;
+    }
+  }
+
+  @media (max-width: 767px) {
+    table {
+      tr > td:first-child, tr > th:first-child {
+        padding-left:@phoneMargin;
+        text-indent:@phoneMargin * 1.5;
+        width: 35%;
+
+        > *:first-child {
+          text-indent:0;
+          margin-left:@phoneMargin;
+        }
+      }
+    }
+  }
 }

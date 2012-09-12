@@ -9,7 +9,7 @@
       <li><a href="#essentials_completed" data-toggle="tab"><%= t 'woople_theme.dashboards.member.essentials_section.completed_tab_name' %></a></li>
     <% end %>
     <% essentials_section.render_exceptions do %>
-      <li><a href="#essentials_exceptions" data-toggle="tab"><%= t 'woople_theme.dashboards.member.essentials_section.exceptions_tab_name' %></a></li>
+      <li><a href="#essentials_exceptions" data-toggle="tab"><%= t 'woople_theme.dashboards.member.exceptions.title' %></a></li>
     <% end %>
   </ul>
   <div class="tab-content">
@@ -20,26 +20,7 @@
     <% end %>
     <% essentials_section.render_completed do %>
       <div class="tab-pane" id="essentials_completed">
-        <table class="table">
-          <thead>
-            <tr>
-              <th style="width:10%"><%= t 'woople_theme.date_title' %></th>
-              <th><%= t 'woople_theme.dashboards.titles.name' %></th>
-              <th class="count"><%= t 'woople_theme.dashboards.titles.time' %></th>
-            </tr>
-          </thead>
-          <tbody>
-            <%= completed_essentials(essentials_section.essentials_completed) %>
-          </tbody>
-          <tfoot>
-            <tr>
-              <%= total_courses(essentials_section.total_completed_courses) %>
-              <td>
-                <%= essentials_section.total_completed_minutes %>
-              </td>
-            </tr>
-          </tfoot>
-        </table>
+        <%= essentials_completed(essentials_section.essentials_completed) %>
       </div>
     <% end %>
     <% essentials_section.render_exceptions do %>
@@ -47,19 +28,13 @@
         <table class="table">
           <thead>
             <tr>
-              <th style="width:10%"><%= t 'woople_theme.date_title' %></th>
-              <th><%= t 'woople_theme.dashboards.titles.name' %></th>
-              <th style="width:25%" class="count"><%= t 'woople_theme.dashboards.titles.reason' %></th>
+              <th><%= t 'woople_theme.date_title' %></th>
+              <th><%= t 'woople_theme.dashboards.member.essentials_section.course_reason' %></th>
             </tr>
           </thead>
           <tbody>
             <%= essentials_exceptions(essentials_section.essentials_exceptions) %>
           </tbody>
-          <tfoot>
-            <tr>
-              <%= total_courses(essentials_section.total_exceptions) %>
-            </tr>
-          </tfoot>
         </table>
       </div>
     <% end %>
