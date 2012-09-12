@@ -1,6 +1,7 @@
 require_relative '../../app/presenters/content_item_presenter'
 require_relative '../../spec/support/content_image_example'
 require 'active_support/core_ext/object/blank'
+require 'spec_helper'
 
 describe ContentItemPresenter do
   let(:presenter) { ContentItemPresenter }
