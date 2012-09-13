@@ -83,7 +83,9 @@ en:
           points_tab_name: Points
           reason_points: Reason/Points
           in_progress: In-Progress
-          points_earned: '%{points_earned} of %{points_total} elective points earned'
+          points_earned:
+            one: '%{points_earned} of %{count} elective point earned'
+            other: '%{points_earned} of %{count} elective points earned'
 
   date:
     formats:
