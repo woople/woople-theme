@@ -1,3 +1,6 @@
+require 'spec_helper'
+require 'duration'
+
 describe Duration do
 
   describe "format_time" do
