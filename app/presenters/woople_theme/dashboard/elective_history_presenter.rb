@@ -26,14 +26,18 @@ module WoopleTheme
       end
 
       def render_completed_on(&block)
-        yield(formatted_date)
+        yield(formatted_completed_on)
+      end
+
+      def formatted_completed_on
+        if completed_on.nil?
+          I18n.t('woople_theme.dashboards.member.electives_section.in_progress')
+        else
+          WoopleThemeI18n.l(completed_on.to_date)
+        end
       end
 
       private
-
-      def formatted_date
-        WoopleThemeI18n.l(completed_on.to_date)
-      end
 
       def points_metadata
         if in_progress?

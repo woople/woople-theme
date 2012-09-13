@@ -101,14 +101,18 @@ class BrowseController < ApplicationController
   end
 
   def random_course
-    total_points = [10, 20].sample
+    course_completed    = completed.sample
+    course_completed_on = course_completed == true ? Time.at(rand * Time.now.to_i) : nil
+
+    total_points   = [10, 20].sample
+    current_points = course_completed == true ? total_points : (1..(total_points - 1)).to_a.sample
 
     OpenStruct.new(
       name: course_names.sample,
       description: 'Here is a sample description',
       url: '/course',
-      completed?: completed.sample,
-      completed_on: Time.at(rand * Time.now.to_i),
+      completed?: course_completed,
+      completed_on: course_completed_on,
       percent_complete: rand(100),
       image: images.sample,
       time_remaining: '4:56',
@@ -116,7 +120,7 @@ class BrowseController < ApplicationController
       popularity: "230,323",
       certification_metadata: certification_metadata.sample,
       units: rand(1..3).times.collect { |index| random_unit(index) },
-      current_points: (1..total_points).to_a.sample,
+      current_points: current_points,
       total_points: total_points
     )
   end
