@@ -6,6 +6,8 @@ module WoopleTheme
       enforce_definitions :earned, :total
 
       def percent_complete
+        return 100 if data.total.zero?
+
         ( (data.earned.to_f / data.total.to_f) * 100 ).round
       end
 
