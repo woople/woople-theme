@@ -1,4 +1,3 @@
-require 'duration'
 require 'woople_theme_i18n'
 
 module WoopleTheme
@@ -22,7 +21,7 @@ module WoopleTheme
       end
 
       def render_essential_duration(&block)
-        yield(formatted_duration)
+        yield(time_total)
       end
 
       private
@@ -30,11 +29,6 @@ module WoopleTheme
       def formatted_date
         WoopleThemeI18n.l(completed_on.to_date)
       end
-
-      def formatted_duration
-        Duration.format_time(time_total)
-      end
-
     end
   end
 end
