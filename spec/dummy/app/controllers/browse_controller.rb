@@ -77,6 +77,8 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       electives_history: rand(3..5).times.collect { |index| random_course },
       electives_exceptions: rand(3..5).times.collect { |index| random_elective_exception },
+      points_earned: rand(0..10),
+      points_total: rand(0..190),
       enabled?: true
     )
   end

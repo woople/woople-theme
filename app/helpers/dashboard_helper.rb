@@ -22,6 +22,11 @@ module DashboardHelper
            object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::ElectivesSectionPresenter)
   end
 
+  def electives_points(points_earned, points_total)
+    render partial: 'dashboard/points',
+           object: ThemePresentation.wrap({ earned: points_earned, total: points_total }, WoopleTheme::Dashboard::PointsPresenter)
+  end
+
   def electives_history(items)
     render_collection_partial(items, WoopleTheme::Dashboard::ElectiveHistoryPresenter, 'woople-theme/content_item')
   end

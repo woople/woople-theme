@@ -80,6 +80,8 @@ describe DashboardHelper do
       helper.electives_section({
         electives_history: [stub(completed_on: Time.current, name: 'x', current_points: 10, total_points: 20, url: '/course', image: nil).as_null_object],
         electives_exceptions: [stub(name: 'Exception', description: 10, completed_on: Time.current, url: nil).as_null_object],
+        points_earned: 1,
+        points_total: 2,
         enabled?: true
       })
     end
@@ -88,6 +90,25 @@ describe DashboardHelper do
 
     it "has the correct title" do
       page.find("#electives-section h2").text.should == I18n.t('woople_theme.dashboards.member.electives_section.title')
+    end
+  end
+
+  describe "#electives_points" do
+    subject do
+      helper.electives_section({
+        electives_history: [stub(completed_on: Time.current, name: 'x', current_points: 10, total_points: 20, url: '/course', image: nil).as_null_object],
+        electives_exceptions: [stub(name: 'Exception', description: 10, completed_on: Time.current, url: nil).as_null_object],
+        points_earned: 1,
+        points_total: 2,
+        enabled?: true
+      })
+
+      let(:page) { Capybara::Node::Simple.new(subject) }
+
+      it "has points" do
+        page.find('#electives_points .points').text.should == I18n.t('woople_theme.dashboards.member.electives_section.points_earned', points_earned: 1, points_total: 2)
+
+      end
     end
   end
 
