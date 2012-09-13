@@ -7,9 +7,7 @@ describe WoopleTheme::Dashboard::ElectivesSectionPresenter do
 
       subject { WoopleTheme::Dashboard::ElectivesSectionPresenter.new(data) }
 
-      it "yields the block" do
-        expect { |block| subject.render_history(&block) }.to yield_control
-      end
+      specify { expect { |b| subject.render_history(&b) }.to yield_control }
     end
 
     describe "0 completed/in-progress electives" do
@@ -17,9 +15,7 @@ describe WoopleTheme::Dashboard::ElectivesSectionPresenter do
 
       subject { WoopleTheme::Dashboard::ElectivesSectionPresenter.new(data) }
 
-      it "does not yields the block" do
-        expect { |block| subject.render_history(&block)}.not_to yield_control
-      end
+      specify { expect { |b| subject.render_history(&b) }.not_to yield_control }
     end
   end
 
@@ -29,9 +25,7 @@ describe WoopleTheme::Dashboard::ElectivesSectionPresenter do
 
       subject { WoopleTheme::Dashboard::ElectivesSectionPresenter.new(data) }
 
-      it "yields the block" do
-        expect { |block| subject.render_exceptions(&block) }.to yield_control
-      end
+      specify { expect { |b| subject.render_exceptions(&b) }.to yield_control }
     end
 
     describe "0 elective exceptions" do
@@ -39,9 +33,7 @@ describe WoopleTheme::Dashboard::ElectivesSectionPresenter do
 
       subject { WoopleTheme::Dashboard::ElectivesSectionPresenter.new(data) }
 
-      it "does not yield the block" do
-        expect { |block| subject.render_exceptions(&block) }.not_to yield_control
-      end
+      specify { expect { |b| subject.render_exceptions(&b) }.not_to yield_control }
     end
   end
 

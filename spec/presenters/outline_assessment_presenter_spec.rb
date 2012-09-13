@@ -7,17 +7,13 @@ describe OutlineAssessmentPresenter do
     describe "when the assessment is enabled" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: true, completed?: false).as_null_object) }
 
-      it "yields the block" do
-        expect { |block| subject.render &block }.to yield_control
-      end
+      specify { expect { |b| subject.render(&b) }.to yield_control }
     end
 
     describe "when the assessment is not enabled" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: false, completed?: false).as_null_object) }
 
-      it "does not yield the block" do
-        expect { |block| subject.render &block }.not_to yield_control
-      end
+      specify { expect { |b| subject.render(&b) }.not_to yield_control }
     end
   end
 
@@ -25,17 +21,13 @@ describe OutlineAssessmentPresenter do
     describe "when there aren't relearnings" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [], completed?: false, enabled?: true)) }
 
-      it "shouldn't yield" do
-        expect { |block| subject.render_relearnings &block }.not_to yield_control
-      end
+      specify { expect { |b| subject.render_relearnings(&b) }.not_to yield_control }
     end
 
     describe "when there are relearnings" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [stub], completed?: false, enabled?: true)) }
 
-      it "should yield" do
-        expect { |block| subject.render_relearnings &block }.to yield_control
-      end
+      specify { expect { |b| subject.render_relearnings(&b) }.to yield_control }
     end
   end
 
@@ -65,17 +57,13 @@ describe OutlineAssessmentPresenter do
     describe "when having history items" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [stub], enabled?: true, completed?: false).as_null_object) }
 
-      it "yields the block" do
-        expect { |block| subject.render_history_link &block }.to yield_control
-      end
+      specify { expect { |b| subject.render_history_link(&b) }.to yield_control }
     end
 
     describe "when no history items" do
       subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [], enabled?: false, completed?: false).as_null_object) }
 
-      it "does not yield the block" do
-        expect { |block| subject.render_history_link &block }.not_to yield_control
-      end
+      specify { expect { |b| subject.render_history_link(&b) }.not_to yield_control }
     end
   end
 
@@ -117,16 +105,15 @@ describe OutlineAssessmentPresenter do
     describe "given no 'passed?' key" do
       subject { OutlineAssessmentPresenter.new OpenStruct.new(completed?: false, enabled?: true) }
 
-      it "doesn't yield" do
-        expect { |block| subject.render_pass_fail_alert &block }.not_to yield_control
-      end
+      specify { expect { |b| subject.render_pass_fail_alert(&b) }.not_to yield_control }
     end
 
     describe "given 'passed?' is true" do
       subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: true, history: [OpenStruct.new(url: '/foo')], completed?: false, enabled?: true)) }
 
+      specify { expect { |b| subject.render_pass_fail_alert(&b) }.to yield_with_args(OpenStruct) }
+
       it 'yields an OpenStruct with pass alert entries' do
-        expect { |block| subject.render_pass_fail_alert &block }.to yield_with_args OpenStruct
         subject.render_pass_fail_alert do |alert|
           alert.css_class.should == 'alert-success'
           alert.heading.should == WoopleThemeI18n.t('woople_theme.assessment.pass_alert.heading')
@@ -140,8 +127,9 @@ describe OutlineAssessmentPresenter do
     describe "given 'passed?' is false" do
       subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: false, history: [OpenStruct.new(url: '/foo')], completed?: false, enabled?: true)) }
 
+      specify { expect { |b| subject.render_pass_fail_alert(&b) }.to yield_with_args(OpenStruct) }
+
       it 'yields an OpenStruct with fail alert entries' do
-        expect { |block| subject.render_pass_fail_alert &block }.to yield_with_args OpenStruct
         subject.render_pass_fail_alert do |alert|
           alert.css_class.should == 'alert-error'
           alert.heading.should == WoopleThemeI18n.t('woople_theme.assessment.fail_alert.heading')
