@@ -36,6 +36,8 @@ class ContentItemPresenter < ExplicitDelegator
     'completed' if source.completed?
   end
 
+  private
+
   def source
     __getobj__
   end

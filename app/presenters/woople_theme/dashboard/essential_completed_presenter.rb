@@ -17,7 +17,7 @@ module WoopleTheme
       end
 
       def render_completed_on(&block)
-        yield(formatted_date)
+        yield(formatted_date) unless completed_on.nil?
       end
 
       def render_essential_duration(&block)

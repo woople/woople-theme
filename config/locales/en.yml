@@ -81,6 +81,7 @@ en:
           title: Electives
           history_tab_name: History
           reason_points: Reason/Points
+          in_progress: In-Progress
 
   date:
     formats:

@@ -38,9 +38,7 @@ describe AssessmentFormPresenter do
   end
 
   describe "#render_result_status" do
-    it "rendering nothing" do
-      expect { |block| subject.render_result_status &block }.not_to yield_control
-    end
+    specify { expect { |b| subject.render_result_status(&b) }.not_to yield_control }
   end
 
   describe '#render_copyright' do
@@ -48,18 +46,14 @@ describe AssessmentFormPresenter do
       obj[:copyright] = ''
       assessment_form = AssessmentFormPresenter.new struct(obj)
 
-      it 'does not yield' do
-        expect { |block| assessment_form.render_copyright &block }.not_to yield_control
-      end
+      specify { expect { |b| assessment_form.render_copyright(&b) }.not_to yield_control }
     end
 
     describe 'when the copyright is present' do
       obj[:copyright] = 'Copyright (c) 2012 Apple Inc. All rights reserved.'
       assessment_form = AssessmentFormPresenter.new( struct(obj) )
 
-      it 'yields' do
-        expect { |block| assessment_form.render_copyright &block }.to yield_control
-      end
+      specify { expect { |b| assessment_form.render_copyright(&b) }.to yield_control }
     end
   end
 

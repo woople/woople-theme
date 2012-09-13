@@ -12,9 +12,7 @@ describe ContentItemPresenter do
 
     subject { ContentItemPresenter.new(data) }
 
-    it "should not yield" do
-      expect { |block| subject.render_elective_points(&block).not_to yield_control }
-    end
+    specify { expect { |b| subject.render_elective_points(&b) }.not_to yield_control }
   end
 
   describe "#render_essential_duration" do
@@ -22,26 +20,20 @@ describe ContentItemPresenter do
 
     subject { ContentItemPresenter.new(data) }
 
-    it "should not yield" do
-      expect { |block| subject.render_essential_duration(&block).not_to yield_control }
-    end
+    specify { expect { |b| subject.render_essential_duration(&b) }.not_to yield_control }
   end
 
   describe "#render_certification_metadata" do
     describe "when null certification_metadata" do
       subject { ContentItemPresenter.new(stub_presenter(certification_metadata:nil)) }
 
-      it "does not yield metadata" do
-        expect { |block| subject.render_elective_points(&block).not_toyield_control }
-      end
+      specify { expect { |b| subject.render_certification_metadata(&b) }.not_to yield_control }
     end
 
     describe "when present certification_metadata" do
       subject { ContentItemPresenter.new(stub_presenter(certification_metadata:'data')) }
 
-      it "yields metadata" do
-        expect { |block| subject.render_elective_points(&block).to yield_control }
-      end
+      specify { expect { |b| subject.render_certification_metadata(&b) }.to yield_control }
     end
   end
 
@@ -50,9 +42,7 @@ describe ContentItemPresenter do
 
     subject { ContentItemPresenter.new(data) }
 
-    it "should yield" do
-      expect { |block| subject.render_popularity(&block).to yield_control }
-    end
+    specify { expect { |b| subject.render_popularity(&b) }.to yield_control }
   end
 
   describe "#render_time_remaining" do
@@ -60,19 +50,15 @@ describe ContentItemPresenter do
 
     subject { ContentItemPresenter.new(data) }
 
-    it "should yield" do
-      expect { |block| subject.render_time_remaining(&block).to yield_control }
-    end
+    specify { expect { |b| subject.render_time_remaining(&b) }.to yield_control }
   end
 
   describe "#render_progress_bar" do
-    let(:data) { stub_presenter() }
+    let(:data) { stub_presenter(percent_complete: 100) }
 
     subject { ContentItemPresenter.new(data) }
 
-    it "should yield" do
-      expect { |block| subject.render_progress_bar(&block).to yield_control }
-    end
+    specify { expect { |b| subject.render_progress_bar(&b) }.to yield_control }
   end
 
   describe "#completed_class" do
