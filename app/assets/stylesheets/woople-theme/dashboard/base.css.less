@@ -25,6 +25,32 @@ section.certification-content {
     }
   }
 
+  #electives_points > div {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding:@contentPadding;
+
+    @media (max-width: 767px) {
+      width: auto;
+    }
+
+    .points {
+      .content-title();
+      margin-bottom: 0;
+    }
+  }
+
+  .progress {
+    height: 40px;
+    text-align: left;
+    .bar {
+      filter: none;
+      background:fade(@highlight, 100%);
+      height: 40px;
+    }
+  }
+
   .styled-table();
 
   table {

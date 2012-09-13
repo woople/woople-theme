@@ -2,6 +2,7 @@
   <section id="electives-section" class="certification-content">
     <h2><%= t 'woople_theme.dashboards.member.electives_section.title' %></h2>
     <ul class="nav nav-tabs" id="electives_tab_nav">
+        <li><a href="#electives_points" data-toggle="tab"><%= t 'woople_theme.dashboards.member.electives_section.points_tab_name' %></a></li>
       <% electives_section.render_history do %>
         <li><a href="#electives_history" data-toggle="tab"><%= t 'woople_theme.dashboards.member.electives_section.history_tab_name' %></a></li>
       <% end %>
@@ -10,6 +11,9 @@
       <% end %>
     </ul>
     <div class="tab-content">
+      <div class="tab-pane" id="electives_points">
+        <%= electives_points(electives_section.points_earned, electives_section.points_total) %>
+      </div>
     <% electives_section.render_history do %>
       <div class="tab-pane" id="electives_history">
         <%= electives_history(electives_section.electives_history) %>

@@ -80,8 +80,10 @@ en:
         electives_section:
           title: Electives
           history_tab_name: History
+          points_tab_name: Points
           reason_points: Reason/Points
           in_progress: In-Progress
+          points_earned: '%{points_earned} of %{points_total} elective points earned'
 
   date:
     formats:
