@@ -6,9 +6,7 @@
   <div class="modal-body">
     <div class="modal-video">
       <div class="video-js-box modal-video-box">
-        <video id="theme_video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}" poster="<%= asset_path('woople-theme/poster.jpg') %>">
-          <source src="<%= video.src %>" type="video/mp4">
-        </video>
+        <div id="theme_video"></div>
       </div>
     </div>
   </div>
@@ -23,3 +21,14 @@
     </div>
   </div>
 </div>
+<%- content_for :extra_javascript do %>
+<script type="text/javascript">
+  jwplayer('theme_video').setup({
+    'flashplayer': 'assets/player.swf',
+    'id': 'playerID',
+    'width': '768',
+    'height': '432',
+    'file': '<%= video.src %>'
+  });
+</script>
+<% end %>
