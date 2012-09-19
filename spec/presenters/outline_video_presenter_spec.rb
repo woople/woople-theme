@@ -1,21 +1,9 @@
 require_relative '../../app/presenters/outline_video_presenter'
 
 describe OutlineVideoPresenter do
-  describe "#intialize" do
-    describe "when there are no properties" do
-      it "raises an exception" do
-        expect { OutlineVideoPresenter.new(stub) }.to raise_error "Rendering a video requires: [:enabled, :completed, :id, :duration, :url, :name]"
-      end
-
-      it "only includes the missing fields in the error" do
-        expect { OutlineVideoPresenter.new(stub(name:'Bob', id:1, url: 'test')) }.to raise_error "Rendering a video requires: [:enabled, :completed, :duration]"
-      end
-    end
-  end
-
   describe "#css_class" do
     describe "when video is disabled and incomplete" do
-      subject { presenter(stub(enabled:false, completed: false)) }
+      subject { presenter(enabled:false, completed: false) }
 
       it "is disabled" do
         subject.css_class.should == 'disabled'
@@ -23,7 +11,7 @@ describe OutlineVideoPresenter do
     end
 
     describe "when video is enabled and completed" do
-      subject { presenter(stub(enabled:true, completed:true)) }
+      subject { presenter(enabled:true, completed:true) }
 
       it "is completed" do
         subject.css_class.should == 'completed'
@@ -31,7 +19,7 @@ describe OutlineVideoPresenter do
     end
 
     describe "when the video is not completed" do
-      subject { presenter(stub(enabled:true, completed:false)) }
+      subject { presenter(enabled:true, completed:false) }
 
       it "has an empty css class" do
         subject.css_class.should be_empty
@@ -40,44 +28,18 @@ describe OutlineVideoPresenter do
   end
 
   describe "#slug" do
-    subject { presenter(stub(id: 123)) }
+    subject { presenter(id: 123) }
     its(:slug) { should == 'video_123' }
   end
 
   describe "#duration" do
-    subject { presenter(stub(duration: 100000)) }
+    subject { presenter(duration: 100000) }
     its(:duration) { should == '1:40' }
-  end
-
-  describe "#completed" do
-    describe "when the video is completed" do
-      subject { presenter(stub(completed:true)) }
-
-      it "yields" do
-        called = false
-
-        subject.completed { called = true }
-
-        called.should == true
-      end
-    end
-
-    describe "when the video is incomplete" do
-      subject { presenter(stub(completed:false)) }
-
-      it "doesn't yield" do
-        called = false
-
-        subject.completed { called = true }
-
-        called.should == false
-      end
-    end
   end
 
   describe "#url" do
     describe "when the video is enabled" do
-      subject { presenter(stub(enabled: true, url: 'blah')) }
+      subject { presenter(enabled: true, url: 'blah') }
 
       it "returns the proper url" do
         subject.url.should == 'blah'
@@ -85,7 +47,7 @@ describe OutlineVideoPresenter do
     end
 
     describe "when the video is disabled" do
-      subject { presenter(stub(enabled:false, url: 'blah')) }
+      subject { presenter(enabled:false, url: 'blah') }
 
       it "does not return the url" do
         subject.url.should == '#'
@@ -93,10 +55,90 @@ describe OutlineVideoPresenter do
     end
   end
 
+  describe "#playback_class" do
+    describe "when completed" do
+      subject { presenter(completed: true) }
+
+      specify { subject.playback_class.should eq("icon-ok") }
+    end
+
+    describe "when enabled" do
+      subject { presenter(enabled: true) }
+
+      specify { subject.playback_class.should eq("icon-play") }
+    end
+
+    describe "when incomplete and disabled" do
+      subject { presenter(completed: false, enabled: false) }
+
+      specify { subject.playback_class.should eq("icon-lock") }
+    end
+  end
+
+  describe "#playback_icon" do
+    subject { presenter(completed: true) }
+
+    it "should create an icon element" do
+      subject.playback_icon.should eq("<i class=\"icon-ok\"></i>")
+    end
+  end
+
+  describe "#linkable?" do
+    describe "when completed" do
+      subject { presenter(completed: true) }
+
+      specify { subject.linkable?.should eq(true) }
+    end
+
+    describe "when enabled" do
+      subject { presenter(enabled: true) }
+
+      specify { subject.linkable?.should eq(true) }
+    end
+
+    describe "when incomplete and disabled" do
+      subject { presenter(completed: false, enabled: false) }
+
+      specify { subject.linkable?.should eq(false) }
+    end
+  end
+
+  # describe "#playback_state" do
+  #   describe "when the video is already completed" do
+  #     subject { presenter(completed: true) }
+
+  #     it "returns as expected" do
+  #       subject.playback_state.should eq("<a href=\"#\"><i class='icon-ok'></i></a>")
+  #     end
+  #   end
+
+  #   describe "when the video is not completed, but is enabled" do
+  #     subject { presenter(completed: false, enabled: true) }
+
+  #     it "returns as expected" do
+  #       subject.playback_state.should eq("<a href=\"#\"><i class='icon-play'></i></a>")
+  #     end
+  #   end
+
+  #   describe "when the video is not completed, and not enabled" do
+  #     subject { presenter(completed: false, enabled: false) }
+
+  #     it "returns as expected" do
+  #       subject.playback_state.should eq("<i class='icon-lock'></i>")
+  #     end
+  #   end
+  # end
+
   private
 
-  def presenter(model)
-    OutlineVideoPresenter.new(model.as_null_object)
+  def presenter(data)
+    OutlineVideoPresenter.new(stub_presenter(data))
+  end
+
+  def stub_presenter(options = {})
+    defaults = {id: nil, name: nil, completed: nil, duration: nil, enabled: nil, url: '#'}
+    defaults.merge!(options)
+
+    OpenStruct.new(defaults)
   end
 end
-

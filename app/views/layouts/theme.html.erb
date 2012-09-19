@@ -7,10 +7,10 @@
 
   <%= stylesheet_link_tag 'woople-theme/index', media: 'all' %>
   <%= stylesheet_link_tag "woople-theme/theme-retina", media: 'only screen and (-webkit-min-device-pixel-ratio: 2)' %>
+  <!--[if (IE 7)]><%= stylesheet_link_tag 'font-awesome/font-awesome-ie7', media: 'all' %><![endif]-->
   <%= javascript_include_tag "woople-theme/theme" %>
   <%= application_javascript %>
   <%= csrf_meta_tags %>
-  
   <%= yield :head_content %>
 
 </head>
@@ -22,7 +22,7 @@
 
   <div class="row">
     <a href="#" class="close-navigation close">&times;</a>
-    <a href="#navigation" class="navigation"><i class="icon-th-list"></i></a>
+    <a href="#navigation" class="navigation"><i class="icon-menu">&nbsp;</i></a>
 
     <div id="masthead" class="span12">
       <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>

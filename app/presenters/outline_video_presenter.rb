@@ -1,12 +1,10 @@
-require 'delegate'
+require 'action_view/helpers/url_helper'
+require 'explicit_delegator'
 
-class OutlineVideoPresenter < SimpleDelegator
-  REQUIRED_ATTRIBUTES = [:enabled, :completed, :id, :duration, :url, :name]
+class OutlineVideoPresenter < ExplicitDelegator
+  include ActionView::Helpers::UrlHelper
 
-  def initialize(video)
-    super(video)
-    check_attributes
-  end
+  enforce_definitions :enabled, :completed, :id, :duration, :url, :name
 
   def css_class
     css_classes = []
@@ -32,10 +30,6 @@ class OutlineVideoPresenter < SimpleDelegator
     "#{minutes}:#{seconds}"
   end
 
-  def completed
-    yield if video.completed
-  end
-
   def url
     if video.enabled
       video.url
@@ -44,23 +38,25 @@ class OutlineVideoPresenter < SimpleDelegator
     end
   end
 
+  def playback_class
+    if video.completed
+      "icon-ok"
+    elsif video.enabled
+      "icon-play"
+    else
+      "icon-lock"
+    end
+  end
+
+  def playback_icon
+    content_tag(:i, nil, class: playback_class)
+  end
+
+  def linkable?
+    video.completed || video.enabled
+  end
+
   private
-
-  def check_attributes
-    raise "Rendering a video requires: #{missing_attributes}" if missing_attributes?
-  end
-
-  def missing_attributes?
-    REQUIRED_ATTRIBUTES.find do |attr|
-      !__getobj__.respond_to?(attr)
-    end
-  end
-
-  def missing_attributes
-    REQUIRED_ATTRIBUTES.select do |attr|
-      !__getobj__.respond_to?(attr)
-    end
-  end
 
   def video
     __getobj__

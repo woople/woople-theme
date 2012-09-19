@@ -4,6 +4,11 @@
 .outline {
   border-bottom:solid 1px fade(@contentBorder, 35%);
 
+  a [class^="icon-"],
+  a [class*=" icon-"] {
+    text-decoration: none;
+  }
+
   h2 {
     .outline-title();
   }
