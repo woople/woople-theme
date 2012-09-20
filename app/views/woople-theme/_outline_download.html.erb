@@ -1,14 +1,14 @@
 <tr class="<%= outline_download.css_class %>">
   <% if outline_download.enabled %>
-  <td>
-    <a href="<%= outline_download.url %>" target="_blank" class="action btn btn-primary"><i class="icon-white icon-download-alt"></i></a></td>
+  <td class="icons">
+    <%= link_to("<i class='icon-download-alt'> </i> ".html_safe, outline_download.url, target: '_blank') %>
   </td>
   <td>
-    <a href="<%= outline_download.url %>" target="_blank"><%= outline_download.name %></a>
+    <%= link_to(outline_download.name, outline_download.url, target: '_blank') %>
   </td>
   <% else %>
-  <td>
-    <i class="icon-white icon-download-alt"></i>
+  <td class="icons">
+    <i class="icon-download-alt"> </i>
   </td>
   <td>
     <%= outline_download.name %>
