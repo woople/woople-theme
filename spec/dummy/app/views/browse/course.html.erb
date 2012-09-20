@@ -2,6 +2,10 @@
   <% if @video.present? %>
   <script>
     var showingPlayer = true;
+
+    var videoOptions = {
+      desktopSrc: '<%= @video.desktop_src.html_safe %>'
+    };
   </script>
   <% end %>
 <% end %>
