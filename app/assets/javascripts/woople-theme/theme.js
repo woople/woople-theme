@@ -9,7 +9,7 @@
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/tab
 //= require fastclick.min_
-//= require jwplayer
+//= require jwplayer/jwplayer
 //= require_tree .
 
 function resizeFix() {
