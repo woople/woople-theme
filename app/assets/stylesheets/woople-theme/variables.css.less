@@ -130,13 +130,14 @@
       width:75px;
     }
 
-    th {
-      border-top:none;
-    }
-
     tr > td:first-child, tr > th:first-child {
       padding-left:@contentPadding;
       width:@gridGutterWidth + @imageWidth - (@tableCellPadding * 2);
+    }
+
+    tr > td.icons, tr > th.icons {
+      width:25px;
+      text-align: center;
     }
 
     .action {
