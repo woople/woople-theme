@@ -1,11 +1,10 @@
 <tr id="<%= outline_video.slug %>" class="<%= outline_video.css_class %> outline-video">
-  <td>
-    <a class="action btn btn-primary" href="<%= outline_video.url %>">
-      <i class="icon-white icon-play">
-    </i></a>
-    <% outline_video.completed do %>
-      ✔
-    <% end %>
+  <td class="icons">
+    <%=
+      link_to_if(outline_video.linkable?, outline_video.playback_icon, outline_video.url) do
+        outline_video.playback_icon
+      end
+    %>
   </td>
   <td>
     <% if outline_video.enabled %>

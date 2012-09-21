@@ -183,7 +183,7 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       id: index,
       name: video_names.sample,
-      url: '/course/video',
+      url: '/video',
       duration: rand(50000...500000),
       completed: completed && unit_enabled,
       enabled: enabled && unit_enabled
