@@ -6,7 +6,9 @@ end
 
 describe WoopleTheme::VideoPresenter do
   obj = {
-    src: nil,
+    desktop_src: nil,
+    mobile_src: nil,
+    streamer: nil,
     liked?: nil
   }
 
