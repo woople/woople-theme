@@ -5,10 +5,8 @@
   </div>
   <div class="modal-body">
     <div class="modal-video">
-      <div class="video-js-box modal-video-box">
-        <video id="theme_video" class="video-js vjs-default-skin" controls preload="auto" data-setup="{}" poster="<%= asset_path('woople-theme/poster.jpg') %>">
-          <source src="<%= video.src %>" type="video/mp4">
-        </video>
+      <div class="modal-video-box">
+        <div id="theme_video"></div>
       </div>
     </div>
   </div>
@@ -23,3 +21,25 @@
     </div>
   </div>
 </div>
+<%- content_for :extra_javascript do %>
+<script type="text/javascript">
+  jwplayer("theme_video").setup({
+    image: '/assets/woople-theme/poster.jpg',
+    controlbar: {
+      position: 'bottom'
+    },
+    bufferlength: 10,
+    file: '<%= video.desktop_src.html_safe %>',
+    height: '100%',
+    modes: [{
+      type: "flash",
+      src: "/assets/jwplayer/player.swf"
+    }],
+    provider: "video",
+    width: '100%',
+    plugins: {
+      "gapro-2":{}
+    }
+  });
+</script>
+<% end %>

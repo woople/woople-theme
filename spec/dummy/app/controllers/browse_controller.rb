@@ -15,7 +15,9 @@ class BrowseController < ApplicationController
 
     @video  = OpenStruct.new(
       name: video_names.sample,
-      src: 'http://video-js.zencoder.com/oceans-clip.mp4',
+      desktop_src: desktop_src,
+      mobile_src: mobile_src,
+      streamer: 'rtmpe://s2ltskyqti9uio.cloudfront.net/cfx/st',
       liked?: true
     )
 
@@ -299,6 +301,18 @@ class BrowseController < ApplicationController
   def create_id_generator
     id = 0
     Proc.new { id += 1 }
+  end
+
+  def mobile_src
+    default_src
+  end
+
+  def desktop_src
+    default_src
+  end
+
+  def default_src
+    'http://video-js.zencoder.com/oceans-clip.mp4'
   end
 
 end
