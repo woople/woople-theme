@@ -2,8 +2,7 @@ require 'explicit_delegator'
 
 module WoopleTheme
   class VideoPresenter < ExplicitDelegator
-    enforce_definitions :src,   # path to the video
-                        :liked? # does the user like this video (default: nil)
+    enforce_definitions :desktop_src, :mobile_src, :streamer, :liked?
 
     def liked_css
       liked? == true ? 'active' : nil
