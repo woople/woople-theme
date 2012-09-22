@@ -62,7 +62,21 @@ class BrowseController < ApplicationController
     @electives_presenter  = electives
   end
 
+  def organization_dashboard
+    @presenter = OpenStruct.new(
+      status_color: [:red, :yellow, :green].sample,
+      status_description: 'The organization will be on track when the owner as well as 7 more team-members turn green.',
+      accounts: rand(1..3).times.collect { random_account }
+    )
+  end
+
   private
+
+  def random_account
+    {
+      name: ['Account Name', 'Very Very Very Very Very Very Long Account Name'].sample
+    }
+  end
 
   def essentials
     OpenStruct.new(
@@ -293,8 +307,6 @@ class BrowseController < ApplicationController
   def generate_id
     @id_generator.call
   end
-
-  private
 
   def create_id_generator
     id = 0

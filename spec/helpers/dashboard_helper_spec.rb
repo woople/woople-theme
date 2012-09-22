@@ -42,6 +42,18 @@ describe DashboardHelper do
     end
   end
 
+  describe '#organization_accounts' do
+    context 'accordion heading' do
+      subject { helper.organization_accounts([{ name: 'Account 1' }, { name: 'Account 2' }]) }
+
+      it 'outputs the account names in the accordion headings' do
+        page = Capybara::Node::Simple.new(subject)
+        page.find('a[href="#organization-account-0"]').text.should eq('Account 1')
+        page.find('a[href="#organization-account-1"]').text.should eq('Account 2')
+      end
+    end
+  end
+
   describe "#essentials_section" do
     subject do
       helper.essentials_section({
@@ -70,7 +82,7 @@ describe DashboardHelper do
   describe "#essentials_exceptions" do
     it "renders a collection" do
       collection = [stub(url: '/course').as_null_object]
-      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'dashboard/exception')
+      helper.should_receive(:render_collection_partial).with(collection, WoopleTheme::Dashboard::EssentialExceptionPresenter, 'woople-theme/dashboard/exception')
       helper.essentials_exceptions(collection)
     end
   end

@@ -8,6 +8,7 @@
 //= require twitter/bootstrap/button
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/tab
+//= require twitter/bootstrap/collapse
 //= require fastclick.min_
 //= require video.min
 //= require_tree .
