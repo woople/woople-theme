@@ -1,0 +1,3 @@
+<div id="organization-accounts" class="accordion">
+  <%= render partial: 'woople-theme/dashboard/organization_account', collection: ThemePresentation.wrap_collection(organization_accounts.accounts, WoopleTheme::Dashboard::OrganizationAccountPresenter) %>
+</div>

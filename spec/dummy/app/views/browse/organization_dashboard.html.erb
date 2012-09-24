@@ -1,0 +1,7 @@
+<%= page_header title: 'Organization Dashboard', description: '' %>
+
+<section id="organization-status">
+  <%= status_alert @presenter.status_color, @presenter.status_description %>
+</section>
+
+<%= organization_accounts @presenter.accounts %>

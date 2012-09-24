@@ -1,0 +1,12 @@
+<% account_id = "organization-account-#{organization_account_counter}" %>
+
+<div class="accordion-group">
+  <div class="accordion-heading">
+    <a href="#<%= account_id %>" class="accordion-toggle" data-toggle="collapse" data-parent="#organization-accounts"><%= organization_account.name %></a>
+  </div>
+  <div id="<%= account_id %>" class="accordion-body collapse <%= 'in' if organization_account_counter == 0 %>">
+    <div class="accordion-inner">
+      <!-- Hi mom! -->
+    </div>
+  </div>
+</div>
