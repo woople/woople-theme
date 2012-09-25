@@ -1,5 +1,16 @@
 class ProfileLinks
   def self.generate
+    {
+      image: image,
+      sections: sections
+    }
+  end
+
+  def self.image
+    nil # or provide your own default
+  end
+
+  def self.sections
     [
       [{ name: 'Account Settings', url: '#' }],
       [
@@ -13,6 +24,7 @@ class ProfileLinks
         { name: 'Terms of Service', url: '#' },
         { name: 'Privacy', url: '#' }
       ],
-      [{ name: 'Log out', url: '#' }]]
+      [{ name: 'Log out', url: '#' }]
+    ]
   end
 end
