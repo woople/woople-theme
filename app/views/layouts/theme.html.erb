@@ -1,45 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Woople</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <head>
+    <title>Woople</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 
-  <%= stylesheet_link_tag 'woople-theme/index', media: 'all' %>
-  <%= stylesheet_link_tag "woople-theme/theme-retina", media: 'only screen and (-webkit-min-device-pixel-ratio: 2)' %>
-  <!--[if (IE 7)]><%= stylesheet_link_tag 'font-awesome/font-awesome-ie7', media: 'all' %><![endif]-->
-  <%= javascript_include_tag "woople-theme/theme" %>
-  <%= application_javascript %>
-  <%= csrf_meta_tags %>
-  <%= yield :head_content %>
+    <%= stylesheet_link_tag 'woople-theme/index', media: 'all' %>
+    <%= stylesheet_link_tag "woople-theme/theme-retina", media: 'only screen and (-webkit-min-device-pixel-ratio: 2)' %>
+    <!--[if (IE 7)]><%= stylesheet_link_tag 'font-awesome/font-awesome-ie7', media: 'all' %><![endif]-->
+    <%= javascript_include_tag "woople-theme/theme" %>
+    <%= application_javascript %>
+    <%= csrf_meta_tags %>
+    <%= yield :head_content %>
 
-</head>
-<body>
-<%= yield :body_content %>
+  </head>
+  <body>
+    <%= yield :body_content %>
 
-<div class="container" id="navigation">
-  <%= impersonation_banner %>
+    <div class="container" id="navigation">
+      <%= impersonation_banner %>
 
-  <div class="row">
-    <a href="#" class="close-navigation close">&times;</a>
-    <a href="#navigation" class="navigation"><i class="icon-menu">&nbsp;</i></a>
+      <div class="row">
+        <a href="#" class="close-navigation close">&times;</a>
+        <a href="#navigation" class="navigation"><i class="icon-menu">&nbsp;</i></a>
 
-    <div id="masthead" class="span12">
-      <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>
-      <%= profile %>
-    </div>
+        <div id="masthead" class="span12">
+          <%= image_tag('woople-theme/logo.png', class: 'masthead-logo') %>
+          <%= profile %>
+        </div>
 
-    <%= menu %>
+        <div id="body-container" >
 
-    <div class="outer-content span9">
-      <div class="content">
-        <%= yield %>
+          <%= menu %>
+
+          <div class="outer-content span9">
+            <div class="content">
+              <%= yield %>
+            </div>
+          </div>
+
+        </div>
       </div>
+      <p class="copyright"><a href="<%t 'woople_theme.company.url' %>"><%=t 'woople_theme.company.name' %></a> &copy; <%= DateTime.now.strftime("%Y") %></p>
     </div>
-  </div>
-  <p class="copyright"><a href="<%t 'woople_theme.company.url' %>"><%=t 'woople_theme.company.name' %></a> &copy; <%= DateTime.now.strftime("%Y") %></p>
-</div>
 
-  <%= yield :extra_javascript %>
-</body>
+    <%= yield :extra_javascript %>
+  </body>
 </html>
