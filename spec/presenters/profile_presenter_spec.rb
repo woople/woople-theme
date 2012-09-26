@@ -1,33 +1,56 @@
 require_relative '../../app/presenters/profile_presenter'
+require_relative '../../app/presenters/profile_section_presenter'
 require_relative '../../app/presenters/theme_presentation'
 
-
 describe ProfilePresenter do
-  it "wraps each item in the profile presenter" do
-    items = [stub, stub, stub]
+  let(:presenter) { ProfilePresenter }
 
-    ProfilePresenter.new(items).each do |item|
-      item.wrapped_by.should == [ProfilePresenter]
+  describe "#image" do
+    describe "when there is a default paperclip image" do
+      subject { get_presenter(stub_presenter(image: ProfilePresenter::MISSING_WOOPLE_IMAGE)) }
+
+      it "yields the default image" do
+        subject.image { |url| url }.should == ProfilePresenter::DEFAULT_IMAGE
+      end
     end
-  end
 
-  describe "#url" do
-    subject { ProfilePresenter.new([url: 'blah']) }
+    describe "when there is a null image" do
+      subject { get_presenter(stub_presenter(image:nil)) }
 
-    it "returns the url" do
-      subject.each do |item|
-        item.url.should == 'blah'
+      it "yields the default image" do
+        subject.image { |url| url }.should == ProfilePresenter::DEFAULT_IMAGE
+      end
+    end
+
+    describe "when there is an image" do
+      subject { get_presenter(stub_presenter(image:'image.jpg')) }
+
+      it "yields the specified image" do
+        subject.image { |url| url }.should == 'image.jpg'
       end
     end
   end
 
-  describe "#name" do
-    subject { ProfilePresenter.new([name: 'blah']) }
+  describe "#sections" do
+    subject { get_presenter(stub_presenter(sections: [stub, stub])) }
 
-    it "returns the name" do
-      subject.each do |item|
-        item.name.should == 'blah'
+    it "wraps the section in the ProfileSectionPresenter" do
+      subject.sections.each do |item|
+        item.wrapped_by.should eq([ProfileSectionPresenter])
       end
     end
+  end
+
+  private
+
+  def get_presenter(model)
+    presenter.new(model)
+  end
+
+  def stub_presenter(options = {})
+    defaults = {image: nil, sections: []}
+    defaults.merge!(options)
+
+    OpenStruct.new(defaults)
   end
 end

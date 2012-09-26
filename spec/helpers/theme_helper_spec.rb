@@ -53,7 +53,7 @@ describe ThemeHelper do
 
   describe "#profile" do
     it "renders correctly when a profile_model is present" do
-      helper.stub(:profile_model) { stub.as_null_object }
+      helper.stub(:profile_model) { stub(image: nil, sections: []).as_null_object }
 
       html = helper.profile
       page = Capybara::Node::Simple.new(html)
