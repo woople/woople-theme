@@ -14,6 +14,4 @@ class MenuSectionPresenter < SimpleDelegator
   def section
     __getobj__
   end
-
 end
-
