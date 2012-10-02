@@ -34,4 +34,13 @@ Rake::TestTask.new(:test) do |t|
   t.verbose = false
 end
 
-task :default => :spec
+task :load_app do
+  require 'action_controller/railtie'
+  require 'konacha'
+  load 'tasks/konacha.rake'
+end
+
+APP_RAKEFILE = File.expand_path("../spec/dummy/Rakefile", __FILE__)
+load 'rails/tasks/engine.rake'
+
+task :default => [:spec, 'konacha:run']

@@ -6,13 +6,7 @@ module WoopleTheme
       enforce_definitions :enabled?
 
       def render
-        yield if section.enabled?
-      end
-
-      private
-
-      def section
-        __getobj__
+        yield if @delegate.enabled?
       end
     end
   end

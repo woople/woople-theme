@@ -1,18 +1,7 @@
 require 'spec_helper'
 
-def struct(obj_in)
-  OpenStruct.new(obj_in)
-end
-
 describe WoopleTheme::VideoPresenter do
-  obj = {
-    desktop_src: nil,
-    mobile_src: nil,
-    streamer: nil,
-    liked?: nil
-  }
-
-  subject { WoopleTheme::VideoPresenter.new(struct(obj)) }
+  subject { WoopleTheme::VideoPresenter.new(stub_presenter) }
 
   describe "#liked_css" do
     it "returns nothing" do
@@ -48,5 +37,14 @@ describe WoopleTheme::VideoPresenter do
 
       subject.disliked_css.should be_nil
     end
+  end
+
+  private
+
+  def stub_presenter(options = {})
+    defaults = {name: nil, desktop_src: nil, mobile_src: nil, streamer: nil, liked?: nil}
+    defaults.merge!(options)
+
+    OpenStruct.new(defaults)
   end
 end

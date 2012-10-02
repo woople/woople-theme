@@ -14,7 +14,7 @@ module WoopleTheme
       private
 
       def data
-        __getobj__
+        @delegate
       end
     end
   end

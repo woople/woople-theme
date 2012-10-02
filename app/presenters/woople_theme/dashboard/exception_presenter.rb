@@ -20,7 +20,7 @@ module WoopleTheme
       private
 
       def source
-        __getobj__
+        @delegate
       end
 
     end

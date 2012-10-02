@@ -1,11 +1,13 @@
-require 'delegate'
+require 'explicit_delegator'
 require_relative 'content_image'
 
-class PageHeaderPresenter < SimpleDelegator
+class PageHeaderPresenter < ExplicitDelegator
   include ContentImage
 
+  enforce_definitions :description
+
   def title
-    name || header.title
+    @delegate.name || @delegate.title
   end
 
   def image_class
@@ -13,24 +15,20 @@ class PageHeaderPresenter < SimpleDelegator
   end
 
   def completed_class
-    'completed' if header.completed?
+    'completed' if @delegate.completed?
   end
 
   private
 
   def has_image?
-    header.respond_to?(:image)
+    @delegate.respond_to?(:image)
   end
 
   def name
-    if header.respond_to?(:name)
-      header.name
+    if @delegate.respond_to?(:name)
+      @delegate.name
     else
       nil
     end
-  end
-
-  def header
-    __getobj__
   end
 end

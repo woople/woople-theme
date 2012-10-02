@@ -17,7 +17,7 @@ class ProfilePresenter < ExplicitDelegator
   private
 
   def profile
-    __getobj__
+    @delegate
   end
 
   def normalized(image)

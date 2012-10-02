@@ -3,7 +3,7 @@ require 'woople_theme_i18n'
 
 describe WoopleTheme::Dashboard::EssentialCompletedPresenter do
   describe "#render_time_remaining" do
-    let(:data) { stub_presenter() }
+    let(:data) { stub_presenter }
 
     subject { WoopleTheme::Dashboard::EssentialCompletedPresenter.new(data) }
 
@@ -11,7 +11,7 @@ describe WoopleTheme::Dashboard::EssentialCompletedPresenter do
   end
 
   describe "#render_popularity" do
-    let(:data) { stub_presenter() }
+    let(:data) { stub_presenter }
 
     subject { WoopleTheme::Dashboard::EssentialCompletedPresenter.new(data) }
 
@@ -19,7 +19,7 @@ describe WoopleTheme::Dashboard::EssentialCompletedPresenter do
   end
 
   describe "#render_certification_metadata" do
-    let(:data) { stub_presenter() }
+    let(:data) { stub_presenter }
 
     subject { WoopleTheme::Dashboard::EssentialCompletedPresenter.new(data) }
 
@@ -27,7 +27,7 @@ describe WoopleTheme::Dashboard::EssentialCompletedPresenter do
   end
 
   describe "#render_progress_bar" do
-    let(:data) { stub_presenter() }
+    let(:data) { stub_presenter }
 
     subject { WoopleTheme::Dashboard::EssentialCompletedPresenter.new(data) }
 
@@ -52,7 +52,7 @@ describe WoopleTheme::Dashboard::EssentialCompletedPresenter do
     end
 
     context "when completed_on is not nil" do
-      let(:data) { stub_presenter(completed_on: Time.current) }
+      let(:data) { stub_presenter }
 
       subject { WoopleTheme::Dashboard::EssentialCompletedPresenter.new(data) }
 
@@ -63,7 +63,7 @@ describe WoopleTheme::Dashboard::EssentialCompletedPresenter do
   private
 
   def stub_presenter(options = {})
-    defaults = {name: 'Elective Course', url: '/course', image: nil, completed_on: Time.current, current_points: 0, total_points: 0}
+    defaults = {name: 'Elective Course', url: '/course', image: nil, completed_on: Time.current, time_total: '12:34', current_points: 0, total_points: 0}
     defaults.merge!(options)
 
     OpenStruct.new(defaults)

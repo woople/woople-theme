@@ -38,18 +38,6 @@ class ThemePresentation
 
   def self.normalize_presenters(presenters)
     presenters.reject!(&:nil?)
-    add_class_delegation(presenters)
-
     presenters
-  end
-
-  def self.add_class_delegation(presenters)
-    presenters.each do |presenter|
-      presenter.class_eval do
-        def class
-          __getobj__.class
-        end
-      end
-    end
   end
 end

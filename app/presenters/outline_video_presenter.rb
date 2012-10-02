@@ -59,6 +59,6 @@ class OutlineVideoPresenter < ExplicitDelegator
   private
 
   def video
-    __getobj__
+    @delegate
   end
 end

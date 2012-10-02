@@ -1,0 +1,62 @@
+@import "woople-theme/variables.css.less";
+
+section.reports {
+  margin-top: @contentPadding / 2;
+
+  #reports_nav {
+    padding-left: 10px;
+    margin-bottom: 0;
+  }
+
+  #reports_data {
+    background-color: white;
+    padding: @contentPadding;
+  }
+
+  .report-download {
+    float: left;
+
+    a, a:hover {
+      color: white;
+      text-decoration: none;
+    }
+  }
+
+  .legend {
+    float: right;
+
+    .badge {
+      pointer-events: none;
+    }
+
+    .badge.badge-warning {
+      background-color: gold;
+    }
+  }
+}
+
+.touch .glass_pane {
+  width: 100%;
+  height: 410px;
+  position: absolute;
+  z-index: 100;
+}
+
+@media (max-width: 768px) {
+  section.reports {
+    margin-top: @contentPadding / 2;
+
+    #reports_data {
+      background-color: white;
+      padding: @contentPadding / 2;
+    }
+
+    .report-download {
+      display: none;
+    }
+
+    .tab-pain {
+      position: relative;
+    }
+  }
+}

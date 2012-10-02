@@ -3,37 +3,41 @@ require_relative '../../spec/support/content_image_example'
 
 describe PageHeaderPresenter do
   let(:presenter) { PageHeaderPresenter }
+
+  subject { PageHeaderPresenter.new(stub_presenter) }
+
   include_examples 'content_image'
 
   describe "#title" do
     describe "when the object has a name" do
-      subject { PageHeaderPresenter.new(stub(name: 'Name')) }
+      subject { PageHeaderPresenter.new(stub_presenter(name: 'Name')) }
 
       it "should have a name" do
-        subject.title.should == "Name"
+        subject.title.should eq('Name')
       end
     end
 
     describe "when the object has a title" do
-      subject { PageHeaderPresenter.new(stub(title: 'Title')) }
+      subject { PageHeaderPresenter.new(stub_presenter(title: 'Title')) }
 
       it "should have the title" do
-        subject.title.should == 'Title'
+        subject.stub(:name).and_return('Name')
+        subject.title.should eq('Title')
       end
     end
   end
 
   describe "#image_class" do
     describe "when the object has an image" do
-      subject { PageHeaderPresenter.new(stub(image: 'image')) }
+      subject { PageHeaderPresenter.new(stub_presenter(image: 'image')) }
 
       it "has a class of page-header-with-image" do
-        subject.image_class.should == 'page-header-with-image'
+        subject.image_class.should eq('page-header-with-image')
       end
     end
 
     describe "when the object does not have an image" do
-      subject { PageHeaderPresenter.new(stub) }
+      subject { PageHeaderPresenter.new(stub_presenter) }
 
       it "has a class of nil" do
         subject.image_class.should be_nil
@@ -43,19 +47,28 @@ describe PageHeaderPresenter do
 
   describe "#completed_class" do
     describe "when the object is completed" do
-      subject { PageHeaderPresenter.new(stub(completed?: true)) }
+      subject { PageHeaderPresenter.new(stub_presenter(completed?: true)) }
 
       it "has a class of completed" do
-        subject.completed_class.should == 'completed'
+        subject.completed_class.should eq('completed')
       end
     end
 
     describe "when the object is incompleted" do
-      subject { PageHeaderPresenter.new(stub(completed?: false)) }
+      subject { PageHeaderPresenter.new(stub_presenter(completed?: false)) }
 
       it "has a class of nil" do
         subject.completed_class.should be_nil
       end
     end
+  end
+
+  private
+
+  def stub_presenter(options = {})
+    defaults = {completed?: nil, description: nil}
+    defaults.merge!(options)
+
+    OpenStruct.new(defaults)
   end
 end
