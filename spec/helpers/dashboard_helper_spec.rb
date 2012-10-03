@@ -44,12 +44,54 @@ describe DashboardHelper do
 
   describe '#organization_accounts' do
     context 'accordion heading' do
-      subject { helper.organization_accounts([{ name: 'Account 1' }, { name: 'Account 2' }]) }
+      subject { helper.organization_accounts [{ name: 'Account 1', users: [] }, { name: 'Account 2', users: [] }] }
 
-      it 'outputs the account names in the accordion headings' do
+      it 'renders the account names in the accordion headings' do
         page = Capybara::Node::Simple.new(subject)
         page.find('a[href="#organization-account-0"]').text.should eq('Account 1')
         page.find('a[href="#organization-account-1"]').text.should eq('Account 2')
+      end
+    end
+
+    context 'accordion inner' do
+      user1 = {
+        image: '/assets/retina_thumb/missing.png',
+        name: 'Christopher Mudiappahpillai',
+        member_dashboard_path: '/member_dashboards/2757',
+        status_color: :red,
+        status_description: '3 essentials and 123 elective points required.'
+      }
+      user2 = {
+        image: 'https://woople.s3.amazonaws.com/gwar.jpg',
+        name: 'Joannou Ng',
+        member_dashboard_path: '/member_dashboards/113037',
+        status_color: :yellow,
+        status_description: '7 essentials and 113 elective points required.'
+      }
+
+      subject do
+        account = { name: 'GOATSE', users: [user1, user2] }
+        helper.organization_accounts [account]
+      end
+
+      it 'renders the account users in the accordion inner' do
+        page = Capybara::Node::Simple.new subject
+
+        [user1, user2].each_with_index do |user, i|
+          page.all('img')[i][:src].should eq '/assets/woople-theme/missing-profile.png' if i == 0
+          page.all('img')[i][:src].should eq user[:image] if i == 1
+          anchor = page.all('.span8 a')[i]
+          anchor.text.should eq user[:name]
+          anchor[:href].should eq user[:member_dashboard_path]
+          status = page.all('.status-alert')[i]
+          status[:class].should eq 'alert alert-error status-alert' if i == 0
+          status[:class].should eq 'alert  status-alert' if i == 1
+          status['data-content'].should eq user[:status_description]
+          page.all('.status-alert strong')[i].text.should eq user[:status_color].to_s.capitalize!
+          page.all('.status-alert span')[i].text.should eq user[:status_description]
+        end
+
+        page.should have_css 'button.btn.btn-primary i.icon-envelope-alt.icon-white', count: 2
       end
     end
   end

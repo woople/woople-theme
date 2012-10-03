@@ -14,13 +14,13 @@
 }
 
 .menu .red {
-  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
+  background-image: asset-url('woople-theme/certification/red-icon2x.png');
 }
 
 .menu .green {
-  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
+  background-image: asset-url('woople-theme/certification/green-icon2x.png');
 }
 
 .menu .yellow {
-  background-image:url(/assets/woople-theme/certification/red-icon2x.png);
+  background-image: asset-url('woople-theme/certification/yellow-icon2x.png');
 }

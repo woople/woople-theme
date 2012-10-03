@@ -9,6 +9,8 @@
 //= require twitter/bootstrap/alert
 //= require twitter/bootstrap/tab
 //= require twitter/bootstrap/collapse
+//= require twitter/bootstrap/tooltip
+//= require twitter/bootstrap/popover
 //= require fastclick.min_
 //= require jwplayer/jwplayer
 //= require_tree .

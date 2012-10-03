@@ -1,10 +1,113 @@
+@import 'twitter/bootstrap/mixins';
+@import 'woople-theme/variables.css.less';
 @import 'woople-theme/colours.css.less';
 
+@status-height: 25px;
+@alert-padding: 2px;
+
 #organization-accounts {
-  margin: 16px 8px 0px 8px;
+  margin: 16px 8px 0 8px;
   padding-bottom: 8px;
 
   .accordion-heading {
     background-color: @highlightBackground;
+  }
+
+  .accordion-inner {
+    padding-top: 0;
+    padding-bottom: 8px;
+  }
+
+  .row-fluid {
+    margin-top: 8px;
+  }
+
+  img {
+    .border-radius(4px);
+    .box-shadow(0 1px 3px rgba(0, 0, 0, 0.125));
+  }
+
+  .span8 {
+    padding-top: 1px;
+
+    a {
+      margin-left: 4px;
+      vertical-align: middle;
+      font-size: 18px;
+      font-weight: @title-font-weight;
+    }
+  }
+
+  .status-alert {
+    margin: 0;
+    padding: @alert-padding;
+    min-height: @status-height;
+    background-image: asset-url('woople-theme/certification/yellow-icon.png');
+    background-position: @alert-padding @alert-padding;
+
+    strong {
+      margin-top: 3px;
+      margin-left: @status-height + @alert-padding;
+      font-size: 18px;
+    }
+
+    span {
+      display: none;
+    }
+  }
+
+  .status-alert.alert-error {
+    background-image: asset-url('woople-theme/certification/red-icon.png');
+  }
+
+  .status-alert.alert-success {
+    background-image: asset-url('woople-theme/certification/green-icon.png');
+  }
+
+  @media (-webkit-min-device-pixel-ratio: 2) {
+    .status-alert {
+      background-size: @status-height @status-height;
+      background-image: asset-url('woople-theme/certification/yellow-icon2x.png');
+    }
+
+    .status-alert.alert-error {
+      background-image: asset-url('woople-theme/certification/red-icon2x.png');
+    }
+
+    .status-alert.alert-success {
+      background-image: asset-url('woople-theme/certification/green-icon2x.png');
+    }
+  }
+
+  .remind-column {
+    padding-top: 1px;
+    text-align: right;
+  }
+}
+
+@media (max-width: 480px) {
+  #organization-accounts {
+    .span8 {
+      padding-top: 0;
+    }
+
+    .span2 {
+      margin-top: 4px;
+    }
+
+    .status-alert {
+      span {
+        display: block;
+        margin: 0 4px 2px;
+      }
+    }
+
+    .remind-column {
+      padding-top: 0;
+    }
+
+    button {
+      width: 100%;
+    }
   }
 }
