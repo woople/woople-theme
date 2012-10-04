@@ -6,7 +6,7 @@
   </div>
   <div id="<%= account_id %>" class="accordion-body collapse <%= 'in' if organization_account_counter == 0 %>">
     <div class="accordion-inner">
-      <!-- Hi mom! -->
+      <%= render partial: 'woople-theme/dashboard/account_user', collection: ThemePresentation.wrap_collection(organization_account.users, WoopleTheme::Dashboard::AccountUserPresenter) %>
     </div>
   </div>
 </div>

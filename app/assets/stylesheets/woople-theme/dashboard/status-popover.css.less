@@ -1,0 +1,19 @@
+@import 'twitter/bootstrap/mixins';
+@import 'woople-theme/colours.css.less';
+
+.status-popover {
+  &.top .arrow {
+    border-top-color: @primary;
+  }
+
+  .popover-inner {
+    width: 224px;
+    background-color: @primary;
+  }
+
+  .popover-content {
+    .border-radius(3px);
+    background-color: @contentBackground;
+    color: @secondaryTextColour;
+  }
+}

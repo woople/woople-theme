@@ -1,0 +1,12 @@
+<div class="row-fluid">
+  <div class="span8">
+    <%= image_tag account_user.image, size: '25x25' %>
+    <%= link_to account_user.name, account_user.member_dashboard_path %>
+  </div>
+  <div class="span2">
+    <%= status_alert account_user.status_color, account_user.status_description %>
+  </div>
+  <div class="span2 remind-column">
+    <button class="btn btn-primary"><i class="icon-envelope-alt icon-white"></i> Remind</button>
+  </div>
+</div>

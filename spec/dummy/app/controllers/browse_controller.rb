@@ -76,7 +76,18 @@ class BrowseController < ApplicationController
 
   def random_account
     {
-      name: ['Account Name', 'Very Very Very Very Very Very Long Account Name'].sample
+      name: ['Account Name', 'Very Very Very Very Very Very Long Account Name'].sample,
+      users: rand(1..4).times.collect { random_user }
+    }
+  end
+
+  def random_user
+    {
+      image: '/assets/retina_thumb/missing.png',
+      name: 'Christopher Mudiappahpillai',
+      member_dashboard_path: '/member-dashboard',
+      status_color: [:red, :yellow, :green].sample,
+      status_description: '3 essentials and 123 elective points required.'
     }
   end
 
