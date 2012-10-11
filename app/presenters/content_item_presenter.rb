@@ -5,7 +5,7 @@ require_relative 'content_image'
 class ContentItemPresenter < ExplicitDelegator
   include ContentImage
 
-  enforce_definitions :image, :name, :url
+  enforce_definitions :name, :url
 
   def render_time_remaining(&block)
     yield(source.time_remaining, source.time_total)
@@ -39,6 +39,6 @@ class ContentItemPresenter < ExplicitDelegator
   private
 
   def source
-    __getobj__
+    @delegate
   end
 end

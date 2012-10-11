@@ -1,11 +1,17 @@
 class Menu
   def self.generate(selection)
-    [continue_learning(selection), certification, featured, topics]
+    [continue_learning(selection), personal_report(selection), certification, featured, topics]
   end
 
   def self.continue_learning(selection)
     {
       links: [ { name: 'Continue Learning', url: '/', featured: true, selected: (selection == 'continue-learning')  } ]
+    }
+  end
+
+  def self.personal_report(selection)
+    {
+      links: [ { name: 'Progress Report', url: '/report/personal', featured: true, selected: (selection == 'personal-report')  } ]
     }
   end
 
@@ -40,11 +46,11 @@ class Menu
 
   def self.category_names
     [
-      "Advice", 
-      "Agency Best Practices", 
-      "Allstate Workout 1", 
-      "Allstate Workout 2", 
-      "Allstate Workout 2012", 
+      "Advice",
+      "Agency Best Practices",
+      "Allstate Workout 1",
+      "Allstate Workout 2",
+      "Allstate Workout 2012",
       "Allstate Workout 3",
       "California Region",
       "Care Sell Quote Close",

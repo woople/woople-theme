@@ -1,0 +1,23 @@
+<section class="reports">
+  <ul class="nav nav-tabs" id="spec_reports_nav">
+    <li><a href="#week" data-container="week_report_chart" data-path="/report/personal/data.json" data-toggle="tab" data-type="week">Daily</a></li>
+  </ul>
+
+  <div class="tab-content" id="reports_data">
+    <div class="tab-pane" id="week" data-title="Daily (Past 7 Days)">
+      <div class="report-download">
+        <span class="badge badge-info">
+          <a href="/report/personal/data.csv"><i class='icon-download-alt'></i> Download</a>
+        </span>
+      </div>
+
+      <div class="legend">
+        <span class="badge badge-error">0-3 Viewed</span>
+        <span class="badge badge-warning">4-6 Viewed</span>
+        <span class="badge badge-success">7+ Viewed</span>
+      </div>
+
+      <div class="report_chart" id="week_report_chart"></div>
+    </div>
+  </div>
+</section>

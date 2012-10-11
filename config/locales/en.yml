@@ -87,6 +87,19 @@ en:
             one: '%{points_earned} of %{count} elective point earned'
             other: '%{points_earned} of %{count} elective points earned'
 
+    reports:
+      chart:
+        titles:
+          daily: Daily (Past 7 Days)
+          weekly: Weekly (Past 5 Weeks)
+          monthly: Monthly (Past 12 Months)
+      download:
+        html: "<i class='icon-download-alt'></i> Download"
+      legend:
+        viewed: "%{range} Viewed"
+      personal:
+        label: Progress Report
+        description: See how you are doing over time
   date:
     formats:
       default: ! '%b %d %Y'

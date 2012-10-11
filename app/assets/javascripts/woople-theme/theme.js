@@ -13,6 +13,7 @@
 //= require twitter/bootstrap/popover
 //= require fastclick.min_
 //= require jwplayer/jwplayer
+//= require highcharts
 //= require_tree .
 
 function resizeFix() {

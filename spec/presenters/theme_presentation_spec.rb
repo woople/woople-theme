@@ -58,7 +58,7 @@ describe ThemePresentation do
               another_key: 'another value'
             }
           ]
-        } 
+        }
       end
 
       it 'returns a nested struct' do
@@ -88,10 +88,6 @@ describe ThemePresentation do
 
       it 'wraps in order' do
         @data.name.should == 'Presenter2'
-      end
-
-      it 'keeps the same class' do
-        @data.class.should == Model
       end
     end
   end

@@ -72,7 +72,51 @@ class BrowseController < ApplicationController
     )
   end
 
+  def personal_report
+    @presenter = OpenStruct.new({
+      reports: [
+        {
+          name: 'Daily',
+          type: 'week',
+          data_path: personal_report_data_path(format: :json),
+          download_path: personal_report_data_path(format: :csv)
+        },{
+          name: 'Weekly',
+          type: 'month',
+          data_path: personal_report_data_path(format: :json),
+          download_path: personal_report_data_path(format: :csv)
+        },{
+          name: 'Monthly',
+          type: 'annual',
+          data_path: personal_report_data_path(format: :json),
+          download_path: personal_report_data_path(format: :csv)
+        }
+      ]
+    })
+
+    respond_to do |wants|
+      wants.html
+      wants.json { render json: sample_report_data, status: :ok }
+    end
+  end
+
   private
+
+  def sample_report_data
+    data = []
+
+    5.days.ago.to_date.upto(0.days.ago.to_date) do |date|
+      data << {
+        primary_name: date,
+        secondary_name: "",
+        views: (0..20).to_a.sample,
+        relearns: (0..10).to_a.sample,
+        grade: 0
+      }
+    end
+
+    data
+  end
 
   def random_account
     {

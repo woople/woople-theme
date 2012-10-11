@@ -7,6 +7,8 @@ Dummy::Application.routes.draw do
   match 'assessment-result',      to: 'browse#assessment_result'
   match 'member-dashboard',       to: 'browse#member_dashboard'
   match 'organization-dashboard', to: 'browse#organization_dashboard'
+  match 'report/personal',        to: 'browse#personal_report'
+  match 'report/personal/data',   to: 'browse#personal_report', as: :personal_report_data
 
   root :to => 'browse#show'
 end
