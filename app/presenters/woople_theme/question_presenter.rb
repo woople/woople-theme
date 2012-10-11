@@ -7,7 +7,7 @@ module WoopleTheme
                         :answers   # Set of options/answers for the question
 
     def answers
-      ThemePresentation.wrap_collection(__getobj__.answers, WoopleTheme::AnswerPresenter)
+      ThemePresentation.wrap_collection(@delegate.answers, WoopleTheme::AnswerPresenter)
     end
 
   end

@@ -3,7 +3,7 @@ module ContentImage
   MISSING_WOOPLE_IMAGE = '/assets/retina_thumb/missing.png'
 
   def image(&block)
-    yield(normalized(__getobj__.image) || DEFAULT_IMAGE) if __getobj__.respond_to? :image
+    yield(normalized(@delegate.image) || DEFAULT_IMAGE) if @delegate.respond_to? :image
   end
 
   private

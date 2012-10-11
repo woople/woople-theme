@@ -100,8 +100,8 @@ describe DashboardHelper do
     subject do
       helper.essentials_section({
         enabled?: true,
-        essentials_remaining:  [stub(url:"/course",name:'remaining',image:nil).as_null_object],
-        essentials_completed:  [stub(url:"/course",name:'completed',image:nil,time_total:'12:34').as_null_object],
+        essentials_remaining:  [stub(url: '/course', name:'remaining', image:nil).as_null_object],
+        essentials_completed:  [stub(url: '/course', name:'completed', image:nil, completed_on: Time.current, time_total: '12:34').as_null_object],
         essentials_exceptions: [stub(name: 'Exception', description: 'Reason', completed_on: Time.current, url: '/course').as_null_object]
       })
     end

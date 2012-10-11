@@ -19,7 +19,7 @@ class SubmittedAssessmentFormPresenter < AssessmentFormPresenter
   end
 
   def questions
-    ThemePresentation.wrap_collection(__getobj__.questions, WoopleTheme::SubmittedQuestionPresenter)
+    ThemePresentation.wrap_collection(@delegate.questions, WoopleTheme::SubmittedQuestionPresenter)
   end
 
   def render_result_status

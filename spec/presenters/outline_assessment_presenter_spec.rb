@@ -5,13 +5,13 @@ require 'capybara'
 describe OutlineAssessmentPresenter do
   describe "#render" do
     describe "when the assessment is enabled" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: true, completed?: false).as_null_object) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(enabled?: true)) }
 
       specify { expect { |b| subject.render(&b) }.to yield_control }
     end
 
     describe "when the assessment is not enabled" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, enabled?: false, completed?: false).as_null_object) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(enabled?: false)) }
 
       specify { expect { |b| subject.render(&b) }.not_to yield_control }
     end
@@ -19,13 +19,13 @@ describe OutlineAssessmentPresenter do
 
   describe "#render_relearning" do
     describe "when there aren't relearnings" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [], completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter) }
 
       specify { expect { |b| subject.render_relearnings(&b) }.not_to yield_control }
     end
 
     describe "when there are relearnings" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, relearnings: [stub], completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(relearnings: [stub])) }
 
       specify { expect { |b| subject.render_relearnings(&b) }.to yield_control }
     end
@@ -33,7 +33,7 @@ describe OutlineAssessmentPresenter do
 
   describe '#start_button_tag' do
     describe 'when the assessment is not startable' do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, startable?: false, completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(startable?: false)) }
 
       it "should have a 'disabled' attribute" do
         page = Capybara::Node::Simple.new subject.start_button_tag
@@ -43,7 +43,7 @@ describe OutlineAssessmentPresenter do
     end
 
     describe 'when the assessment is startable' do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, startable?: true, url: '/courses/foo', completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(startable?: true)) }
 
       it "should not have a 'disabled' button" do
         page = Capybara::Node::Simple.new subject.start_button_tag
@@ -55,13 +55,13 @@ describe OutlineAssessmentPresenter do
 
   describe "#render_history_link" do
     describe "when having history items" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [stub], enabled?: true, completed?: false).as_null_object) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(history: [stub])) }
 
       specify { expect { |b| subject.render_history_link(&b) }.to yield_control }
     end
 
     describe "when no history items" do
-      subject { OutlineAssessmentPresenter.new(stub(:assessment, history: [], enabled?: false, completed?: false).as_null_object) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter) }
 
       specify { expect { |b| subject.render_history_link(&b) }.not_to yield_control }
     end
@@ -73,7 +73,7 @@ describe OutlineAssessmentPresenter do
 
       @first_history_item = stub(passed: false, score: 42, url: 'foo', completed_at: Date.parse('20120307')).as_null_object
       second_history_item = stub(passed: true).as_null_object
-      assessment = OutlineAssessmentPresenter.new(stub(:assessment, history: [@first_history_item, second_history_item], completed?: false, enabled?: true))
+      assessment = OutlineAssessmentPresenter.new(stub_presenter(history: [@first_history_item, second_history_item]))
       @processed = []
       assessment.each_history_item do |history_item|
         @processed << history_item
@@ -103,13 +103,13 @@ describe OutlineAssessmentPresenter do
 
   describe '#render_pass_fail_alert' do
     describe "given no 'passed?' key" do
-      subject { OutlineAssessmentPresenter.new OpenStruct.new(completed?: false, enabled?: true) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter) }
 
       specify { expect { |b| subject.render_pass_fail_alert(&b) }.not_to yield_control }
     end
 
     describe "given 'passed?' is true" do
-      subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: true, history: [OpenStruct.new(url: '/foo')], completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(passed?: true, history: [stub(url: '/foo').as_null_object])) }
 
       specify { expect { |b| subject.render_pass_fail_alert(&b) }.to yield_with_args(OpenStruct) }
 
@@ -125,7 +125,7 @@ describe OutlineAssessmentPresenter do
     end
 
     describe "given 'passed?' is false" do
-      subject { OutlineAssessmentPresenter.new(OpenStruct.new(passed?: false, history: [OpenStruct.new(url: '/foo')], completed?: false, enabled?: true)) }
+      subject { OutlineAssessmentPresenter.new(stub_presenter(passed?: false, history: [stub(url: '/foo').as_null_object])) }
 
       specify { expect { |b| subject.render_pass_fail_alert(&b) }.to yield_with_args(OpenStruct) }
 
@@ -142,7 +142,7 @@ describe OutlineAssessmentPresenter do
   end
 
   describe "#completed_class" do
-    subject { OutlineAssessmentPresenter.new(OpenStruct.new(completed?: true, enabled?: true)) }
+    subject { OutlineAssessmentPresenter.new(stub_presenter(completed?: true)) }
 
     it "should return 'completed' when the assessment is completed" do
       subject.completed_class.should eq("completed")
@@ -153,5 +153,26 @@ describe OutlineAssessmentPresenter do
 
       subject.completed_class.should be_nil
     end
+  end
+
+  private
+
+  def stub_presenter(options = {})
+    defaults = {
+      assessment_id: nil,
+      enabled?: false,
+      questions_asked: nil,
+      pass_requirement: nil,
+      estimated_duration: nil,
+      startable?: false,
+      url: nil,
+      relearnings: [],
+      history: [],
+      completed?: false,
+      passed?: nil
+    }
+    defaults.merge!(options)
+
+    OpenStruct.new(defaults)
   end
 end

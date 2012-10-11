@@ -16,7 +16,7 @@ class AssessmentFormPresenter < ExplicitDelegator
   end
 
   def questions
-    ThemePresentation.wrap_collection(__getobj__.questions, WoopleTheme::QuestionPresenter)
+    ThemePresentation.wrap_collection(assessment_result.questions, WoopleTheme::QuestionPresenter)
   end
 
   def render_result_status
@@ -34,6 +34,6 @@ class AssessmentFormPresenter < ExplicitDelegator
   private
 
   def assessment_result
-    __getobj__
+    @delegate
   end
 end

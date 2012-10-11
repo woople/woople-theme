@@ -3,14 +3,16 @@ module WoopleTheme
   module Dashboard
     class ElectivesSectionPresenter < SectionPresenter
       enforce_definitions :electives_history,
-                          :electives_exceptions
+                          :electives_exceptions,
+                          :points_earned,
+                          :points_total
 
       def render_history
-        yield if render?(section.electives_history)
+        yield if render?(@delegate.electives_history)
       end
 
       def render_exceptions
-        yield if render?(section.electives_exceptions)
+        yield if render?(@delegate.electives_exceptions)
       end
 
       private

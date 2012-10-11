@@ -1,0 +1,13 @@
+<section class="reports">
+  <ul class="nav nav-tabs" id="reports_nav">
+    <% presenter.reports.each do |report| %>
+    <li><%= report.report_link %></li>
+    <% end %>
+  </ul>
+
+   <div class="tab-content" id="reports_data">
+    <% presenter.reports.each do |report| %>
+    <%= render partial: 'woople-theme/reports/personal/report', object: report %>
+    <% end %>
+  </div>
+</section>

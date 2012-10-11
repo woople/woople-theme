@@ -6,7 +6,7 @@ module WoopleTheme
       enforce_definitions :color, :description
 
       def css_class
-        case __getobj__.color
+        case @delegate.color
         when :red
           'alert-error'
         when :green
@@ -15,7 +15,7 @@ module WoopleTheme
       end
 
       def color
-        __getobj__.color.to_s.capitalize!
+        @delegate.color.to_s.capitalize!
       end
     end
   end

@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'less-rails-bootstrap'
+require 'highcharts-rails'
 
 module WoopleTheme
   class Engine < ::Rails::Engine

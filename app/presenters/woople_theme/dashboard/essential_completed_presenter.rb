@@ -3,6 +3,7 @@ require 'woople_theme_i18n'
 module WoopleTheme
   module Dashboard
     class EssentialCompletedPresenter < ContentItemPresenter
+      enforce_definitions :completed_on, :time_total
 
       def render_time_remaining(&block)
       end
@@ -17,17 +18,17 @@ module WoopleTheme
       end
 
       def render_completed_on(&block)
-        yield(formatted_date) unless completed_on.nil?
+        yield(formatted_date) unless source.completed_on.nil?
       end
 
       def render_essential_duration(&block)
-        yield(time_total)
+        yield(source.time_total)
       end
 
       private
 
       def formatted_date
-        WoopleThemeI18n.l(completed_on.to_date)
+        WoopleThemeI18n.l(source.completed_on.to_date)
       end
     end
   end

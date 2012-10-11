@@ -1,6 +1,8 @@
+require 'ostruct'
+
 shared_examples 'content_image' do
   describe "when there is a default paperclip image" do
-    subject { get_presenter(stub_presenter(image:ContentImage::MISSING_WOOPLE_IMAGE)) }
+    subject { get_presenter(stub_presenter(image: ContentImage::MISSING_WOOPLE_IMAGE)) }
 
     it "yields the default image" do
       subject.image { |url| url }.should == ContentImage::DEFAULT_IMAGE
@@ -8,7 +10,7 @@ shared_examples 'content_image' do
   end
 
   describe "when there is a null image" do
-    subject { get_presenter(stub_presenter(image:nil)) }
+    subject { get_presenter(stub_presenter(image: nil)) }
 
     it "yields the default image" do
       subject.image { |url| url }.should == ContentImage::DEFAULT_IMAGE
@@ -16,7 +18,7 @@ shared_examples 'content_image' do
   end
 
   describe "when there is an image" do
-    subject { get_presenter(stub_presenter(image:'image.jpg')) }
+    subject { get_presenter(stub_presenter(image: 'image.jpg')) }
 
     it "yields the specified image" do
       subject.image { |url| url }.should == 'image.jpg'

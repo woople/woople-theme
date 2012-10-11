@@ -10,8 +10,9 @@ class OutlineAssessmentPresenter < ExplicitDelegator
   include ActionView::Helpers::NumberHelper
   include ActionView::Helpers::TagHelper
 
-  enforce_definitions :completed?,
-                      :enabled?
+  enforce_definitions :assessment_id, :completed?, :enabled?, :startable?,
+    :relearnings, :history, :passed?, :questions_asked, :pass_requirement,
+    :estimated_duration, :url
 
   def render
     yield if enabled?
@@ -42,7 +43,8 @@ class OutlineAssessmentPresenter < ExplicitDelegator
   end
 
   def render_pass_fail_alert
-    return unless respond_to? :passed?
+    return if passed?.nil?
+
     if passed?
       yield OpenStruct.new(
         css_class: 'alert-success',

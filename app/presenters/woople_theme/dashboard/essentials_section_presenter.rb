@@ -8,15 +8,15 @@ module WoopleTheme
                           :essentials_exceptions
 
       def render_remaining
-        yield if render?(section.essentials_remaining)
+        yield if render?(@delegate.essentials_remaining)
       end
 
       def render_completed
-        yield if render?(section.essentials_completed)
+        yield if render?(@delegate.essentials_completed)
       end
 
       def render_exceptions
-        yield if render?(section.essentials_exceptions)
+        yield if render?(@delegate.essentials_exceptions)
       end
 
       private
