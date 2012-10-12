@@ -4,7 +4,11 @@
   <%= breadcrumb @presenter.organization_path %>
 <% end %>
 
-<%= status_alert @presenter.status_color, @presenter.status_description %>
+<% if [true, false].sample %>
+  <%= status_alert @presenter.status_color, @presenter.status_description %>
+<% else %>
+  <%= user_and_status @presenter.user_and_status_data %>
+<% end %>
 
 <%= essentials_section @essentials_presenter %>
 <%= electives_section @electives_presenter %>
