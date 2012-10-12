@@ -1,5 +1,9 @@
 <%= page_header title: 'Member Dashboard', description: '' %>
 
+<% if [true, false].sample %>
+  <%= breadcrumb @presenter.organization_path %>
+<% end %>
+
 <%= status_alert @presenter.status_color, @presenter.status_description %>
 
 <%= essentials_section @essentials_presenter %>
