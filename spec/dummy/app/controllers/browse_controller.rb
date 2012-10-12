@@ -58,6 +58,12 @@ class BrowseController < ApplicationController
     @presenter = OpenStruct.new(
       status_color: [:red, :yellow, :green].sample,
       status_description: '3 essentials and 123 elective points required.',
+      user_and_status_data: {
+        image: '/assets/retina_thumb/missing.png',
+        name: 'Christopher Mudiappahpillai',
+        status_color: [:red, :yellow, :green].sample,
+        status_description: '3 essentials and 123 elective points required.'
+      }
     )
 
     @essentials_presenter = essentials
