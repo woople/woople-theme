@@ -95,13 +95,13 @@ describe ThemeHelper do
       page.find('.results-header .title').should have_content(title)
     end
 
-    it "should not show the more link when the path is not set" do
+    it "does not show the more link when the path is not set" do
       page = Capybara::Node::Simple.new helper.results_header(title, '')
       page.should_not have_selector("a")
       page.find('.results-header .title').should_not have_content(I18n.t('woople_theme.search_results_more'))
     end
 
-    it "should show the more link when the path is set" do
+    it "shows the more link when the path is set" do
       path = "/search"
       html = helper.results_header(title, path)
       page = Capybara::Node::Simple.new(html)
@@ -135,6 +135,13 @@ describe ThemeHelper do
       end
 
       expect { helper.impersonation_banner }.to raise_error("something_that_does_not_exist helper_method does not exist. WoopleTheme.configuration.impersonation_banner_helper must point to a valid helper_method.")
+    end
+  end
+
+  describe "#breadcrumb" do
+    it 'shows the breadcrumb' do
+      page = Capybara::Node::Simple.new helper.breadcrumb('path')
+      page.should have_css('.breadcrumb')
     end
   end
 end

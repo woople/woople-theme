@@ -58,6 +58,7 @@ class BrowseController < ApplicationController
     @presenter = OpenStruct.new(
       status_color: [:red, :yellow, :green].sample,
       status_description: '3 essentials and 123 elective points required.',
+      organization_path: "organization-dashboard",
     )
 
     @essentials_presenter = essentials

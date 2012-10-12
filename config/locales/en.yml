@@ -60,6 +60,10 @@ en:
     return_to_course: Return to Course
     date_title: Date
 
+    breadcrumb:
+      organization: Organization
+      member: Member
+
     dashboards:
       titles:
         reason: Reason

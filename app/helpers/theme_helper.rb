@@ -60,4 +60,9 @@ module ThemeHelper
     render 'woople-theme/impersonation_banner', impersonation: model
   end
 
+  def breadcrumb(organization_path)
+   render partial: 'woople-theme/breadcrumb',
+           object: ThemePresentation.wrap({organization_path: organization_path}, WoopleTheme::BreadcrumbPresenter)
+  end
+
 end
