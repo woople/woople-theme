@@ -1,0 +1,11 @@
+<div class="user-and-status">
+  <div class="row-fluid">
+    <div class="span5">
+      <%= image_tag user_and_status.image, size: '25x25' %>
+      <span><%= user_and_status.name %></span>
+    </div>
+    <div class="span7">
+      <%= status_alert user_and_status.status_color, user_and_status.status_description %>
+    </div>
+  </div>
+</div>
