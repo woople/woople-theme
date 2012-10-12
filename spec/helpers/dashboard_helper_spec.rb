@@ -96,6 +96,29 @@ describe DashboardHelper do
     end
   end
 
+  describe '#user_and_status' do
+    data = {
+      image: '/assets/retina_thumb/missing.png',
+      name: 'Christopher Mudiappahpillai',
+      status_color: :red,
+      status_description: '3 essentials and 123 elective points required.'
+    }
+
+    subject do
+      helper.user_and_status data
+    end
+
+    it 'renders the user and status' do
+      page = Capybara::Node::Simple.new subject
+
+      page.find('img')[:src].should eq '/assets/woople-theme/missing-profile.png'
+      page.find('.span5 span').text.should eq data[:name]
+      page.find('.status-alert')[:class].should eq 'alert alert-error status-alert'
+      page.find('.status-alert strong').text.should eq data[:status_color].to_s.capitalize!
+      page.find('.status-alert span').text.should eq data[:status_description]
+    end
+  end
+
   describe "#essentials_section" do
     subject do
       helper.essentials_section({
