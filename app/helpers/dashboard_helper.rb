@@ -4,6 +4,10 @@ module DashboardHelper
            object: ThemePresentation.wrap({ color: color, description: description }, WoopleTheme::Dashboard::StatusAlertPresenter)
   end
 
+  def user_and_status(data)
+    render partial: 'woople-theme/dashboard/user_and_status', object: ThemePresentation.wrap(data, WoopleTheme::Dashboard::UserAndStatusPresenter)
+  end
+
   def essentials_section(presenter)
     render partial: 'woople-theme/dashboard/essentials_section',
            object: ThemePresentation.wrap(presenter, WoopleTheme::Dashboard::EssentialsSectionPresenter)
