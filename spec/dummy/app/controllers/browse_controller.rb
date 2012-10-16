@@ -128,6 +128,7 @@ class BrowseController < ApplicationController
 
   def random_user
     {
+      id: (1..100).to_a.sample,
       image: '/assets/retina_thumb/missing.png',
       name: 'Christopher Mudiappahpillai',
       member_dashboard_path: '/member-dashboard',

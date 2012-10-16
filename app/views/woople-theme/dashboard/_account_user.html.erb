@@ -7,6 +7,6 @@
     <%= status_alert account_user.status_color, account_user.status_description %>
   </div>
   <div class="span2 remind-column">
-    <button class="btn btn-primary"><i class="icon-envelope-alt icon-white"></i> Remind</button>
+    <button class="btn btn-primary" data-user-id="<%= account_user.id %>"><i class="icon-envelope-alt icon-white"></i> Remind</button>
   </div>
 </div>

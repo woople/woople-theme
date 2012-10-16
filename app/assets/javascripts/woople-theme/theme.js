@@ -14,6 +14,7 @@
 //= require fastclick.min_
 //= require jwplayer/jwplayer
 //= require highcharts
+//= require underscore-min
 //= require_tree .
 
 function resizeFix() {
