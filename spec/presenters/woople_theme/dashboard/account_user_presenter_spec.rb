@@ -4,7 +4,7 @@ describe WoopleTheme::Dashboard::AccountUserPresenter do
   describe '#image' do
     context 'no image' do
       subject do
-        data = OpenStruct.new image: '/assets/retina_thumb/missing.png', name: 'GOATSE', member_dashboard_path: 'GOATSE', status_color: :red, status_description: 'GOATSE'
+        data = OpenStruct.new id:1, image: '/assets/retina_thumb/missing.png', name: 'GOATSE', member_dashboard_path: 'GOATSE', status_color: :red, status_description: 'GOATSE'
         WoopleTheme::Dashboard::AccountUserPresenter.new(data).image
       end
 
@@ -17,7 +17,7 @@ describe WoopleTheme::Dashboard::AccountUserPresenter do
       profile_image_url = 'https://woople.s3.amazonaws.com/gwar.jpg'
 
       subject do
-        data = OpenStruct.new image: profile_image_url, name: 'GOATSE', member_dashboard_path: 'GOATSE', status_color: :red, status_description: 'GOATSE'
+        data = OpenStruct.new id:1, image: profile_image_url, name: 'GOATSE', member_dashboard_path: 'GOATSE', status_color: :red, status_description: 'GOATSE'
         WoopleTheme::Dashboard::AccountUserPresenter.new(data).image
       end
 

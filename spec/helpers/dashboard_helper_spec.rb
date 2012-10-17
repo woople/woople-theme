@@ -55,6 +55,7 @@ describe DashboardHelper do
 
     context 'accordion inner' do
       user1 = {
+        id: 1,
         image: '/assets/retina_thumb/missing.png',
         name: 'Christopher Mudiappahpillai',
         member_dashboard_path: '/member_dashboards/2757',
@@ -62,6 +63,7 @@ describe DashboardHelper do
         status_description: '3 essentials and 123 elective points required.'
       }
       user2 = {
+        id: 2,
         image: 'https://woople.s3.amazonaws.com/gwar.jpg',
         name: 'Joannou Ng',
         member_dashboard_path: '/member_dashboards/113037',

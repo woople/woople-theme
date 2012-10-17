@@ -12,7 +12,7 @@
       alert('Sending a reminder to: '+ userId);
     };
     $(function() {
-        new OrganizationDashboardController({reminderCallback: reminderEmail});
+      new OrganizationDashboardController().init({reminderCallback: reminderEmail});
     });
   </script>
 <% end %>
