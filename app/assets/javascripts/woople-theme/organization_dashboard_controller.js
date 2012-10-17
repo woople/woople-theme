@@ -1,10 +1,13 @@
 (function(){
-   function OrganizationDashboardController(options) {
-      this.debugMode       = false;
+  function OrganizationDashboardController() {}
 
-      this.reminderCallback = options.reminderCallback;
-      this.setupListeners();
-  }
+  OrganizationDashboardController.prototype.init = function(options, debugMode) {
+    this.debugMode = debugMode != null ? debugMode : false;
+    this.reminderCallback = options.reminderCallback;
+    this.setupListeners();
+
+    this.log('initialize');
+  };
 
   OrganizationDashboardController.prototype.setupListeners = function() {
     this.log('setup listeners');
@@ -17,12 +20,16 @@
     if (this.isPhone()) {
       $('#organization-accounts button').addClass('btn-large');
     } else {
-      $('#organization-accounts').popover({
-        selector: '.status-alert',
-        placement: 'top',
-        template: '<div class="popover status-popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
-      });
+      this.createPopover();
     }
+  };
+
+  OrganizationDashboardController.prototype.createPopover = function() {
+    $('#organization-accounts').popover({
+      selector: '.status-alert',
+      placement: 'top',
+      template: '<div class="popover status-popover"><div class="arrow"></div><div class="popover-inner"><div class="popover-content"><p></p></div></div></div>'
+    });
   };
 
   OrganizationDashboardController.prototype.bindReminderButtons = function() {
@@ -43,12 +50,15 @@
   };
 
   OrganizationDashboardController.prototype.log = function(message) {
-    if (!this.debugMode) return;
-    console.log("[OrganizationDashboardController]", message);
+    if (this.debugMode) console.log("[OrganizationDashboardController]", message);
   };
 
   OrganizationDashboardController.prototype.isPhone = function() {
-    return $(window).width() <= 480 ? true : false;
+    return this.windowWidth() <= 480 ? true : false;
+  };
+
+  OrganizationDashboardController.prototype.windowWidth = function () {
+    return $(window).width();
   };
 
   this.OrganizationDashboardController = OrganizationDashboardController;

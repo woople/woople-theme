@@ -6,7 +6,7 @@ class PersonalReport
   @YELLOW_GOAL = 4;
   @GREEN_GOAL  = 7;
 
-  init: (selector, @debugMode) ->
+  init: (selector, @debugMode=false) ->
     @selector  = $(selector)
 
     @log('initialize')
