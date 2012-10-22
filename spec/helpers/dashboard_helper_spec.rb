@@ -55,18 +55,18 @@ describe DashboardHelper do
 
     context 'accordion inner' do
       user1 = {
-        id: 1,
         image: '/assets/retina_thumb/missing.png',
         name: 'Christopher Mudiappahpillai',
         member_dashboard_path: '/member_dashboards/2757',
+        reminder_path: '/',
         status_color: :red,
         status_description: '3 essentials and 123 elective points required.'
       }
       user2 = {
-        id: 2,
         image: 'https://woople.s3.amazonaws.com/gwar.jpg',
         name: 'Joannou Ng',
         member_dashboard_path: '/member_dashboards/113037',
+        reminder_path: '/',
         status_color: :yellow,
         status_description: '7 essentials and 113 elective points required.'
       }
@@ -94,6 +94,7 @@ describe DashboardHelper do
         end
 
         page.should have_css 'button.btn.btn-primary i.icon-envelope-alt.icon-white', count: 2
+        page.should have_css 'button.btn.btn-primary i.icon-ok.icon-white', count: 2
       end
     end
   end

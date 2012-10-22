@@ -1,5 +1,7 @@
 #= require spec_helper
 #= require underscore-min
+#= require twitter/bootstrap/tooltip
+#= require twitter/bootstrap/popover
 #= require woople-theme/organization_dashboard_controller
 
 describe 'OrganizationDashboardController', ->
@@ -43,13 +45,44 @@ describe 'OrganizationDashboardController', ->
   #this is a bit integrated, otherwise we end up in some funky stubbing
   describe 'bindReminderButtons', ->
     it 'binds the callback to the click event', ->
-      callbackSpy = sinon.spy()
-      options =
-        reminderCallback: callbackSpy
       sinon.stub(@sut,'createPopover')
-      @sut.init(options)
+      @sut.init()
+      callbackStub = sinon.stub(@sut, 'sendReminder')
+
       $('#organization-accounts .remind-column .btn').first().click()
-      expect(callbackSpy).to.have.been.calledOnce
+      expect(callbackStub).to.have.been.calledOnce
+
+  describe 'sendReminder', ->
+    beforeEach ->
+      @ajax     = sinon.stub(jQuery, 'ajax')
+    afterEach ->
+      @ajax.restore()
+
+    it 'tells the button to change when the reminder is successful', ->
+      url      = '/reminder'
+      button   = $('#organization-accounts button').first()
+      callback = sinon.stub(@sut, 'changeButton')
+      @ajax(
+        success: callback
+      )
+      @ajax.yieldTo('success')
+
+      @sut.sendReminder(url, button)
+
+      expect(callback).to.be.called
+
+    it 'tells the user something went wrong', ->
+      url      = '/reminder'
+      button   = $('#organization-accounts button').first()
+      callback = sinon.stub(@sut, 'remindError')
+      @ajax(
+        error: callback
+      )
+      @ajax.yieldTo('error')
+
+      @sut.sendReminder(url, button)
+
+      expect(callback).to.be.called
 
   describe 'log', ->
     beforeEach ->
@@ -58,10 +91,7 @@ describe 'OrganizationDashboardController', ->
     it 'writes to the console when debugging is enabled', ->
       stub = sinon.stub(console, 'log').returns(true)
 
-      @sut.init(
-        reminderCallback: 'foo'
-        , true # debugMode
-      )
+      @sut.init(true)
 
       expect(stub).to.have.been.calledOnce
       stub.restore()
@@ -69,10 +99,7 @@ describe 'OrganizationDashboardController', ->
     it 'does not write to the console when debugging is disabled', ->
       stub = sinon.stub(console, 'log').returns(true)
 
-      @sut.init(
-        reminderCallback: 'foo'
-        , false # debugMode
-      )
+      @sut.init(false)
 
       expect(stub).to.not.have.been.called
       stub.restore()

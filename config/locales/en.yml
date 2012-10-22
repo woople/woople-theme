@@ -97,6 +97,11 @@ en:
           points_earned:
             one: '%{points_earned} of %{count} elective point earned'
             other: '%{points_earned} of %{count} elective points earned'
+      organization:
+        reminder:
+          sent: Sent!
+          remind: Remind
+          error: "Oops! Something went wrong.\nPlease try again or contact support."
 
     reports:
       chart:

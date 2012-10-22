@@ -5,14 +5,3 @@
 </section>
 
 <%= organization_accounts @presenter.accounts %>
-
-<% content_for(:extra_javascript) do %>
-  <script type="text/javascript">
-    var reminderEmail = function(userId) {
-      alert('Sending a reminder to: '+ userId);
-    };
-    $(function() {
-      new OrganizationDashboardController().init({reminderCallback: reminderEmail});
-    });
-  </script>
-<% end %>
