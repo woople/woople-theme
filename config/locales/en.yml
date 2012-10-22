@@ -1,5 +1,12 @@
 en:
   woople_theme:
+    profile_links:
+      feature_request:
+        label: Feature Request
+      help:
+        label: Help
+      logout:
+        label: Log out
     company:
       name: "Woople"
       url: http://woople.com
