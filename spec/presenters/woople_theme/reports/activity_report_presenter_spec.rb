@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe WoopleTheme::Reports::PersonalReportPresenter do
+describe WoopleTheme::Reports::ActivityReportPresenter do
   describe "#report_link" do
     let(:data) { stub_presenter(name: 'daily', type: 'daily') }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     specify { subject.report_link.should eq('<a href="#daily" data-container="daily_report_chart" data-path="/data.json" data-toggle="tab" data-type="daily">Daily</a>') }
   end
@@ -12,7 +12,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
   describe "#name" do
     let(:data) { stub_presenter(name: 'daily') }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     specify { subject.name.should eq('Daily') }
   end
@@ -20,7 +20,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
   describe "#tab_name" do
     let(:data) { stub_presenter(type: 'Test') }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     specify { subject.tab_name.should eq('test') }
   end
@@ -28,7 +28,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
   describe "#href" do
     let(:data) { stub_presenter(type: 'test') }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     specify { subject.href.should eq('#test') }
   end
@@ -36,7 +36,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
   describe "#container" do
     let(:data) { stub_presenter(type: 'test') }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     specify { subject.container.should eq('test_report_chart') }
   end
@@ -44,13 +44,13 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
   describe "#legend" do
     let(:data) { stub_presenter }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     describe 'when report is daily' do
       it 'returns the correct legend' do
         subject.stub(:daily?) { true }
 
-        subject.legend.should eq(WoopleTheme::Reports::PersonalReportPresenter::DAILY_LEGEND)
+        subject.legend.should eq(WoopleTheme::Reports::ActivityReportPresenter::DAILY_LEGEND)
       end
     end
 
@@ -58,7 +58,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
       it 'returns the correct legend' do
         subject.stub(:weekly?) { true }
 
-        subject.legend.should eq(WoopleTheme::Reports::PersonalReportPresenter::WEEKLY_LEGEND)
+        subject.legend.should eq(WoopleTheme::Reports::ActivityReportPresenter::WEEKLY_LEGEND)
       end
     end
 
@@ -66,7 +66,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
       it 'returns the correct legend' do
         subject.stub(:monthly?) { true }
 
-        subject.legend.should eq(WoopleTheme::Reports::PersonalReportPresenter::MONTHLY_LEGEND)
+        subject.legend.should eq(WoopleTheme::Reports::ActivityReportPresenter::MONTHLY_LEGEND)
       end
     end
   end
@@ -74,7 +74,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
   describe "#chart_title" do
     let(:data) { stub_presenter }
 
-    subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+    subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
     describe 'when report is daily' do
       it 'returns the correct title' do
@@ -105,7 +105,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
     describe 'when report type is week' do
       let(:data) { stub_presenter(type: 'week') }
 
-      subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+      subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
       specify { subject.daily?.should be_true }
     end
@@ -113,7 +113,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
     describe 'when report type is not week' do
       let(:data) { stub_presenter(type: 'week-not') }
 
-      subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+      subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
       specify { subject.daily?.should_not be_true }
     end
@@ -123,7 +123,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
     describe 'when report type is month' do
       let(:data) { stub_presenter(type: 'month') }
 
-      subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+      subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
       specify { subject.weekly?.should be_true }
     end
@@ -131,7 +131,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
     describe 'when report type is not month' do
       let(:data) { stub_presenter(type: 'month-not') }
 
-      subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+      subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
       specify { subject.weekly?.should_not be_true }
     end
@@ -141,7 +141,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
     describe 'when report type is annual' do
       let(:data) { stub_presenter(type: 'annual') }
 
-      subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+      subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
       specify { subject.monthly?.should be_true }
     end
@@ -149,7 +149,7 @@ describe WoopleTheme::Reports::PersonalReportPresenter do
     describe 'when report type is not annual' do
       let(:data) { stub_presenter(type: 'annual-not') }
 
-      subject { WoopleTheme::Reports::PersonalReportPresenter.new(data) }
+      subject { WoopleTheme::Reports::ActivityReportPresenter.new(data) }
 
       specify { subject.monthly?.should_not be_true }
     end

@@ -1,13 +1,13 @@
 require 'spec_helper'
 
-describe PersonalReportHelper do
+describe ActivityReportHelper do
 
-  describe "#personal_reports" do
+  describe "#activity_reports" do
     it 'renders correctly' do
       report_stub = stub(name: 'Daily', type: :week, data_path: '/data.json', download_path: '/data.csv')
 
       helper_stub = stub(reports: [report_stub])
-      html = helper.personal_reports(helper_stub)
+      html = helper.activity_reports(helper_stub)
       page = Capybara::Node::Simple.new(html)
 
       page.find('#reports_nav li:first-child').text.should eq(report_stub.name)
@@ -15,10 +15,10 @@ describe PersonalReportHelper do
     end
   end
 
-  describe "#personal_report_legend" do
+  describe "#activity_report_legend" do
     it 'renders correctly' do
       helper_stub = ['1-2', '3-4', '5+']
-      html = helper.personal_report_legend(helper_stub)
+      html = helper.activity_report_legend(helper_stub)
       page = Capybara::Node::Simple.new(html)
 
       page.find('.legend span:nth-child(1)')[:class].should eq('badge badge-error')
@@ -32,10 +32,10 @@ describe PersonalReportHelper do
     end
   end
 
-  describe "#personal_report_download" do
+  describe "#activity_report_download" do
     it 'renders correctly' do
       path = 'http://example.com'
-      html = helper.personal_report_download(path)
+      html = helper.activity_report_download(path)
       page = Capybara::Node::Simple.new(html)
 
       page.find('a')[:href].should eq(path)
@@ -44,7 +44,7 @@ describe PersonalReportHelper do
 
     it 'returns nil when a link is not provided' do
       path = nil
-      html = helper.personal_report_download(path)
+      html = helper.activity_report_download(path)
 
       html.should be_nil
     end

@@ -101,8 +101,8 @@ en:
         html: "<i class='icon-download-alt'></i> Download"
       legend:
         viewed: "%{range} Viewed"
-      personal:
-        label: Progress Report
+      activity:
+        label: Activity Report
         description: See how you are doing over time
   date:
     formats:
