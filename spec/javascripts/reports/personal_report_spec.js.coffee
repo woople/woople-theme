@@ -1,14 +1,14 @@
 #= require spec_helper
 #= require twitter/bootstrap/tab
 #= require highcharts
-#= require woople-theme/reports/personal_report
+#= require woople-theme/reports/activity_report
 
-describe 'PersonalReport', ->
+describe 'ActivityReport', ->
   beforeEach ->
     $('body').html( JST['templates/tabs']() )
 
     @selector = $('#spec_reports_nav a[data-toggle="tab"]')
-    @sut      = new PersonalReport()
+    @sut      = new ActivityReport()
 
   describe 'shownListener', ->
     it 'should load the report based on the selector data-attributes', ->
@@ -165,7 +165,7 @@ describe 'PersonalReport', ->
         views: 7
         relearns: 0
 
-      expectation = "rgba(#{PersonalReport.GREEN}, 1)"
+      expectation = "rgba(#{ActivityReport.GREEN}, 1)"
 
       expect(@sut.gradeColour(dataMock, 1)).to.equal(expectation)
 
@@ -176,7 +176,7 @@ describe 'PersonalReport', ->
         views: 4
         relearns: 0
 
-      expectation = "rgba(#{PersonalReport.YELLOW}, 1)"
+      expectation = "rgba(#{ActivityReport.YELLOW}, 1)"
 
       expect(@sut.gradeColour(dataMock, 1)).to.equal(expectation)
 
@@ -187,7 +187,7 @@ describe 'PersonalReport', ->
         views: 1
         relearns: 0
 
-      expectation = "rgba(#{PersonalReport.RED}, 1)"
+      expectation = "rgba(#{ActivityReport.RED}, 1)"
 
       expect(@sut.gradeColour(dataMock, 1)).to.equal(expectation)
 
@@ -210,7 +210,7 @@ describe 'PersonalReport', ->
 
       @sut.init('x', true)
 
-      expect(stub.withArgs("[PersonalReport] initialize")).to.have.been.calledOnce
+      expect(stub.withArgs("[ActivityReport] initialize")).to.have.been.calledOnce
       stub.restore()
 
     it 'should not write to the console when debugging is disabled', ->

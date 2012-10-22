@@ -1,6 +1,6 @@
 <div class="tab-pane" id="<%= report.tab_name %>" data-title="<%= report.chart_title %>">
-  <%= personal_report_download(report.download_path) %>
-  <%= personal_report_legend(report.legend) %>
+  <%= activity_report_download(report.download_path) %>
+  <%= activity_report_legend(report.legend) %>
   <div class="glass_pane"></div>
   <div class="report_chart" id="<%= report.container %>"></div>
 </div>

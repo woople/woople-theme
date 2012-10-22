@@ -1,10 +1,9 @@
-require 'forwardable'
 require 'action_view/helpers/url_helper'
 require 'explicit_delegator'
 
 module WoopleTheme
   module Reports
-    class PersonalReportPresenter < ExplicitDelegator
+    class ActivityReportPresenter < ExplicitDelegator
       include ActionView::Helpers::UrlHelper
 
       enforce_definitions :name, :type, :data_path, :download_path

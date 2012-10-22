@@ -1,4 +1,4 @@
-class PersonalReport
+class ActivityReport
   @RED    = '255, 0, 0';
   @YELLOW = '255, 215, 0';
   @GREEN  = '70, 136, 71';
@@ -150,9 +150,9 @@ class PersonalReport
   gradeColour: (data, opacity) ->
     total = (parseInt(data.views, 10) + parseInt(data.relearns, 10))
 
-    return "rgba(#{PersonalReport.RED}, #{opacity})" if (total < (PersonalReport.YELLOW_GOAL * @multiplier()))
-    return "rgba(#{PersonalReport.YELLOW}, #{opacity})" if (total < (PersonalReport.GREEN_GOAL * @multiplier()))
-    return "rgba(#{PersonalReport.GREEN}, #{opacity})" if (total >= (PersonalReport.GREEN_GOAL * @multiplier()))
+    return "rgba(#{ActivityReport.RED}, #{opacity})" if (total < (ActivityReport.YELLOW_GOAL * @multiplier()))
+    return "rgba(#{ActivityReport.YELLOW}, #{opacity})" if (total < (ActivityReport.GREEN_GOAL * @multiplier()))
+    return "rgba(#{ActivityReport.GREEN}, #{opacity})" if (total >= (ActivityReport.GREEN_GOAL * @multiplier()))
 
   multiplier: ->
     return 1 if @isWeekly()
@@ -169,6 +169,6 @@ class PersonalReport
     @reportType is 'annual'
 
   log: (message) ->
-    console.log("[PersonalReport] " + message) if @debugMode
+    console.log("[ActivityReport] " + message) if @debugMode
 
-@PersonalReport = PersonalReport
+@ActivityReport = ActivityReport
