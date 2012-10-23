@@ -107,6 +107,10 @@ class BrowseController < ApplicationController
     end
   end
 
+  def send_reminder
+    head [ :ok, :bad_request ].sample
+  end
+
   private
 
   def sample_report_data
@@ -134,10 +138,10 @@ class BrowseController < ApplicationController
 
   def random_user
     {
-      id: (1..100).to_a.sample,
       image: '/assets/retina_thumb/missing.png',
       name: 'Christopher Mudiappahpillai',
       member_dashboard_path: '/member-dashboard',
+      reminder_path: "/reminder",
       status_color: [:red, :yellow, :green].sample,
       status_description: '3 essentials and 123 elective points required.'
     }

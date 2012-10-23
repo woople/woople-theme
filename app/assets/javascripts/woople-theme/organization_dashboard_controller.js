@@ -1,9 +1,12 @@
+$(function() {
+  if ($('#organization-accounts')) new OrganizationDashboardController().init();
+});
+
 (function(){
   function OrganizationDashboardController() {}
 
-  OrganizationDashboardController.prototype.init = function(options, debugMode) {
-    this.debugMode = debugMode != null ? debugMode : false;
-    this.reminderCallback = options.reminderCallback;
+  OrganizationDashboardController.prototype.init = function(debugMode) {
+    this.debugMode = debugMode !== null ? debugMode : false;
     this.setupListeners();
 
     this.log('initialize');
@@ -35,29 +38,48 @@
   OrganizationDashboardController.prototype.bindReminderButtons = function() {
     this.log('bind reminder button events');
 
-    var reminderClick = function(userId) {
+    var reminderClick = function(reminderPath, button) {
       this.log('fire reminder callback');
-      this.reminderCallback(userId);
+      this.sendReminder(reminderPath, button);
     };
 
     var clickBinder = function(button){
-      var userId = $(button).data('userId');
-      $(button).click(_.bind(reminderClick, this, userId));
+      var reminderPath = $(button).data('reminderPath');
+      $(button).click(_.bind(reminderClick, this, reminderPath, button));
     };
 
     var buttons = $('#organization-accounts .remind-column .btn');
     _.each(buttons, clickBinder , this);
   };
 
+  OrganizationDashboardController.prototype.sendReminder = function(reminderPath, button) {
+    $.ajax({
+      type    : 'POST',
+      url     : reminderPath,
+      context : button,
+      success : this.changeButton,
+      error   : this.remindError
+    });
+  };
+
+  OrganizationDashboardController.prototype.changeButton = function(data, textStatus, jqXHR) {
+    $(this).addClass('btn-success sent').prop('disabled', true);
+  };
+
+  OrganizationDashboardController.prototype.remindError = function(jqXHR, textStatus, errorThrown) {
+    alert($(this).data('errorMessage'));
+  };
+
   OrganizationDashboardController.prototype.log = function(message) {
-    if (this.debugMode) console.log("[OrganizationDashboardController]", message);
+    if (!this.debugMode) return;
+    console.log("[OrganizationDashboardController]", message);
   };
 
   OrganizationDashboardController.prototype.isPhone = function() {
     return this.windowWidth() <= 480 ? true : false;
   };
 
-  OrganizationDashboardController.prototype.windowWidth = function () {
+  OrganizationDashboardController.prototype.windowWidth = function() {
     return $(window).width();
   };
 
