@@ -44,8 +44,10 @@ $(function() {
     };
 
     var clickBinder = function(button){
-      var reminderPath = $(button).data('reminderPath');
-      $(button).click(_.bind(reminderClick, this, reminderPath, button));
+      var reminderPath          = $(button).data('reminder-path');
+      var debouncedClickHandler = _.debounce(reminderClick, 300); // avoid button click spamming.
+      var boundClickHandler     = _.bind(debouncedClickHandler, this, reminderPath, button);
+      $(button).click(boundClickHandler);
     };
 
     var buttons = $('#organization-accounts .remind-column .btn');
@@ -53,6 +55,7 @@ $(function() {
   };
 
   OrganizationDashboardController.prototype.sendReminder = function(reminderPath, button) {
+    $(button).prop('disabled', true);
     $.ajax({
       type    : 'POST',
       url     : reminderPath,
@@ -63,11 +66,12 @@ $(function() {
   };
 
   OrganizationDashboardController.prototype.changeButton = function(data, textStatus, jqXHR) {
-    $(this).addClass('btn-success sent').prop('disabled', true);
+    $(this).addClass('btn-success sent');
   };
 
   OrganizationDashboardController.prototype.remindError = function(jqXHR, textStatus, errorThrown) {
     alert($(this).data('errorMessage'));
+    $(this).prop('disabled', false);
   };
 
   OrganizationDashboardController.prototype.log = function(message) {

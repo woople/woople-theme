@@ -20,7 +20,7 @@ describe 'OrganizationDashboardController', ->
 
   describe 'setupListeners', ->
     beforeEach ->
-      @mobileStub = sinon.stub(@sut, 'mobileSetup')
+      @mobileStub  = sinon.stub(@sut, 'mobileSetup')
       @buttonsStub = sinon.stub(@sut, 'bindReminderButtons')
       @sut.setupListeners()
 
@@ -44,12 +44,19 @@ describe 'OrganizationDashboardController', ->
 
   #this is a bit integrated, otherwise we end up in some funky stubbing
   describe 'bindReminderButtons', ->
+    before ->
+      @clock = sinon.useFakeTimers()
+    after ->
+      @clock.restore();
+
     it 'binds the callback to the click event', ->
       sinon.stub(@sut,'createPopover')
       @sut.init()
       callbackStub = sinon.stub(@sut, 'sendReminder')
 
       $('#organization-accounts .remind-column .btn').first().click()
+      @clock.tick(300) # wait for the debounce
+
       expect(callbackStub).to.have.been.calledOnce
 
   describe 'sendReminder', ->
@@ -110,7 +117,7 @@ describe 'OrganizationDashboardController', ->
       expect(@sut.isPhone()).to.be.true
       windowStub.restore()
 
-      windowStub =sinon.stub(@sut, "windowWidth").returns(280)
+      windowStub = sinon.stub(@sut, "windowWidth").returns(280)
       expect(@sut.isPhone()).to.be.true
       windowStub.restore()
 
