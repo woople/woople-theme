@@ -7,7 +7,7 @@ class PageHeaderPresenter < ExplicitDelegator
   enforce_definitions :description
 
   def title
-    @delegate.name || @delegate.title
+    name || @delegate.title
   end
 
   def image_class
