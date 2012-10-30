@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency 'rails', '~> 3.2.8'
-  s.add_dependency 'less-rails-bootstrap', '2.0.13'
+  s.add_dependency 'less-rails-bootstrap', '2.1.1'
   s.add_dependency 'therubyracer'
   s.add_dependency 'coffee-rails', '~> 3.2.1'
   s.add_dependency 'highcharts-rails', '2.3.3'
