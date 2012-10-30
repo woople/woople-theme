@@ -237,9 +237,10 @@ class BrowseController < ApplicationController
       startable?: [true, false].sample,
       url: '#',
       relearnings: rand(0..7).times.collect { |index| random_video(index, [true, false].sample, true, true) },
-      history: rand(0..7).times.collect { random_history_item },
-      completed?: [true, false].sample
-    ).tap { |assessment| assessment.send 'passed?=', [true, false].sample if [true, false].sample }
+      history: rand(1..7).times.collect { random_history_item },
+      completed?: [true, false].sample,
+      passed?: [true, false, nil].sample
+    )
   end
 
   def random_history_item
