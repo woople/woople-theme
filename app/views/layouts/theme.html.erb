@@ -37,11 +37,12 @@
             <div class="content">
               <%= yield %>
             </div>
+            <p class="copyright"><a href="<%t 'woople_theme.company.url' %>"><%=t 'woople_theme.company.name' %></a> &copy; <%= DateTime.now.strftime("%Y") %></p>
           </div>
 
         </div>
+
       </div>
-      <p class="copyright"><a href="<%t 'woople_theme.company.url' %>"><%=t 'woople_theme.company.name' %></a> &copy; <%= DateTime.now.strftime("%Y") %></p>
     </div>
 
     <%= yield :extra_javascript %>
