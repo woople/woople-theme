@@ -1,6 +1,8 @@
 en:
   woople_theme:
     profile_links:
+      edit_profile:
+        label: Edit Profile
       feature_request:
         label: Feature Request
       help:
@@ -116,6 +118,22 @@ en:
       activity:
         label: Activity Report
         description: See how you are doing over time
+
+    settings:
+      profile:
+        title: Your Profile
+        error_html: <strong>Uh Oh!</strong> There were problems updating your profile.
+        error_field_html: '<span class="help-block">%{message}</span>'
+        success_html: <strong>Yay!</strong> You've successfully updated your profile.
+        cancel: Cancel
+        change: Change
+        remove: Remove
+        save_changes: Save Changes
+        choose_image: Choose Image
+        name: Name
+        email: Email
+        image: Avatar
+
   date:
     formats:
       default: ! '%b %d %Y'
