@@ -15,6 +15,7 @@
 //= require jwplayer/jwplayer
 //= require highcharts
 //= require underscore-min
+//= require jasny/bootstrap/bootstrap-fileupload
 //= require_tree .
 
 function resizeFix() {
