@@ -1,0 +1,35 @@
+@import "woople-theme/variables.css.less";
+
+.content {
+  form {
+    padding-top: @contentPadding;
+
+    .alert {
+      margin-top: -@contentPadding * 0.5;
+      margin-left: @contentPadding * 0.5;
+      margin-right: @contentPadding * 0.5;
+    }
+
+    .form-actions {
+      margin-left: 1px;
+      margin-right: 1px;
+    }
+  }
+}
+
+
+@media (max-width: 767px) {
+  .content {
+    form {
+      .control-group {
+        padding-left: @phoneMargin;
+        padding-right: @phoneMargin;
+      }
+
+      .form-actions {
+        padding-left: @phoneMargin;
+        padding-right: @phoneMargin;
+      }
+    }
+  }
+}
