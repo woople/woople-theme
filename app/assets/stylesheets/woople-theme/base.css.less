@@ -7,7 +7,6 @@ body {
 
 body > .container {
   margin-bottom:40px;
-  overflow-x:hidden;
 }
 
 .close-navigation, .navigation {
@@ -35,6 +34,8 @@ a:hover {
 }
 
 .copyright {
+  float:right;
+  clear: left;
   text-align:right;
   margin-right:30px;
   margin-top:15px;
@@ -73,7 +74,7 @@ a:hover {
   body > .container {
     margin-left:0;
     margin-right:0;
-    width:100%;
+    overflow-x: visible;
   }
 
   .close-navigation {
@@ -108,6 +109,11 @@ a:hover {
 
   #navigation:target .navigation {
     display:none;
+  }
+
+  #navigation:target {
+    width:100%;
+    overflow: hidden;
   }
 }
 
