@@ -1,0 +1,16 @@
+machine:
+  ruby:
+    version:
+      1.9.3-p194
+
+database:
+  override:
+    - echo 'by-passing database inference'
+
+test:
+  override:
+    - bundle exec rspec --color -r rspec-extra-formatters -f progress -f JUnitFormatter --out circleci/junit/rspec_null.xml spec
+  post:
+    - bundle exec rake konacha:run:
+        pwd:
+          spec/dummy
