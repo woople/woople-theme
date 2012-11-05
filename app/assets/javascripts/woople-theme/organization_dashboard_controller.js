@@ -75,7 +75,7 @@ $(function() {
   };
 
   OrganizationDashboardController.prototype.log = function(message) {
-    if (!this.debugMode) return;
+    if (this.debugMode !== true) return;
     console.log("[OrganizationDashboardController]", message);
   };
 
