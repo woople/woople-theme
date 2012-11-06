@@ -4,7 +4,7 @@ class CourseHeaderPresenter < SimpleDelegator
   end
 
   def title
-    __getobj__.name
+    __getobj__.title
   end
 
 end
