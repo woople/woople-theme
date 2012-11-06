@@ -22,19 +22,28 @@
     margin-top: 8px;
   }
 
-  img {
-    .border-radius(4px);
-    .box-shadow(0 1px 3px rgba(0, 0, 0, 0.125));
-  }
-
   .span8 {
     padding-top: 1px;
 
     a {
-      margin-left: 4px;
       vertical-align: middle;
       font-size: 18px;
       font-weight: @title-font-weight;
+      display: block;
+      width: 100%;
+      height: 25px;
+
+      img {
+        float: left;
+        .border-radius(4px);
+        .box-shadow(0 1px 3px rgba(0, 0, 0, 0.125));
+      }
+      span {
+        margin-left: 4px;
+        line-height: 25px;
+        float: left;
+        display: inline-block;
+      }
     }
   }
 
