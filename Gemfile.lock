@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    woople-theme (0.6.25)
+    woople-theme (0.6.26)
       coffee-rails (~> 3.2.1)
       highcharts-rails (= 2.3.3)
       less-rails-bootstrap (= 2.0.13)
@@ -171,7 +171,7 @@ GEM
     treetop (1.4.12)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.34)
+    tzinfo (0.3.35)
     xpath (0.1.4)
       nokogiri (~> 1.3)
 
