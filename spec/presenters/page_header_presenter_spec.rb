@@ -21,7 +21,6 @@ describe PageHeaderPresenter do
       subject { PageHeaderPresenter.new(stub_presenter(title: 'Title')) }
 
       it "should have the title" do
-        subject.stub(:name).and_return('Name')
         subject.title.should eq('Title')
       end
     end
