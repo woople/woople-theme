@@ -2,7 +2,11 @@ require 'explicit_delegator'
 
 module WoopleTheme
   class VideoPresenter < ExplicitDelegator
-    enforce_definitions :name, :desktop_src, :mobile_src, :streamer, :liked?
+    enforce_definitions :name, :desktop_src, :mobile_src, :streamer, :favorite?, :liked?
+
+    def favorite_css_class
+      favorite? ? 'active' : ''
+    end
 
     def liked_css
       liked? == true ? 'active' : nil

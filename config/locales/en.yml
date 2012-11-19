@@ -27,6 +27,7 @@ en:
     profile:
       search: Search...
     video_modal:
+      favorite: Favorite
       like: Like
       dislike: Dislike
     assessment:
