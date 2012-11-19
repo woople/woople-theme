@@ -11,6 +11,11 @@
     </div>
   </div>
   <div class="modal-footer">
+    <button type="button" id="btn-favorite" class="btn <%= video.favorite_css_class %>" data-toggle="button">
+      <i class="icon-star"></i>
+      <%= t 'woople_theme.video_modal.favorite' %>
+    </button>
+
     <div class="btn-group" data-toggle="buttons-radio">
       <button class="btn btn-like <%= video.liked_css %>">
         <i class="icon-thumbs-up"></i> <%=t 'woople_theme.video_modal.like' %>

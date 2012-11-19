@@ -3,6 +3,18 @@ require 'spec_helper'
 describe WoopleTheme::VideoPresenter do
   subject { WoopleTheme::VideoPresenter.new(stub_presenter) }
 
+  describe '#favorite_css_class' do
+    it "returns 'active' when favorited" do
+      subject.stub favorite?: true
+      subject.favorite_css_class.should eq 'active'
+    end
+
+    it 'returns nothing when unfavorited' do
+      subject.stub favorite?: false
+      subject.favorite_css_class.should eq ''
+    end
+  end
+
   describe "#liked_css" do
     it "returns nothing" do
       subject.liked_css.should be_nil
@@ -42,7 +54,7 @@ describe WoopleTheme::VideoPresenter do
   private
 
   def stub_presenter(options = {})
-    defaults = {name: nil, desktop_src: nil, mobile_src: nil, streamer: nil, liked?: nil}
+    defaults = {name: nil, desktop_src: nil, mobile_src: nil, streamer: nil, favorite?: nil, liked?: nil}
     defaults.merge!(options)
 
     OpenStruct.new(defaults)
