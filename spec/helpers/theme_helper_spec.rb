@@ -27,7 +27,7 @@ describe ThemeHelper do
 
   describe "#video_modal" do
     it "renders the video modal correctly" do
-      video = stub(name: 'My video', desktop_src: "example", mobile_src: "example", streamer: "example", liked?: nil).as_null_object
+      video = stub(name: 'My video', desktop_src: "example", mobile_src: "example", streamer: "example", favorite?: nil, liked?: nil).as_null_object
       html = helper.video_modal(video)
       page = Capybara::Node::Simple.new(html)
       page.find('h3').should have_content(video.name)

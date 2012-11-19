@@ -13,11 +13,12 @@ class BrowseController < ApplicationController
   def video
     @course = random_course
 
-    @video  = OpenStruct.new(
+    @video = OpenStruct.new(
       name: video_names.sample,
       desktop_src: desktop_src,
       mobile_src: mobile_src,
       streamer: 'unknown',
+      favorite?: [true, false].sample,
       liked?: true
     )
 
