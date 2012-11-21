@@ -18,6 +18,7 @@ class BrowseController < ApplicationController
       desktop_src: desktop_src,
       mobile_src: mobile_src,
       streamer: 'unknown',
+      favorite_id: [nil, 123].sample,
       favorite?: [true, false].sample,
       liked?: true
     )
