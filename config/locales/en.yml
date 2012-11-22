@@ -119,6 +119,10 @@ en:
       activity:
         label: Activity Report
         description: See how you are doing over time
+      status:
+        views:
+          one: "<strong>Today:</strong> %{count} View"
+          other: "<strong>Today:</strong> %{count} Views"
 
     settings:
       profile:

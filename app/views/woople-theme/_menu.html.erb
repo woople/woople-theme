@@ -5,6 +5,13 @@
         <% section.name do |name| %>
           <li class="nav-header"><%= name %></li>
         <% end %>
+
+        <% section.widgets.each do |widget| %>
+          <li>
+            <%= render partial: widget.partial_path, locals: { model: widget.model } %>
+          </li>
+        <% end %>
+
         <% section.links.each do |link| %>
           <li class="<%= link.css_class %>"><a href="<%= link.url %>"><%= link.featured_tag(link.name + link.badge + link.certification_badge) %></a></li>
         <% end %>
@@ -12,4 +19,3 @@
     </ul>
   </div>
 </div>
-

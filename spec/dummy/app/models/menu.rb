@@ -1,17 +1,17 @@
 class Menu
   def self.generate(selection)
-    [continue_learning(selection), personal_report(selection), certification, featured, topics]
+    [activity(selection), certification, featured, topics]
   end
 
-  def self.continue_learning(selection)
+  def self.activity(selection)
     {
-      links: [ { name: 'Continue Learning', url: '/', featured: true, selected: (selection == 'continue-learning')  } ]
-    }
-  end
-
-  def self.personal_report(selection)
-    {
-      links: [ { name: 'Progress Report', url: '/report/personal', featured: true, selected: (selection == 'personal-report')  } ]
+      name: 'Activity',
+      widgets: [
+        activity_status_model
+      ],
+      links: [
+        { name: 'Continue Learning', url: '/', featured: true, selected: (selection == 'continue-learning') }
+      ]
     }
   end
 
@@ -68,6 +68,30 @@ class Menu
 
   def self.cat(name)
     { name: name, url: '#' }
+  end
+
+  private
+
+  def self.activity_status_model
+    views = rand(0..7)
+
+    percentage = ((views / 7.0) * 100)
+
+    css_class = case views
+      when 0..3 then 'progress-danger'
+      when 4..6 then 'progress-warning'
+      else 'progress-success'
+    end
+
+    OpenStruct.new(
+      model: {
+        css_class: css_class,
+        percentage: percentage,
+        subtitle: I18n.t('woople_theme.reports.status.views', count: views),
+        url: '/report/personal'
+      },
+      partial_path: 'woople-theme/reports/status/show'
+    )
   end
 
 end
