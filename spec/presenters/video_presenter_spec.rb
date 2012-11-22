@@ -54,7 +54,7 @@ describe WoopleTheme::VideoPresenter do
   private
 
   def stub_presenter(options = {})
-    defaults = {name: nil, desktop_src: nil, mobile_src: nil, streamer: nil, favorite?: nil, liked?: nil}
+    defaults = {name: nil, desktop_src: nil, mobile_src: nil, streamer: nil, favorite_id: nil, favorite?: nil, liked?: nil}
     defaults.merge!(options)
 
     OpenStruct.new(defaults)
