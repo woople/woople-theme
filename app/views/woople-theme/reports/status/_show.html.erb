@@ -1,0 +1,6 @@
+<div class="widget activity_status_report" data-url="<%= model[:url] %>">
+  <div class="progress <%= model[:css_class] %>">
+    <div class="bar" style="width: <%= number_to_percentage(model[:percentage]) %>;"></div>
+  </div>
+  <div class="subtitle"><%= model[:subtitle].html_safe %></div>
+</div>
