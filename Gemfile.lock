@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    woople-theme (0.8.2)
+    woople-theme (0.8.3)
       coffee-rails (~> 3.2.1)
       highcharts-rails (= 2.3.3)
       less-rails-bootstrap (= 2.0.13)
