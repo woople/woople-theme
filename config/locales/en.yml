@@ -26,7 +26,7 @@ en:
       assessment_requirement: "%{percent}% required"
     profile:
       search: Search...
-    video_modal:
+    video_player:
       favorite: Favorite
       like: Like
       dislike: Dislike

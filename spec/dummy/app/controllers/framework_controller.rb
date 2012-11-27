@@ -28,7 +28,7 @@ class FrameworkController < ApplicationController
         { name: 'Page Header', url: '#page_header' },
         { name: 'Content Items', url: '#content_items' },
         { name: 'Content Item Header', url: '#content_item_header' },
-        { name: 'Video Modal', url: '#video_modal' },
+        { name: 'Video Player', url: '#video_player' },
         { name: 'Outline', url: '#outline' },
         { name: 'Profile', url: '#profile' },
         { name: 'Menu', url: '#menu' }

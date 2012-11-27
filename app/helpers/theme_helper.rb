@@ -10,9 +10,9 @@ module ThemeHelper
     render partial: 'woople-theme/content_item', collection: collection
   end
 
-  def video_modal(video)
+  def video_player(video)
     video = ThemePresentation.wrap(video, WoopleTheme::VideoPresenter)
-    render 'woople-theme/video_modal', video: video
+    render 'woople-theme/video_player', video: video
   end
 
   def content_item_header

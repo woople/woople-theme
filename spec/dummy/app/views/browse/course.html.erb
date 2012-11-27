@@ -4,17 +4,17 @@
     var showingPlayer = true;
 
     var videoOptions = {
-      desktopSrc: '<%= @video.desktop_src.html_safe %>'
+      desktopSrc: '<%= @video.desktop_src.html_safe %>',
+      mobileSrc: '<%= @video.mobile_src.html_safe %>'
     };
   </script>
   <% end %>
 <% end %>
-<% content_for(:body_content) do %>
-  <%= video_modal(@video) if @video.present? %>
-<% end %>
 
 <section id="content_outline">
   <%= page_header(@course, CourseHeaderPresenter) %>
+
+  <%= video_player(@video) if @video.present? %>
 
   <% @course.units.each do |unit| %>
     <%= outline(unit) do |outline| %>
