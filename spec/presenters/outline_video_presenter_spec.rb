@@ -103,31 +103,19 @@ describe OutlineVideoPresenter do
     end
   end
 
-  # describe "#playback_state" do
-  #   describe "when the video is already completed" do
-  #     subject { presenter(completed: true) }
+  describe "#render_description" do
+    describe "when description is nil" do
+      subject { presenter(description: nil) }
 
-  #     it "returns as expected" do
-  #       subject.playback_state.should eq("<a href=\"#\"><i class='icon-ok'></i></a>")
-  #     end
-  #   end
+      specify { expect {|b| subject.render_description(&b) }.not_to yield_control }
+    end
 
-  #   describe "when the video is not completed, but is enabled" do
-  #     subject { presenter(completed: false, enabled: true) }
+    describe "when description is not nil" do
+      subject { presenter(description: 'example') }
 
-  #     it "returns as expected" do
-  #       subject.playback_state.should eq("<a href=\"#\"><i class='icon-play'></i></a>")
-  #     end
-  #   end
-
-  #   describe "when the video is not completed, and not enabled" do
-  #     subject { presenter(completed: false, enabled: false) }
-
-  #     it "returns as expected" do
-  #       subject.playback_state.should eq("<i class='icon-lock'></i>")
-  #     end
-  #   end
-  # end
+      specify { expect {|b| subject.render_description(&b) }.to yield_control }
+    end
+  end
 
   private
 
@@ -136,7 +124,7 @@ describe OutlineVideoPresenter do
   end
 
   def stub_presenter(options = {})
-    defaults = {id: nil, name: nil, completed: nil, duration: nil, enabled: nil, url: '#'}
+    defaults = {id: nil, name: nil, description: nil, completed: nil, duration: nil, enabled: nil, url: '#'}
     defaults.merge!(options)
 
     OpenStruct.new(defaults)

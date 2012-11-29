@@ -9,6 +9,10 @@
   <td>
     <% if outline_video.enabled %>
     <a href="<%= outline_video.url %>" class="video_link"><%= outline_video.name %></a>
+    <% outline_video.render_description do |description| %>
+      <br />
+      <span class="description"><%= description %></span>
+    <% end %>
     <% else %>
     <%= outline_video.name %>
     <% end %>

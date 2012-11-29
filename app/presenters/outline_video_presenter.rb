@@ -4,7 +4,7 @@ require 'explicit_delegator'
 class OutlineVideoPresenter < ExplicitDelegator
   include ActionView::Helpers::UrlHelper
 
-  enforce_definitions :enabled, :completed, :id, :duration, :url, :name
+  enforce_definitions :enabled, :completed, :id, :duration, :url, :name, :description
 
   def css_class
     css_classes = []
@@ -54,6 +54,10 @@ class OutlineVideoPresenter < ExplicitDelegator
 
   def linkable?
     video.completed || video.enabled
+  end
+
+  def render_description
+    yield(video.description) unless video.description.nil?
   end
 
   private
