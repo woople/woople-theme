@@ -15,6 +15,7 @@ class BrowseController < ApplicationController
 
     @video = OpenStruct.new(
       name: video_names.sample,
+      description: nil,
       desktop_src: desktop_src,
       mobile_src: mobile_src,
       streamer: 'unknown',
@@ -267,6 +268,7 @@ class BrowseController < ApplicationController
     OpenStruct.new(
       id: index,
       name: video_names.sample,
+      description: nil,
       url: '/video',
       duration: rand(50000...500000),
       completed: completed && unit_enabled,
