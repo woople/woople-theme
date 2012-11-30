@@ -214,17 +214,20 @@ class BrowseController < ApplicationController
   end
 
   def random_unit(unit_index = 0, enabled = false, completed_videos = 3)
+    video_range = (completed_videos+1)..(completed_videos*3)
+
     OpenStruct.new(
       name: course_names.sample,
       enabled: (unit_index == 0),
       assessment: random_assessment(unit_index),
       completed: 2,
-      videos: rand((completed_videos+1)..(completed_videos*3)).times.collect { |index|
+      videos: rand(video_range).times.collect { |index|
         random_video("#{unit_index}_#{index}",
-                     (index + 1 <= completed_videos) ? true : false,
-                     (index <= completed_videos) ? true : false,
-                     (unit_index == 0)
-                    )
+          (index + 1 <= completed_videos) ? true : false,
+          (index <= completed_videos) ? true : false,
+          (unit_index == 0),
+          ((index == completed_videos) && (unit_index == 0))
+          )
       },
       downloads: [random_download(unit_index == 0)]
     )
@@ -239,7 +242,7 @@ class BrowseController < ApplicationController
       enabled?: [true, false].sample,
       startable?: [true, false].sample,
       url: '#',
-      relearnings: rand(0..7).times.collect { |index| random_video(index, [true, false].sample, true, true) },
+      relearnings: rand(0..7).times.collect { |index| random_video(index, [true, false].sample, true, true, [true, false].sample) },
       history: rand(1..7).times.collect { random_history_item },
       completed?: [true, false].sample,
       passed?: [true, false, nil].sample
@@ -264,7 +267,7 @@ class BrowseController < ApplicationController
     )
   end
 
-  def random_video(index, completed, enabled, unit_enabled)
+  def random_video(index, completed, enabled, unit_enabled, now_playing)
     OpenStruct.new(
       id: index,
       name: video_names.sample,
@@ -272,7 +275,8 @@ class BrowseController < ApplicationController
       url: '/video',
       duration: rand(50000...500000),
       completed: completed && unit_enabled,
-      enabled: enabled && unit_enabled
+      enabled: enabled && unit_enabled,
+      now_playing: now_playing
     )
   end
 
