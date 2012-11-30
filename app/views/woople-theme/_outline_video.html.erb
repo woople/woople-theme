@@ -8,6 +8,9 @@
   </td>
   <td>
     <% if outline_video.enabled %>
+    <% outline_video.render_now_playing do %>
+      <span class="label label-success"><%= t('woople_theme.outline.videos.now_playing') %></span>
+    <% end %>
     <a href="<%= outline_video.url %>" class="video_link"><%= outline_video.name %></a>
     <% outline_video.render_description do |description| %>
       <br />

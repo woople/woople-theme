@@ -86,8 +86,10 @@
     th, td {
       padding:@tableCellPadding;
       border-top:none;
+
       a {
         color:@primaryTextColour;
+        vertical-align: middle;
       }
     }
 
@@ -111,6 +113,10 @@
 
     .description {
       font-size: 11px;
+    }
+
+    .label.label-success {
+      .woople-badge();
     }
 
     tr:hover {
