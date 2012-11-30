@@ -4,7 +4,7 @@ require 'explicit_delegator'
 class OutlineVideoPresenter < ExplicitDelegator
   include ActionView::Helpers::UrlHelper
 
-  enforce_definitions :enabled, :completed, :id, :duration, :url, :name, :description
+  enforce_definitions :enabled, :completed, :id, :duration, :url, :name, :description, :now_playing?
 
   def css_class
     css_classes = []
@@ -19,9 +19,9 @@ class OutlineVideoPresenter < ExplicitDelegator
   end
 
   def duration
-    minutes = (video.duration.to_f / 1000.0 / 60.0).floor
+    minutes   = (video.duration.to_f / 1000.0 / 60.0).floor
     remainder = (video.duration - (minutes * 60 * 1000))
-    seconds = (remainder.to_f / 1000.0).floor
+    seconds   = (remainder.to_f / 1000.0).floor
 
     if seconds <= 9
       seconds = "0#{seconds}"
@@ -58,6 +58,10 @@ class OutlineVideoPresenter < ExplicitDelegator
 
   def render_description
     yield(video.description) unless video.description.nil?
+  end
+
+  def render_now_playing
+    yield if video.now_playing?
   end
 
   private
