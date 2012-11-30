@@ -117,6 +117,20 @@ describe OutlineVideoPresenter do
     end
   end
 
+  describe "#render_now_playing" do
+    describe "when now_playing is nil or false" do
+      subject { presenter(now_playing?: [nil, false].sample) }
+
+      specify { expect {|b| subject.render_now_playing(&b) }.not_to yield_control }
+    end
+
+    describe "when now_playing is true" do
+      subject { presenter(now_playing?: true) }
+
+      specify { expect {|b| subject.render_now_playing(&b) }.to yield_control }
+    end
+  end
+
   private
 
   def presenter(data)
@@ -124,7 +138,7 @@ describe OutlineVideoPresenter do
   end
 
   def stub_presenter(options = {})
-    defaults = {id: nil, name: nil, description: nil, completed: nil, duration: nil, enabled: nil, url: '#'}
+    defaults = {id: nil, name: nil, description: nil, completed: nil, duration: nil, enabled: nil, url: '#', now_playing?: nil}
     defaults.merge!(options)
 
     OpenStruct.new(defaults)

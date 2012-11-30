@@ -24,6 +24,8 @@ en:
         one: 1 question
         other: '%{count} questions'
       assessment_requirement: "%{percent}% required"
+      videos:
+        now_playing: Now Playing
     profile:
       search: Search...
     video_player:
