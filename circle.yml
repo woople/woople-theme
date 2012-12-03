@@ -9,7 +9,7 @@ database:
 
 test:
   override:
-    - bundle exec rspec --color -r rspec-extra-formatters -f progress -f JUnitFormatter --out circleci/junit/rspec_null.xml spec
+    - bundle exec rspec --color spec
   post:
     - bundle exec rake konacha:run:
         pwd:
