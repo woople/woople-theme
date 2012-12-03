@@ -33,6 +33,7 @@ function resizeFix() {
 function setLoading(selector, element, options) {
   var div = $('<div></div>').addClass('loadingAction');
   $(element).find(selector).html(div);
+
   new Spinner(options).spin(div[0]);
 }
 
@@ -107,7 +108,7 @@ $(document).ready(function() {
     new FastClick(document.body);
   }
 
-  $('.outline tbody tr').not('.disabled').on('click', function(e) {
+  $(document).on('click', '.outline tbody tr:not(.disabled)', function(e) {
     e.preventDefault();
 
     if (!$(this).hasClass('download')) {
