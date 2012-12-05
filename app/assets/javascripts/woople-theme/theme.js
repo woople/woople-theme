@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery.pjax
 //= require modernizr
 //= require spin.min
 //= require twitter/bootstrap/transition
@@ -130,16 +131,16 @@ $(document).ready(function() {
     visitLocation(this);
   });
 
-  $('.pagination a').on('click', function() {
-    tinyLoadingIndicator(this);
-  });
-
-  $('a.loading_indicator').on('click', function() {
-    tinyLoadingIndicator(this);
-  });
-
   mobileSearchToggle();
 
   $('#essentials_tab_nav a:first').tab('show');
   $('#electives_tab_nav a:first').tab('show');
+
+  $(document).on('click', 'a.loading_indicator', function() {
+    tinyLoadingIndicator(this);
+  });
+
+  $(document).on('click', '.pagination a', function(e) {
+    tinyLoadingIndicator(this);
+  });
 });
