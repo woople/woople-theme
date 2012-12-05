@@ -6,7 +6,8 @@ source "http://rubygems.org"
 gemspec
 
 # jquery-rails is used by the dummy application
-gem 'jquery-rails'
+gem 'jquery-rails', '2.1.3'
+gem 'pjax_rails', '0.3.4'
 gem 'thin'
 
 gem 'ejs'
