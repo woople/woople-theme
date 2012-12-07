@@ -29,14 +29,21 @@
           <%= profile %>
         </div>
 
-        <div id="body-container">
+        <div id="body-container" >
+
           <%= menu %>
 
           <div class="outer-content span9">
             <div class="content">
               <%= yield %>
             </div>
-            <p class="copyright"><a href="<%t 'woople_theme.company.url' %>"><%=t 'woople_theme.company.name' %></a> &copy; <%= DateTime.now.strftime("%Y") %></p>
+            <p class="copyright"><a href="<%=t 'woople_theme.company.url' %>" target="_blank"><%=t 'woople_theme.company.name' %></a> &copy; <%= DateTime.now.strftime("%Y") %></p>
+            <p class="footer_link"><a href="<%=t 'woople_theme.company.privacy_url' %>" target="_blank"><%=t 'woople_theme.company.privacy' %></a></p>
+            <p class="footer_link"><a href="<%=t 'woople_theme.company.tos_url' %>" target="_blank"><%=t 'woople_theme.company.terms_of_service' %></a></p>
+            <p class="footer_link"><a href="<%=t 'woople_theme.company.security_url' %>" target="_blank"><%=t 'woople_theme.company.security' %></a></p>
+            <p class="footer_link"><a href="<%=t 'woople_theme.company.blog_url' %>" target="_blank"><%=t 'woople_theme.company.blog' %></a></p>
+            <p class="footer_link"><a href="<%=t 'woople_theme.company.twitter_url' %>" target="_blank"><%=t 'woople_theme.company.twitter' %></a></p>
+            <p class="footer_link"><a href="<%=t 'woople_theme.company.facebook_url' %>" target="_blank"><%=t 'woople_theme.company.facebook' %></a></p>
           </div>
 
         </div>
