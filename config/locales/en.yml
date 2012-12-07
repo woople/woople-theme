@@ -12,6 +12,18 @@ en:
     company:
       name: "Woople"
       url: http://woople.com
+      privacy: Privacy
+      privacy_url: https://master.woople.com/static/privacy.html
+      terms_of_service: Terms of Service
+      tos_url: https://master.woople.com/static/terms.html
+      security: Security
+      security_url: https://master.woople.com/static/security.html
+      blog: Blog
+      blog_url: http://woople.tumblr.com/
+      twitter: Twitter
+      twitter_url: https://twitter.com/shoutwoople
+      facebook: Facebook
+      facebook_url: http://www.facebook.com/shoutwoople
     content_item_header:
       time_left: Time Left
       popularity: Popularity
