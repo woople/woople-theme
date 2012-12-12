@@ -19,3 +19,5 @@ spec/dummy/log/*.log
 
 # Developer-specific folders
 .idea/
+
+Gemfile.lock
