@@ -18,8 +18,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 3.2.9'
   s.add_dependency 'less-rails-bootstrap', '2.0.13'
-  s.add_dependency 'libv8', '3.11.8.4'
-  s.add_dependency 'therubyracer', '0.11.0beta8'
+  s.add_dependency 'therubyracer', '0.10.2'
   s.add_dependency 'coffee-rails', '~> 3.2.1'
   s.add_dependency 'highcharts-rails', '2.3.3'
 
