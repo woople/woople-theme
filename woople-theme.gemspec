@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib,vendor}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
-  s.add_dependency 'rails', '~> 3.2.9'
+  s.add_dependency 'rails', '~> 3.2.10'
   s.add_dependency 'less-rails-bootstrap', '2.0.13'
   s.add_dependency 'therubyracer', '0.10.2'
   s.add_dependency 'coffee-rails', '~> 3.2.1'

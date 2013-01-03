@@ -11,7 +11,7 @@ gem 'pjax_rails', '0.3.4'
 gem 'thin'
 
 gem 'ejs'
-gem 'konacha', '2.0.0.beta3'
+gem 'konacha', '2.1.0'
 gem 'poltergeist'
 gem 'sinon-rails'
 gem 'foreman'
