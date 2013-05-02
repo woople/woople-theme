@@ -38,7 +38,10 @@
               <%= yield %>
             </div>
             <div class="footer">
-              <p class="footer_link"><a href="<%=t 'woople_theme.company.blog_url' %>" target="_blank"><%=t 'woople_theme.company.blog' %></a></p>
+              <% if has_admin_functions %>
+                <p class="footer_link"><a href="<%=t 'woople_theme.company.admin_url' %>" target="_blank"><%=t 'woople_theme.company.admin' %></a></p>
+                <p class="footer_link">|</p>
+              <% end %>
               <p class="footer_link"><a href="<%=t 'woople_theme.company.twitter_url' %>" target="_blank"><%=t 'woople_theme.company.twitter' %></a></p>
               <p class="footer_link"><a href="<%=t 'woople_theme.company.facebook_url' %>" target="_blank"><%=t 'woople_theme.company.facebook' %></a></p>
               <p class="footer_link"><a href="<%=t 'woople_theme.company.security_url' %>" target="_blank"><%=t 'woople_theme.company.security' %></a></p>

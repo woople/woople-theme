@@ -18,6 +18,8 @@ en:
       tos_url: https://master.woople.com/static/terms.html
       security: Security
       security_url: https://master.woople.com/static/security.html
+      admin: Administration and Reports
+      admin_url: https://app.woople.com/admin
       blog: Blog
       blog_url: http://woople.tumblr.com/
       twitter: Twitter
